@@ -1,0 +1,77 @@
+%%% Dateikodierung: UTF-8
+
+%%% Magic Comments zum Setzen der korrekten Parameter in kompatiblen IDEs
+% !TeX encoding = utf8
+% !TeX program = pdflatex 
+% !TeX spellcheck = de_DE
+% !BIB program = biber
+
+\RequirePackage[utf8]{inputenc} % bei Verw. von lualatex oder xelatex entfernen!
+\RequirePackage{hgbpdfa}        % Erzeugt ein PDF/A-2b-konformes Dokument
+
+\documentclass[type=bachelor,theme=default,language=german,titlelanguage=german,smartquotes]{hgbthesis}
+\setlength{\parindent}{0pt}
+
+\graphicspath{{images/}}  % Verzeichnis mit Bildern und Grafiken
+\bibliography{references} % Biblatex-Literaturdatei (references.bib)
+
+%%%-----------------------------------------------------------------------------
+\begin{document}
+%%%-----------------------------------------------------------------------------
+
+%%%-----------------------------------------------------------------------------
+% Angaben für die Titelei (Titelseite, Erklärung etc.)
+%%%-----------------------------------------------------------------------------
+
+\title{Partielle Lösungen zur "allgemeinen" Problematik}
+\subtitle{Eine grundlegende Einführung}
+\author{Florian\ Rittberger}
+
+\programtype{Fachhochschul-Bachelorstudiengang}
+\programname{Software Engineering}
+\institution{Fachhochschule Oberösterreich}
+
+\placeofstudy{Hagenberg}
+\dateofsubmission{2025}{07}{01} % {JJJJ}{MM}{TT}
+
+\advisor{Andreas Johann~Scheibenpflug~BSc MSc}
+
+\license{cc}
+
+%%%-----------------------------------------------------------------------------
+\frontmatter                                       % Titelei (röm. Seitenzahlen)
+%%%-----------------------------------------------------------------------------
+
+\maketitle
+\tableofcontents
+
+\include{front/vorwort} % Ein Vorwort ist optional
+\include{front/kurzfassung}		
+\include{front/abstract}
+
+%%%-----------------------------------------------------------------------------
+\mainmatter                             % Hauptteil (ab hier arab. Seitenzahlen)
+%%%-----------------------------------------------------------------------------
+
+\include{chapters/einleitung}
+\include{chapters/grundlagen}
+\include{chapters/konzept_und_design}
+\include{chapters/implementierung_des_backtesters}
+\include{chapters/performancetests_der_unterschiedlichen_programmiersprachen}
+\include{chapters/zusammenfassung_und_schlussbemerkungen}
+
+%%%-----------------------------------------------------------------------------
+\backmatter                          % Schlussteil (Quellenverzeichnis und dgl.)
+%%%-----------------------------------------------------------------------------
+
+\MakeBibliography % Quellenverzeichnis
+
+%%%-----------------------------------------------------------------------------
+% Messbox zur Druckkontrolle
+%%%-----------------------------------------------------------------------------
+
+\include{back/messbox}
+
+%%%-----------------------------------------------------------------------------
+\end{document}
+%%%-----------------------------------------------------------------------------

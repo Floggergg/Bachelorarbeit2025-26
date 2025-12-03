@@ -1,0 +1,31 @@
+@startuml
+
+title Backtesting-Prozess
+
+skinparam backgroundColor #FFFFFF
+
+skinparam activity {
+  BackgroundColor #66b9f8
+  BorderColor #2B547E
+  FontColor #1A1A1A
+  FontSize 14
+  FontStyle bold
+  DiamondBackgroundColor #69e994
+  DiamondBorderColor #1C7C54
+  Padding 20
+  BorderThickness 1
+  RoundCorner 10
+}
+
+start
+
+:     Strategie erstellen     ;
+repeat :                    Backtest mit \n historischen Daten durchführen     ;
+    :     Ergebnisse analysieren     ;
+backward :     Strategie anpassen     ;
+repeat while (\n        Strategie\nzufriedenstellend?\n) is (Nein) not (Ja)
+:     Strategie übernehmen     ;
+
+stop
+
+@enduml

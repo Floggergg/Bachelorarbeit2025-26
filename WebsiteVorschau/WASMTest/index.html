@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WASM Upload Demo</title>
+</head>
+<body>
+<h1>Upload a WebAssembly (.wasm) File</h1>
+<input type="file" id="wasmUpload" accept=".wasm" />
+<p>Console will log the result of <code>add(5, 3)</code> if found.</p>
+
+<script type="module">
+    document.getElementById('wasmUpload').addEventListener('change', async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const bytes = await file.arrayBuffer();
+
+        const memory = new WebAssembly.Memory({ initial: 1 });
+        const { instance } = await WebAssembly.instantiate(bytes, { env: { memory } });
+        console.log(instance);
+
+        const { decision, malloc, free } = instance.exports;
+
+        const times = new Float32Array([20000, 15000, 12345]);
+
+// Allocate memory inside WASM
+        const ptr = malloc(times.length * 4); // 4 bytes per float32
+        new Float32Array(memory.buffer, ptr, times.length).set(times);
+
+        console.log('Pointer:', ptr);
+        console.log('Result:', decision(ptr, times.length));
+
+// Free allocated memory
+        free(ptr);
+    });
+</script>
+</body>
+</html>

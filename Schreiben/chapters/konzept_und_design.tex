@@ -1,0 +1,253 @@
+\chapter{Konzept und Design}
+\label{cha:KonzeptundDesign}
+
+In diesem Kapitel werden das Konzept und Design des im Rahmen dieser Arbeit entwickelten Backtesters beschrieben. 
+Zudem wird der Aufbau der Strategien sowie die Herangehensweise bei der Visualisierung der Kennzahlen und Ergebnisse erläutert.
+
+\section{Architektur des Backtesters}
+\label{sec:ArchitekturdesBacktesters}
+
+Der entwickelte Backtester besteht aus mehreren Komponenten.
+Den erhaltenen Daten, der Backtesterlogik und der Visualisierung der Ergebnisse.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{backtester_architektur.drawio.png}
+    \caption{Struktur des Backtesters}
+    \label{fig:StrukturdesBacktesters}
+\end{figure}
+
+In der Grafik \ref{fig:StrukturdesBacktesters} ist die Struktur des gesamten Backtesters dargestellt.
+Zu Beginn werden eingehenden Daten in die Backtesterlogik eingespeist. 
+Einerseits wird eine Historie von Kursdaten im JSON Format übergeben, andererseits wird die zu testende Strategie als WebAssembly Modul oder JavaScript Datei geladen.
+Als Result entsteht eine Visualisierung der Backtestergebnisse und die Auflistung der Trades.
+
+\subsection{Format der historischen Finanzdaten}
+\label{subsec:FormatderhistorischenFinanzdaten}
+
+Die historischen Finanzdaten werden über die Weboberfläche im JSON Format an die Backtesterlogik weitergereicht.
+Das JSON Format eignet sich für die Übergabe, da es von JavaScript nativ unterstützt wird und leicht zu parsen ist.
+JSON hat sich als Standartformat für die Datenverwaltung im Web etabliert, da dieses gut menschen lesbar ist und performant von Webbrowsern verarbeitet werden kann.
+Darüber hinaus bringt die Struktur von JSON den Vorteil mit sich, dass komplexe Datenstrukturen damit einfach abgebildet werden können.
+XML wurde nicht gewählt, da es im Vergleich zu JSON eine umfangreichere Syntax besitzt und dadurch mehr Speicherplatz sowie Rechenzeit beim Parsen benötigt. 
+Des Weiteren ist XML weniger kompakt und wird von modernen Webanwendungen nicht so effizient wie JSON verarbeitet.
+\cite{SaurabhZunkeJSONXML}
+
+Die historischen Daten müssen in einer bestimmten Form vorliegen, um eine korrekte Verarbeitung durch die Backtesterlogik zu ermöglichen. 
+Jeder Datenpunkt ist dabei durch zwei Attribute zu beschreiben: einen Zeitstempel im ISO Format sowie einen zugehörigen Kurswert als Flieskommazahl.
+
+\subsection{Backtesterlogik}
+\label{subsec:Backtesterlogik}
+
+In der Backtesterlogik ist der Hauptteil der Funktionalität des Backtesters umgesetzt.
+Der Backtestprozess beginnt, nachdem die historischen Finanzdaten und die zu testende Strategie geladen wurden.
+Dabei wird iterativ über den gesamten Datensatz gegangen und in einem vordefinierten Intervall die Strategie aufgerufen und nach einem Handelssignal befragt.
+Die Strategie erhält als Eingabeparameter den aktuellen Kurswert, eine festgelegte Anzahl historischer Datenpunkte sowie den zeitlichen Abstand, in dem diese historischen Kurswerte voneinander entfernt erfasst wurden.
+Die WASM Module erhalten ebenso die Anzahl der übergebenen Kurswerte, damit die Daten korrekt verarbeiten werden können.
+Je nach zurückgegebenem Signal der Strategie wird danach ein Kauf- oder Verkaufsvorgang simuliert.
+Dieser Vorgang wird aber nur durchgeführt, wenn bei einem Kaufvorgang genügend Kapital vorhanden ist oder bei einem Verkaufsvorgang genügend Wertpapiere im Portfolio sind.
+Somit wird verhindert, dass ein negatives Kapital oder ein negativer Bestand an Wertpapieren entsteht.
+Jede erfolgreiche Transaktion während des Backtestprozesses wird protokolliert, um diese nach vollständiger Berechnung visualisieren zu können.
+In der Abbildung \ref{fig:Backtestablauf} ist dieser Prozess visuell dargestellt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=0.5\textheight]{BacktesterLogik.png}
+    \caption{Backtestingablauf}
+    \label{fig:Backtestablauf}
+\end{figure}
+
+Ein weiterer Aspekt in der Backtesterlogik ist die Messung der Ausführungsgeschwindigkeit der einzelnen Strategien.
+Da gleichwertige Strategien mit identer Logik in verschiedenen Programmiersprachen implementiert und getestet werden können, ist es möglich die Ausführungszeit der Strategien zu vergleichen.
+Dazu wird die Zeit gemessen, die für das Ausführen der Strategie während des Backtestes benötigt wird.
+Die Zeit startet nach dem Initialisieren des Backtesters und endet, nachdem alle Datenpunkte in den Kursdaten berücksichtigt wurden.
+Das Laden der historischen Finanzdaten, der Strategie und die Errechnung der Kennzahlen wird dabei nicht mit einbezogen.
+
+Am Ende des Backtestingvorganges werden ebenfalls verschiedene Kennzahlen errechnet, um die Performance der getesteten Strategie zu bewerten.
+Zu den errechneten Kennzahlen gehören: Endwert des Portfolios, Gesamtrendite, prozentueller Gewinn und der Sharpe Ratio.
+
+\subsection{Modularisierung der Strategien}
+\label{subsec:ModularisierungderStrategien}
+
+Der Backtester ist so designt, dass verschiedene Handelsstrategien modular hochgeladen und getestet werden können.
+Die Modularisierung ermöglicht es den Nutzern, eigene Strategien zu implementieren und diese in dem Backtester zu verwenden ohne Backtestinglogik verändern zu müssen.
+Die Strategiemodule müssen dabei nur einen definierten Namen und eine vordefinierte Signatur besitzen, um korrekt aufgerufen werden zu können.
+Der Rückgabewert dieser Funktion bestimmt dabei, ob ein Kauf-, Verkaufs- oder Haltesignal ausgegeben wird.
+
+Das modulare Konzept erlaubt die Verwendung von Strategien in verschiedenen Programmiersprachen.
+Der in dieser Arbeit entwickelte Backtester unterstützt Strategien in den Programmiersprachen JavaScript und WebAssembly (WASM), um den Vergleich der Ausführungsgeschwindigkeiten zu ermöglichen.
+Die Trennung zwischen dem Backtester und den Strategien ermöglicht es das System zukünftig einfach, um weitere Sprachen und Schnittstellen zu erweitern.
+
+\section{Aufbau der Teststrategien}
+\label{sec:AufbauderTeststrategien}
+
+Zum Testen des Backtesters wurden verschiedene Konzepte für Handelsstrategien in konkrete Implementierungen überführt.
+Jeder der Strategieansätze verfolgt einen anderen Ansatz zur Generierung von Kauf- und Verkaufssignalen und weist dementsprechend auch unterschiedliche Geschwindigkeiten in der Ausführung auf.
+Der Aufbau der drei umgesetzten Strategien ist in den folgenden Unterkapiteln beschrieben.
+
+\subsection{Struktur der Mittelwertrückkehr Strategie mit Bollinger Bändern}
+\label{subsec:StrukturderMittelwertrückkehrStrategiemitBollingerBändern}
+
+Die Durchschnittsrückkehr beschreibt die Tendenz von Kurswerten, nach Abweichungen wieder in die Nähe ihres Mittelwerts zurückzukehren.
+Die Verwendung von Bollinger Bändern reduziert die Häufigkeit schwacher Handelssignale, indem kurzfristige Schwankungen herausfiltert werden und nur starke Preisabweichungen Impulse auslösen.
+Eine detaillierte Beschreibung dieser Strategieidee befindet sich in Abschnitt \ref{subsec:MittelwertrückkehrmitBollingerBänder}.
+
+Als Breite des Bollinger Bandes wird eine Standardabweichung von 3,25 gewählt, um die Strategie an längerfristige Anlagen und Märkte mit höherer Volatilität anzupassen.
+Laut \cite{kabasinskas2010bollinger} sind Breiten von 1,8 Standartabweichungen von Bändern bei kurzzeitigen Investments vorteilhaft.
+Je mehr Schwankungen im Kursverlauf enthalten sind und bei einem längeren Anlagehorizont sollte eine größere Standardabweichung gewählt werden, um die Breite des Bandes entsprechend anzupassen.
+Somit werden mehr kurzfristige Signale entfernt und das Risiko für Fehlsignale gesenkt.
+Die Strategie löst erst dann Trades aus, wenn genügend Datenpunkte übergeben werden, da für die Berechnung der Standardabweichung eine Reihe von Werten benötigt wird.
+Die Mindestanzahl an historischen Kurswerten wird in der Strategie selbst festgelegt.
+
+\subsection{Aufbau der Ausbruchsstrategie}
+\label{subsec:AufbauderAusbruchsstrategie}
+
+Ausbruchsstrategien erzeugen ein Kauf- oder Verkaufssignal, wenn der aktuelle Kurswert das in einem beobachteten Intervall ermittelte Maximum überschreitet oder das Minimum unterschreitet.
+Eine genauere Erklärung dazu befindet sich in dem Kapitel \ref{subsec:Ausbruchsstrategien}.
+
+Die für diese Arbeit entwickelte Ausbruchsstrategie bezieht in die Minima und Maximum Berechnung alle erhaltenen Wert bis auf den Letzten mit ein.
+Der letzte Kurswert wird jedoch nicht direkt mit den Extremwerten des vergangenen Beobachtungszeitraums verglichen, sondern
+um geringfügige Kursschwankungen, die keinen tatsächlichen Ausbruchstrend anzeigen, zu vermeiden, mit einem Epsilon-Faktor angepasst.
+Dadurch sollen Fehlsignale in Seitwärtsmarktphasen vermieden werden.
+Ebenfalls zur Absicherung gegen Fehlsignale werden Haltesignale erst dann ausgegeben, wenn der Strategie mindestens die eingegebene Anzahl an Kurswerten übergeben wurde.
+
+\subsection{Umsetzung der gleitenden Durchschnittsüberschneidungs Strategie}
+\label{subsec:UmsetzungdergleitendenDurchschnittsüberschneidungsStrategie}
+
+Bei der Durchschnittsüberschneidungsstrategie werden zwei gleitende Durchschnitte mit unterschiedlich langen Zeiträumen berechnet und miteinander verglichen, um Handelssignale zu erzeugen.
+Wie bereits in Kapitel \ref{subsec:GleitendeDurchschnittsÜberscheidungen} beschrieben.
+
+Die implementierte Handelsstrategie verwendet dabei einen gleitenden Durchschnitt mit einer Länge von acht Zeiteinheiten als kurzfristigen Durchschnitt,
+während für den langfristigen Durchschnitt ein Zeitraum von 24 Zeiteinheiten beobachtet wird.
+Dieses 1:3 Verhältnis wurde so gewählt, da es eine gute Balance zwischen Reaktionsfähigkeit, Gewinn und Stabilität bietet.
+\cite{https://doi.org/10.1111/j.1540-6261.1992.tb04681.x}
+Diese Strategie berücksichtigt nur die aktuellsten 24 Datenpunkte, um die Durchschnitte zu berechnen.
+Alle übergebenen historischen Datenpunkte, die älter als dieses Intervall sind, werden ignoriert.
+Die Strategie generiert ausschließlich Haltesignale, sobald eine ausreichende Anzahl an Datenpunkten zur Berechnung der gleitenden Durchschnitte vorliegt.
+Zudem werden Handelssignale nur dann ausgelöst, wenn die Überschneidung der Durchschnitte einen definierten prozentualen Schwellenwert in Relation zum aktuellen Kurs überschreitet, um die Entstehung von Fehlsignalen zu reduzieren.
+
+\section{Weboberfläche des Backtesters}
+\label{sec:WeboberflächedesBacktesters}
+
+Die Weboberfläche des Backtesters ermöglicht es, historische Kursdaten und Strategien hochzuladen, Backtests zu starten und die Ergebnisse zu visualisieren.
+Der Backtester ist nur über die Weboberfläche bedienbar.
+Die Webseite ist in verschiedene Bereiche unterteilt, die jeweils unterschiedliche Funktionen bereitstellen.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{weboberflaecheDesign.drawio.png}
+    \caption{Design der Weboberfläche des Backtesters}
+    \label{fig:DesignderWeboberflächedesBacktesters}
+\end{figure}
+
+In der Abbildung \ref{fig:DesignderWeboberflächedesBacktesters} ist das Design der Weboberfläche des Backtesters dargestellt.
+Der oberste Bereich bietet die Möglichkeit, historische Kursdaten im JSON Format herunterzuladen.
+Dabei muss das Kürzel des gewünschten Wertpapiers sowie der Zeitraum angegeben werden.
+Unterhalb befindet sich der Abschnitt, in dem die Kursdaten und die Handelsstrategie hochgeladen sowie die Startparameter für den Backtest festgelegt werden können.
+Zu diesen Parametern zählen das Anfangskapital, das Intervall, in dem die Strategie abgefragt werden soll, sowie die Anzahl der historischen Datenpunkte, die an die Strategie übergeben werden.
+Nachdem alle Felder ausgefüllt und als gültig erkannt wurden, kann der Backtest per Knopfdruck gestartet werden.
+Im folgenden Bereich werden nach der Berechnung die Kennzahlen des Backtests dargestellt.
+Daraufhin werden die Kursverläufe mit den Handelszeitpunkten sowie die Portfolioentwicklung visualisiert.
+Abschließend wird eine Tabelle mit allen im Rahmen des Backtests ausgeführten Trades angezeigt.
+
+\section{Visualisierung der Daten und Ergebnisse}
+\label{sec:VisualisierungderDatenundErgebnisse}
+
+Die Kennzahlen, Ergebnisse des Backtestes und Kursdaten werden als Liniendiagramme visualisiert.
+Dabei werden diese in zwei Diagrammen dargestellt. \ref{fig:KursdiagrammemitKennzahlen}
+Das obere Diagramm zeigt die Kursdaten über die Zeit an und markiert an welchen Stellen ver- oder gekauft wurde.
+Das untere Diagramm stellt den Portfoliowert über die Zeit dar.
+Das Portfoliodiagramm und die Kennzahlen helfen die Effektivität der getesteten Strategie zu einzuschätzen und machen die Performance visuell sichtbar.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{Diagramms.png}
+    \caption{Kursdiagramme mit Kennzahlen}
+    \label{fig:KursdiagrammemitKennzahlen}
+\end{figure}
+
+Bei der Visualisierung der Finanzdaten fallen große Datenmengen mit Millionen von Datenpunkten an. 
+Um eine übersichtliche Darstellung zu ermöglichen, werden die Datensätze daher zur Darstellung durch Downsampling reduziert.
+Zur Reduktion des Datensets wird eine stichprobenartige Reduktion mittels Schrittweite verwendet, bei der jeder n-te Datenpunkt berücksichtigt wird.
+Dadurch wird die Anzahl der dargestellten Datenpunkte verringert, während die grundlegende Form des Aktienkurses erhalten bleibt.
+Durch die Wahl der Schrittweite kann die Detailliertheit der Darstellung angepasst werden.
+\cite{10.1145/1150402.1150479}
+
+\section{Aufbau der Geschwindigkeitstests}
+\label{sec:AufbauderGeschwindigkeitstests}
+
+Zur Evaluierung der Ausführungsgeschwindigkeit der implementierten Strategien in den verschiedenen Programmiersprachen wird bei jedem Backtest die Laufzeit erfasst. 
+Da der Fokus auf dem Vergleich der Ausführungszeiten zwischen den Programmiersprachen liegt, wird die Zeitmessung bei mehreren identen Strategielogiken in verschiedenen Sprachen durchgeführt. 
+Als Ausführungsumgebung wird der Webbrowser Google Chrome, da dieser mit etwa 70 \% Marktanteil, der am häufigsten genutzte Browser ist und somit eine realistische Einschätzung der Performance ermöglicht.
+\cite{StatCounterBrowserShare2025, W3CounterGlobalStats2025}
+
+Die Backtests werden mit unterschiedlich großen Datensätzen durchgeführt, um die Performance der Strategien bei variierenden Datenmengen zu bewerten. 
+Ebenfalls werden alle Tests auf derselben Hardware ausgeführt, um eine Vergleichbarkeit der Ergebnisse zu gewährleisten.
+Zusätzlich wird jede Strategie mehrfach auf demselben Datensatz angewendet, um die gemessenen Laufzeiten zu Mitteln und zufällige Ausreißer durch Hintergrundprozesse oder Just-in-Time-Kompilierung zu reduzieren.
+Die gemessenen Ausführungszeiten werden in Millisekunden gemessen und am Ende jedes Backtestes angezeigt.
+
+\section{Abrufen der historischen Kursdaten}
+\label{sec:AbrufenderhistorischenKursdaten}
+
+Die historischen Kursdaten werden über Binance bezogen. \cite{Binance}
+Binance bietet eine API an, über die Finanzdaten für verschiedene Aktien oder Kryptowährungen in gewissen Zeiträumen abgerufen werden können.
+Die Daten werden aber nicht direkt weiterverwendet, sondern in einem Vorverarbeitungsschritt in das benötigte JSON Format umgewandelt.
+Dabei wird der durchschnittliche Kurswert pro Minutenintervall berechnet und zusammen mit dem Zeitstempel in die JSON Datei geschrieben.
+Mit der Normalisierung der Daten auf Minuten wird eine einheitliche Datenbasis für die Backtests geschaffen werden.
+Die Datei kann anschließend lokal gespeichert werden.
+Die verarbeiten Datensets können in der Weboberfläche des Backtesters hochgeladen und verwendet werden.
+
+\section{Werkzeuge zur WASM Entwicklung}
+\label{sec:WerkzeugezurWASMEntwicklung}
+
+Für die Entwicklung von WebAssembly (WASM) können verschiedenste Werkzeuge eingesetzt werden. 
+Ein Compiler ist notwendig, um den Quellcode in das WASM-Format zu übersetzen.
+Häufig verwendete Compiler sind dafür Emscripten für C/C++ \cite{EmscriptenWebsite,EmscriptenGitHub}, TeaVM für Java  \cite{TeaVMWebsite,TeaVMGitHub} oder rustc für Rust \cite{RustToWASMWebsite}.
+
+Des Weiteren können Tools wie das The WebAssembly Binary Toolkit (WABT) \cite{wabtGitHub} zur Optimierung und Analyse von WASM-Modulen verwendet werden.
+
+In dieser Arbeit wurde Emscripten als Compiler von C Code und WABT als Tool zur Auswertung von kompilierten WASM Dateien eingesetzt.
+
+\subsection{Emscripten}
+\label{subsec:Emscripten}
+
+Emscripten ist ein Open Source Compiler, der C und C++ Code in WebAssembly (WASM) übersetzt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{EmscriptenPipeline.png}
+    \caption{Emscripten Pipeline}
+    \label{fig:EmscriptenPipeline}
+\end{figure}
+
+In der Abbildung \ref{fig:EmscriptenPipeline} ist der Ablauf eines Emscripten Kompiliervorgangs dargestellt. Zuerst wird der C/C++ Quellcode mit dem Clang Frontend in eine Zwischensprache übersetzt.
+Die Zwischensprache wird danach je nach Compileroption optimiert, um die Performance zu verbessern. Im nächsten Schritt entsteht aus der optimierte Zwischensprache WebAssembly Code. 
+Abschließend kann optional JavaScript-Glue-Code generiert werden, der das Aufrufen des WebAssembly Moduls in JavaScript erleichtert. Dieser zusätzliche Code kann jedoch die Ausführungszeit des Moduls beeinträchtigen.
+\cite{EmscriptenToolchainWebsite}
+
+Um die bestmögliche Performance zu erzielen, wird in dieser Arbeit auf die Generierung von JavaScript-Glue-Code verzichtet und mit der höchsten Optimierungsstufe O3 kompiliert.
+Somit wird gewährleistet, dass der erzeugte WebAssembly Code möglichst effizient ausgeführt werden kann.
+\newline
+Alle Strategien sind wie folgt kompiliert:
+
+emcc strategie.c -O3 -nostdlib -Wl,--no-entry -Wl,--allow-undefined -o strategie.wasm
+\begin{itemize}
+    \item \textbf{emcc}: Befehl zum Aufrufen von Emscripten.
+    \item \textbf{strategie.c}: Die C-Quellcodedatei der jeweiligen Strategie.
+    \item \textbf{-O3}: Die Optimierungsstufe.
+    \item \textbf{-nostdlib}: Verhindert das Einbinden von Standardbibliotheken.
+    \item \textbf{-Wl,--no-entry}: Gibt an, dass das Modul keinen Einstiegspunkt hat. In diesem Fall ist dies die fehlende main Funktion, da es sich um ein Modul handelt.
+    \item \textbf{-Wl,--allow-undefined}: Erlaubt undefinierte Symbole im Modul.
+    \item \textbf{-o strategie.wasm}: Legt den Namen der Ausgabedatei fest.
+\end{itemize}
+
+\subsection{WABT}
+\label{subsec:WABT}
+
+Das WebAssembly Binary Toolkit (WABT) bietet eine Zusammenstellung von Werkzeugen zur Untersuchung und nachträglichen Änderung von WebAssembly (WASM) Modulen.
+WASM Dateien können damit beispielsweise in ein menschenlesbares Textformat umgewandelt, dekompiliert oder nachträglich verändert und validiert werden.
+Im lesbaren Textformat ist der Bytecode nicht mehr binär kodiert, sondern durch Assembler Code dargestellt, der leichter zu interpretieren ist.
+WABT bietet des weiteren Werkzeuge zur Darstellung in JSON oder einem Object Dump Format an.
+Ebenfalls ist es möglich Metainformationen über das Modul zu extrahieren, wie beispielsweise die Anzahl der Funktionen, den Speicherverbrauch oder die importierten und exportierten Symbole.
+\cite{wabtGitHub}
+Eine Abbildung des Bytecodes ist in der Abbildung \ref{fig:WASMBytecode} zu sehen.

@@ -1,0 +1,1886 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{wright2024breakout}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ff7d515a63b60987aeda210175a96c4c}{%
+           family={Agarwal},
+           familyi={A\bibinitperiod},
+           given={Madhav},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff7d515a63b60987aeda210175a96c4c}
+      \strng{fullhash}{ff7d515a63b60987aeda210175a96c4c}
+      \strng{fullhashraw}{ff7d515a63b60987aeda210175a96c4c}
+      \strng{bibnamehash}{ff7d515a63b60987aeda210175a96c4c}
+      \strng{authorbibnamehash}{ff7d515a63b60987aeda210175a96c4c}
+      \strng{authornamehash}{ff7d515a63b60987aeda210175a96c4c}
+      \strng{authorfullhash}{ff7d515a63b60987aeda210175a96c4c}
+      \strng{authorfullhashraw}{ff7d515a63b60987aeda210175a96c4c}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-19}
+      \field{title}{Breakout Pattern - Meaning and Trading Strategy}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.wrightresearch.in/blog/breakout-pattern-meaning-and-trading-strategy/
+      \endverb
+      \verb{url}
+      \verb https://www.wrightresearch.in/blog/breakout-pattern-meaning-and-trading-strategy/
+      \endverb
+    \endentry
+    \entry{TeaVMWebsite}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=9e059de6c5faf6112c580d98f2c3670b}{%
+           family={Andreev},
+           familyi={A\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6111dfa60fd519b4f6e4950eda48c756}{%
+           family={Contributors},
+           familyi={C\bibinitperiod},
+           given={TeaVM},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{fullhash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{fullhashraw}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{bibnamehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authorbibnamehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authornamehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authorfullhash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authorfullhashraw}{ed7dc108688b912d47032eb6cd5edff3}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-26}
+      \field{title}{TeaVM Website}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://teavm.org/
+      \endverb
+      \verb{url}
+      \verb https://teavm.org/
+      \endverb
+    \endentry
+    \entry{arumugam2017empirical}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=959492c0ff50523dbd583daebd56e1e7}{%
+           family={Arumugam},
+           familyi={A\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2306c23162cd580fe4a60cba64b7369b}{%
+           family={Saranya},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c2a5a5df174066bb1e2326a42541167}
+      \strng{fullhash}{5c2a5a5df174066bb1e2326a42541167}
+      \strng{fullhashraw}{5c2a5a5df174066bb1e2326a42541167}
+      \strng{bibnamehash}{5c2a5a5df174066bb1e2326a42541167}
+      \strng{authorbibnamehash}{5c2a5a5df174066bb1e2326a42541167}
+      \strng{authornamehash}{5c2a5a5df174066bb1e2326a42541167}
+      \strng{authorfullhash}{5c2a5a5df174066bb1e2326a42541167}
+      \strng{authorfullhashraw}{5c2a5a5df174066bb1e2326a42541167}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ICTACT Journal on Management Studies}
+      \field{number}{1}
+      \field{title}{An Empirical Analysis of Trading Strategy Based on Simple Moving Average Crossovers}
+      \field{volume}{3}
+      \field{year}{2017}
+      \field{pages}{423\bibrangedash 426}
+      \range{pages}{4}
+    \endentry
+    \entry{Bailey2021BacktestOverfitting}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=dfd392c230fed420a844e8b2f567a39c}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=f592fd7a2dd505aa048b4c0e3277ab29}{%
+           family={Prado},
+           familyi={P\bibinitperiod},
+           given={Marcos\bibnamedelima López},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{a466b731c85176116f1b44e327af51ac}
+      \strng{fullhash}{a466b731c85176116f1b44e327af51ac}
+      \strng{fullhashraw}{a466b731c85176116f1b44e327af51ac}
+      \strng{bibnamehash}{a466b731c85176116f1b44e327af51ac}
+      \strng{authorbibnamehash}{a466b731c85176116f1b44e327af51ac}
+      \strng{authornamehash}{a466b731c85176116f1b44e327af51ac}
+      \strng{authorfullhash}{a466b731c85176116f1b44e327af51ac}
+      \strng{authorfullhashraw}{a466b731c85176116f1b44e327af51ac}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Significance}
+      \field{number}{6}
+      \field{title}{How “Backtest Overfitting” in Finance Leads to False Discoveries}
+      \field{volume}{18}
+      \field{year}{2021}
+      \field{pages}{22\bibrangedash 25}
+      \range{pages}{4}
+    \endentry
+    \entry{Bailey2014PseudoMath}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=dfd392c230fed420a844e8b2f567a39c}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=e5da7b97a9d7939bd585b509b54ddc95}{%
+           family={Borwein},
+           familyi={B\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9a324b3e027531fed3766b6ed67a9ac8}{%
+           family={López\bibnamedelimb de\bibnamedelima Prado},
+           familyi={L\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Marcos},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b37563e5aedeffdf138ca591a0728083}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Qiji\bibnamedelima Jim},
+           giveni={Q\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{fullhash}{bb8b029677e2c859f3b2fea80ed5f948}
+      \strng{fullhashraw}{bb8b029677e2c859f3b2fea80ed5f948}
+      \strng{bibnamehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{authorbibnamehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{authornamehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{authorfullhash}{bb8b029677e2c859f3b2fea80ed5f948}
+      \strng{authorfullhashraw}{bb8b029677e2c859f3b2fea80ed5f948}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Notices of the American Mathematical Society}
+      \field{number}{5}
+      \field{title}{Pseudo-mathematics and financial charlatanism: The effects of backtest overfitting on out-of-sample performance}
+      \field{volume}{61}
+      \field{year}{2014}
+      \field{pages}{458\bibrangedash 471}
+      \range{pages}{14}
+    \endentry
+    \entry{Bailey2015PBO}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=dfd392c230fed420a844e8b2f567a39c}{%
+           family={Bailey},
+           familyi={B\bibinitperiod},
+           given={David\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=55a718488fd513ab72b005964e3e21f5}{%
+           family={Borwein},
+           familyi={B\bibinitperiod},
+           given={Jonathan\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=f592fd7a2dd505aa048b4c0e3277ab29}{%
+           family={Prado},
+           familyi={P\bibinitperiod},
+           given={Marcos\bibnamedelima López},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=b37563e5aedeffdf138ca591a0728083}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Qiji\bibnamedelima Jim},
+           giveni={Q\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{fullhash}{a54092564a7830241d46abfb2b2e0f70}
+      \strng{fullhashraw}{a54092564a7830241d46abfb2b2e0f70}
+      \strng{bibnamehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{authorbibnamehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{authornamehash}{c82df7523744e1a1e200b000a9b53a09}
+      \strng{authorfullhash}{a54092564a7830241d46abfb2b2e0f70}
+      \strng{authorfullhashraw}{a54092564a7830241d46abfb2b2e0f70}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Finance (Risk Journals)}
+      \field{title}{The Probability of Backtest Overfitting}
+      \field{year}{2015}
+    \endentry
+    \entry{backtestjsExampleResult}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=153a0cd256b06cda69a98c3ff4a4deb0}{%
+           family={Baronick},
+           familyi={B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{fullhash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{fullhashraw}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{bibnamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorbibnamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authornamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorfullhash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorfullhashraw}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-29}
+      \field{title}{BacktestJS Example Result}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://backtestjs.com/docs/trading-strategy-results/view-trading-strategy-results/
+      \endverb
+      \verb{url}
+      \verb https://backtestjs.com/docs/trading-strategy-results/view-trading-strategy-results/
+      \endverb
+    \endentry
+    \entry{backtestjsWebsite}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=153a0cd256b06cda69a98c3ff4a4deb0}{%
+           family={Baronick},
+           familyi={B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{fullhash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{fullhashraw}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{bibnamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorbibnamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authornamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorfullhash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorfullhashraw}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-29}
+      \field{title}{BacktestJS Website}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://backtestjs.com/
+      \endverb
+      \verb{url}
+      \verb https://backtestjs.com/
+      \endverb
+    \endentry
+    \entry{ElBernoussi2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7fca4f102774ddafddad98051fa9b456}{%
+           family={Bernoussi},
+           familyi={B\bibinitperiod},
+           given={Rim\bibnamedelima El},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=125685ee2e8edde111ea2ae521ff7530}{%
+           family={Rockinger},
+           familyi={R\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{29934f2d3d235ab660c8a7538c7bdb30}
+      \strng{fullhash}{29934f2d3d235ab660c8a7538c7bdb30}
+      \strng{fullhashraw}{29934f2d3d235ab660c8a7538c7bdb30}
+      \strng{bibnamehash}{29934f2d3d235ab660c8a7538c7bdb30}
+      \strng{authorbibnamehash}{29934f2d3d235ab660c8a7538c7bdb30}
+      \strng{authornamehash}{29934f2d3d235ab660c8a7538c7bdb30}
+      \strng{authorfullhash}{29934f2d3d235ab660c8a7538c7bdb30}
+      \strng{authorfullhashraw}{29934f2d3d235ab660c8a7538c7bdb30}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Financial Markets and Portfolio Management}
+      \field{number}{2}
+      \field{title}{Rebalancing with transaction costs: theory, simulations, and actual data}
+      \field{volume}{37}
+      \field{year}{2023}
+      \field{pages}{121\bibrangedash 160}
+      \range{pages}{40}
+    \endentry
+    \entry{Binance}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=60ac63a0e9dbb4690f1910c2de98b2f1}{%
+           family={Binance},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \strng{fullhash}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \strng{fullhashraw}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \strng{bibnamehash}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \strng{authorbibnamehash}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \strng{authornamehash}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \strng{authorfullhash}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \strng{authorfullhashraw}{60ac63a0e9dbb4690f1910c2de98b2f1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.binance.com/}
+      \field{note}{Accessed: 2025-11-03}
+      \field{title}{Binance - Cryptocurrency Exchange}
+      \field{year}{2025}
+    \endentry
+    \entry{bollinger1992using}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=0933c4953e5ce30fd67fb12392b636de}{%
+           family={Bollinger},
+           familyi={B\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{0933c4953e5ce30fd67fb12392b636de}
+      \strng{fullhash}{0933c4953e5ce30fd67fb12392b636de}
+      \strng{fullhashraw}{0933c4953e5ce30fd67fb12392b636de}
+      \strng{bibnamehash}{0933c4953e5ce30fd67fb12392b636de}
+      \strng{authorbibnamehash}{0933c4953e5ce30fd67fb12392b636de}
+      \strng{authornamehash}{0933c4953e5ce30fd67fb12392b636de}
+      \strng{authorfullhash}{0933c4953e5ce30fd67fb12392b636de}
+      \strng{authorfullhashraw}{0933c4953e5ce30fd67fb12392b636de}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Stocks \& Commodities}
+      \field{number}{2}
+      \field{title}{Using bollinger bands}
+      \field{volume}{10}
+      \field{year}{1992}
+      \field{pages}{47\bibrangedash 51}
+      \range{pages}{5}
+    \endentry
+    \entry{https://doi.org/10.1111/j.1540-6261.1992.tb04681.x}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d00b60e921487be764223bd1f4e6ff06}{%
+           family={BROCK},
+           familyi={B\bibinitperiod},
+           given={WILLIAM},
+           giveni={W\bibinitperiod}}}%
+        {{hash=90718000361d40f849ec179a31ba1416}{%
+           family={LAKONISHOK},
+           familyi={L\bibinitperiod},
+           given={JOSEF},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f8bb8800e4a3729b7a9c31a0ef6ecd77}{%
+           family={LeBARON},
+           familyi={L\bibinitperiod},
+           given={BLAKE},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{fullhash}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{fullhashraw}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{bibnamehash}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{authorbibnamehash}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{authornamehash}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{authorfullhash}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{authorfullhashraw}{677e0887f84c918a0a669e2dddad92bb}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Finance}
+      \field{number}{5}
+      \field{title}{Simple Technical Trading Rules and the Stochastic Properties of Stock Returns}
+      \field{volume}{47}
+      \field{year}{1992}
+      \field{pages}{1731\bibrangedash 1764}
+      \range{pages}{34}
+    \endentry
+    \entry{10.1093/rfs/5.4.553}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=39512e2c77560c93cf0afaaad4cd4aa3}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Stephen\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c5cc8bad867b97c2d88752bbb6dc765f}{%
+           family={Goetzmann},
+           familyi={G\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+        {{hash=1df6c72e9ae6560999f6832c996befa2}{%
+           family={Ibbotson},
+           familyi={I\bibinitperiod},
+           given={Roger\bibnamedelima G.},
+           giveni={R\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=98b2227c5a8dba76158ffb9a20138b89}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Stephen\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9f1d3a9fa02483c1b471d58c399a438}
+      \strng{fullhash}{f7cd44bcf907c1fd376affade17184d1}
+      \strng{fullhashraw}{f7cd44bcf907c1fd376affade17184d1}
+      \strng{bibnamehash}{c9f1d3a9fa02483c1b471d58c399a438}
+      \strng{authorbibnamehash}{c9f1d3a9fa02483c1b471d58c399a438}
+      \strng{authornamehash}{c9f1d3a9fa02483c1b471d58c399a438}
+      \strng{authorfullhash}{f7cd44bcf907c1fd376affade17184d1}
+      \strng{authorfullhashraw}{f7cd44bcf907c1fd376affade17184d1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Financial Studies}
+      \field{number}{4}
+      \field{title}{Survivorship Bias in Performance Studies}
+      \field{volume}{5}
+      \field{year}{2015}
+      \field{pages}{553\bibrangedash 580}
+      \range{pages}{28}
+    \endentry
+    \entry{10.1093/rfs/15.5.1439}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=8a76f68a24fc2415999589b4429d26d1}{%
+           family={Carhart},
+           familyi={C\bibinitperiod},
+           given={Mark\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=c357cf3726a9fe813a60b98ad5bcb862}{%
+           family={Carpenter},
+           familyi={C\bibinitperiod},
+           given={Jennifer\bibnamedelima N.},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=433477949e87d5838be00986a0829deb}{%
+           family={Lynch},
+           familyi={L\bibinitperiod},
+           given={Anthony\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ac13c61f011302c9e1144c8ac84b5bc3}{%
+           family={Musto},
+           familyi={M\bibinitperiod},
+           given={David\bibnamedelima K.},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{408134992d7893a0873f899eec411be2}
+      \strng{fullhash}{2f399a0b59958ca19d33bfd5f93ab0ff}
+      \strng{fullhashraw}{2f399a0b59958ca19d33bfd5f93ab0ff}
+      \strng{bibnamehash}{408134992d7893a0873f899eec411be2}
+      \strng{authorbibnamehash}{408134992d7893a0873f899eec411be2}
+      \strng{authornamehash}{408134992d7893a0873f899eec411be2}
+      \strng{authorfullhash}{2f399a0b59958ca19d33bfd5f93ab0ff}
+      \strng{authorfullhashraw}{2f399a0b59958ca19d33bfd5f93ab0ff}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Financial Studies}
+      \field{number}{5}
+      \field{title}{Mutual Fund Survivorship}
+      \field{volume}{15}
+      \field{year}{2015}
+      \field{pages}{1439\bibrangedash 1463}
+      \range{pages}{25}
+    \endentry
+    \entry{EmscriptenToolchainWebsite}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9013d8dc230d5ff741cbc0998e6cb990}{%
+           family={Contributors},
+           familyi={C\bibinitperiod},
+           given={Emscripten},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{fullhash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{fullhashraw}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{bibnamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorbibnamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authornamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorfullhash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorfullhashraw}{9013d8dc230d5ff741cbc0998e6cb990}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-26}
+      \field{title}{Emscripten Toolchain Website}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://emscripten.org/
+      \endverb
+      \verb{url}
+      \verb https://emscripten.org/
+      \endverb
+    \endentry
+    \entry{EmscriptenWebsite}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=9013d8dc230d5ff741cbc0998e6cb990}{%
+           family={Contributors},
+           familyi={C\bibinitperiod},
+           given={Emscripten},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{fullhash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{fullhashraw}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{bibnamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorbibnamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authornamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorfullhash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorfullhashraw}{9013d8dc230d5ff741cbc0998e6cb990}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-26}
+      \field{title}{Emscripten Website}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://emscripten.org/
+      \endverb
+      \verb{url}
+      \verb https://emscripten.org/
+      \endverb
+    \endentry
+    \entry{RustToWASMWebsite}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ba237f06b56d9082de25dc9bd4f1cac8}{%
+           family={contributors},
+           familyi={c\bibinitperiod},
+           given={Mozilla.org},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \strng{fullhash}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \strng{fullhashraw}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \strng{bibnamehash}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \strng{authorbibnamehash}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \strng{authornamehash}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \strng{authorfullhash}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \strng{authorfullhashraw}{ba237f06b56d9082de25dc9bd4f1cac8}
+      \field{sortinit}{c}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-26}
+      \field{title}{Compiling from Rust to WebAssembly}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm
+      \endverb
+      \verb{url}
+      \verb https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm
+      \endverb
+    \endentry
+    \entry{daniel2008lookaheadbenchmarkbiasportfolio}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=54522cc5ddf43f2136fc2f5a53f0a15f}{%
+           family={Daniel},
+           familyi={D\bibinitperiod},
+           given={Gilles},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f09839d6781db87008be2b09a018e899}{%
+           family={Sornette},
+           familyi={S\bibinitperiod},
+           given={Didier},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5df762a5455d732a220cc224f1e0909e}{%
+           family={Wohrmann},
+           familyi={W\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \strng{fullhash}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \strng{fullhashraw}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \strng{bibnamehash}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \strng{authorbibnamehash}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \strng{authornamehash}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \strng{authorfullhash}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \strng{authorfullhashraw}{eb7a44b07e3c260a2616d0fc3efdb1c1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Look-Ahead Benchmark Bias in Portfolio Performance Evaluation}
+      \field{year}{2008}
+    \endentry
+    \entry{ferreira2018detailed}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=11f86d4dc60f6f0f79ff9b1d2e059772}{%
+           family={Ferreira},
+           familyi={F\bibinitperiod},
+           given={Fernando\bibnamedelima F.},
+           giveni={F\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=6ca6a024147f755081f0f48555e541c9}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi Christian},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=9bfab978431c199c2a385ced8ea52fa2}{%
+           family={Yen},
+           familyi={Y\bibinitperiod},
+           given={Ju-Yi},
+           giveni={J\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{067a619fa32fc54896ad9971bf51258d}
+      \strng{fullhash}{067a619fa32fc54896ad9971bf51258d}
+      \strng{fullhashraw}{067a619fa32fc54896ad9971bf51258d}
+      \strng{bibnamehash}{067a619fa32fc54896ad9971bf51258d}
+      \strng{authorbibnamehash}{067a619fa32fc54896ad9971bf51258d}
+      \strng{authornamehash}{067a619fa32fc54896ad9971bf51258d}
+      \strng{authorfullhash}{067a619fa32fc54896ad9971bf51258d}
+      \strng{authorfullhashraw}{067a619fa32fc54896ad9971bf51258d}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Quantitative Finance}
+      \field{number}{9}
+      \field{title}{Detailed Study of a Moving Average Trading Rule}
+      \field{volume}{18}
+      \field{year}{2018}
+      \field{pages}{1599\bibrangedash 1617}
+      \range{pages}{19}
+    \endentry
+    \entry{GILALANA2000285}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=82ce3e8ca7362492ec02164cffe36ed3}{%
+           family={Gil-Alana},
+           familyi={G\bibinithyphendelim A\bibinitperiod},
+           given={Luis\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{82ce3e8ca7362492ec02164cffe36ed3}
+      \strng{fullhash}{82ce3e8ca7362492ec02164cffe36ed3}
+      \strng{fullhashraw}{82ce3e8ca7362492ec02164cffe36ed3}
+      \strng{bibnamehash}{82ce3e8ca7362492ec02164cffe36ed3}
+      \strng{authorbibnamehash}{82ce3e8ca7362492ec02164cffe36ed3}
+      \strng{authornamehash}{82ce3e8ca7362492ec02164cffe36ed3}
+      \strng{authorfullhash}{82ce3e8ca7362492ec02164cffe36ed3}
+      \strng{authorfullhashraw}{82ce3e8ca7362492ec02164cffe36ed3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Economics Letters}
+      \field{number}{3}
+      \field{title}{Mean reversion in the real exchange rates}
+      \field{volume}{69}
+      \field{year}{2000}
+      \field{pages}{285\bibrangedash 288}
+      \range{pages}{4}
+    \endentry
+    \entry{gurrib2016moving}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=30565eba0e86b4331f782612779210c0}{%
+           family={Gurrib},
+           familyi={G\bibinitperiod},
+           given={Ikhlaas},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{30565eba0e86b4331f782612779210c0}
+      \strng{fullhash}{30565eba0e86b4331f782612779210c0}
+      \strng{fullhashraw}{30565eba0e86b4331f782612779210c0}
+      \strng{bibnamehash}{30565eba0e86b4331f782612779210c0}
+      \strng{authorbibnamehash}{30565eba0e86b4331f782612779210c0}
+      \strng{authornamehash}{30565eba0e86b4331f782612779210c0}
+      \strng{authorfullhash}{30565eba0e86b4331f782612779210c0}
+      \strng{authorfullhashraw}{30565eba0e86b4331f782612779210c0}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Global Review of Accounting and Finance}
+      \field{number}{1}
+      \field{title}{The Moving Average Crossover Strategy: Does It Work for the S\&P500 Market Index?}
+      \field{volume}{7}
+      \field{year}{2016}
+      \field{pages}{92\bibrangedash 107}
+      \range{pages}{16}
+    \endentry
+    \entry{10.1145/3062341.3062363}{inproceedings}{}{}
+      \name{author}{9}{}{%
+        {{hash=d285745edf3df63d50a2aaae6417e9de}{%
+           family={Haas},
+           familyi={H\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e41d0523c45d34fc1a4630ae8dfa1b45}{%
+           family={Rossberg},
+           familyi={R\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a1a9ac6abb10a490a1c600fd3fb50bfd}{%
+           family={Schuff},
+           familyi={S\bibinitperiod},
+           given={Derek\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=c4ede8193f4de30bb8c003babb575025}{%
+           family={Titzer},
+           familyi={T\bibinitperiod},
+           given={Ben\bibnamedelima L.},
+           giveni={B\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=f3c36a0376f6a1b154d101380a9ee9ee}{%
+           family={Holman},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0033c00a4ac7e8d28588850ff2892879}{%
+           family={Gohman},
+           familyi={G\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3b04ed2ed09df1fb347c7c6a307b856f}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={Luke},
+           giveni={L\bibinitperiod}}}%
+        {{hash=c4cfe1bc600036ecf862fcbdf7b6d1cf}{%
+           family={Zakai},
+           familyi={Z\bibinitperiod},
+           given={Alon},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6ed048f7e52d9b7495c2c1155343cba0}{%
+           family={Bastien},
+           familyi={B\bibinitperiod},
+           given={JF},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{0fcf5db0d071ed558eeb0272fdd59d86}
+      \strng{fullhash}{d85819e34a2c685aa697c34d20936ff9}
+      \strng{fullhashraw}{d85819e34a2c685aa697c34d20936ff9}
+      \strng{bibnamehash}{0fcf5db0d071ed558eeb0272fdd59d86}
+      \strng{authorbibnamehash}{0fcf5db0d071ed558eeb0272fdd59d86}
+      \strng{authornamehash}{0fcf5db0d071ed558eeb0272fdd59d86}
+      \strng{authorfullhash}{d85819e34a2c685aa697c34d20936ff9}
+      \strng{authorfullhashraw}{d85819e34a2c685aa697c34d20936ff9}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 38th ACM SIGPLAN Conference on Programming Language Design and Implementation}
+      \field{title}{Bringing the web up to speed with WebAssembly}
+      \field{year}{2017}
+      \field{pages}{185\bibrangedash 200}
+      \range{pages}{16}
+    \endentry
+    \entry{HarveyLiu2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=df50f01f1e21f2511e4ad855af369835}{%
+           family={Harvey},
+           familyi={H\bibinitperiod},
+           given={Campbell},
+           giveni={C\bibinitperiod}}}%
+        {{hash=92f7474e36f4f2b59a14e85c0e738e40}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yan},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \strng{fullhash}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \strng{fullhashraw}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \strng{bibnamehash}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \strng{authorbibnamehash}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \strng{authornamehash}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \strng{authorfullhash}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \strng{authorfullhashraw}{50b2aa6b9b3f8e5f130f86531f8c519d}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SSRN Electronic Journal}
+      \field{title}{Backtesting}
+      \field{volume}{42}
+      \field{year}{2013}
+    \endentry
+    \entry{HOLMBERG201327}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=f83689ad3d01e0ad5cbbdbf77fb59586}{%
+           family={Holmberg},
+           familyi={H\bibinitperiod},
+           given={Ulf},
+           giveni={U\bibinitperiod}}}%
+        {{hash=57e51eefe88e736373c98672236e5358}{%
+           family={Lönnbark},
+           familyi={L\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod}}}%
+        {{hash=36cc496ba5dbb6885980642440ff995f}{%
+           family={Lundström},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \strng{fullhash}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \strng{fullhashraw}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \strng{bibnamehash}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \strng{authorbibnamehash}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \strng{authornamehash}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \strng{authorfullhash}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \strng{authorfullhashraw}{1fd6f30d8cc19962ca97b3eee80250c7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Finance Research Letters}
+      \field{number}{1}
+      \field{title}{Assessing the profitability of intraday opening range breakout strategies}
+      \field{volume}{10}
+      \field{year}{2013}
+      \field{pages}{27\bibrangedash 33}
+      \range{pages}{7}
+    \endentry
+    \entry{HUANG202016}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=142774f1a351d59eddf6113a4d0baa36}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Jing-Zhi},
+           giveni={J\bibinithyphendelim Z\bibinitperiod}}}%
+        {{hash=3883f8816e65ce37b9f1e4fa7a46ca2b}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhijian\bibnamedelima (James)},
+           giveni={Z\bibinitperiod\bibinitdelim (\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ed63ccffae963fb0fb4844b6aa43839}
+      \strng{fullhash}{9ed63ccffae963fb0fb4844b6aa43839}
+      \strng{fullhashraw}{9ed63ccffae963fb0fb4844b6aa43839}
+      \strng{bibnamehash}{9ed63ccffae963fb0fb4844b6aa43839}
+      \strng{authorbibnamehash}{9ed63ccffae963fb0fb4844b6aa43839}
+      \strng{authornamehash}{9ed63ccffae963fb0fb4844b6aa43839}
+      \strng{authorfullhash}{9ed63ccffae963fb0fb4844b6aa43839}
+      \strng{authorfullhashraw}{9ed63ccffae963fb0fb4844b6aa43839}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Empirical Finance}
+      \field{title}{Testing moving average trading strategies on ETFs}
+      \field{volume}{57}
+      \field{year}{2020}
+      \field{pages}{16\bibrangedash 32}
+      \range{pages}{17}
+    \endentry
+    \entry{ziplineTraderWebsite}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=7dd2c9b3374f33f377ded1a2ce13db92}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Quantopian},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{fullhash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{fullhashraw}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{bibnamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorbibnamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authornamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorfullhash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorfullhashraw}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \field{extraname}{1}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-30}
+      \field{title}{Zipline Trader Website}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://zipline-trader.readthedocs.io/en/latest/index.html
+      \endverb
+      \verb{url}
+      \verb https://zipline-trader.readthedocs.io/en/latest/index.html
+      \endverb
+    \endentry
+    \entry{ziplineReloadedWebsite}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=7dd2c9b3374f33f377ded1a2ce13db92}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Quantopian},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=08a278ef9d93fdbc3cb1cf406e494e43}{%
+           family={Jansen},
+           familyi={J\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{fullhash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{fullhashraw}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{bibnamehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authorbibnamehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authornamehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authorfullhash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authorfullhashraw}{772c8623b8221bc2c67082f65cd29e2c}
+      \field{extraname}{1}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-30}
+      \field{title}{Zipline Reloaded Website}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://zipline.ml4trading.io/
+      \endverb
+      \verb{url}
+      \verb https://zipline.ml4trading.io/
+      \endverb
+    \endentry
+    \entry{kabasinskas2010bollinger}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e2b82f2ae8e34a6bdb0fb6a8b78e92bb}{%
+           family={Kabasinskas},
+           familyi={K\bibinitperiod},
+           given={Audrius},
+           giveni={A\bibinitperiod}}}%
+        {{hash=46db232e79bfd317388803c496f82487}{%
+           family={Macys},
+           familyi={M\bibinitperiod},
+           given={Ugnius},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Kaunas, Lithuania}%
+      }
+      \list{publisher}{1}{%
+        {Kaunas University of Technology}%
+      }
+      \strng{namehash}{779fd0237313847779d7de97849141d8}
+      \strng{fullhash}{779fd0237313847779d7de97849141d8}
+      \strng{fullhashraw}{779fd0237313847779d7de97849141d8}
+      \strng{bibnamehash}{779fd0237313847779d7de97849141d8}
+      \strng{authorbibnamehash}{779fd0237313847779d7de97849141d8}
+      \strng{authornamehash}{779fd0237313847779d7de97849141d8}
+      \strng{authorfullhash}{779fd0237313847779d7de97849141d8}
+      \strng{authorfullhashraw}{779fd0237313847779d7de97849141d8}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inzinerine Ekonomika-Engineering Economics}
+      \field{number}{3}
+      \field{title}{Calibration of Bollinger Bands Parameters for Trading Strategy Development in the Baltic Stock Market}
+      \field{volume}{21}
+      \field{year}{2010}
+      \field{pages}{244\bibrangedash 254}
+      \range{pages}{11}
+    \endentry
+    \entry{leeds2013bollingerbandsthirtyyears}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a0b5b2bf7500268b52c7881ac6b3b45c}{%
+           family={Leeds},
+           familyi={L\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \strng{fullhash}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \strng{fullhashraw}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \strng{bibnamehash}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \strng{authorbibnamehash}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \strng{authornamehash}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \strng{authorfullhash}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \strng{authorfullhashraw}{a0b5b2bf7500268b52c7881ac6b3b45c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bollinger Bands Thirty Years Later}
+      \field{year}{2013}
+    \endentry
+    \entry{10.1145/1150402.1150479}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=900d107125ff0ca84698cb909e4f6c51}{%
+           family={Leskovec},
+           familyi={L\bibinitperiod},
+           given={Jure},
+           giveni={J\bibinitperiod}}}%
+        {{hash=976e034dd29cfc47640ae45c16d21a9d}{%
+           family={Faloutsos},
+           familyi={F\bibinitperiod},
+           given={Christos},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Philadelphia, PA, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{9b49af5957848a6571a426cf49a2af14}
+      \strng{fullhash}{9b49af5957848a6571a426cf49a2af14}
+      \strng{fullhashraw}{9b49af5957848a6571a426cf49a2af14}
+      \strng{bibnamehash}{9b49af5957848a6571a426cf49a2af14}
+      \strng{authorbibnamehash}{9b49af5957848a6571a426cf49a2af14}
+      \strng{authornamehash}{9b49af5957848a6571a426cf49a2af14}
+      \strng{authorfullhash}{9b49af5957848a6571a426cf49a2af14}
+      \strng{authorfullhashraw}{9b49af5957848a6571a426cf49a2af14}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 12th ACM SIGKDD international conference on Knowledge discovery and data mining}
+      \field{title}{Sampling from large graphs}
+      \field{year}{2006}
+      \field{pages}{631\bibrangedash 636}
+      \range{pages}{6}
+    \endentry
+    \entry{LoMacKinlay1989}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=3991aad95c3885c82267fa604f5bbe20}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={Andrew\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=5167d2112d64a227f42442bc7e4e70de}{%
+           family={MacKinlay},
+           familyi={M\bibinitperiod},
+           given={A.\bibnamedelimi Craig},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Massachusetts Institute of Technology, Sloan School of Management}%
+      }
+      \strng{namehash}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \strng{fullhash}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \strng{fullhashraw}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \strng{bibnamehash}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \strng{authorbibnamehash}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \strng{authornamehash}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \strng{authorfullhash}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \strng{authorfullhashraw}{7c46bc97eaf2ccd0b910dd504e1340a2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{No.\ 3020‐89‐EFA}
+      \field{title}{Data‐snooping Biases in Tests of Financial Asset Pricing Models}
+      \field{type}{techreport}
+      \field{year}{1989}
+    \endentry
+    \entry{martin2011meanreversionpayscosts}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=97dd599e6129acad689edd3b53cc907d}{%
+           family={Martin},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d06a9443564a069f7aa2f0a8c109758a}{%
+           family={Schöneborn},
+           familyi={S\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \strng{fullhash}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \strng{fullhashraw}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \strng{bibnamehash}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \strng{authorbibnamehash}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \strng{authornamehash}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \strng{authorfullhash}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \strng{authorfullhashraw}{d8fe51a3d976304f82a4c7e8dcbb4efc}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mean Reversion Pays, but Costs}
+      \field{year}{2011}
+    \endentry
+    \entry{mitchell2023failedbreak}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=706e83c94d48e2f8a3d019e0784bf74a}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Cory},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{706e83c94d48e2f8a3d019e0784bf74a}
+      \strng{fullhash}{706e83c94d48e2f8a3d019e0784bf74a}
+      \strng{fullhashraw}{706e83c94d48e2f8a3d019e0784bf74a}
+      \strng{bibnamehash}{706e83c94d48e2f8a3d019e0784bf74a}
+      \strng{authorbibnamehash}{706e83c94d48e2f8a3d019e0784bf74a}
+      \strng{authornamehash}{706e83c94d48e2f8a3d019e0784bf74a}
+      \strng{authorfullhash}{706e83c94d48e2f8a3d019e0784bf74a}
+      \strng{authorfullhashraw}{706e83c94d48e2f8a3d019e0784bf74a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-19}
+      \field{title}{Failed Break: What It Is, How It Works, Example}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.investopedia.com/terms/f/failedbreak.asp
+      \endverb
+      \verb{url}
+      \verb https://www.investopedia.com/terms/f/failedbreak.asp
+      \endverb
+    \endentry
+    \entry{POTERBA198827}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=8eac1f708dfc6a357a2a2ca1796e3a26}{%
+           family={Poterba},
+           familyi={P\bibinitperiod},
+           given={James\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=99d97b6119dc8e6173e861cc94d01099}{%
+           family={Summers},
+           familyi={S\bibinitperiod},
+           given={Lawrence\bibnamedelima H.},
+           giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{99fdd452bdada074838774986e84f746}
+      \strng{fullhash}{99fdd452bdada074838774986e84f746}
+      \strng{fullhashraw}{99fdd452bdada074838774986e84f746}
+      \strng{bibnamehash}{99fdd452bdada074838774986e84f746}
+      \strng{authorbibnamehash}{99fdd452bdada074838774986e84f746}
+      \strng{authornamehash}{99fdd452bdada074838774986e84f746}
+      \strng{authorfullhash}{99fdd452bdada074838774986e84f746}
+      \strng{authorfullhashraw}{99fdd452bdada074838774986e84f746}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Financial Economics}
+      \field{number}{1}
+      \field{title}{Mean reversion in stock prices: Evidence and Implications}
+      \field{volume}{22}
+      \field{year}{1988}
+      \field{pages}{27\bibrangedash 59}
+      \range{pages}{33}
+    \endentry
+    \entry{backtraderWebsite}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=ef8aaedb8092f13e9d9bd2b24b9341fc}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{fullhash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{fullhashraw}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{bibnamehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authorbibnamehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authornamehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authorfullhash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authorfullhashraw}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \field{extraname}{1}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-29}
+      \field{title}{Backtrader Website}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.backtrader.com/
+      \endverb
+      \verb{url}
+      \verb https://www.backtrader.com/
+      \endverb
+    \endentry
+    \entry{StatCounterBrowserShare2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=811283e931fe09468140104ccae1b6ba}{%
+           family={Stats},
+           familyi={S\bibinitperiod},
+           given={StatCounter\bibnamedelima Global},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{811283e931fe09468140104ccae1b6ba}
+      \strng{fullhash}{811283e931fe09468140104ccae1b6ba}
+      \strng{fullhashraw}{811283e931fe09468140104ccae1b6ba}
+      \strng{bibnamehash}{811283e931fe09468140104ccae1b6ba}
+      \strng{authorbibnamehash}{811283e931fe09468140104ccae1b6ba}
+      \strng{authornamehash}{811283e931fe09468140104ccae1b6ba}
+      \strng{authorfullhash}{811283e931fe09468140104ccae1b6ba}
+      \strng{authorfullhashraw}{811283e931fe09468140104ccae1b6ba}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://gs.statcounter.com/browser-market-share}
+      \field{note}{Accessed: 2025-10-31}
+      \field{title}{Browser Market Share Worldwide}
+      \field{year}{2025}
+    \endentry
+    \entry{Su2023}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=d5d632efedebe5e1607f57d80c68cc6d}{%
+           family={Su},
+           familyi={S\bibinitperiod},
+           given={Guanru},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Atlantis Press}%
+      }
+      \strng{namehash}{d5d632efedebe5e1607f57d80c68cc6d}
+      \strng{fullhash}{d5d632efedebe5e1607f57d80c68cc6d}
+      \strng{fullhashraw}{d5d632efedebe5e1607f57d80c68cc6d}
+      \strng{bibnamehash}{d5d632efedebe5e1607f57d80c68cc6d}
+      \strng{authorbibnamehash}{d5d632efedebe5e1607f57d80c68cc6d}
+      \strng{authornamehash}{d5d632efedebe5e1607f57d80c68cc6d}
+      \strng{authorfullhash}{d5d632efedebe5e1607f57d80c68cc6d}
+      \strng{authorfullhashraw}{d5d632efedebe5e1607f57d80c68cc6d}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 3rd International Conference on Economic Development and Business Culture (ICEDBC 2023)}
+      \field{title}{Analysis of the Bollinger Band Mean Regression Trading Strategy}
+      \field{year}{2023}
+      \field{pages}{95\bibrangedash 102}
+      \range{pages}{8}
+    \endentry
+    \entry{https://doi.org/10.1111/0022-1082.00163}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=da9fc58d71c244b06f2afe82f94430a7}{%
+           family={Sullivan},
+           familyi={S\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=402c6ccc2c21c4d48ed2eef0058ff70d}{%
+           family={Timmermann},
+           familyi={T\bibinitperiod},
+           given={Allan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=426e452a5ec8e692f7740ce0d3e3655c}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={Halbert},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{a355af555a28379e5ac1a0410c506940}
+      \strng{fullhash}{a355af555a28379e5ac1a0410c506940}
+      \strng{fullhashraw}{a355af555a28379e5ac1a0410c506940}
+      \strng{bibnamehash}{a355af555a28379e5ac1a0410c506940}
+      \strng{authorbibnamehash}{a355af555a28379e5ac1a0410c506940}
+      \strng{authornamehash}{a355af555a28379e5ac1a0410c506940}
+      \strng{authorfullhash}{a355af555a28379e5ac1a0410c506940}
+      \strng{authorfullhashraw}{a355af555a28379e5ac1a0410c506940}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Journal of Finance}
+      \field{number}{5}
+      \field{title}{Data-Snooping, Technical Trading Rule Performance, and the Bootstrap}
+      \field{volume}{54}
+      \field{year}{1999}
+      \field{pages}{1647\bibrangedash 1691}
+      \range{pages}{45}
+    \endentry
+    \entry{W3CounterGlobalStats2025}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=311bba0a66ea62e4ad0ed714863490fc}{%
+           family={W3Counter},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{311bba0a66ea62e4ad0ed714863490fc}
+      \strng{fullhash}{311bba0a66ea62e4ad0ed714863490fc}
+      \strng{fullhashraw}{311bba0a66ea62e4ad0ed714863490fc}
+      \strng{bibnamehash}{311bba0a66ea62e4ad0ed714863490fc}
+      \strng{authorbibnamehash}{311bba0a66ea62e4ad0ed714863490fc}
+      \strng{authornamehash}{311bba0a66ea62e4ad0ed714863490fc}
+      \strng{authorfullhash}{311bba0a66ea62e4ad0ed714863490fc}
+      \strng{authorfullhashraw}{311bba0a66ea62e4ad0ed714863490fc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://www.w3counter.com/globalstats.php}
+      \field{note}{Accessed: 2025-10-31}
+      \field{title}{Browser \& Platform Market Share – Global Web Stats}
+      \field{year}{2025}
+    \endentry
+    \entry{webassemblyorg}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=a76d091753d08838e97965cb7ac788f3}{%
+           family={{WebAssembly Community Group}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{a76d091753d08838e97965cb7ac788f3}
+      \strng{fullhash}{a76d091753d08838e97965cb7ac788f3}
+      \strng{fullhashraw}{a76d091753d08838e97965cb7ac788f3}
+      \strng{bibnamehash}{a76d091753d08838e97965cb7ac788f3}
+      \strng{authorbibnamehash}{a76d091753d08838e97965cb7ac788f3}
+      \strng{authornamehash}{a76d091753d08838e97965cb7ac788f3}
+      \strng{authorfullhash}{a76d091753d08838e97965cb7ac788f3}
+      \strng{authorfullhashraw}{a76d091753d08838e97965cb7ac788f3}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-07}
+      \field{title}{WebAssembly}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://webassembly.org/
+      \endverb
+      \verb{url}
+      \verb https://webassembly.org/
+      \endverb
+    \endentry
+    \entry{10.1145/3487552.3487827}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=87f4838236dd4be71ecf031f8d9e0f5b}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Yutian},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=be7ea595f5ce5fcb31648c1ad779e0a9}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Tengfei},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f34639f12bea4dcd999c370bb81f5119}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Lijian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=418a5f98caacfb68adfc0d9e3c723634}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Yuchen},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9ef6436089a8bfcd743a79ea68f8cafa}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Weihang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{81404325bd7f9e6f8ab0272a5dbc0602}
+      \strng{fullhash}{3b8a8120f6e240f2405a6dc8f22f554e}
+      \strng{fullhashraw}{3b8a8120f6e240f2405a6dc8f22f554e}
+      \strng{bibnamehash}{81404325bd7f9e6f8ab0272a5dbc0602}
+      \strng{authorbibnamehash}{81404325bd7f9e6f8ab0272a5dbc0602}
+      \strng{authornamehash}{81404325bd7f9e6f8ab0272a5dbc0602}
+      \strng{authorfullhash}{3b8a8120f6e240f2405a6dc8f22f554e}
+      \strng{authorfullhashraw}{3b8a8120f6e240f2405a6dc8f22f554e}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 21st ACM Internet Measurement Conference}
+      \field{title}{Understanding the performance of webassembly applications}
+      \field{year}{2021}
+      \field{pages}{533\bibrangedash 549}
+      \range{pages}{17}
+    \endentry
+    \entry{zarattini2024profitable}{report}{}{}
+      \name{author}{3}{}{%
+        {{hash=189fc4843bfe4b0fb4f8324e47ac21e9}{%
+           family={Zarattini},
+           familyi={Z\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+        {{hash=a9f6845004f80c16ea88e102b75c92ad}{%
+           family={Barbon},
+           familyi={B\bibinitperiod},
+           given={Andrea},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1223ca3422511576616202f23c37fa0c}{%
+           family={Aziz},
+           familyi={A\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Swiss Finance Institute}%
+      }
+      \strng{namehash}{73636024f25a214cb24f5ed731be9eee}
+      \strng{fullhash}{73636024f25a214cb24f5ed731be9eee}
+      \strng{fullhashraw}{73636024f25a214cb24f5ed731be9eee}
+      \strng{bibnamehash}{73636024f25a214cb24f5ed731be9eee}
+      \strng{authorbibnamehash}{73636024f25a214cb24f5ed731be9eee}
+      \strng{authornamehash}{73636024f25a214cb24f5ed731be9eee}
+      \strng{authorfullhash}{73636024f25a214cb24f5ed731be9eee}
+      \strng{authorfullhashraw}{73636024f25a214cb24f5ed731be9eee}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{24-98}
+      \field{title}{A Profitable Day Trading Strategy For The U.S. Equity Market}
+      \field{type}{Research Paper}
+      \field{year}{2024}
+    \endentry
+    \entry{SaurabhZunkeJSONXML}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d76750b9efbb7fa94764bffaee5aecb4}{%
+           family={Zunke},
+           familyi={Z\bibinitperiod},
+           given={Saurabh},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a1a0264d8761b972ad5f2922c51eca13}{%
+           family={D'Souza},
+           familyi={D\bibinitperiod},
+           given={Veronica},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IJCSN}%
+      }
+      \strng{namehash}{7eb236447e68dbb25dd8476128caec6e}
+      \strng{fullhash}{7eb236447e68dbb25dd8476128caec6e}
+      \strng{fullhashraw}{7eb236447e68dbb25dd8476128caec6e}
+      \strng{bibnamehash}{7eb236447e68dbb25dd8476128caec6e}
+      \strng{authorbibnamehash}{7eb236447e68dbb25dd8476128caec6e}
+      \strng{authornamehash}{7eb236447e68dbb25dd8476128caec6e}
+      \strng{authorfullhash}{7eb236447e68dbb25dd8476128caec6e}
+      \strng{authorfullhashraw}{7eb236447e68dbb25dd8476128caec6e}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computer Science and Network}
+      \field{number}{4}
+      \field{title}{JSON vs XML: A Comparative Performance Analysis of Data Exchange Formats}
+      \field{volume}{3}
+      \field{year}{2014}
+      \field{pages}{257\bibrangedash 261}
+      \range{pages}{5}
+    \endentry
+    \entry{TeaVMGitHub}{software}{}{}
+      \name{author}{2}{}{%
+        {{hash=9e059de6c5faf6112c580d98f2c3670b}{%
+           family={Andreev},
+           familyi={A\bibinitperiod},
+           given={Alexey},
+           giveni={A\bibinitperiod}}}%
+        {{hash=6111dfa60fd519b4f6e4950eda48c756}{%
+           family={Contributors},
+           familyi={C\bibinitperiod},
+           given={TeaVM},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{fullhash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{fullhashraw}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{bibnamehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authorbibnamehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authornamehash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authorfullhash}{ed7dc108688b912d47032eb6cd5edff3}
+      \strng{authorfullhashraw}{ed7dc108688b912d47032eb6cd5edff3}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-26}
+      \field{title}{TeaVM GitHub}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://github.com/konsoletyper/teavm
+      \endverb
+      \verb{url}
+      \verb https://github.com/konsoletyper/teavm
+      \endverb
+    \endentry
+    \entry{BacktestingMax2025}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=9d9b413017cdfaa00a798888071b5bdb}{%
+           family={BacktestingMax\bibnamedelima (Max},
+           familyi={B\bibinitperiod\bibinitdelim (\bibinitperiod},
+           given={founder)},
+           giveni={f\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d9b413017cdfaa00a798888071b5bdb}
+      \strng{fullhash}{9d9b413017cdfaa00a798888071b5bdb}
+      \strng{fullhashraw}{9d9b413017cdfaa00a798888071b5bdb}
+      \strng{bibnamehash}{9d9b413017cdfaa00a798888071b5bdb}
+      \strng{authorbibnamehash}{9d9b413017cdfaa00a798888071b5bdb}
+      \strng{authornamehash}{9d9b413017cdfaa00a798888071b5bdb}
+      \strng{authorfullhash}{9d9b413017cdfaa00a798888071b5bdb}
+      \strng{authorfullhashraw}{9d9b413017cdfaa00a798888071b5bdb}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-18}
+      \field{title}{BacktestingMax}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://backtestingmax.com
+      \endverb
+      \verb{url}
+      \verb https://backtestingmax.com
+      \endverb
+    \endentry
+    \entry{backtestjsGitHub}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=153a0cd256b06cda69a98c3ff4a4deb0}{%
+           family={Baronick},
+           familyi={B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{fullhash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{fullhashraw}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{bibnamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorbibnamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authornamehash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorfullhash}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \strng{authorfullhashraw}{153a0cd256b06cda69a98c3ff4a4deb0}
+      \field{extraname}{3}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-29}
+      \field{title}{BacktestJS GitHub}
+      \field{version}{1.0.0}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://github.com/andrewbaronick/BacktestJS
+      \endverb
+      \verb{url}
+      \verb https://github.com/andrewbaronick/BacktestJS
+      \endverb
+    \endentry
+    \entry{EmscriptenGitHub}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=9013d8dc230d5ff741cbc0998e6cb990}{%
+           family={Contributors},
+           familyi={C\bibinitperiod},
+           given={Emscripten},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{fullhash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{fullhashraw}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{bibnamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorbibnamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authornamehash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorfullhash}{9013d8dc230d5ff741cbc0998e6cb990}
+      \strng{authorfullhashraw}{9013d8dc230d5ff741cbc0998e6cb990}
+      \field{extraname}{3}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-26}
+      \field{title}{Emscripten GitHub}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://github.com/emscripten-core/emsdk
+      \endverb
+      \verb{url}
+      \verb https://github.com/emscripten-core/emsdk
+      \endverb
+    \endentry
+    \entry{wabtGitHub}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=67858f7c827290cb36945226b7a34fc3}{%
+           family={Group},
+           familyi={G\bibinitperiod},
+           given={WebAssembly\bibnamedelima Community},
+           giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{fullhash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{fullhashraw}{67858f7c827290cb36945226b7a34fc3}
+      \strng{bibnamehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authorbibnamehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authornamehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authorfullhash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authorfullhashraw}{67858f7c827290cb36945226b7a34fc3}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-26}
+      \field{title}{WebAssembly Binary Toolkit (WABT) GitHub}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/WebAssembly/wabt
+      \endverb
+      \verb{url}
+      \verb https://github.com/WebAssembly/wabt
+      \endverb
+    \endentry
+    \entry{pyFolioGitHub}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=7dd2c9b3374f33f377ded1a2ce13db92}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Quantopian},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{fullhash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{fullhashraw}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{bibnamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorbibnamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authornamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorfullhash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorfullhashraw}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \field{extraname}{2}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-30}
+      \field{title}{Quantopian PyFolio GitHub}
+      \field{version}{0.9.2}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://github.com/quantopian/pyfolio
+      \endverb
+      \verb{url}
+      \verb https://github.com/quantopian/pyfolio
+      \endverb
+    \endentry
+    \entry{ziplineGitHub}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=7dd2c9b3374f33f377ded1a2ce13db92}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Quantopian},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{fullhash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{fullhashraw}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{bibnamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorbibnamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authornamehash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorfullhash}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \strng{authorfullhashraw}{7dd2c9b3374f33f377ded1a2ce13db92}
+      \field{extraname}{3}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-30}
+      \field{title}{Zipline GitHub}
+      \field{version}{1.4.1}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://github.com/quantopian/zipline
+      \endverb
+      \verb{url}
+      \verb https://github.com/quantopian/zipline
+      \endverb
+    \endentry
+    \entry{ziplineReloadedGitHub}{software}{}{}
+      \name{author}{2}{}{%
+        {{hash=7dd2c9b3374f33f377ded1a2ce13db92}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Quantopian},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=08a278ef9d93fdbc3cb1cf406e494e43}{%
+           family={Jansen},
+           familyi={J\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{fullhash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{fullhashraw}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{bibnamehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authorbibnamehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authornamehash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authorfullhash}{772c8623b8221bc2c67082f65cd29e2c}
+      \strng{authorfullhashraw}{772c8623b8221bc2c67082f65cd29e2c}
+      \field{extraname}{2}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-30}
+      \field{title}{Zipline Reloaded GitHub}
+      \field{version}{3.1.1}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://github.com/stefan-jansen/zipline-reloaded
+      \endverb
+      \verb{url}
+      \verb https://github.com/stefan-jansen/zipline-reloaded
+      \endverb
+    \endentry
+    \entry{ziplineTraderGitHub}{software}{}{}
+      \name{author}{2}{}{%
+        {{hash=7dd2c9b3374f33f377ded1a2ce13db92}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Quantopian},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=8d49903ed75668a11d6039b78b149151}{%
+           family={Kushchi},
+           familyi={K\bibinitperiod},
+           given={Shlomi},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \strng{fullhash}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \strng{fullhashraw}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \strng{bibnamehash}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \strng{authorbibnamehash}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \strng{authornamehash}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \strng{authorfullhash}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \strng{authorfullhashraw}{4c48dd1a9cdf954a627dc503e9147ab1}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-30}
+      \field{title}{Zipline GitHub}
+      \field{version}{1.6.0}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://github.com/shlomiku/zipline-trader
+      \endverb
+      \verb{url}
+      \verb https://github.com/shlomiku/zipline-trader
+      \endverb
+    \endentry
+    \entry{backtraderGitHub}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=ef8aaedb8092f13e9d9bd2b24b9341fc}{%
+           family={Rodriguez},
+           familyi={R\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{fullhash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{fullhashraw}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{bibnamehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authorbibnamehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authornamehash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authorfullhash}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \strng{authorfullhashraw}{ef8aaedb8092f13e9d9bd2b24b9341fc}
+      \field{extraname}{2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-29}
+      \field{title}{Backtrader GitHub}
+      \field{version}{1.9.78.123}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://github.com/mementum/backtrader
+      \endverb
+      \verb{url}
+      \verb https://github.com/mementum/backtrader
+      \endverb
+    \endentry
+    \entry{BacktesterIO2025}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=005eaedf48c7e63fc229acda0fd13692}{%
+           family={team},
+           familyi={t\bibinitperiod},
+           given={Backtester.io},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{005eaedf48c7e63fc229acda0fd13692}
+      \strng{fullhash}{005eaedf48c7e63fc229acda0fd13692}
+      \strng{fullhashraw}{005eaedf48c7e63fc229acda0fd13692}
+      \strng{bibnamehash}{005eaedf48c7e63fc229acda0fd13692}
+      \strng{authorbibnamehash}{005eaedf48c7e63fc229acda0fd13692}
+      \strng{authornamehash}{005eaedf48c7e63fc229acda0fd13692}
+      \strng{authorfullhash}{005eaedf48c7e63fc229acda0fd13692}
+      \strng{authorfullhashraw}{005eaedf48c7e63fc229acda0fd13692}
+      \field{extraname}{1}
+      \field{sortinit}{t}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-18}
+      \field{title}{Backtester.io}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://backtester.io
+      \endverb
+      \verb{url}
+      \verb https://backtester.io
+      \endverb
+    \endentry
+    \entry{FXReplay2025}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=78dbb161e7d134323069dbac6bc9258b}{%
+           family={team},
+           familyi={t\bibinitperiod},
+           given={FX\bibnamedelima Replay},
+           giveni={F\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{78dbb161e7d134323069dbac6bc9258b}
+      \strng{fullhash}{78dbb161e7d134323069dbac6bc9258b}
+      \strng{fullhashraw}{78dbb161e7d134323069dbac6bc9258b}
+      \strng{bibnamehash}{78dbb161e7d134323069dbac6bc9258b}
+      \strng{authorbibnamehash}{78dbb161e7d134323069dbac6bc9258b}
+      \strng{authornamehash}{78dbb161e7d134323069dbac6bc9258b}
+      \strng{authorfullhash}{78dbb161e7d134323069dbac6bc9258b}
+      \strng{authorfullhashraw}{78dbb161e7d134323069dbac6bc9258b}
+      \field{extraname}{2}
+      \field{sortinit}{t}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-10-18}
+      \field{title}{FX Replay}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.fxreplay.com/
+      \endverb
+      \verb{url}
+      \verb https://www.fxreplay.com/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kraken BTC Historical Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Kraken BTC/USD Historical Data</h1>
+
+<label for="assetSelect">Asset:</label>
+<select id="assetSelect">
+    <option value="XXBTZUSD">Bitcoin (BTC)</option>
+    <option value="XETHZUSD">Ethereum (ETH)</option>
+    <option value="USDTZUSD">Tether (USDT)</option>
+    <option value="XXRPZUSD">Ripple (XRP)</option>
+</select>
+
+<label for="intervalSelect">Group Interval:</label>
+<select id="intervalSelect">
+    <option value="1">1 Second</option>
+    <option value="60">1 Minute</option>
+    <option value="3600">1 Hour</option>
+    <option value="86400">1 Day</option>
+</select>
+
+<label for="sinceInput">From:</label>
+<input type="date" id="sinceInput" required>
+
+<label for="untilInput">To:</label>
+<input type="date" id="untilInput" required>
+
+<button id="loadBtn">Load Data</button>
+<button id="downloadBtn" disabled>Download JSON</button>
+
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th>Time</th>
+        <th>Avg Price</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script src="script.js">
+</script>
+</body>
+</html>

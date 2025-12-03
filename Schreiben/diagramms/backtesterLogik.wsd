@@ -1,0 +1,16 @@
+@startuml
+title Ablauf der Backtester Logik
+
+start
+
+:Finanzdaten und Strategie laden;
+repeat
+  :Strategie aufrufen;
+  :Handelssignal verarbeiten;
+  :Transaktion protokollieren;
+repeat while (Weitere Kursdaten vorhanden?) is (Ja)
+:Kennzahlen berechnen;
+:Ergebnisse visualisieren;
+
+stop
+@enduml

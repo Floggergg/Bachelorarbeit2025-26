@@ -1,0 +1,6 @@
+body { font-family: sans-serif; padding: 20px; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: right; }
+th { background: #f0f0f0; }
+#loadBtn { padding: 10px 20px; font-size: 16px; margin-right: 10px; }
+select, input[type="date"] { padding: 10px; font-size: 16px; margin-right: 10px; }

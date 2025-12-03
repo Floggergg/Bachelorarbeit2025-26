@@ -1,0 +1,23 @@
+@startuml
+title Emscripten Pipeline (C/C++ → WebAssembly)
+
+skinparam rectangle {
+  BackgroundColor #E3F2FD
+  BorderColor #555555
+  RoundCorner 15
+}
+
+rectangle "C / C++ Quellcode" as src
+rectangle "Übersetzung in plattformunabhängigen Zwischencode" as ir
+rectangle "Optimierung des Zwischencodes" as opt
+rectangle "Umwandlung in WebAssembly Bytecode (.wasm)" as wasm_gen
+rectangle "Optionale Ergänzung von JavaScript Glue Code" as glue
+rectangle "Ausführbare .wasm Datei für den Browser" as runtime
+
+src -down-> ir
+ir -right-> opt
+opt -up-> wasm_gen
+wasm_gen -right-> glue
+glue -down-> runtime
+
+@enduml

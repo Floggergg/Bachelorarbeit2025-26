@@ -1,0 +1,76 @@
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{Erklärung}{ii}{chapter*.1}%
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{Vorwort}{v}{chapter*.3}%
+\contentsline {chapter}{Kurzfassung}{vi}{chapter*.4}%
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{Abstract}{vii}{chapter*.5}%
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Grundlegende Konzepte und Technologien}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Backtesting}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Biase in Backtesting}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Look-Ahead Bias}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Overfitting Bias}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Survivorship Bias}{4}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Data-Snooping Bias}{5}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}State of the Art Backtester}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Backtrader}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Zipline}{6}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}BacktestJS}{6}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Bewährte Ansätze für Handelsstrategien}{7}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Mittelwertrückkehr mit Bollinger Bänder}{7}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Gleitende Durchschnitts Überscheidungen}{9}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Ausbruchsstrategien}{9}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}WASM}{10}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Konzept und Design}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Architektur des Backtesters}{12}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Format der historischen Finanzdaten}{13}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Backtesterlogik}{13}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Modularisierung der Strategien}{14}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Aufbau der Teststrategien}{15}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Struktur der Mittelwertrückkehr Strategie mit Bollinger Bändern}{15}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Aufbau der Ausbruchsstrategie}{15}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Umsetzung der gleitenden Durchschnittsüberschneidungs Strategie}{16}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Weboberfläche des Backtesters}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Visualisierung der Daten und Ergebnisse}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Aufbau der Geschwindigkeitstests}{18}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Abrufen der historischen Kursdaten}{19}{section.3.6}%
+\contentsline {section}{\numberline {3.7}Werkzeuge zur WASM Entwicklung}{19}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Emscripten}{19}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}WABT}{20}{subsection.3.7.2}%
+\contentsline {chapter}{\numberline {4}Implementierung des Backtesters}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Die Benutzerschnittstellen}{21}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Die API Schnittstelle}{21}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Die Logikeingangsparameter}{21}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Implementierung der Backtestlogik}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Implementierungen der Strategien}{21}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Gleitende Durchschnittsüberschneidungs Strategie}{21}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Mittelwertrückkehr Strategie}{21}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Ausbruchsstrategie}{21}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Die Datenvisualisierungen}{21}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Visualisierung des Kurswertes}{21}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Visualisierung des Portfoliowertes}{21}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Performancetests der unterschiedlichen Programmiersprachen}{22}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Die Testvoraussetzungen}{22}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Die Testumgebung}{22}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Die Testdaten}{22}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Die Testausführung}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Die Testergebnisse}{23}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Ergebnisse der gleitenden Durchschnittsüberschneidungs Strategie}{23}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Ergebnisse der mittelwertrückkehr Strategie}{23}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Ergebnisse der Ausbruchsstrategie}{23}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Analyse der Testergebnisse}{23}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{24}{chapter.6}%
+\contentsline {chapter}{Quellenverzeichnis}{25}{chapter*.15}%
+\contentsline {section}{Literatur}{25}{section*.16}%
+\contentsline {section}{Software}{28}{section*.17}%

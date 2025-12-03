@@ -1,0 +1,34 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.8">
+  <diagram name="Seite-1" id="nFXPXnifR74eEni4epyA">
+    <mxGraphModel dx="1366" dy="709" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="165" y="95" width="550" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-4" value="Kursdaten herunterladen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="220" y="160" width="440" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-5" value="Daten und Einstellungen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="220" y="200" width="440" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-6" value="Kennzahlen" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="220" y="280" width="440" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-7" value="Kursdiagramm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="220" y="325" width="440" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-8" value="Portfoliodiagramm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="220" y="422" width="440" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-9" value="Tradestabelle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="220" y="519" width="440" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="b8pU-4IShFgm4wc-i8_d-10" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;&lt;b&gt;Backtester&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="95" width="60" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

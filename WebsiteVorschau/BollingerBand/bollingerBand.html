@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktienchart mit Bollinger Bändern</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            height: 500px;
+            margin: 20px 0;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 4px;
+            border-radius: 2px;
+        }
+        .info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Aktienchart mit Bollinger Bändern</h1>
+    <p class="subtitle">Geglätteter Kursverlauf mit natürlichen Schwankungen</p>
+
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #3498db;"></div>
+            <span>Aktienkurs</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #e74c3c;"></div>
+            <span>Oberes Band</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #2ecc71;"></div>
+            <span>Mittleres Band (GD)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #9b59b6;"></div>
+            <span>Unteres Band</span>
+        </div>
+    </div>
+
+    <div class="info">
+        <p>Bollinger Bänder (20-Perioden, 2 Standardabweichungen) | Geglättete Kursdaten</p>
+    </div>
+</div>
+
+<script>
+    // Geglättete Aktienkurse mit natürlichen Bewegungen generieren
+    function generateSmoothStockPrices(days = 100, startPrice = 100) {
+        const prices = [startPrice];
+        let currentPrice = startPrice;
+        let trend = 0.0005; // Leichter Aufwärtstrend
+
+        for (let i = 1; i < days; i++) {
+            // Langsam variierende Volatilität für natürlichere Bewegung
+            const volatility = 0.01 + 0.005 * Math.sin(i / 20);
+
+            // Glattere Zufallsbewegung mit mehreren Komponenten
+            const random1 = Math.sin(i / 10) * 0.005;
+            const random2 = (Math.random() - 0.5) * volatility;
+            const random3 = (Math.random() - 0.5) * volatility * 0.3;
+
+            // Kursänderung mit Trend und geglätteten Zufallskomponenten
+            const priceChange = trend + random1 + random2 + random3;
+            currentPrice = currentPrice * (1 + priceChange);
+
+            // Sicherstellen, dass der Kurs nicht unter ein Minimum fällt
+            currentPrice = Math.max(currentPrice, 0.1);
+
+            prices.push(currentPrice);
+        }
+
+        return prices;
+    }
+
+    // Bollinger Bänder berechnen
+    function calculateBollingerBands(prices, period = 20, stdDevMultiplier = 2) {
+        const middleBand = [];
+        const upperBand = [];
+        const lowerBand = [];
+
+        for (let i = 0; i < prices.length; i++) {
+            if (i < period - 1) {
+                // Nicht genug Daten für den Zeitraum
+                middleBand.push(null);
+                upperBand.push(null);
+                lowerBand.push(null);
+            } else {
+                // Gleitenden Durchschnitt (mittleres Band) berechnen
+                const slice = prices.slice(i - period + 1, i + 1);
+                const sum = slice.reduce((a, b) => a + b, 0);
+                const sma = sum / period;
+                middleBand.push(sma);
+
+                // Standardabweichung berechnen
+                const squaredDiffs = slice.map(price => Math.pow(price - sma, 2));
+                const avgSquaredDiff = squaredDiffs.reduce((a, b) => a + b, 0) / period;
+                const stdDev = Math.sqrt(avgSquaredDiff);
+
+                // Oberes und unteres Band berechnen
+                upperBand.push(sma + stdDev * stdDevMultiplier);
+                lowerBand.push(sma - stdDev * stdDevMultiplier);
+            }
+        }
+
+        return {
+            middleBand,
+            upperBand,
+            lowerBand
+        };
+    }
+
+    // Monatsnamen auf Deutsch
+    const monthNames = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'];
+
+    // Chart initialisieren
+    function initializeChart() {
+        const ctx = document.getElementById('priceChart').getContext('2d');
+
+        // Geglättete Aktienkurse generieren
+        const prices = generateSmoothStockPrices(100, 100);
+
+        // Bollinger Bänder berechnen
+        const bands = calculateBollingerBands(prices, 20, 2);
+
+        // Beschriftungen für die X-Achse erstellen
+        const labels = Array.from({length: prices.length}, (_, i) => {
+            // Realistische Datumsbeschriftungen erstellen
+            const date = new Date();
+            date.setDate(date.getDate() + i - prices.length);
+            return `${date.getDate()}. ${monthNames[date.getMonth()]}`;
+        });
+
+        // Datensätze erstellen
+        const datasets = [
+            {
+                label: 'Aktienkurs',
+                data: prices,
+                borderColor: '#3498db',
+                backgroundColor: 'transparent',
+                borderWidth: 2.5,
+                fill: false,
+                tension: 0.3, // Erhöhte Spannung für glattere Kurven
+                pointRadius: 0,
+                pointHoverRadius: 5
+            },
+            {
+                label: 'Oberes Band',
+                data: bands.upperBand,
+                borderColor: '#e74c3c',
+                backgroundColor: 'transparent',
+                borderWidth: 1.5,
+                borderDash: [5, 5],
+                fill: false,
+                tension: 0.3, // Auch die Bänder glätten
+                pointRadius: 0,
+                pointHoverRadius: 5
+            },
+            {
+                label: 'Mittleres Band (GD)',
+                data: bands.middleBand,
+                borderColor: '#2ecc71',
+                backgroundColor: 'transparent',
+                borderWidth: 1.5,
+                fill: false,
+                tension: 0.3,
+                pointRadius: 0,
+                pointHoverRadius: 5
+            },
+            {
+                label: 'Unteres Band',
+                data: bands.lowerBand,
+                borderColor: '#9b59b6',
+                backgroundColor: 'transparent',
+                borderWidth: 1.5,
+                borderDash: [5, 5],
+                fill: false,
+                tension: 0.3,
+                pointRadius: 0,
+                pointHoverRadius: 5
+            }
+        ];
+
+        // Chart erstellen
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: datasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Aktienkurs mit Bollinger Bändern (20-Tage, 2σ)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    // Kurs in Tooltip anzeigen, aber ohne €-Symbol
+                                    label += context.parsed.y.toFixed(2).replace('.', ',');
+                                }
+                                return label;
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Datum'
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        // Y-Achse ohne Beschriftung
+                        display: true,
+                        grid: {
+                            display: true
+                        },
+                        // Entfernen der Achsenbeschriftung
+                        ticks: {
+                            display: false // Zahlenwerte ausblenden
+                        },
+                        title: {
+                            display: false // Titel der Y-Achse ausblenden
+                        }
+                    }
+                },
+                interaction: {
+                    intersect: false,
+                    mode: 'nearest'
+                },
+                elements: {
+                    line: {
+                        tension: 0.3 // Glattere Kurven für den gesamten Chart
+                    }
+                }
+            }
+        });
+    }
+
+    // Chart beim Laden der Seite initialisieren
+    window.addEventListener('load', initializeChart);
+</script>
+</body>
+</html>

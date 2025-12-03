@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Date Map with Chart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Backtester</h2>
+
+<div class="controls">
+    <div class="row">
+        <div>
+            <h3>JSON Extractor:</h3>
+        </div>
+
+        <div>
+            <label for="assetCode">Asset:</label>
+            <input type="text" id="assetCode" placeholder="BTCUSDT">
+        </div>
+
+        <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" value="2023-01-01">
+        </div>
+
+        <div>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" value="2023-12-31">
+        </div>
+
+        <div class="button-wrap">
+            <button id="fetchJsonBtn">Fetch JSON</button>
+            <button id="downloadJsonBtn" disabled>Download JSON</button>
+        </div>
+
+        <span id="downloadStatus"></span>
+
+    </div>
+
+    <div class="row">
+        <div>
+            <h3>Backtesting:</h3>
+        </div>
+
+        <div>
+            <label for="fileInput">JSON File:</label>
+            <div class="input-check">
+                <input type="file" id="fileInput" accept="application/json" required>
+                <span id="fileInputStatus">❌</span>
+            </div>
+        </div>
+
+        <div>
+            <label for="strategyFile">Strategy File:</label>
+            <div class="input-check">
+                <input type="file" id="strategyFile" accept=".js, .wasm" required>
+                <span id="strategyFileStatus">❌</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="second">
+        <div>
+            <label for="startingMoney">Starting Money:</label>
+            <input type="number" min="1" step="1" id="startingMoney" value="10000" required>
+        </div>
+
+        <div>
+            <label for="interval">Polling Interval:</label>
+            <select id="interval" required>
+                <option value="60">1 hour</option>
+                <option value="30">30 min</option>
+                <option value="15">15 min</option>
+                <option value="1">1 min</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="intervalsBack">Intervals back:</label>
+            <input type="number" min="1" step="1" id="intervalsBack" value="24" required>
+        </div>
+
+        <div class="button-wrap">
+            <button id="backtestButton">Backtest</button>
+            <span id="textMessage" class="hidden">✔ Ready</span>
+        </div>
+    </div>
+</div>
+
+<div class="results-row">
+    <div class="field"><label>Starting Money:</label> <span id="resStartingMoney">-</span></div>
+    <div class="field"><label>Interval:</label> <span id="resInterval">-</span></div>
+    <div class="field"><label>End Money:</label> <span id="resEndMoney">-</span></div>
+    <div class="field"><label>Abs. Profit/Loss:</label> <span id="resAbsProfit">-</span></div>
+    <div class="field"><label>Percent Profit:</label> <span id="resPercentProfit">-</span></div>
+    <div class="field"><label>Sharpe Ratio:</label> <span id="sharpeRatio">-</span></div>
+    <div class="field"><label>Execution Speed:</label> <span id="executionSpeed">-</span></div>
+</div>
+
+<h3>Asset Course</h3>
+<canvas id="priceChart" height="500"></canvas>
+<div id="tooltip"></div>
+
+<h3>Portfolio Value</h3>
+<canvas id="portfolioChart" height="500"></canvas>
+<div id="portfolioTooltip"></div>
+
+<h3>Trade Actions</h3>
+<table id="actionTable">
+    <thead>
+    <tr>
+        <th>Nr</th>
+        <th>Time</th>
+        <th>Action</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+\chapter{Grundlegende Konzepte und Technologien}
+\label{cha:GrundlegendeKonzepteundTechnologien}
+
+Dieses Kapitel behandelt die theoretischen und technischen Grundlagen des Backtestings. 
+Dabei werden zentrale Konzepte, mögliche Verzerrungen, bewährte Handelsstrategien, bestehende Backtester sowie weitere Technologien wie WebAssembly erläutert.
+
+\section{Backtesting}
+\label{sec:Backtesting}
+
+Backtesting bietet die Möglichkeit den Erfolg einer Investitionsstrategie an historischen Finanzdaten zu testen. Die Erfolgsquote dieser Strategie lässt sich somit einschätzen, ohne dafür spekulativ Geld in aktuelle Märkte investieren zu müssen.
+Dabei wird eine Strategie zu konkreten Zeitpunkten in gewissen Intervallen befragt, ob in diesem Moment gekauft, verkauft oder gehalten werden soll. Die Strategie erhält aber für die Berechnung der Entscheidung nur Informationen, die zu diesem Zeitpunkt auch tatsächlich verfügbar gewesen wären.
+Zukünftige Informationen, die zu diesem Zeitpunkt noch nicht bekannt waren, dürfen nicht in die Entscheidungsfindung mit einfließen, obwohl diese verfügbar sind.
+\cite{Bailey2015PBO}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.51]{BacktestingFlow.png}
+    \caption{Ablauf eines Backtestingsprozesses}
+    \label{fig:BacktestingFlow}
+\end{figure}
+
+In der Abbildung \ref{fig:BacktestingFlow} ist der Ablauf eines Backtestingprozesses dargestellt.
+Zuerst wird eine Investmentstrategie erstellt, die getestet werden soll. Wie die Strategien implementiert sein muss hängt von dem verwendeten Backtester ab.
+Daraufhin wird die Strategie auf den historischen Daten im Backtester angewendet.
+Die Ergebnisse dieses Tests müssen anschließend analysiert werden, um die Qualität der Strategie bewerten zu können.
+Dazu können verschiedenste Kennzahlen verwendet werden, wie
+Beispielsweise der prozentuelle Gesamtgewinn oder der Sharpe-Ratio, welcher das Verhältnis von Rendite zu Risiko misst. 
+
+Der Sharpe-Ratio wird wie folgt berechnet:
+\[
+\textit{Sharpe-Ratio} = \frac{R_p - R_f}{\sigma_p}
+\]
+
+\begin{itemize}
+    \item $R_p$ = Rendite des Portfolios
+    \item $R_f$ = Risikofreier Zinssatz
+    \item $\sigma_p$ = Standardabweichung der Überschussrendite des Portfolios
+\end{itemize}
+
+
+Falls die Ergebnisse den Erwartungen entsprechen, ist der Backtestingprozess abgeschlossen.
+Andernfalls sollte die Strategie angepasst werden und der Backtest erneut ausgeführt werden.
+Dabei sollte der Prozess jedoch nicht zu oft wiederholt werden, da sonst die Gefahr besteht, dass die Strategie zu stark an die historischen Daten angepasst wird
+und unter realen Bedingungen nicht mehr den Erwartungen entspricht.
+\cite{HarveyLiu2013} \cite{Bailey2021BacktestOverfitting}
+
+Nur weil eine Strategie erfolgreich im Backtesting war, heißt dies aber nicht, dass diese auch in der Zukunft erfolgreich sein wird. 
+Ein möglicher Grund hierfür könnten Verzerrungen (Biase) in der Strategie oder bei den Testdaten sein, die während des Backtests einbezogen wurden. 
+Das Ergebnis erscheint dadurch im Test überzeugend, in der Praxis aber wird die Strategie den Erwartungen voraussichtlich nicht gerecht. 
+\cite{Bailey2014PseudoMath}
+
+Desweitern kann im Backtester ein verfälschtes Ergebnis entstehen, wenn während des Testprozesses keine Gebühren oder Steuern berücksichtig werden, die in der Praxis anfallen würden.
+Strategien mit einer geringen Anzahl an Transaktionen wirken im Backtest weniger profitabel als Strategien mit hoher Handelsfrequenz. 
+In der Realität können sie jedoch aufgrund niedrigerer Transaktionskosten und geringerer Slippage oft bessere Ergebnisse erzielen.
+\cite{ElBernoussi2023}
+
+\section{Biase in Backtesting}
+\label{sec:BiaseinBacktesting}
+
+Durch falsches Anwenden eines Backtesters können verschiedene Biase in die Ergebnisse mit einfließen und diese dadurch verfälschen. 
+Nachfolgend werden vier bekannte Biase beschrieben und wie diese vermieden werden können.
+
+\subsection{Look-Ahead Bias}
+\label{subsec:LookAheadBias}
+
+Investitionsstrategien, die Informationen verwenden, die sie zum Zeitpunkt der Entscheidung noch nicht haben konnten, sind vom Look-Ahead Bias betroffen. Dieser verfälscht das Backtestergebnis.
+Wenn die Strategie die Aktienkurse der folgenden Jahre in die Entscheidungsfindung mit einfließen lässt, kann diese Aktien, bei denen ein Kursanstieg erwartet wird, kaufen und Aktien, bei denen ein Kursrückgang erwartet wird, verkaufen.
+Somit wird die Strategie im Backtest einen Gewinn erzielen, aber bei realen Bedingungen, bei denen nicht in die Zukunft geblickt werden kann, versagen.
+Um dies zu verhindern, sollten ausschließlich Informationen berücksichtigt werden, die zum Zeitpunkt der Entscheidung tatsächlich vorlagen.
+\cite{daniel2008lookaheadbenchmarkbiasportfolio}
+
+\subsection{Overfitting Bias}
+\label{subsec:OverfittingBias}
+
+Der Overfitting Bias entsteht, wenn die erstellte Handlungsstrategie zu stark an die ausgewählten historischen Daten angepasst wurde, um bessere Ergebnisse zu erzielen. 
+Dadurch wird die Strategie nur auf diese speziellen Datensets gute Ergebnisse liefern, in der Praxis aber wird dadurch voraussichtlich die Erwartung nicht erfüllt. Ein Beispiel für eine angepasste Strategie sind statisch definierte Kauf- und Verkaufsgrenzen.
+Um dies zu vermeiden, sollte die Strategie auf mehreren verschiedenen Datensets getestet werden. Ebenfalls sollte zur Erstellung der Strategie ein anderer Teil der historischen Daten verwendet werden als zum Testen der Strategie. 
+\cite{Bailey2015PBO}
+
+\subsection{Survivorship Bias}
+\label{subsec:SurvivorshipBias}
+
+Der Survivorship Bias entsteht, wenn in den historischen Daten nur Firmen enthalten sind, die während des beobachteten Zeitraums weiterhin bestanden haben.
+Firmen, die in der Vergangenheit in Konkurs gegangen sind oder aus anderen Gründen nicht mehr existieren, sind in den Daten deswegen nicht enthalten.
+Somit wird die Strategie im Backtest nur auf Firmen angewandt, die es geschafft, haben zu überleben und dabei wird nicht getestet, ob die Strategie auch bei Firmen erfolgreich wäre die in der Vergangenheit gescheitert sind.
+Um Verzerrungen zu vermeiden, sollten historische Daten einbezogen werden, die auch Unternehmen berücksichtigen, die im betrachteten Zeitraum insolvent geworden sind.
+\cite{10.1093/rfs/5.4.553} \cite{10.1093/rfs/15.5.1439}
+
+\subsection{Data-Snooping Bias}
+\label{subsec:DataSnoopingBias}
+
+Ein Testergebnis fällt in den Data-Snooping Bias, wenn für einen Test eine zu kleine Auswahl an unterschiedlichen Kursentwicklungen in den Testdatensets verwendet wurde. 
+Daraus entsteht das Problem, dass die Strategie nur auf die in den Datensets vorkommenden Kursentwicklungen optimiert wurde, ohne auf andere Kursentwicklungen Rücksicht zu nehmen.
+Wenn alle verwendeten Kurse beispielsweise nur von Firmen stammen, die alle in dem betrachteten Zeitraum einen wirtschaftlichen Aufschwung hatten, wird die Strategie auch nur in ähnlichen Szenarien gute Ergebnisse liefern.
+Somit wird die Strategie in anderen Marktsituationen möglicherweise nicht die Erwartungen erfüllen.
+Um dies zu vermeiden, sollten Datensätze gewählt werden, die unterschiedliche Aufschwünge und Krisen aufzeigen, um verschiedene Marktsituationen abzudecken.
+\cite{https://doi.org/10.1111/0022-1082.00163} \cite{LoMacKinlay1989}
+
+\section{State of the Art Backtester}
+\label{sec:StateoftheArtBacktester}
+
+Es gibt bereits zahlreiche Backtester von den verschiedensten Anbietern. Ein Großteil dieser Systeme ist jedoch kostenpflichtig und laufen nicht lokal, sondern nur auf den Servern der einzelnen Anbieter.
+\cite{FXReplay2025} \cite{BacktesterIO2025} \cite{BacktestingMax2025}
+Somit werden auch selbst entwickelte Strategien an diese Dienstleister weitergegeben. Dritte könnten potenziell die zugrunde liegenden Konzepte der Ansätze übernehmen und für eigene Zwecke adaptieren.
+Dies ist ein Sicherheitsrisiko für nicht veröffentlichte Strategien.
+Darüber hinaus ist bei solchen Anbietern häufig auch nicht transparent, wie die Backtester intern implementiert sind.
+
+Im Rahmen dieser Arbeit werden daher nur lokale Open-Source Backtester analysiert. Dadurch lassen sich die genannten Probleme vermeiden und die Backtester im Detail untersuchen und besser miteinander vergleichen.
+Nachfolgend werden drei bekannte open-source Backtester beschrieben und deren Aufbau und Funktionsweise erläutert.
+
+\subsection{Backtrader}
+\label{subsec:Backtrader}
+
+Backtrader ist ein in Python implementierter Backtester. Alle Komponenten des Backtesters sind in einzelne Klassen aufgeteilt. 
+Eine Klasse für Finanzdaten, Backtesteinstellungen und Startparameter, eine für die Strategie, eine für einen Kauf oder Verkauf und eine Klasse für alle errechneten Ergebnisse.
+Um selbst Strategien zu implementieren, muss eine Strategieklasse erstellt werden.
+Die eigene Strategieklasse muss von einer Basisklasse erben und gewisse Funktionalitäten implementieren. Von der Art der Strategie hängt ab, ob alle oder nur ein Teil der Funktionen implementiert werden muss.
+Mit geerbten Funktionen können beispielsweise Kauf- und Verkaufssignale an den Backtester gesendet werden.
+
+Backtrader bietet keine graphische Benutzeroberfläche, um Backtests zu starten, durchzuführen oder zu analysieren. Der Backtest wird durchgeführt, indem die selbst erstellte Python-Datei ausgeführt wird. 
+Als Datenquelle können CSV-Dateien oder Daten von Online-Quellen wie Yahoo Finance verwendet werden. Alle diese Quellen müssen in einem bestimmen Format vorliegen.
+Die Resultate des Backtests werden von Backtrader nicht automatisch visualisiert. Stattdessen müssen die Kennzahlen selbstständig aufbereitet und dargestellt werden. Dadurch gestaltet sich die Präsentation aufwändiger, jedoch wird diese dadurch individuell anpassbarer. 
+Zur Veranschaulichung steht eine Hilfsklasse zur Verfügung, die die Darstellung erleichtert und sich zudem durch Ableitung mit eigenen Grafiken erweitern lässt.
+Ebenfalls vereinfacht die Bibliothek PyFolio die Visualisierung der Ergebnisse. Mit dieser werden aus den Resultaten verschiedene Diagramme und Tabellen mit Kennzahlen erstellt.
+\cite{backtraderGitHub} \cite{backtraderWebsite} \cite{pyFolioGitHub}
+
+Die Performanz von Backtrader ist durch die Geschwindigkeit von Python begrenzt.
+Backtrader biete keine Möglichkeit die langsamsten Teile der Strategie in einer anderen Form zu implementieren, um die Ausführungsgeschwindigkeit zu beschleunigen.
+
+\subsection{Zipline}
+\label{subsec:Zipline}
+
+Zipline ist ein in Python implementierter Backtester. Dieser wurde ursprünglich von Quantopian entwickelt und wird jetzt von der Community weitergeführt, da 2020 Quantopian den Betrieb eingestellt hat.
+Die weiterentwickelten Versionen von Zipline haben das Ziel, sich von den ursprünglichen Services von Quantopian zu lösen und die Möglichkeit zu bieten, den Backtester lokal auszuführen.
+Zwei der bekanntesten Forks sind Zipline Trader und Zipline Reloaded. Den Entwicklern ist es gelungen, sich von den eingestellten Services zu lösen und eigene Funktionalität weiter hinzuzufügen.
+Beide Forks sind Open-Source und können kostenlos verwendet werden. Ebenfalls ist es möglich beide Systeme über die Kommandozeile zu bedienen, mit Python-Skripten zu steuern oder diese in einem Jupiter Notebook anzuwenden.
+Zipline Trader geht mehr in die Richtung von Python Skripten, während Zipline Reloaded mehr für die Verwendung in einem Jupiter Notebook oder der Kommandozeile ausgelegt ist.
+
+Damit eigene Strategien verwenden werden können muss eine Funktion implementiert werden, die eine Sammlung an Daten nimmt und Kauf- und Verkaufssignale zurückgibt.
+Dabei können verschiedenste Hilfsfunktionen und Indikatoren verwendet werden, die in Zipline bereits implementiert sind.
+Zipline Trader benötigt, um historische Daten zu laden eine Verbindung zu Alpaca oder Interactive Brokers und eine Postgres-Datenbank. 
+Zipline Reloaded hat standartmäßig Kurse für gewisse Aktien vorinstalliert und kann auch Daten von NASDAQ im pickle Format über die API nachladen.
+
+Die Ergebnisse eines Backtests werden in beiden Systemen automatisch generiert aber müssen manuell visualisiert werden.
+Dafür können verschiedene Bibliotheken wie Matplotlib, PyFolio oder Quantstats verwendet werden.
+\cite{ziplineGitHub} \cite{ziplineTraderWebsite} \cite{ziplineTraderGitHub} \cite{ziplineReloadedGitHub} \cite{ziplineReloadedWebsite}
+
+\subsection{BacktestJS}
+\label{subsec:BacktestJS}
+
+BacktestJS ist ein in TypeScript und JavaScript geschriebener Backtester. Dieser kann nur aus der Kommandozeile heraus verwendet werden und hat keine grafische Benutzeroberfläche. 
+Die entstandenen Ergebnisse liegen als HTML-Dateien vor und können in einem Webbrowser betrachtet werden.
+In diesem Backtester ist es auch möglich eigene Strategien testen zu lassen. Dazu muss eine Strategie in JavaScript oder TypeScript implementiert werden die gewisse Bedingungen erfüllt. 
+Diese Regeln bestimmen wie die Funktion zu heißen hat, welche Parameter diese annimmt, welche Imports nötig sind und wo diese sich im Dateisystem zu befinden hat.
+Ebenfalls stellt BacktestJS die Möglichkeit zur Verfügung sich historische Finanzdaten in eine lokale Datenbank zu laden und diese als CSV-Datei zu exportieren. Diese Daten stammen von Binance und sind kostenlos verfügbar. 
+Andere CSV-Dateien in diesem Format können auch direkt in die Datenbank mit BacktestJS geladen werden. Damit ist es möglich seine Strategien auf verschiedene Kurse zu testen. 
+\cite{backtestjsGitHub} \cite{backtestjsWebsite}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{ResulsBacktestBacktestJS.jpeg}
+    \caption{Beispielergebnis eines Backtests mit BacktestJS \cite{backtestjsExampleResult}}
+    \label{fig:ResulsBacktestBacktestJS}
+\end{figure}
+
+
+Ein Beispiel für ein Ergebnis eines Backtests mit BacktestJS ist in der Abbildung \ref{fig:ResulsBacktestBacktestJS} zu sehen.
+In dieser Statistik werden verschiedene Kennzahlen wie beispielsweise der Gesamtgewinn, der Startbetrag, der Höchststand der Aktie und der Sharpe-Ratio angezeigt.
+Es werden nach einem Backtest auch noch weitere Tabellen und Diagramme mit genaueren Informationen generiert und angezeigt.
+
+Die Geschwindigkeit von BacktestJS ist limitiert durch die Ausführungsgeschwindigkeit von JavaScript. 
+Es ist nicht möglich rechenintensive Teile der Strategie in einer anderen schnelleren Programmiersprache wie C oder C++ zu schreiben, um die Backtest-Prozess zu beschleunigen.
+Dies schränkt den Rahmen für Optimierungen der Laufzeit bei komplexeren Strategien ein.
+
+\section{Bewährte Ansätze für Handelsstrategien}
+\label{sec: Bewährte AnsätzefürHandelsstrategien}
+
+Es gibt viele bereits etablierte Ansätze für Anlagestrategien. In dieser Arbeit werden keine neuen Algorithmen entwickelt, sondern bestehende Ansätze verwendet, diese in JavaScript und C implementiert, in einem Webbrowser ausgeführt und die Ausführungsgeschwindigkeit getestet.
+Nachfolgend werden drei bereits bekannte Ideen für Investitionsstrategien beschrieben.
+
+\subsection{Mittelwertrückkehr mit Bollinger Bänder}
+\label{subsec:MittelwertrückkehrmitBollingerBänder}
+
+Die Idee hinter der Mittelwertrückkehr ist, dass der Kurs einer Aktie immer wieder zu einem längerfristigen Mittelwert zurückkehrt. Dabei werden Abweichungen von dem Mittelwert als Kauf- oder Verkaufssignal verstanden.
+Es werden die Aktien verkauft, wenn der Kurs über dem Mittelwert steigt und gekauft, wenn der Kurs unter dem Mittelwert fällt.
+\cite{martin2011meanreversionpayscosts}
+
+Um die Signale zu verstärken und nicht bei den kleinsten Änderungen eine Aktion auszuführen werden häufig Bollinger Bänder verwendet. 
+Diese bestehen aus drei Komponenten. 
+\begin{itemize}
+    \item Einem gleitenden Durchschnitt des Kurses über einen bestimmten Zeitraum.
+    \item Einem oberen Band, welches eine bestimmte Anzahl an Standardabweichungen über dem Durchschnitt liegt.
+    \item Einem unteren Band, welches eine bestimmte Anzahl an Standardabweichungen unter dem Durchschnitt liegt.
+\end{itemize}
+Somit wird ein breiter Mantel über den Aktienkurs gelegt, der die normalen Schwankungen des Kurses umhüllt.
+Wenn der Kurs das Band nach oben hin durchbricht, wird dies als Verkaufssignal gewertet. Unterschreiten des Bandes wird als Kaufsignal gewertet.
+\cite{bollinger1992using} \cite{Su2023} \cite{leeds2013bollingerbandsthirtyyears}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{BollingerBands.png}
+    \caption{Beispiel für ein Bollinger Band}
+    \label{fig:BollingerBands}
+\end{figure}
+
+In der Abbildung \ref{fig:BollingerBands} ist ein Beispiel für ein Bollinger Band zu sehen. Der blaue Bereich stellt den Kursverlauf der Aktie dar. 
+Die grüne Linie ist der gleitende Durchschnitt, das obere Band ist die rote Linie und das untere Band ist die violette Linie.
+Am 17. September ist ein Verkaufssignal zu erkennen, da der Kurs das obere Band durchbricht. Am 21. August ist ein Kaufsignal zu erkennen, da der Kurs das untere Band unterschreitet.
+\newline
+
+Wechselkurse von Währungen dienen als Beispiel dafür, dass Kurse oft zu einem Mittelwert zurückkehren. Diese pendeln häufig um einen Mittelwert und bleiben im Verhältnis zueinander stabil.
+\cite{GILALANA2000285}
+
+Bei Strategien mit Mittelwertrückkehr kann es zu Problemen kommen, wenn der Kurs nicht zum Mittelwert zurückkehrt, sondern sich stark in eine Richtung bewegt. 
+Beispiele dafür sind Firmen, die in Konkurs gehen oder einen starken wirtschaftlichen Aufschwung erleben.
+\cite{POTERBA198827}
+
+\subsection{Gleitende Durchschnitts Überscheidungen}
+\label{subsec:GleitendeDurchschnittsÜberscheidungen}
+
+Gleitende Durchschnitts Überschneidungen Strategien sind eine der bekanntesten und am häufigsten verwendeten Ansätze im Bereich des automatisierten Handels.
+Dabei werden zwei gleitende Durchschnitte mit unterschiedlichen langen Zeiträumen errechnet und miteinander verglichen.
+Wenn der kurzfristige Durchschnitt den langfristigen Durchschnitt von unten nach oben durchbricht, wird dies als Kaufsignal gewertet.
+Wird der langfristige Durchschnitt aber von oben nach unten durchbrochen, wird dies als Verkaufssignal gewertet.
+Der Unterschied in den verschiedenen Strategien mit dieser Vorgehensweise liegt in der Wahl der Zeiträume für die beiden gleitenden Durchschnitte und der Mehrgewichtung aktueller Werte.
+\cite{HUANG202016} \cite{https://doi.org/10.1111/j.1540-6261.1992.tb04681.x}
+
+Eine optimierte gleitende Durchschnitts Überschneidungsstrategie erzielt mehr Rendite als die Strategie eine Aktie zu kaufen und zu warten.
+Für den S\&P 500 Index zeigte die wartende Strategie im Zeitraum von März 2009 bis November 2014 einen niedrigeren Sharpe-Ratio (1,214) als die optimierte gleitende Durchschnittsüberschneidungsstrategie (1,351).
+Dies bedeutet, dass die optimierte Strategie im Verhältnis zu dem eingegangenen Risiko eine höhere Rendite erzielen konnte.
+\cite{gurrib2016moving}
+
+Ein Problem bei gleitenden Durchschnitts Überschneidungsstrategien ist, dass es zu Fehlsignalen kommen kann, wenn die beiden Durchschnitte sich häufig überschneiden.
+Dies passiert häufig in Seitwärtsmärkten, bei denen der Kurs keine klare Richtung hat und sich nur wenig verändert.
+Dabei kann es dazu kommen, dass es sehr viele Kauf- und Verkaufssignale gibt, die einerseits zu hohen Transaktionskosten führen und andererseits bei langsam fallenden Kursen zu Verlusten führen.
+\cite{arumugam2017empirical}
+
+Ein weiteres Problem ist, dass diese Strategien sehr von der Auswahl der Zeiträume für die gleitenden Durchschnitte abhängen.
+Durch eine schlechte Wahl der Zeiträume kann es dazu kommen, dass die Strategie nicht die Erwartungen erfüllt.
+\cite{ferreira2018detailed}
+
+\subsection{Ausbruchsstrategien}
+\label{subsec:Ausbruchsstrategien}
+
+Bei Ausbruchsstrategien wird davon ausgegangen, dass der Aktienkurs aus gesetzten Grenzen ausbricht und sich in die Richtung des Ausbruchs weiterbewegt.
+Zur Bestimmung der Grenzen werden häufig Hoch- und Tiefpunkte in der Kursentwicklung in einem gewissen Zeitrahmen verwendet.
+Ausbrüche über die Obergrenze werden als Kaufsignal gewertet, während Ausbrüche unter die Untergrenze als Verkaufssignal gewertet werden.
+\cite{HOLMBERG201327} \cite{wright2024breakout}
+
+Mit einer optimierten Ausbruchsstrategie kann sogar der S\&P 500 Index in einem Backtest übertroffen werden. Im Zeitraum vom Jänner 2016 bis Dezember 2023 konnte der S\&P 500 198\% Rendite erzielen, während eine optimierte Ausbruchsstrategie 1637\% Rendite erzielen konnte.
+Die Strategie war Risikoreicher als der S\&P 500, konnte aber durch das höhere Risiko auch eine deutlich höhere Rendite erzielen.
+\cite{zarattini2024profitable}
+
+Ein Problem bei Ausbruchsstrategien ist, dass es zu Fehlsignalen kommen kann.
+Dies passiert, wenn eine der Grenzen kurzfristig durchbrochen wird, ohne weiter in die durchbrochene Richtung zu laufen.
+Durch diese Fehlsignale kann es dazu kommen das bei Spitzen gekauft und in Tälern verkauft wird, was zu Verlusten führt.
+\cite{mitchell2023failedbreak}
+
+\section{WASM}
+\label{sec:WASM}
+
+WebAssembly (WASM) ist ein binäres Instruktionsformat für das Web. Es wurde dafür entwickelt, Webanwendungen schneller und effizienter ausführen zu können und diese dabei gleichzeitig portable zu halten.
+WebAssembly kann in verschiedensten höheren Programmiersprachen wie C, C++, Rust und Go geschrieben werden und wird von allen modernen Webbrowsern unterstützt. 
+Der erstellte Quellcode kann anschließend mit einem Compiler, beispielsweise Emscripten, in Bytecode übersetzt werden und durch Aufrufen mit JavaScript in einem Browser ausgeführt werden.
+\cite{webassemblyorg}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{CombinedWASMCode.png}
+    \caption{Vergleich von C Quellcode und generiertem WebAssembly Bytecode}
+    \label{fig:WASMBytecode}
+\end{figure}
+
+In der Abbildung \ref{fig:WASMBytecode} ist ein Beispiel für C Quellcode und der daraus generierte WebAssembly Bytecode zu sehen.
+In C wird eine Funktion definiert, die zwei ganzzahlige Werte als Parameter annimmt, diese addiert und zurückgibt.
+Im WebAssembly-Bytecode wird in der zweiten Zeile zunächst der Funktionsprototyp erstellt. Dieser erhält zwei Ganzzahlen als Eingabeparameter und eine Ganzzahl als Rückgabewert. 
+Anschließend erfolgt die Definition der Funktion selbst.
+In der Funktion werden die beiden lokalen Variablen die als Parameter übergeben wurden, geladen und addiert. 
+Das Ergebnis verbleibt auf dem Stack und stellt dadurch den Rückgabewert der Funktion dar.
+Das Schlüsselwort export gibt den Namen der Funktion an, damit diese von außen aufgerufen werden kann.
+Die Metadaten, die durch den Compiler hinzugefügt werden, sind dabei im Bytecode weggelassen. 
+Ebenfalls sind die Präprozessoranweisungen im C Quellcode, um ihn mit Emscripten kompilieren zu können nicht dargestellt.
+\newline
+
+Je nach Browser gibt es aber Unterschiede, wie schnell der WebAssembly-Code ausgeführt werden kann. Für Desktop-Anwendungen erzielt Firefox die beste Ausführungszeit, während Edge am langsamsten ist. 
+Dafür ist die Ausführung von reinem JavaScript im Durchschnitt in Firefox langsamer als reines WebAssembly. Während der Laufzeit weist WebAssembly aber im Vergleich zu JavaScript einen vielfach höheren Speicherverbrauch auf.
+In allen Desktop-Browsern zeigt sich, dass WebAssembly deutlich mehr Speicher verbraucht als JavaScript (3,39x auf Chrome, 4,93x auf Firefox und 3,44x auf Edge). 
+\cite{10.1145/3487552.3487827}
+
+Da WebAssembly nicht direkt mit dem Browser interagieren kann, gibt es einige Einschränkungen. So hat WebAssembly beispielsweise keinen direkten Zugriff auf das Document Object Model (DOM) eines Webbrowsers.
+Ebenfalls gibt es keinen automatischen Garbage Collector, was zu Folge hat, dass die Speicher manuell verwaltet werden muss.
+\cite{webassemblyorg}
+
+Des Weiteren können Funktionen in WebAssembly nur einzelne Werte und keine Verbunde oder Objekte zurückgeben. Damit ist also weniger Sprachumfang als in JavaScript gegeben.
+Es kann ebenfalls auch nicht auf Umgebungsvariablen beispielsweise dem DOM zugegriffen werden.
+\cite{10.1145/3062341.3062363}
