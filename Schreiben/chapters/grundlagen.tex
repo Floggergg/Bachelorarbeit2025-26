@@ -283,11 +283,6 @@ Die Metadaten, die durch den Compiler hinzugefügt werden, sind dabei im Bytecod
 Ebenfalls sind die Präprozessoranweisungen im C Quellcode, um ihn mit Emscripten kompilieren zu können nicht dargestellt.
 \newline
 
-Je nach Browser gibt es aber Unterschiede, wie schnell der WebAssembly-Code ausgeführt werden kann. Für Desktop-Anwendungen erzielt Firefox die beste Ausführungszeit, während Edge am langsamsten ist. 
-Dafür ist die Ausführung von reinem JavaScript im Durchschnitt in Firefox langsamer als reines WebAssembly. Während der Laufzeit weist WebAssembly aber im Vergleich zu JavaScript einen vielfach höheren Speicherverbrauch auf.
-In allen Desktop-Browsern zeigt sich, dass WebAssembly deutlich mehr Speicher verbraucht als JavaScript (3,39x auf Chrome, 4,93x auf Firefox und 3,44x auf Edge). 
-\cite{10.1145/3487552.3487827}
-
 Da WebAssembly nicht direkt mit dem Browser interagieren kann, gibt es einige Einschränkungen. So hat WebAssembly beispielsweise keinen direkten Zugriff auf das Document Object Model (DOM) eines Webbrowsers.
 Ebenfalls gibt es keinen automatischen Garbage Collector, was zu Folge hat, dass die Speicher manuell verwaltet werden muss.
 \cite{webassemblyorg}
@@ -295,3 +290,12 @@ Ebenfalls gibt es keinen automatischen Garbage Collector, was zu Folge hat, dass
 Des Weiteren können Funktionen in WebAssembly nur einzelne Werte und keine Verbunde oder Objekte zurückgeben. Damit ist also weniger Sprachumfang als in JavaScript gegeben.
 Es kann ebenfalls auch nicht auf Umgebungsvariablen beispielsweise dem DOM zugegriffen werden.
 \cite{10.1145/3062341.3062363}
+
+
+\subsection{Resourcenverbrauch und Performanz von WASM}
+\label{subsec:ResourcenverbrauchundPerformanzvonWASM}
+
+Je nach Browser gibt es aber Unterschiede, wie schnell der WebAssembly-Code ausgeführt werden kann. Für Desktop-Anwendungen erzielt Firefox die beste Ausführungszeit, während Edge am langsamsten ist. 
+Dafür ist die Ausführung von reinem JavaScript im Durchschnitt in Firefox langsamer als reines WebAssembly. Während der Laufzeit weist WebAssembly aber im Vergleich zu JavaScript einen vielfach höheren Speicherverbrauch auf.
+In allen Desktop-Browsern zeigt sich, dass WebAssembly deutlich mehr Speicher verbraucht als JavaScript (3,39x auf Chrome, 4,93x auf Firefox und 3,44x auf Edge). 
+\cite{10.1145/3487552.3487827}

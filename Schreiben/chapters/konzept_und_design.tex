@@ -27,7 +27,7 @@ Als Result entsteht eine Visualisierung der Backtestergebnisse und die Auflistun
 
 Die historischen Finanzdaten werden über die Weboberfläche im JSON Format an die Backtesterlogik weitergereicht.
 Das JSON Format eignet sich für die Übergabe, da es von JavaScript nativ unterstützt wird und leicht zu parsen ist.
-JSON hat sich als Standartformat für die Datenverwaltung im Web etabliert, da dieses gut menschen lesbar ist und performant von Webbrowsern verarbeitet werden kann.
+JSON hat sich als Standartformat für die Datenverwaltung im Web etabliert, da dieses gut Menschen-lesbar ist und performant von Webbrowsern verarbeitet werden kann.
 Darüber hinaus bringt die Struktur von JSON den Vorteil mit sich, dass komplexe Datenstrukturen damit einfach abgebildet werden können.
 XML wurde nicht gewählt, da es im Vergleich zu JSON eine umfangreichere Syntax besitzt und dadurch mehr Speicherplatz sowie Rechenzeit beim Parsen benötigt. 
 Des Weiteren ist XML weniger kompakt und wird von modernen Webanwendungen nicht so effizient wie JSON verarbeitet.
@@ -69,8 +69,8 @@ Zu den errechneten Kennzahlen gehören: Endwert des Portfolios, Gesamtrendite, p
 \subsection{Modularisierung der Strategien}
 \label{subsec:ModularisierungderStrategien}
 
-Der Backtester ist so designt, dass verschiedene Handelsstrategien modular hochgeladen und getestet werden können.
-Die Modularisierung ermöglicht es den Nutzern, eigene Strategien zu implementieren und diese in dem Backtester zu verwenden ohne Backtestinglogik verändern zu müssen.
+Der Backtester ist so gestaltet, dass verschiedene Handelsstrategien modular hochgeladen und getestet werden können.
+Die Modularisierung ermöglicht es, eigene Strategien zu implementieren und diese in dem Backtester zu verwenden ohne Backtestinglogik verändern zu müssen.
 Die Strategiemodule müssen dabei nur einen definierten Namen und eine vordefinierte Signatur besitzen, um korrekt aufgerufen werden zu können.
 Der Rückgabewert dieser Funktion bestimmt dabei, ob ein Kauf-, Verkaufs- oder Haltesignal ausgegeben wird.
 
@@ -250,4 +250,5 @@ Im lesbaren Textformat ist der Bytecode nicht mehr binär kodiert, sondern durch
 WABT bietet des weiteren Werkzeuge zur Darstellung in JSON oder einem Object Dump Format an.
 Ebenfalls ist es möglich Metainformationen über das Modul zu extrahieren, wie beispielsweise die Anzahl der Funktionen, den Speicherverbrauch oder die importierten und exportierten Symbole.
 \cite{wabtGitHub}
-Eine Abbildung des Bytecodes ist in der Abbildung \ref{fig:WASMBytecode} zu sehen.
+Der in der Abbildung gezeigte Bytecode wurde mit WABT decodiert.
+Eine Darstellung des Bytecodes ist in der Abbildung \ref{fig:WASMBytecode} zu sehen.

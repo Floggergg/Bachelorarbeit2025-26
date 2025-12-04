@@ -16,6 +16,7 @@
 \babel@toc {english}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Kapitelübersicht}{1}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Grundlegende Konzepte und Technologien}{2}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Backtesting}{2}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Biase in Backtesting}{4}{section.2.2}%
@@ -32,6 +33,7 @@
 \contentsline {subsection}{\numberline {2.4.2}Gleitende Durchschnitts Überscheidungen}{9}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Ausbruchsstrategien}{9}{subsection.2.4.3}%
 \contentsline {section}{\numberline {2.5}WASM}{10}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Resourcenverbrauch und Performanz von WASM}{11}{subsection.2.5.1}%
 \contentsline {chapter}{\numberline {3}Konzept und Design}{12}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Architektur des Backtesters}{12}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Format der historischen Finanzdaten}{13}{subsection.3.1.1}%
