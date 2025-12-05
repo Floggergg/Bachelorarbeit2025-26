@@ -637,6 +637,34 @@
       \field{title}{Look-Ahead Benchmark Bias in Portfolio Performance Evaluation}
       \field{year}{2008}
     \endentry
+    \entry{PoltavskyiDmytro2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9fbdaf081b9b3f93c1067ff02e300f77}{%
+           family={Dmytro},
+           familyi={D\bibinitperiod},
+           given={Poltavskyi},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \strng{fullhash}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \strng{fullhashraw}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \strng{bibnamehash}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \strng{authorbibnamehash}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \strng{authornamehash}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \strng{authorfullhash}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \strng{authorfullhashraw}{9fbdaf081b9b3f93c1067ff02e300f77}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American Scientific Research Journal for Engineering, Technology, and Sciences}
+      \field{number}{1}
+      \field{title}{Integration of WebAssembly in Performance-critical Web Applications}
+      \field{volume}{102}
+      \field{year}{2025}
+      \field{pages}{39\bibrangedash 53}
+      \range{pages}{15}
+    \endentry
     \entry{ferreira2018detailed}{article}{}{}
       \name{author}{3}{}{%
         {{hash=11f86d4dc60f6f0f79ff9b1d2e059772}{%
@@ -833,6 +861,50 @@
       \field{volume}{42}
       \field{year}{2013}
     \endentry
+    \entry{Herrera2018WebAssembly}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=3f77671d30ffde77c04c274fcf47bbed}{%
+           family={Herrera},
+           familyi={H\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c6a4718090c56f99ac836c1c515d7286}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Hanfeng},
+           giveni={H\bibinitperiod}}}%
+        {{hash=5029eda9aaf41e54e1ce0361d29d6406}{%
+           family={Lavoie},
+           familyi={L\bibinitperiod},
+           given={Erick},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fabe88733959e7e43c1d291df4b2754a}{%
+           family={Hendren},
+           familyi={H\bibinitperiod},
+           given={Laurie},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{9afdf5b2f463d43a756b814f9d04b83a}
+      \strng{fullhash}{8533ba12fd218c26a60744b1f74c1ff4}
+      \strng{fullhashraw}{8533ba12fd218c26a60744b1f74c1ff4}
+      \strng{bibnamehash}{9afdf5b2f463d43a756b814f9d04b83a}
+      \strng{authorbibnamehash}{9afdf5b2f463d43a756b814f9d04b83a}
+      \strng{authornamehash}{9afdf5b2f463d43a756b814f9d04b83a}
+      \strng{authorfullhash}{8533ba12fd218c26a60744b1f74c1ff4}
+      \strng{authorfullhashraw}{8533ba12fd218c26a60744b1f74c1ff4}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 14th ACM SIGPLAN International Symposium on Dynamic Languages (DLS 2018)}
+      \field{title}{Numerical Computing on the Web: Benchmarking for the Future}
+      \field{year}{2018}
+      \field{pages}{88\bibrangedash 100}
+      \range{pages}{13}
+    \endentry
     \entry{HOLMBERG201327}{article}{}{}
       \name{author}{3}{}{%
         {{hash=f83689ad3d01e0ad5cbbdbf77fb59586}{%
@@ -969,6 +1041,50 @@
       \verb{url}
       \verb https://zipline.ml4trading.io/
       \endverb
+    \endentry
+    \entry{Jangda2019NotSoFast}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=70cca84889cafca1bdffaffca73a8699}{%
+           family={Jangda},
+           familyi={J\bibinitperiod},
+           given={Abhinav},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fe2752e04dda52ff37f7e77eb5e5d995}{%
+           family={Powers},
+           familyi={P\bibinitperiod},
+           given={Bobby},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6ad677bc0ccea25ae32ea445c9e85cca}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={Emery\bibnamedelima D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=a800c0ee239434b46b7b5c8321cdf562}{%
+           family={Guha},
+           familyi={G\bibinitperiod},
+           given={Arjun},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{01803e487756a5e2fb5871c4de6861d0}
+      \strng{fullhash}{28efc8bbde8e3017d3c54a1ae5c72515}
+      \strng{fullhashraw}{28efc8bbde8e3017d3c54a1ae5c72515}
+      \strng{bibnamehash}{01803e487756a5e2fb5871c4de6861d0}
+      \strng{authorbibnamehash}{01803e487756a5e2fb5871c4de6861d0}
+      \strng{authornamehash}{01803e487756a5e2fb5871c4de6861d0}
+      \strng{authorfullhash}{28efc8bbde8e3017d3c54a1ae5c72515}
+      \strng{authorfullhashraw}{28efc8bbde8e3017d3c54a1ae5c72515}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 USENIX Annual Technical Conference (USENIX ATC ’19)}
+      \field{title}{Not So Fast: Analyzing the Performance of WebAssembly vs. Native Code}
+      \field{year}{2019}
+      \field{pages}{107\bibrangedash 120}
+      \range{pages}{14}
     \endentry
     \entry{kabasinskas2010bollinger}{article}{}{}
       \name{author}{2}{}{%
@@ -1315,6 +1431,37 @@
       \field{year}{1999}
       \field{pages}{1647\bibrangedash 1691}
       \range{pages}{45}
+    \endentry
+    \entry{Talu2025WebAssemblyRuntimes}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=3552a62bc57101092411401dbe18a32b}{%
+           family={Ţălu},
+           familyi={Ţ\bibinitperiod},
+           given={Mircea},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Bon View Publishing}%
+      }
+      \strng{namehash}{3552a62bc57101092411401dbe18a32b}
+      \strng{fullhash}{3552a62bc57101092411401dbe18a32b}
+      \strng{fullhashraw}{3552a62bc57101092411401dbe18a32b}
+      \strng{bibnamehash}{3552a62bc57101092411401dbe18a32b}
+      \strng{authorbibnamehash}{3552a62bc57101092411401dbe18a32b}
+      \strng{authornamehash}{3552a62bc57101092411401dbe18a32b}
+      \strng{authorfullhash}{3552a62bc57101092411401dbe18a32b}
+      \strng{authorfullhashraw}{3552a62bc57101092411401dbe18a32b}
+      \field{sortinit}{Ţ}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archives of Advanced Engineering Science}
+      \field{number}{00}
+      \field{title}{A Comparative Study of WebAssembly Runtimes: Performance Metrics, Integration Challenges, Application Domains, and Security Features}
+      \field{volume}{00}
+      \field{year}{2025}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
     \endentry
     \entry{W3CounterGlobalStats2025}{misc}{}{}
       \name{author}{1}{}{%

@@ -295,7 +295,18 @@ Es kann ebenfalls auch nicht auf Umgebungsvariablen beispielsweise dem DOM zugeg
 \subsection{Resourcenverbrauch und Performanz von WASM}
 \label{subsec:ResourcenverbrauchundPerformanzvonWASM}
 
-Je nach Browser gibt es aber Unterschiede, wie schnell der WebAssembly-Code ausgeführt werden kann. Für Desktop-Anwendungen erzielt Firefox die beste Ausführungszeit, während Edge am langsamsten ist. 
-Dafür ist die Ausführung von reinem JavaScript im Durchschnitt in Firefox langsamer als reines WebAssembly. Während der Laufzeit weist WebAssembly aber im Vergleich zu JavaScript einen vielfach höheren Speicherverbrauch auf.
-In allen Desktop-Browsern zeigt sich, dass WebAssembly deutlich mehr Speicher verbraucht als JavaScript (3,39x auf Chrome, 4,93x auf Firefox und 3,44x auf Edge). 
+Der Vergleich der Ausführungszeiten zeigt, dass WebAssembly in den von \cite{10.1145/3487552.3487827} getesteten Desktop-Browsern insgesamt schneller ausgeführt wird als JavaScript.
+Während Firefox JavaScript im Durchschnitt etwas langsamer ausführt als Chrome (1,06× Ausführungszeit), läuft WebAssembly in Firefox deutlich schneller und benötigt nur 0,61× der Ausführungszeit von Chrome. 
+Auch im direkten Vergleich erreicht WebAssembly in Firefox kürzere Laufzeiten als reines JavaScript, aufgrund optimierter Funktionsaufrufe und effizienterer Ausführungspfade.
+Die absoluten Ausführungszeiten zeigen aber, dass WebAssembly nur in Firefox schneller ist als JavaScript (39,65 ms gegenüber 48,26 ms), während es in Chrome und Edge jeweils langsamer ausgeführt wird als JavaScript.
+Bei der Laufzeit weist WebAssembly im Vergleich zu JavaScript ebenfalls einen vielfach höheren Speicherverbrauch auf.
+In allen Desktop-Browsern benötigt WebAssembly deutlich mehr Speicher als JavaScript (3,39x in Chrome, 4,93x in Firefox und 3,44x in Edge). 
 \cite{10.1145/3487552.3487827}
+
+Auch andere Studien zeigen, wie WebAssembly im richtigen Browser schneller ausgeführt wird als JavaScript. 
+In den Tests von \cite{PoltavskyiDmytro2025} kommt WebAssembly mit einem optimiertem Speicherzugriff und parallelem Datenzugriff beim Multiplizieren einer 102 x 1024 Matrix auf einen 1,64-fachen Geschwindigkeitsvorteil gegenüber einer optimierten JavaScript-Implementierung.
+\cite{Talu2025WebAssemblyRuntimes} zeigt desweitern, dass WebAssembly besonders bei rechenintensiven Aufgaben wie der Bild- und Videobearbeitung oder mathematischen Simulationen eine deutlich bessere Leistung als JavaScript bietet.
+
+Im Vergleich zu nativen Anwenden in C schneidet WebAssembly jedoch schlechter ab.
+WebAssembly erreicht im Durchschnitt nur etwa 60-70\% der Leistung von nativem C-Code.
+\cite{Herrera2018WebAssembly} \cite{Jangda2019NotSoFast}

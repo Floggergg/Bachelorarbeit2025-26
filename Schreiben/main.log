@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  4 DEC 2025 18:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  5 DEC 2025 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1603,16 +1603,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--285
 
  []
 
-)
 
-[10 <./images/CombinedWASMCode.png>]
+
+[10 <./images/CombinedWASMCode.png>])
 
 [11]
 \openout2 = `chapters/konzept_und_design.aux'.
 
  (./chapters/konzept_und_design.tex
 Kapitel 3.
-<images/backtester_architektur.drawio.png, id=351, 563.10374pt x 373.395pt>
+<images/backtester_architektur.drawio.png, id=360, 563.10374pt x 373.395pt>
 File: images/backtester_architektur.drawio.png Graphic file (type png)
 <use images/backtester_architektur.drawio.png>
 Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input line 15.
@@ -1625,7 +1625,7 @@ Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input
 
 
  <./images/backtester_architektur.drawio.png>]
-<images/BacktesterLogik.png, id=361, 237.88875pt x 542.025pt>
+<images/BacktesterLogik.png, id=370, 237.88875pt x 542.025pt>
 File: images/BacktesterLogik.png Graphic file (type png)
 <use images/BacktesterLogik.png>
 Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
@@ -1637,7 +1637,7 @@ Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
 [14 <./images/BacktesterLogik.png>]
 
 [15]
-<images/weboberflaecheDesign.drawio.png, id=382, 553.06625pt x 553.06625pt>
+<images/weboberflaecheDesign.drawio.png, id=391, 553.06625pt x 553.06625pt>
 File: images/weboberflaecheDesign.drawio.png Graphic file (type png)
 <use images/weboberflaecheDesign.drawio.png>
 Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input line 138.
@@ -1645,7 +1645,7 @@ Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input l
 
 
 [16]
-<images/Diagramms.png, id=389, 1422.81563pt x 710.655pt>
+<images/Diagramms.png, id=398, 1422.81563pt x 710.655pt>
 File: images/Diagramms.png Graphic file (type png)
 <use images/Diagramms.png>
 Package pdftex.def Info: images/Diagramms.png  used on input line 164.
@@ -1655,7 +1655,7 @@ Package pdftex.def Info: images/Diagramms.png  used on input line 164.
 [17 <./images/weboberflaecheDesign.drawio.png>]
 
 [18 <./images/Diagramms.png>]
-<images/EmscriptenPipeline.png, id=416, 1039.885pt x 187.70125pt>
+<images/EmscriptenPipeline.png, id=425, 1039.885pt x 187.70125pt>
 File: images/EmscriptenPipeline.png Graphic file (type png)
 <use images/EmscriptenPipeline.png>
 Package pdftex.def Info: images/EmscriptenPipeline.png  used on input line 218.
@@ -1761,18 +1761,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46243 strings out of 467816
- 922749 string characters out of 5436431
- 1918187 words of memory out of 5000000
- 73765 multiletter control sequences out of 15000+600000
+ 46272 strings out of 467816
+ 924117 string characters out of 5436431
+ 1918796 words of memory out of 5000000
+ 73790 multiletter control sequences out of 15000+600000
  717112 words of font info for 95 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  130i,12n,145p,887b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (37 pages, 666164 bytes).
+Output written on main.pdf (37 pages, 669352 bytes).
 PDF statistics:
- 865 PDF objects out of 1000 (max. 8388607)
- 775 compressed objects within 8 object streams
- 167 named destinations out of 1000 (max. 500000)
+ 879 PDF objects out of 1000 (max. 8388607)
+ 789 compressed objects within 8 object streams
+ 171 named destinations out of 1000 (max. 500000)
  615 words of extra memory for PDF output out of 10000 (max. 10000000)
 
