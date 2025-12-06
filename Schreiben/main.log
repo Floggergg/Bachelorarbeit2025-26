@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  5 DEC 2025 22:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  6 DEC 2025 12:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1423,7 +1423,21 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                10.1145/3062341.3062363
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+
+Package biblatex Warning: citation '10.1145/3062341.3062363'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
 Package biblatex Info: Reference section=0 on input line 19.
 Package biblatex Info: Reference segment=0 on input line 19.
 <<sRGB.icc>>
@@ -1604,6 +1618,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--285
  []
 
 
+LaTeX Warning: Citation '10.1145/3062341.3062363' on page 10 undefined on input line 292.
+
+
 
 [10 <./images/CombinedWASMCode.png>])
 
@@ -1612,7 +1629,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--285
 
  (./chapters/konzept_und_design.tex
 Kapitel 3.
-<images/backtester_architektur.drawio.png, id=360, 563.10374pt x 373.395pt>
+<images/backtester_architektur.drawio.png, id=358, 563.10374pt x 373.395pt>
 File: images/backtester_architektur.drawio.png Graphic file (type png)
 <use images/backtester_architektur.drawio.png>
 Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input line 15.
@@ -1625,7 +1642,7 @@ Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input
 
 
  <./images/backtester_architektur.drawio.png>]
-<images/BacktesterLogik.png, id=370, 237.88875pt x 542.025pt>
+<images/BacktesterLogik.png, id=368, 237.88875pt x 542.025pt>
 File: images/BacktesterLogik.png Graphic file (type png)
 <use images/BacktesterLogik.png>
 Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
@@ -1635,41 +1652,52 @@ Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
 [13]
 
 [14 <./images/BacktesterLogik.png>]
+<images/CombinedCJSFunktionsschnittstellen.png, id=379, 509.905pt x 92.345pt>
+File: images/CombinedCJSFunktionsschnittstellen.png Graphic file (type png)
+<use images/CombinedCJSFunktionsschnittstellen.png>
+Package pdftex.def Info: images/CombinedCJSFunktionsschnittstellen.png  used on input line 79.
+(pdftex.def)             Requested size: 394.63846pt x 71.47362pt.
 
-[15]
-<images/weboberflaecheDesign.drawio.png, id=391, 553.06625pt x 553.06625pt>
+Underfull \hbox (badness 10000) in paragraph at lines 84--89
+
+ []
+
+
+
+[15 <./images/CombinedCJSFunktionsschnittstellen.png>]
+
+[16]
+<images/weboberflaecheDesign.drawio.png, id=403, 553.06625pt x 553.06625pt>
 File: images/weboberflaecheDesign.drawio.png Graphic file (type png)
 <use images/weboberflaecheDesign.drawio.png>
-Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input line 138.
+Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input line 161.
 (pdftex.def)             Requested size: 270.01411pt x 270.00902pt.
 
 
-[16]
-<images/Diagramms.png, id=398, 1422.81563pt x 710.655pt>
+[17 <./images/weboberflaecheDesign.drawio.png>]
+<images/Diagramms.png, id=413, 1422.81563pt x 710.655pt>
 File: images/Diagramms.png Graphic file (type png)
 <use images/Diagramms.png>
-Package pdftex.def Info: images/Diagramms.png  used on input line 164.
+Package pdftex.def Info: images/Diagramms.png  used on input line 187.
 (pdftex.def)             Requested size: 415.41025pt x 207.4835pt.
 
 
-[17 <./images/weboberflaecheDesign.drawio.png>]
-
 [18 <./images/Diagramms.png>]
-<images/EmscriptenPipeline.png, id=425, 1039.885pt x 187.70125pt>
+<images/EmscriptenPipeline.png, id=432, 1039.885pt x 187.70125pt>
 File: images/EmscriptenPipeline.png Graphic file (type png)
 <use images/EmscriptenPipeline.png>
-Package pdftex.def Info: images/EmscriptenPipeline.png  used on input line 218.
+Package pdftex.def Info: images/EmscriptenPipeline.png  used on input line 243.
 (pdftex.def)             Requested size: 415.94662pt x 75.07916pt.
 
-Overfull \hbox (0.53638pt too wide) in paragraph at lines 218--219
+Overfull \hbox (0.53638pt too wide) in paragraph at lines 243--244
  [][] 
  []
 
 
 
-[19 <./images/EmscriptenPipeline.png>])
+[19])
 
-[20]
+[20 <./images/EmscriptenPipeline.png>]
 \openout2 = `chapters/implementierung_des_backtesters.aux'.
 
  (./chapters/implementierung_des_backtesters.tex
@@ -1741,6 +1769,8 @@ Underfull \hbox (badness 2205) in paragraph at lines 68--68
 [27]
 
 [28]
+
+[29]
 \openout2 = `back/messbox.aux'.
 
  (./back/messbox.tex
@@ -1748,7 +1778,7 @@ LaTeX Font Info:    External font `cmex7' loaded for size
 (Font)              <5> on input line 10.
 )
 
-[29
+[30
 
 
 ] (./main.aux (./front/vorwort.aux) (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
@@ -1761,18 +1791,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46272 strings out of 467816
- 924117 string characters out of 5436431
- 1918796 words of memory out of 5000000
- 73790 multiletter control sequences out of 15000+600000
+ 46298 strings out of 467816
+ 925090 string characters out of 5436431
+ 1919065 words of memory out of 5000000
+ 73813 multiletter control sequences out of 15000+600000
  717112 words of font info for 95 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 130i,12n,145p,887b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 130i,12n,145p,888b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (37 pages, 669352 bytes).
+Output written on main.pdf (38 pages, 681751 bytes).
 PDF statistics:
- 879 PDF objects out of 1000 (max. 8388607)
- 789 compressed objects within 8 object streams
- 171 named destinations out of 1000 (max. 500000)
- 615 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 895 PDF objects out of 1000 (max. 8388607)
+ 801 compressed objects within 9 object streams
+ 174 named destinations out of 1000 (max. 500000)
+ 620 words of extra memory for PDF output out of 10000 (max. 10000000)
 

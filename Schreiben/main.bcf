@@ -2459,21 +2459,25 @@
     <bcf:citekey order="49" intorder="1">Herrera2018WebAssembly</bcf:citekey>
     <bcf:citekey order="50" intorder="1">Jangda2019NotSoFast</bcf:citekey>
     <bcf:citekey order="51" intorder="1">SaurabhZunkeJSONXML</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">kabasinskas2010bollinger</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">https://doi.org/10.1111/j.1540-6261.1992.tb04681.x</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">10.1145/1150402.1150479</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">StatCounterBrowserShare2025</bcf:citekey>
-    <bcf:citekey order="55" intorder="2">W3CounterGlobalStats2025</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">Binance</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">EmscriptenWebsite</bcf:citekey>
-    <bcf:citekey order="57" intorder="2">EmscriptenGitHub</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">TeaVMWebsite</bcf:citekey>
-    <bcf:citekey order="58" intorder="2">TeaVMGitHub</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">RustToWASMWebsite</bcf:citekey>
-    <bcf:citekey order="60" intorder="1">wabtGitHub</bcf:citekey>
-    <bcf:citekey order="61" intorder="1">EmscriptenToolchainWebsite</bcf:citekey>
-    <bcf:citekey order="62" intorder="1">wabtGitHub</bcf:citekey>
-    <bcf:citekey order="63" intorder="1">Binance</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">webassemblyorg</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">10.1145/3140587.3062363</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">Hughes1990WhyFP</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">10.1145/3140587.3062363</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">kabasinskas2010bollinger</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">https://doi.org/10.1111/j.1540-6261.1992.tb04681.x</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">10.1145/1150402.1150479</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">StatCounterBrowserShare2025</bcf:citekey>
+    <bcf:citekey order="59" intorder="2">W3CounterGlobalStats2025</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">Binance</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">EmscriptenWebsite</bcf:citekey>
+    <bcf:citekey order="61" intorder="2">EmscriptenGitHub</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">TeaVMWebsite</bcf:citekey>
+    <bcf:citekey order="62" intorder="2">TeaVMGitHub</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">RustToWASMWebsite</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">wabtGitHub</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">EmscriptenToolchainWebsite</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">wabtGitHub</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">Binance</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

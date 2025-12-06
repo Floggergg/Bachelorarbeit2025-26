@@ -74,9 +74,32 @@ Die Modularisierung ermöglicht es, eigene Strategien zu implementieren und dies
 Die Strategiemodule müssen dabei nur einen definierten Namen und eine vordefinierte Signatur besitzen, um korrekt aufgerufen werden zu können.
 Der Rückgabewert dieser Funktion bestimmt dabei, ob ein Kauf-, Verkaufs- oder Haltesignal ausgegeben wird.
 
-Das modulare Konzept erlaubt die Verwendung von Strategien in verschiedenen Programmiersprachen.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{CombinedCJSFunktionsschnittstellen.png}
+    \caption{Funktionsschnittstellen der Strategien in C und JavaScript}
+    \label{fig:FunktionsschnittstellenderStrategieninCundJavaScript}
+\end{figure}
+
+In der Abbildung \ref{fig:FunktionsschnittstellenderStrategieninCundJavaScript} sind die Funktionsschnittstellen der Strategien in C und JavaScript dargestellt.
+Beide Schnittstellen besitzen denselben Funktionsnamen und die logisch gleichen Parameter.
+Die C-Funktion erhält im Vergleich zur JavaScript Funktion zusätzlich die Anzahl der übergebenen historischen Kurswerte als Parameter, da in C keine dynamischen Arrays unterstützt werden.
+Beide Funktionen geben einen ganzzahligen Wert zurück, der das Handelssignal repräsentiert.
+\newline
+
+Das modulare Konzept mit Funktionen erlaubt die Verwendung von Strategien in verschiedenen Programmiersprachen.
 Der in dieser Arbeit entwickelte Backtester unterstützt Strategien in den Programmiersprachen JavaScript und WebAssembly (WASM), um den Vergleich der Ausführungsgeschwindigkeiten zu ermöglichen.
 Die Trennung zwischen dem Backtester und den Strategien ermöglicht es das System zukünftig einfach, um weitere Sprachen und Schnittstellen zu erweitern.
+
+Um möglichst viele Programmiersprachen unterstützten zu können, wird der Aufruf der Strategien über eine einfache Funktionsschnittstelle realisiert.
+Da WebAssembly nur Funktionsaufrufe erlaubt, eignet sich dieser Ansatz besonders gut, um eine breite Kompatibilität zu ermöglichen.
+In WebAssembly können keine Klassen nach außen definiert werden, weshalb die Funktionsschnittstelle die einzige Möglichkeit darstellt, mit dem Backtester zu kommunizieren.
+\cite{webassemblyorg} \cite{10.1145/3140587.3062363}
+
+Desweitern bietet die Funktionsschnittstelle den Vorteil, dass keine komplexen Objekte oder Datenstrukturen wie Klassen erzeugt werden müssen.
+Der Aufruf über eine Funktion ist im Vergleich zu objektorientierten Ansätzen in der Regel effizienter, vor allem bei Sprachenübergreifenden Schnittstellen.
+Dies vereinfacht die Implementierung der Strategien in verschiedenen Sprachen, verringert die Ausführungszeit und reduziert den Aufwand für die Integration in den Backtester.
+\cite{Hughes1990WhyFP} \cite{10.1145/3140587.3062363}
 
 \section{Aufbau der Teststrategien}
 \label{sec:AufbauderTeststrategien}
@@ -178,8 +201,10 @@ Durch die Wahl der Schrittweite kann die Detailliertheit der Darstellung angepas
 
 Zur Evaluierung der Ausführungsgeschwindigkeit der implementierten Strategien in den verschiedenen Programmiersprachen wird bei jedem Backtest die Laufzeit erfasst. 
 Da der Fokus auf dem Vergleich der Ausführungszeiten zwischen den Programmiersprachen liegt, wird die Zeitmessung bei mehreren identen Strategielogiken in verschiedenen Sprachen durchgeführt. 
-Als Ausführungsumgebung wird der Webbrowser Google Chrome, da dieser mit etwa 70 \% Marktanteil, der am häufigsten genutzte Browser ist und somit eine realistische Einschätzung der Performance ermöglicht.
+Als Ausführungsumgebungen werden die Webbrowser Google Chrome und FireFox verwendet.
+Google Chrome ist mit etwa 70 \% Marktanteil, der am häufigsten genutzte Browser und bietet somit eine realistische Einschätzung der Performance.
 \cite{StatCounterBrowserShare2025, W3CounterGlobalStats2025}
+FireFox wird als zweiter Testbrowser eingesetzt, da dieser die schnelleste Ausführungsgeschwindigkeit für WebAssembly Module bietet und somit einen interessanten Vergleichspunkt darstellt, wie in Kapital \ref{subsec:ResourcenverbrauchundPerformanzvonWASM} beschrieben.
 
 Die Backtests werden mit unterschiedlich großen Datensätzen durchgeführt, um die Performance der Strategien bei variierenden Datenmengen zu bewerten. 
 Ebenfalls werden alle Tests auf derselben Hardware ausgeführt, um eine Vergleichbarkeit der Ergebnisse zu gewährleisten.

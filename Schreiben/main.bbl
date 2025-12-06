@@ -762,7 +762,7 @@
       \field{pages}{92\bibrangedash 107}
       \range{pages}{16}
     \endentry
-    \entry{10.1145/3062341.3062363}{inproceedings}{}{}
+    \entry{10.1145/3140587.3062363}{article}{}{}
       \name{author}{9}{}{%
         {{hash=d285745edf3df63d50a2aaae6417e9de}{%
            family={Haas},
@@ -810,6 +810,9 @@
            given={JF},
            giveni={J\bibinitperiod}}}%
       }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
       \list{publisher}{1}{%
         {Association for Computing Machinery}%
       }
@@ -825,8 +828,10 @@
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 38th ACM SIGPLAN Conference on Programming Language Design and Implementation}
+      \field{journaltitle}{SIGPLAN Not.}
+      \field{number}{6}
       \field{title}{Bringing the web up to speed with WebAssembly}
+      \field{volume}{52}
       \field{year}{2017}
       \field{pages}{185\bibrangedash 200}
       \range{pages}{16}
@@ -974,6 +979,46 @@
       \field{year}{2020}
       \field{pages}{16\bibrangedash 32}
       \range{pages}{17}
+    \endentry
+    \entry{Hughes1990WhyFP}{incollection}{}{}
+      \name{author}{1}{}{%
+        {{hash=05db43db1a50c29c0eca01fd35ec8758}{%
+           family={Hughes},
+           familyi={H\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=10fe3045b2233d406d7736fd950b9958}{%
+           family={Turner},
+           familyi={T\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{fullhash}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{fullhashraw}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{bibnamehash}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{authorbibnamehash}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{authornamehash}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{authorfullhash}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{authorfullhashraw}{05db43db1a50c29c0eca01fd35ec8758}
+      \strng{editorbibnamehash}{10fe3045b2233d406d7736fd950b9958}
+      \strng{editornamehash}{10fe3045b2233d406d7736fd950b9958}
+      \strng{editorfullhash}{10fe3045b2233d406d7736fd950b9958}
+      \strng{editorfullhashraw}{10fe3045b2233d406d7736fd950b9958}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Research Topics in Functional Programming}
+      \field{title}{Why Functional Programming Matters}
+      \field{year}{1990}
+      \field{pages}{17\bibrangedash 42}
+      \range{pages}{26}
     \endentry
     \entry{ziplineTraderWebsite}{misc}{}{}
       \name{author}{1}{}{%
@@ -2028,6 +2073,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{10.1145/3062341.3062363}
 \endrefsection
 \endinput
 
