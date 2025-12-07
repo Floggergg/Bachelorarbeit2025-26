@@ -741,6 +741,10 @@ OUTPUT chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux
 INPUT ./chapters/performancetests_der_unterschiedlichen_programmiersprachen.tex
 INPUT ./chapters/performancetests_der_unterschiedlichen_programmiersprachen.tex
 INPUT chapters/performancetests_der_unterschiedlichen_programmiersprachen.tex
+INPUT ./images/TestDataJson.png
+INPUT ./images/TestDataJson.png
+INPUT ./images/TestDataJson.png
+INPUT ./images/TestDataJson.png
 INPUT ./chapters/zusammenfassung_und_schlussbemerkungen.tex
 INPUT ./chapters/zusammenfassung_und_schlussbemerkungen.tex
 OUTPUT chapters/zusammenfassung_und_schlussbemerkungen.aux

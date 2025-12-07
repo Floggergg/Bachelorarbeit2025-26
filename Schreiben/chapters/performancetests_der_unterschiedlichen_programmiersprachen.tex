@@ -12,6 +12,19 @@ Deswegen wird in diesem Abschnitt beschrieben, welche Voraussetzungen für die T
 \subsection{Die Testumgebung}
 \label{subsec:DieTestumgebung}
 
+Alle Performancetests werden auf einem System mit den folgender Hardware und Software durchgeführt:
+\begin{itemize}
+    \item CPU: Intel Core i7-11800H @2.30GHz
+    \item RAM: 16 GB DDR4
+    \item GPU: NVIDIA GeForce RTX 3070
+    \item Betriebssystem: Windows 11 Pro 64-Bit
+    \item Chrome Version: 143.0.7499.41
+    \item FireFox Version: 145.0
+\end{itemize}
+Während der Durchführung der Tests werden keine weiteren Programme ausgeführt, um Verzerrungen der Ergebnisse zu vermeiden.
+Als Testumgebungen dienen die Browser Google Chrome und Mozilla Firefox, die jeweils die JavaScript-Engines V8 (Chrome) und SpiderMonkey (Firefox) verwenden.
+Der Backtester wird in den beiden Browsern ausgeführt, um einen Vergleich der Performance von WebAssembly (WASM) und JavaScript in der jeweiligen Engine zu ermöglichen.
+
 \subsection{Die Testdaten}
 \label{subsec:DieTestdaten}
 
@@ -30,6 +43,16 @@ Die Kursdaten umfassen etwa 500.000 Datenpunkte pro Jahr und liegen in einem Min
 Somit stehen für Bitcoin rund 1,5 Millionen, für Cardano etwa 1 Million und für Ethereum etwa 500.000 Kurswerte zur Verfügung.
 Durch die Kombination der Beobachtungszeiträume und Kryptowährungen wird ein breites Spektrum an unterschiedlichen Kursbewegungen abgebildet, 
 sodass verschiedene Marktphasen und stark variierende Datenpunktumfänge in den Tests berücksichtig werden.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{TestDataJson.png}
+    \caption{Beispiel eines Kursdatensatzes im JSON-Format}
+    \label{fig:BeispieleinesKursdatensatzesimJSON-Format}
+\end{figure}
+
+Die Kursdaten werden im JSON-Format gespeichert, wie in Abbildung \ref{fig:BeispieleinesKursdatensatzesimJSON-Format} dargestellt.
+Die Datenpunkte enthalten einen Zeitstempel und einen Kurswert. Die Daten sind im Minutentakt erfasst, was eine detaillierte Analyse der Kursbewegungen ermöglicht.
 
 \section{Die Testausführung}
 \label{sec:DieTestausführung}
