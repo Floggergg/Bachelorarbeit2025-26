@@ -762,7 +762,7 @@
       \field{pages}{92\bibrangedash 107}
       \range{pages}{16}
     \endentry
-    \entry{10.1145/3140587.3062363}{article}{}{}
+    \entry{WebUpSpeed}{article}{}{}
       \name{author}{9}{}{%
         {{hash=d285745edf3df63d50a2aaae6417e9de}{%
            family={Haas},
@@ -1385,6 +1385,15 @@
       \verb https://www.backtrader.com/
       \endverb
     \endentry
+    \entry{SpiderMonkey2025}{misc}{}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://spidermonkey.dev}
+      \field{note}{Accessed: 2025-12-09}
+      \field{title}{SpiderMonkey: Mozillas WebAssembly Engine}
+      \field{year}{2025}
+    \endentry
     \entry{StatCounterBrowserShare2025}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=811283e931fe09468140104ccae1b6ba}{%
@@ -1507,6 +1516,15 @@
       \field{year}{2025}
       \field{pages}{1\bibrangedash 13}
       \range{pages}{13}
+    \endentry
+    \entry{V8_2025}{misc}{}{}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{https://v8.dev}
+      \field{note}{Accessed: 2025-12-09}
+      \field{title}{V8: Googles WebAssembly Engine}
+      \field{year}{2025}
     \endentry
     \entry{W3CounterGlobalStats2025}{misc}{}{}
       \name{author}{1}{}{%
@@ -2073,7 +2091,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{10.1145/3062341.3062363}
 \endrefsection
 \endinput
 

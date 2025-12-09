@@ -94,12 +94,12 @@ Die Trennung zwischen dem Backtester und den Strategien ermöglicht es das Syste
 Um möglichst viele Programmiersprachen unterstützten zu können, wird der Aufruf der Strategien über eine einfache Funktionsschnittstelle realisiert.
 Da WebAssembly nur Funktionsaufrufe erlaubt, eignet sich dieser Ansatz besonders gut, um eine breite Kompatibilität zu ermöglichen.
 In WebAssembly können keine Klassen nach außen definiert werden, weshalb die Funktionsschnittstelle die einzige Möglichkeit darstellt, mit dem Backtester zu kommunizieren.
-\cite{webassemblyorg} \cite{10.1145/3140587.3062363}
+\cite{webassemblyorg} \cite{WebUpSpeed}
 
 Desweitern bietet die Funktionsschnittstelle den Vorteil, dass keine komplexen Objekte oder Datenstrukturen wie Klassen erzeugt werden müssen.
 Der Aufruf über eine Funktion ist im Vergleich zu objektorientierten Ansätzen in der Regel effizienter, vor allem bei Sprachenübergreifenden Schnittstellen.
 Dies vereinfacht die Implementierung der Strategien in verschiedenen Sprachen, verringert die Ausführungszeit und reduziert den Aufwand für die Integration in den Backtester.
-\cite{Hughes1990WhyFP} \cite{10.1145/3140587.3062363}
+\cite{Hughes1990WhyFP} \cite{WebUpSpeed}
 
 \section{Aufbau der Teststrategien}
 \label{sec:AufbauderTeststrategien}

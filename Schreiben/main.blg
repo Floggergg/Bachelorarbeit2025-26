@@ -1,17 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'main.blg'
-[88] biber-MSWIN64:342> INFO - === 
-[124] Biber.pm:421> INFO - Reading 'main.bcf'
-[222] Biber.pm:1002> INFO - Found 61 citekeys in bib section 0
-[233] Biber.pm:4487> INFO - Processing section 0
-[244] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
-[282] bibtex.pm:1713> INFO - LaTeX decoding ...
-[322] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[539] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[539] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[540] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[540] Biber.pm:4313> INFO - No sort tailoring available for locale 'de-DE'
-[583] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[606] bbl.pm:779> INFO - Output to main.bbl
-[606] Biber.pm:132> WARN - I didn't find a database entry for '10.1145/3062341.3062363' (section 0)
-[606] Biber.pm:134> INFO - WARNINGS: 1
+[1] Config.pm:331> INFO - Logfile is 'main.blg'
+[95] biber-MSWIN64:342> INFO - === 
+[129] Biber.pm:421> INFO - Reading 'main.bcf'
+[226] Biber.pm:1002> INFO - Found 62 citekeys in bib section 0
+[238] Biber.pm:4487> INFO - Processing section 0
+[248] Biber.pm:4678> INFO - Looking for bibtex file 'references.bib' for section 0
+[290] bibtex.pm:1713> INFO - LaTeX decoding ...
+[333] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[559] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[559] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[559] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[559] Biber.pm:4313> INFO - No sort tailoring available for locale 'de-DE'
+[604] bbl.pm:676> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[629] bbl.pm:779> INFO - Output to main.bbl

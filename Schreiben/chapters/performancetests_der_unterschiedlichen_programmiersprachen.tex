@@ -22,7 +22,7 @@ Alle Performancetests werden auf einem System mit den folgender Hardware und Sof
     \item FireFox Version: 145.0
 \end{itemize}
 Während der Durchführung der Tests werden keine weiteren Programme ausgeführt, um Verzerrungen der Ergebnisse zu vermeiden.
-Als Testumgebungen dienen die Browser Google Chrome und Mozilla Firefox, die jeweils die JavaScript-Engines V8 (Chrome) und SpiderMonkey (Firefox) verwenden.
+Als Testumgebungen dienen die Browser Google Chrome und Mozilla Firefox, die jeweils die JavaScript-Engines V8 (Chrome) \cite{V8_2025} und SpiderMonkey (Firefox) \cite{SpiderMonkey2025} verwenden.
 Der Backtester wird in den beiden Browsern ausgeführt, um einen Vergleich der Performance von WebAssembly (WASM) und JavaScript in der jeweiligen Engine zu ermöglichen.
 
 \subsection{Die Testdaten}
@@ -56,6 +56,18 @@ Die Datenpunkte enthalten einen Zeitstempel und einen Kurswert. Die Daten sind i
 
 \section{Die Testausführung}
 \label{sec:DieTestausführung}
+
+Damit die Performance der beiden Programmiersprachen objektiv bewertet werden kann, werden die Ausführungszeiten der einzelnen Strategien systematisch gemessen. 
+Es wird jede der drei Handelsstrategien sowohl in WebAssembly als auch in JavaScript implementiert und anschließend innerhalb des entwickelten Backtesters ausgeführt.
+Dafür wird das System jeweils einmal in Chrome und einmal in Firefox gestartet. 
+Der Backtester garantiert dabei, dass alle Strategien unter gleichen Bedingungen getestet werden können.
+
+Um die Aussagekraft der Ergebnisse weiter zu erhöhen, werden alle Strategien auf drei unterschiedliche Datensets angewandt.
+Durch die Kombination aus zwei Browsern, drei Strategien, zwei Implementierungssprachen und drei Datensets ergeben sich insgesamt 24 Testfälle.
+
+Für statistisch belastbare und reproduzierbare Ergebnisse wird jede Kombination aus Browser, Strategie, Implementierungssprache und Datenset 20-mal ausgeführt. 
+Bei jedem Durchlauf wird die benötigte Zeit erfasst. Aus den Messdaten wird der Durchschnitt, der Median und die Standardabweichung pro Testfall berechnet. 
+Diese Kennzahlen ermöglichen es, sowohl die Performance als auch die Stabilität und Konsistenz der jeweiligen Implementierung zu bewerten.
 
 \section{Die Testergebnisse}
 \label{sec:DieTestergebnisse}
