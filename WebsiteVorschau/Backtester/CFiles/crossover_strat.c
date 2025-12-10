@@ -1,6 +1,6 @@
 __attribute__((used)) int strategy(double* prices, int prices_length, int intervalsBack) {
     const int shortPeriod = 8;
-    const int longPeriod = 23;
+    const int longPeriod = 24;
 
     if (prices_length < longPeriod + 1) {
         return 0;

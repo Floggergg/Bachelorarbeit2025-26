@@ -11,7 +11,7 @@ function strategy(prices, intervalsBack) {
     }
 
     const shortPeriod = 8;
-    const longPeriod = 23;
+    const longPeriod = 24;
 
     if (prices.length < longPeriod + 1) {
         return 0;

@@ -339,29 +339,142 @@ document.getElementById('strategyFile').addEventListener('change', async (e) => 
 document.getElementById('backtestButton').addEventListener('click', () => {
     let textMessage = document.getElementById('textMessage');
     textMessage.classList.remove("hidden");
+
     const startingMoney = document.getElementById('startingMoney').value;
-    if (uploadedFunctionAvailable && uploadedDataAvailable && startingMoney !== '') {
-        textMessage.textContent = '';
-        const waitingMessage = 'Calculating...';
-        document.getElementById('resEndMoney').textContent = waitingMessage;
-        document.getElementById('resAbsProfit').textContent = waitingMessage;
-        document.getElementById('resPercentProfit').textContent = waitingMessage;
-        document.getElementById('sharpeRatio').textContent = waitingMessage;
-        document.getElementById('executionSpeed').textContent = waitingMessage;
 
-        const interval = document.getElementById('interval').value;
-        const intervalsBack = document.getElementById('intervalsBack').value;
-
-        document.getElementById('resStartingMoney').textContent = startingMoney;
-        document.getElementById('resInterval').textContent = interval;
-
-        setTimeout(() => {
-            executeCalculations(startingMoney, interval, intervalsBack);
-        }, 0);
-    } else {
+    if (!uploadedFunctionAvailable || !uploadedDataAvailable || startingMoney === '') {
         textMessage.textContent = 'Strategy or Data or Money missing';
+        return;
     }
+
+    textMessage.textContent = '';
+    const waitingMessage = 'Calculating...';
+    document.getElementById('resEndMoney').textContent = waitingMessage;
+    document.getElementById('resAbsProfit').textContent = waitingMessage;
+    document.getElementById('resPercentProfit').textContent = waitingMessage;
+    document.getElementById('sharpeRatio').textContent = waitingMessage;
+    document.getElementById('executionSpeed').textContent = waitingMessage;
+
+    const interval = document.getElementById('interval').value;
+    const intervalsBack = document.getElementById('intervalsBack').value;
+
+    const times = [];
+
+    for (let i = 0; i < 25; i++) {
+        let performance = executeCalculations(startingMoney, interval, intervalsBack, true);
+
+        times.push({
+            run: i + 1,
+            ms: +performance
+        });
+    }
+
+    console.log("=== Benchmark Results (25 runs) ===");
+    console.table(times);
+
+    setTimeout(() => {
+        executeCalculations(startingMoney, interval, intervalsBack);
+    }, 0);
 });
+
+function executeCalculations(startingMoney, interval, intervalsBack, silent = false) {
+    const portfolioValues  = [];
+    let rowNumber = 1;
+    const tbody = document.querySelector('#actionTable tbody');
+    tbody.innerHTML = '';
+    interval = parseInt(interval);
+    let money = parseFloat(startingMoney);
+    let stock = 0;
+    let holding = false;
+    let maxPortfolioValue = 0;
+    actions = [];
+    let array = null;
+    if (uploadedFunctionAvailable === "wasm") {
+        array = new Float64Array(memory.buffer, 0, intervalsBack)
+    }
+
+    const t0 = performance.now();
+
+    for (let i = 0; i < jsonData.length; i += interval) {
+        const startIdx = Math.max(0, i - intervalsBack * interval);
+        const sliced = jsonData.slice(startIdx, i);
+
+        const prices = [];
+        for (let idx = 0; idx < sliced.length; idx += interval) {
+            prices.push(parseFloat(sliced[idx].avgPrice));
+        }
+
+        let resCode = 0;
+        if (uploadedFunctionAvailable === "js") {
+            resCode = strategyJS(prices, intervalsBack);
+        } else if (uploadedFunctionAvailable === "wasm" && array) {
+            array.set(prices);
+            if (strategy) {
+                resCode = strategy(array.byteOffset, prices.length, intervalsBack);
+            }
+        } else {
+            return;
+        }
+
+        let action = null;
+        if (resCode === 1) {
+            action = {signal: 'buy'};
+        } else if (resCode === -1) {
+            action = {signal: 'sell'};
+        }
+
+        const { time, avgPrice } = jsonData[i];
+        const date = new Date(time);
+        const price = parseFloat(avgPrice);
+
+        if (action) {
+            if (action.signal === 'buy' && money > 0) {
+                if (!silent) {
+                    rowNumber = appendTradeRow(time, action, rowNumber, date, price, tbody);
+                }
+
+                stock = money / price;
+                money = 0;
+                holding = true;
+            } else if (action.signal === 'sell' && stock > 0) {
+                if (!silent) {
+                    rowNumber = appendTradeRow(time, action, rowNumber, date, price, tbody);
+                }
+
+                money = stock * price;
+                stock = 0;
+                holding = false;
+            }
+        }
+
+        const value = holding ? stock * price : money;
+        const lastVal = portfolioValues[portfolioValues.length - 1]?.value;
+        if (lastVal !== value) {
+            portfolioValues.push({ time, value });
+        }
+        if (value > maxPortfolioValue) {
+            maxPortfolioValue = value;
+        }
+    }
+
+    const t1 = performance.now();
+    if (!silent) {
+        const {minTime, maxTime} = drawChart(jsonData, actions);
+        drawPortfolioChart(portfolioValues, minTime, maxTime, maxPortfolioValue, actions);
+
+        const lastPortfolio = portfolioValues[portfolioValues.length - 1];
+        const endPortValue = lastPortfolio ? lastPortfolio.value : parseFloat(startingMoney);
+        const absProfit = endPortValue - parseFloat(startingMoney);
+
+        document.getElementById('resEndMoney').textContent = endPortValue.toFixed(2);
+        document.getElementById('resAbsProfit').textContent = absProfit.toFixed(2).toString();
+        document.getElementById('resPercentProfit').textContent = ((absProfit / startingMoney) * 100).toFixed(2) + '%';
+        document.getElementById('sharpeRatio').textContent = calculateSharpeRatio(portfolioValues).toFixed(2).toString();
+        document.getElementById('executionSpeed').textContent = (t1 - t0).toFixed(2) + " ms";
+    }
+
+    return (t1 - t0).toFixed(2);
+}
 
 function calculateSharpeRatio(portfolioValues, riskFreeRate = 0.02) {
     if (portfolioValues.length < 2) return 0;
@@ -420,92 +533,4 @@ function appendTradeRow(time, action, rowNumber, date, price, tbody) {
     tr.appendChild(tdPrice);
     tbody.appendChild(tr);
     return rowNumber;
-}
-
-function executeCalculations(startingMoney, interval, intervalsBack) {
-    const portfolioValues  = [];
-    let rowNumber = 1;
-    const tbody = document.querySelector('#actionTable tbody');
-    tbody.innerHTML = '';
-    interval = parseInt(interval);
-    let money = parseFloat(startingMoney);
-    let stock = 0;
-    let holding = false;
-    let maxPortfolioValue = 0;
-    actions = [];
-    let array = null;
-    if (uploadedFunctionAvailable === "wasm") {
-        array = new Float64Array(memory.buffer, 0, intervalsBack)
-    }
-
-    const t0 = performance.now();
-
-    for (let i = 0; i < jsonData.length; i += interval) {
-        const startIdx = Math.max(0, i - intervalsBack * interval);
-        const windowData = jsonData.slice(startIdx, i).filter((_, idx) => idx % interval === 0);
-        const prices = windowData.map(d => parseFloat(d.avgPrice));
-        let resCode = 0;
-
-        if (uploadedFunctionAvailable === "js") {
-            resCode = strategyJS(prices, intervalsBack);
-        } else if (uploadedFunctionAvailable === "wasm" && array) {
-            array.set(prices);
-            if (strategy) {
-                resCode = strategy(array.byteOffset, prices.length, intervalsBack);
-            }
-        } else {
-            return;
-        }
-
-        let action = null;
-        if (resCode === 1) {
-            action = {signal: 'buy'};
-        } else if (resCode === -1) {
-            action = {signal: 'sell'};
-        } else {
-            action = null;
-        }
-
-        const { time, avgPrice } = jsonData[i];
-        const date = new Date(time);
-        const price = parseFloat(avgPrice);
-
-        if (action && (action.signal === 'sell' || action.signal === 'buy')) {
-            if (action.signal === 'buy' && money > 0) {
-                rowNumber = appendTradeRow(time, action, rowNumber, date, price, tbody);
-
-                stock = money / price;
-                money = 0;
-                holding = true;
-            } else if (action.signal === 'sell' && stock > 0) {
-                rowNumber = appendTradeRow(time, action, rowNumber, date, price, tbody);
-
-                money = stock * price;
-                stock = 0;
-                holding = false;
-            }
-        }
-
-        const value = holding ? stock * price : money;
-        const lastVal = portfolioValues[portfolioValues.length - 1]?.value;
-        if (lastVal !== value) {
-            portfolioValues.push({ time, value });
-        }
-        if (value > maxPortfolioValue) {
-            maxPortfolioValue = value;
-        }
-    }
-
-    const { minTime, maxTime } = drawChart(jsonData, actions);
-    drawPortfolioChart(portfolioValues, minTime, maxTime, maxPortfolioValue, actions);
-
-    const t1 = performance.now();
-    const lastPortfolio = portfolioValues[portfolioValues.length - 1];
-    const endPortValue = lastPortfolio ? lastPortfolio.value : parseFloat(startingMoney);
-    const absProfit = endPortValue - parseFloat(startingMoney);
-    document.getElementById('resEndMoney').textContent = endPortValue.toFixed(2);
-    document.getElementById('resAbsProfit').textContent = absProfit.toFixed(2).toString();
-    document.getElementById('resPercentProfit').textContent = ((absProfit / startingMoney) * 100).toFixed(2) + '%';
-    document.getElementById('sharpeRatio').textContent = calculateSharpeRatio(portfolioValues).toFixed(2).toString();
-    document.getElementById('executionSpeed').textContent = (t1 - t0).toFixed(2) + " ms";
 }
