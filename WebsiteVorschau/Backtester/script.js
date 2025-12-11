@@ -336,19 +336,19 @@ document.getElementById('strategyFile').addEventListener('change', async (e) => 
     }
 });
 
-document.getElementById('backtestButton').addEventListener('click', () => {
-    let textMessage = document.getElementById('textMessage');
+function prepareBacktest(waitingMessage) {
+    const textMessage = document.getElementById('textMessage');
     textMessage.classList.remove("hidden");
 
     const startingMoney = document.getElementById('startingMoney').value;
 
     if (!uploadedFunctionAvailable || !uploadedDataAvailable || startingMoney === '') {
         textMessage.textContent = 'Strategy or Data or Money missing';
-        return;
+        return { valid: false };
     }
 
     textMessage.textContent = '';
-    const waitingMessage = 'Calculating...';
+
     document.getElementById('resEndMoney').textContent = waitingMessage;
     document.getElementById('resAbsProfit').textContent = waitingMessage;
     document.getElementById('resPercentProfit').textContent = waitingMessage;
@@ -358,22 +358,39 @@ document.getElementById('backtestButton').addEventListener('click', () => {
     const interval = document.getElementById('interval').value;
     const intervalsBack = document.getElementById('intervalsBack').value;
 
+    return {
+        valid: true,
+        startingMoney,
+        interval,
+        intervalsBack
+    };
+}
+
+document.getElementById('backtest25TimesButton').addEventListener('click', () => {
+    const prep = prepareBacktest('Logging Results...');
+    if (!prep.valid) {
+        return;
+    }
+
     const times = [];
 
     for (let i = 0; i < 25; i++) {
-        let performance = executeCalculations(startingMoney, interval, intervalsBack, true);
-
-        times.push({
-            run: i + 1,
-            ms: +performance
-        });
+        const performance = executeCalculations(prep.startingMoney, prep.interval, prep.intervalsBack, true);
+        times.push({ run: i + 1, ms: Number(performance) });
     }
 
     console.log("=== Benchmark Results (25 runs) ===");
     console.table(times);
+});
+
+document.getElementById('backtestButton').addEventListener('click', () => {
+    const prep = prepareBacktest('Calculating...');
+    if (!prep.valid) {
+        return;
+    }
 
     setTimeout(() => {
-        executeCalculations(startingMoney, interval, intervalsBack);
+        executeCalculations(prep.startingMoney, prep.interval, prep.intervalsBack);
     }, 0);
 });
 

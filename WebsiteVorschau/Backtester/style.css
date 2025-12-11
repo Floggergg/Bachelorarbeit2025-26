@@ -152,6 +152,20 @@ button {
     background-color: #45a049;
 }
 
+#backtest25TimesButton {
+    background-color: #f33636;
+    color: white;
+}
+
+#backtest25TimesButton:hover {
+    background-color: #e42a2a;
+}
+
+#downloadStatus {
+    color: blueviolet;
+    margin-bottom: 15px;
+}
+
 #textMessage {
     padding-top: 7px;
 }
@@ -164,15 +178,6 @@ button {
     font-size: 12px;
     pointer-events: none;
     display: none;
-}
-
-#backtestButton:hover {
-    background-color: #45a049;
-}
-
-#downloadStatus {
-    color: blueviolet;
-    margin-bottom: 15px;
 }
 
 #second {
