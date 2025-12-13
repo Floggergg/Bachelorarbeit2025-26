@@ -29,18 +29,16 @@ Der Backtester wird in den beiden Browsern ausgeführt, um einen Vergleich der P
 \label{subsec:DieTestdaten}
 
 Alle Strategien, die in den Performancetests getestet werden, verwenden die gleichen historischen Kursdatensätze.
-Für die Tests werden Kursdaten von drei verschiedenen Kryptomünzen verwendet:
+Für die Tests werden Kursdaten von zwei verschiedenen Kryptomünzen verwendet:
 \begin{itemize}
     \item Bitcoin (BTC)
-    \item Ethereum (ETH)
     \item Cardano (ADA)
 \end{itemize}
 
-Diese Kursdaten werden von der Kryptobörse Binance \cite{Binance} bezogen und umfassen jeweils einen Zeitraum von ein, zwei und drei Jahren.
-Für die Testfälle wird Bitcoin im Zeitraum vom 01.07.2023 bis zum 30.06.2025, Cardano im Zeitraum vom 01.01.2021 bis zum 31.12.2022 und 
-Ethereum im Zeitraum vom 01.01.2023 bis zum 31.12.2023 betrachtet.
-Die Kursdaten umfassen etwa 500.000 Datenpunkte pro Jahr und liegen in einem Minutenintervall vor. 
-Somit stehen für Bitcoin rund 1,5 Millionen, für Cardano etwa 1 Million und für Ethereum etwa 500.000 Kurswerte zur Verfügung.
+Diese Kursdaten werden von der Kryptobörse Binance \cite{Binance} bezogen und umfassen jeweils einen Zeitraum von einem und drei Jahren.
+Für die Testfälle wird Bitcoin im Zeitraum vom 01.07.2023 bis zum 30.06.2025 und Cardano im Zeitraum vom 01.07.2021 bis zum 30.06.2022.
+Die Kursdaten umfassen etwa 500.000 Datenpunkte pro Jahr und liegen in einem Minutenintervall vor.
+Somit stehen für Bitcoin rund 1,5 Millionen und für Cardano etwa 500.000 Kurswerte zur Verfügung.
 Durch die Kombination der Beobachtungszeiträume und Kryptowährungen wird ein breites Spektrum an unterschiedlichen Kursbewegungen abgebildet, 
 sodass verschiedene Marktphasen und stark variierende Datenpunktumfänge in den Tests berücksichtig werden.
 
@@ -63,7 +61,7 @@ Dafür wird das System jeweils einmal in Chrome und einmal in Firefox gestartet.
 Der Backtester garantiert dabei, dass alle Strategien unter gleichen Bedingungen getestet werden können.
 
 Um die Aussagekraft der Ergebnisse weiter zu erhöhen, werden alle Strategien auf drei unterschiedliche Datensets angewandt.
-Durch die Kombination aus zwei Browsern, drei Strategien, zwei Implementierungssprachen und drei Datensets ergeben sich insgesamt 24 Testfälle.
+Durch die Kombination aus zwei Browsern, drei Strategien, zwei Implementierungssprachen und zwei Datensets ergeben sich insgesamt 24 Testfälle.
 
 Für statistisch belastbare und reproduzierbare Ergebnisse wird jede Kombination aus Browser, Strategie, Implementierungssprache und Datenset 25-mal ausgeführt. 
 Bei jedem Durchlauf wird die benötigte Zeit erfasst. Aus den Messdaten wird der Durchschnitt, der Median und die Standardabweichung pro Testfall berechnet. 

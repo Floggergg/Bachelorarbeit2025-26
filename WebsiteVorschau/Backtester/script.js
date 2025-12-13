@@ -367,20 +367,22 @@ function prepareBacktest(waitingMessage) {
 }
 
 document.getElementById('backtest25TimesButton').addEventListener('click', () => {
-    const prep = prepareBacktest('Logging Results...');
+    let prep = prepareBacktest('Logging Results...');
     if (!prep.valid) {
         return;
     }
 
-    const times = [];
+    setTimeout(() => {
+        const times = [];
 
-    for (let i = 0; i < 25; i++) {
-        const performance = executeCalculations(prep.startingMoney, prep.interval, prep.intervalsBack, true);
-        times.push({ run: i + 1, ms: Number(performance) });
-    }
+        for (let i = 0; i < 25; i++) {
+            const performance = executeCalculations(prep.startingMoney, prep.interval, prep.intervalsBack, true);
+            times.push({ run: i + 1, ms: Number(performance) });
+        }
 
-    console.log("=== Benchmark Results (25 runs) ===");
-    console.table(times);
+        console.log("=== Benchmark Results (25 runs) ===");
+        console.table(times);
+    }, 0);
 });
 
 document.getElementById('backtestButton').addEventListener('click', () => {

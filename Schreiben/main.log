@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  11 DEC 2025 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  13 DEC 2025 16:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1708,7 +1708,7 @@ Kapitel 5.
 <images/TestDataJson.png, id=471, 243.15843pt x 174.6525pt>
 File: images/TestDataJson.png Graphic file (type png)
 <use images/TestDataJson.png>
-Package pdftex.def Info: images/TestDataJson.png  used on input line 49.
+Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
 (pdftex.def)             Requested size: 228.4769pt x 164.10674pt.
 
 
@@ -1790,7 +1790,7 @@ Here is how much of TeX's memory you used:
  1143 hyphenation exceptions out of 8191
  130i,12n,145p,888b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (39 pages, 693027 bytes).
+Output written on main.pdf (39 pages, 692936 bytes).
 PDF statistics:
  912 PDF objects out of 1000 (max. 8388607)
  815 compressed objects within 9 object streams
