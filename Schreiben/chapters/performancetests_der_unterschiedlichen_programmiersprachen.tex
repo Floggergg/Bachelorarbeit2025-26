@@ -19,7 +19,7 @@ Alle Performancetests werden auf einem System mit den folgender Hardware und Sof
     \item GPU: NVIDIA GeForce RTX 3070
     \item Betriebssystem: Windows 11 Pro 64-Bit
     \item Chrome Version: 143.0.7499.41
-    \item FireFox Version: 145.0
+    \item Firefox Version: 145.0
 \end{itemize}
 Während der Durchführung der Tests werden keine weiteren Programme ausgeführt, um Verzerrungen der Ergebnisse zu vermeiden.
 Als Testumgebungen dienen die Browser Google Chrome und Mozilla Firefox, die jeweils die JavaScript-Engines V8 (Chrome) \cite{V8_2025} und SpiderMonkey (Firefox) \cite{SpiderMonkey2025} verwenden.
@@ -59,25 +59,45 @@ Damit die Performance der beiden Programmiersprachen objektiv bewertet werden ka
 Es wird jede der drei Handelsstrategien sowohl in WebAssembly als auch in JavaScript implementiert und anschließend innerhalb des entwickelten Backtesters ausgeführt.
 Dafür wird das System jeweils einmal in Chrome und einmal in Firefox gestartet. 
 Der Backtester garantiert dabei, dass alle Strategien unter gleichen Bedingungen getestet werden können.
+Dieses Signal wird anschließend ausgeführt, sofern in der Simulation ausreichend Geld oder Wertpapiere zur Verfügung stehen.
 
-Um die Aussagekraft der Ergebnisse weiter zu erhöhen, werden alle Strategien auf drei unterschiedliche Datensets angewandt.
+Bei jedem Durchlauf erhält die Strategie den aktuellen Datenpunkt sowie die letzten 72 historischen Datenpunkte. 
+Auf dieser Basis wird die Strategie im Minutenintervall abgefragt, um ein Handelssignal zu generieren.
+
+Um die Aussagekraft der Ergebnisse weiter zu erhöhen, werden alle Strategien auf zwei unterschiedliche Datensets angewandt.
 Durch die Kombination aus zwei Browsern, drei Strategien, zwei Implementierungssprachen und zwei Datensets ergeben sich insgesamt 24 Testfälle.
 
 Für statistisch belastbare und reproduzierbare Ergebnisse wird jede Kombination aus Browser, Strategie, Implementierungssprache und Datenset 25-mal ausgeführt. 
 Bei jedem Durchlauf wird die benötigte Zeit erfasst. Aus den Messdaten wird der Durchschnitt, der Median und die Standardabweichung pro Testfall berechnet. 
 Diese Kennzahlen ermöglichen es, sowohl die Performance als auch die Stabilität und Konsistenz der jeweiligen Implementierung zu bewerten.
 
-\section{Die Testergebnisse}
-\label{sec:DieTestergebnisse}
-
-\subsection{Ergebnisse der gleitenden Durchschnittsüberschneidungs Strategie}
-\label{subsec:ErgebnissedergleitendenDurchschnittsüberschneidungsStrategie}
-
-\subsection{Ergebnisse der mittelwertrückkehr Strategie}
-\label{subsec:Ergebnissedermittelwertrückkehr Strategie}
-
-\subsection{Ergebnisse der Ausbruchsstrategie}
-\label{subsec:ErgebnissederAusbruchsstrategie}
-
 \section{Analyse der Testergebnisse}
 \label{sec:AnalysederTestergebnisse}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesFirefox.png}
+    \caption{Durchschnittliche Ausführungszeiten der Strategien in Firefox}
+    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesChrome.png}
+    \caption{Durchschnittliche Ausführungszeiten der Strategien in Chrome}
+    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{STDFirefox.png}
+    \caption{Standardabweichung der Strategien in Firefox}
+    \label{fig:StandardabweichungderStrategieninFirefox}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{STDChrome.png}
+    \caption{Standardabweichung der Strategien in Chrome}
+    \label{fig:StandardabweichungderStrategieninChrome}
+\end{figure}
