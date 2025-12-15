@@ -310,3 +310,46 @@ In den Tests von \cite{PoltavskyiDmytro2025} kommt WebAssembly mit einem optimie
 Im Vergleich zu nativen Anwenden in C schneidet WebAssembly jedoch schlechter ab.
 WebAssembly erreicht im Durchschnitt nur etwa 60-70\% der Leistung von nativem C-Code.
 \cite{Herrera2018WebAssembly} \cite{Jangda2019NotSoFast}
+
+\section{Laufzeitumgebungen für WebAssembly}
+\label{sec:LaufzeitumgebungenfürWebAssembly}
+
+Um WebAssembly im Browser ausführen zu können wird eine geeignete Laufzeitumgebungen benötigt.
+Dazu werden in den unterschiedlichen Browser verschiedene Umgebungen eingesetzt.
+
+
+Firefox nutzt zur Ausführung von WebAssembly die Engine SpiderMonkey.
+SpiderMonkey ist eine von Mozilla entwickelte JavaScript- und WebAssembly-Laufzeitumgebung, die in den Browser interagiert ist. 
+Diese ist überwiegend in C++ implementiert und wird durch Komponenten in JavaScript und Rust ergänzt. \cite{SpiderMonkey2025}
+
+
+Chrome nutzt die V8 Engine, eine von Google entwickelte JavaScript- und WebAssembly-Laufzeitumgebung, die in C++ implementiert ist.
+V8 wird auch in anderen Chromium-basierten Anwendungen verwendet. \cite{V8_2025}
+
+
+Beide Laufzeitumgebung sind auf Basis der WebAssembly-Spezifikation implementiert und ermöglichen es WebAssembly sicher und plattformunabhängig auszuführen.
+Unterschiede zwischen den Engines ergeben sich durch die genaue Implementierung der einzelnen Browserhersteller und die Art der Optimierungen.
+
+\newpage
+
+\subsection{Ausführung der WebAssemblyanweisungen}
+\label{subsec:AusführungderWebAssemblyanweisungen}
+
+Die Übersetzung von WebAssembly-Bytecode in ausführbare, browserspezifische Instruktionen erfolgt in beiden Laufzeitumgebungen strukturell gleich.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{wasmtoBrowsercode.png}
+    \caption{Ausführung von WebAssembly im Browser}
+    \label{fig:AusführungvonWebAssemblyimBrowser}
+\end{figure}
+
+In der Abbildung \ref{fig:AusführungvonWebAssemblyimBrowser} ist dargestellt wie WebAssemblycode in Instruktionen für den spezifischen Browser umgewandelt werden.
+Zuerst wird die WebAssembly-Datei überprüft, ob diese in einem validen Format laut WebAssembly-Spezifikation vorliegt.
+Danach werden die gefundenen Funktionen in browserspezifischen Code kompiliert. 
+SpiderMonkey generiert direkt beim Interagieren der WebAssembly-Datei für jede Funktion den Code.
+Die V8 Engine erzeugt den Code für die Funktionen erst wenn diese zum ersten Mal aufgerufen werden.
+Die Ausführung der Funktion erfolgt daraufhin basierend auf dem neu erstellten Code.
+Wird eine Funktion häufig aufgerufen, wird diese erneut mit stärker optimiertem Code kompiliert.
+Jede der Funktionen kann nach der Ausführung gecacht werden, damit diese nicht bei jedem weiteren Aufruf erneut kompiliert werden muss.
+\cite{V8_2025_Pipeline} \cite{SpiderMonkey2025_Pipeline} \cite{WebUpSpeed} \cite{webassemblyorg}

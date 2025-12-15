@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  14 DEC 2025 17:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  15 DEC 2025 20:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1481,16 +1481,16 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 12.
 Package tocbasic Info: Using my definition of `\numberline' on input line 15.
 Package tocbasic Info: Using my definition of `\numberline' on input line 18.
 Package tocbasic Info: Using my definition of `\numberline' on input line 20.
-Package tocbasic Info: Using my definition of `\numberline' on input line 37.
+Package tocbasic Info: Using my definition of `\numberline' on input line 39.
 
 
 [3
 
 ]
-Package tocbasic Info: Using my definition of `\numberline' on input line 53.
-Package tocbasic Info: Using my definition of `\numberline' on input line 65.
-Package tocbasic Info: Using my definition of `\numberline' on input line 71.
-Package tocbasic Info: Using my definition of `\numberline' on input line 72.
+Package tocbasic Info: Using my definition of `\numberline' on input line 55.
+Package tocbasic Info: Using my definition of `\numberline' on input line 67.
+Package tocbasic Info: Using my definition of `\numberline' on input line 73.
+Package tocbasic Info: Using my definition of `\numberline' on input line 74.
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -1545,7 +1545,7 @@ Kapitel 1.
 
  (./chapters/grundlagen.tex
 Kapitel 2.
-<images/BacktestingFlow.png, id=194, 508.90125pt x 491.8375pt>
+<images/BacktestingFlow.png, id=198, 508.90125pt x 491.8375pt>
 File: images/BacktestingFlow.png Graphic file (type png)
 <use images/BacktestingFlow.png>
 Package pdftex.def Info: images/BacktestingFlow.png  used on input line 17.
@@ -1570,7 +1570,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [5]
 
 [6]
-<images/ResulsBacktestBacktestJS.jpeg, id=267, 1027.84pt x 443.6575pt>
+<images/ResulsBacktestBacktestJS.jpeg, id=271, 1027.84pt x 443.6575pt>
 File: images/ResulsBacktestBacktestJS.jpeg Graphic file (type jpg)
 <use images/ResulsBacktestBacktestJS.jpeg>
 Package pdftex.def Info: images/ResulsBacktestBacktestJS.jpeg  used on input line 162.
@@ -1578,7 +1578,7 @@ Package pdftex.def Info: images/ResulsBacktestBacktestJS.jpeg  used on input lin
 
 
 [7 <./images/ResulsBacktestBacktestJS.jpeg>]
-<images/BollingerBands.png, id=283, 764.8575pt x 390.70969pt>
+<images/BollingerBands.png, id=287, 764.8575pt x 390.70969pt>
 File: images/BollingerBands.png Graphic file (type png)
 <use images/BollingerBands.png>
 Package pdftex.def Info: images/BollingerBands.png  used on input line 202.
@@ -1593,7 +1593,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--211
 [8 <./images/BollingerBands.png>]
 
 [9]
-<images/CombinedWASMCode.png, id=323, 629.35126pt x 180.675pt>
+<images/CombinedWASMCode.png, id=327, 629.35126pt x 180.675pt>
 File: images/CombinedWASMCode.png Graphic file (type png)
 <use images/CombinedWASMCode.png>
 Package pdftex.def Info: images/CombinedWASMCode.png  used on input line 270.
@@ -1605,37 +1605,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--285
 
 
 
-[10 <./images/CombinedWASMCode.png>])
+[10 <./images/CombinedWASMCode.png>]
+Overfull \hbox (2.16444pt too wide) in paragraph at lines 326--328
+[]\T1/lmr/m/n/10.95 Chrome nutzt die V8 En-gi-ne, ei-ne von Goo-gle ent-wi-ckel-te JavaScript- und WebAssembly-
+ []
+
+
 
 [11]
+<images/wasmtoBrowsercode.png, id=360, 788.9475pt x 185.69376pt>
+File: images/wasmtoBrowsercode.png Graphic file (type png)
+<use images/wasmtoBrowsercode.png>
+Package pdftex.def Info: images/wasmtoBrowsercode.png  used on input line 342.
+(pdftex.def)             Requested size: 415.41025pt x 97.77402pt.
+)
+
+[12 <./images/wasmtoBrowsercode.png (PNG copy)>]
 \openout2 = `chapters/konzept_und_design.aux'.
 
  (./chapters/konzept_und_design.tex
 Kapitel 3.
-<images/backtester_architektur.drawio.png, id=352, 563.10374pt x 373.395pt>
+<images/backtester_architektur.drawio.png, id=373, 563.10374pt x 373.395pt>
 File: images/backtester_architektur.drawio.png Graphic file (type png)
 <use images/backtester_architektur.drawio.png>
 Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input line 15.
 (pdftex.def)             Requested size: 332.32945pt x 220.3695pt.
 
 
-[12
+[13
 
 
 
 
  <./images/backtester_architektur.drawio.png>]
-<images/BacktesterLogik.png, id=362, 237.88875pt x 542.025pt>
+<images/BacktesterLogik.png, id=383, 237.88875pt x 542.025pt>
 File: images/BacktesterLogik.png Graphic file (type png)
 <use images/BacktesterLogik.png>
 Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
 (pdftex.def)             Requested size: 137.99371pt x 314.40295pt.
 
 
-[13]
+[14]
 
-[14 <./images/BacktesterLogik.png>]
-<images/CombinedCJSFunktionsschnittstellen.png, id=373, 509.905pt x 92.345pt>
+[15 <./images/BacktesterLogik.png>]
+<images/CombinedCJSFunktionsschnittstellen.png, id=394, 509.905pt x 92.345pt>
 File: images/CombinedCJSFunktionsschnittstellen.png Graphic file (type png)
 <use images/CombinedCJSFunktionsschnittstellen.png>
 Package pdftex.def Info: images/CombinedCJSFunktionsschnittstellen.png  used on input line 79.
@@ -1647,26 +1660,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--89
 
 
 
-[15 <./images/CombinedCJSFunktionsschnittstellen.png>]
+[16 <./images/CombinedCJSFunktionsschnittstellen.png>]
 
-[16]
-<images/weboberflaecheDesign.drawio.png, id=396, 553.06625pt x 553.06625pt>
+[17]
+<images/weboberflaecheDesign.drawio.png, id=418, 553.06625pt x 553.06625pt>
 File: images/weboberflaecheDesign.drawio.png Graphic file (type png)
 <use images/weboberflaecheDesign.drawio.png>
 Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input line 161.
 (pdftex.def)             Requested size: 270.01411pt x 270.00902pt.
 
 
-[17 <./images/weboberflaecheDesign.drawio.png>]
-<images/Diagramms.png, id=406, 1422.81563pt x 710.655pt>
+[18 <./images/weboberflaecheDesign.drawio.png>]
+<images/Diagramms.png, id=427, 1422.81563pt x 710.655pt>
 File: images/Diagramms.png Graphic file (type png)
 <use images/Diagramms.png>
 Package pdftex.def Info: images/Diagramms.png  used on input line 187.
 (pdftex.def)             Requested size: 415.41025pt x 207.4835pt.
 
 
-[18 <./images/Diagramms.png>]
-<images/EmscriptenPipeline.png, id=425, 1039.885pt x 187.70125pt>
+[19 <./images/Diagramms.png>]
+<images/EmscriptenPipeline.png, id=446, 1039.885pt x 187.70125pt>
 File: images/EmscriptenPipeline.png Graphic file (type png)
 <use images/EmscriptenPipeline.png>
 Package pdftex.def Info: images/EmscriptenPipeline.png  used on input line 243.
@@ -1678,16 +1691,16 @@ Overfull \hbox (0.53638pt too wide) in paragraph at lines 243--244
 
 
 
-[19])
+[20])
 
-[20 <./images/EmscriptenPipeline.png>]
+[21 <./images/EmscriptenPipeline.png>]
 \openout2 = `chapters/implementierung_des_backtesters.aux'.
 
  (./chapters/implementierung_des_backtesters.tex
 Kapitel 4.
 )
 
-[21
+[22
 
 
 
@@ -1699,34 +1712,34 @@ Kapitel 4.
 Kapitel 5.
 
 
-[22
+[23
 
 
 
 
 ]
-<images/TestDataJson.png, id=463, 243.15843pt x 174.6525pt>
+<images/TestDataJson.png, id=483, 243.15843pt x 174.6525pt>
 File: images/TestDataJson.png Graphic file (type png)
 <use images/TestDataJson.png>
 Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
 (pdftex.def)             Requested size: 228.4769pt x 164.10674pt.
 
 
-[23 <./images/TestDataJson.png>]
-<images/AvgExecutionTimesFirefox.png, id=472, 788.9475pt x 1194.4625pt>
+[24 <./images/TestDataJson.png>]
+<images/AvgExecutionTimesFirefox.png, id=491, 788.9475pt x 1194.4625pt>
 File: images/AvgExecutionTimesFirefox.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox.png  used on input line 79.
 (pdftex.def)             Requested size: 415.41025pt x 628.9248pt.
 
 
-[24]
+[25]
 Overfull \vbox (71.96227pt too high) has occurred while \output is active []
 
 
 
-[25 <./images/AvgExecutionTimesFirefox.png (PNG copy)>]
-<images/AvgExecutionTimesChrome.png, id=482, 788.9475pt x 1194.4625pt>
+[26 <./images/AvgExecutionTimesFirefox.png (PNG copy)>]
+<images/AvgExecutionTimesChrome.png, id=501, 788.9475pt x 1194.4625pt>
 File: images/AvgExecutionTimesChrome.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome.png  used on input line 86.
@@ -1736,32 +1749,25 @@ Overfull \vbox (32.1189pt too high) has occurred while \output is active []
 
 
 
-[26 <./images/AvgExecutionTimesChrome.png (PNG copy)>]
-<images/STDFirefox.png, id=488, 1372.12625pt x 592.2125pt>
+[27 <./images/AvgExecutionTimesChrome.png (PNG copy)>]
+<images/STDFirefox.png, id=507, 1081.03876pt x 692.5875pt>
 File: images/STDFirefox.png Graphic file (type png)
 <use images/STDFirefox.png>
 Package pdftex.def Info: images/STDFirefox.png  used on input line 93.
-(pdftex.def)             Requested size: 415.41025pt x 179.29167pt.
-<images/STDChrome.png, id=489, 1395.2125pt x 592.2125pt>
+(pdftex.def)             Requested size: 415.41025pt x 266.13446pt.
+<images/STDChrome.png, id=508, 1091.07625pt x 692.5875pt>
 File: images/STDChrome.png Graphic file (type png)
 <use images/STDChrome.png>
 Package pdftex.def Info: images/STDChrome.png  used on input line 100.
-(pdftex.def)             Requested size: 415.41025pt x 176.32773pt.
+(pdftex.def)             Requested size: 415.41025pt x 263.69324pt.
 )
 
-[27 <./images/STDFirefox.png (PNG copy)> <./images/STDChrome.png (PNG copy)>]
+[28 <./images/STDFirefox.png (PNG copy)> <./images/STDChrome.png (PNG copy)>]
 \openout2 = `chapters/zusammenfassung_und_schlussbemerkungen.aux'.
 
  (./chapters/zusammenfassung_und_schlussbemerkungen.tex
 Kapitel 6.
 )
-
-[28
-
-
-
-
-]
 
 [29
 
@@ -1770,7 +1776,19 @@ Kapitel 6.
 
 ]
 
-[30]
+[30
+
+
+
+
+]
+
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
+[]\T1/lmr/m/it/10.95 SpiderMonkey: We-bAs-sem-b-ly Pi-pe-li-ne\T1/lmr/m/n/10.95 . https://firefox-source-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []\T1/lmr/m/n/10.95 StatCounter Glo-bal Stats. \T1/lmr/m/it/10.95 Brow-ser Mar-ket Sha-re World-wi-de\T1/lmr/m/n/10.95 .
  []
@@ -1782,7 +1800,7 @@ Underfull \hbox (badness 2512) in paragraph at lines 68--68
 
 
 
-[31]
+[32]
 Underfull \hbox (badness 1383) in paragraph at lines 68--68
 []\T1/lmr/m/n/10.95 W3Counter. \T1/lmr/m/it/10.95 Brow-ser & Plat-form Mar-ket Sha-re ^^U Glo-bal Web Stats\T1/lmr/m/n/10.95 . htt-
  []
@@ -1794,9 +1812,9 @@ Underfull \hbox (badness 2205) in paragraph at lines 68--68
 
 
 
-[32]
-
 [33]
+
+[34]
 \openout2 = `back/messbox.aux'.
 
  (./back/messbox.tex
@@ -1804,7 +1822,7 @@ LaTeX Font Info:    External font `cmex7' loaded for size
 (Font)              <5> on input line 10.
 )
 
-[34
+[35
 
 
 ] (./main.aux (./front/vorwort.aux) (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
@@ -1817,18 +1835,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46358 strings out of 467816
- 927056 string characters out of 5436431
- 1919321 words of memory out of 5000000
- 73866 multiletter control sequences out of 15000+600000
+ 46390 strings out of 467816
+ 928198 string characters out of 5436431
+ 1919837 words of memory out of 5000000
+ 73892 multiletter control sequences out of 15000+600000
  717112 words of font info for 95 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  130i,12n,145p,888b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (42 pages, 970457 bytes).
+Output written on main.pdf (43 pages, 989784 bytes).
 PDF statistics:
- 914 PDF objects out of 1000 (max. 8388607)
- 810 compressed objects within 9 object streams
- 181 named destinations out of 1000 (max. 500000)
- 613 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 947 PDF objects out of 1000 (max. 8388607)
+ 841 compressed objects within 9 object streams
+ 187 named destinations out of 1000 (max. 500000)
+ 634 words of extra memory for PDF output out of 10000 (max. 10000000)
 

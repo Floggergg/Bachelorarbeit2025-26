@@ -699,6 +699,10 @@ INPUT ./images/CombinedWASMCode.png
 INPUT ./images/CombinedWASMCode.png
 INPUT ./images/CombinedWASMCode.png
 INPUT ./images/CombinedWASMCode.png
+INPUT ./images/wasmtoBrowsercode.png
+INPUT ./images/wasmtoBrowsercode.png
+INPUT ./images/wasmtoBrowsercode.png
+INPUT ./images/wasmtoBrowsercode.png
 INPUT ./chapters/konzept_und_design.tex
 INPUT ./chapters/konzept_und_design.tex
 OUTPUT chapters/konzept_und_design.aux

@@ -1,0 +1,21 @@
+@startuml
+title WebAssembly zu Browsercode
+
+skinparam rectangle {
+  BackgroundColor #E3F2FD
+  BorderColor #555555
+  RoundCorner 15
+}
+
+rectangle "Validierung der\nWebAssembly-Datei" as src
+rectangle "Kompilierung  der Funktionen" as ir
+rectangle "Optimierte Kompilierung\nhäufig ausgeführter Funktionen" as opt
+rectangle "Ausführung der Funktion" as fun
+rectangle "Caching der Funktion" as cac
+
+src -right-> ir
+ir -right-> fun
+fun -right-> opt
+fun -down-> cac
+
+@enduml
