@@ -74,18 +74,58 @@ Diese Kennzahlen ermöglichen es, sowohl die Performance als auch die Stabilitä
 \section{Analyse der Testergebnisse}
 \label{sec:AnalysederTestergebnisse}
 
+Ziel der Analyse ist es, die Laufzeitunterschiede zwischen der Ausführung des Backtesters in reinem JavaScript und
+der Ausführung unter Verwendung von WebAssembly darzustellen und zu analysieren.
+Die Analyse konzentriert sich dabei auf die Interpretation der gemessenen Laufzeiten und deren erkennenbaren Unterschiede.
+Speicherverbrauch und Größe der einzelnen Strategien wird in diesem Kontext nicht betrachtet.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesFirefox.png}
-    \caption{Durchschnittliche Ausführungszeiten der Strategien in Firefox}
-    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox}
+    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesFirefox1.png}
+    \caption{Durchschnittliche Ausführungszeiten der Strategien in Firefox mit 1,5 Millionen Datenpunkten}
+    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1}
+\end{figure}
+
+In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1} ist erkennbar,
+dass im Firefox-Browser der Performancevorteil von WebAssembly gegenüber JavaScript mit steigender Rechenintensität der Strategien zunimmt.
+Der durch WebAssembly erzielte Performancevorteil kompensiert den zusätzlichen Overhead aber erst bei der rechenintensiven Strategien.
+
+Die Durchschnittsüberschneidungsstrategie weist den geringsten Rechenaufwand auf und benötigt entsprechend die kürzeste Berechnungszeit.
+In diesem Fall verringert der durch die Nutzung von WebAssembly entstehende Overhead die Performanz so sehr, dass die in JavaScript implementierte Strategie schneller ist.
+
+Bei der Ausbruchsstrategie ist der Berechnungsaufwand höher, was zu einer Annäherung der Laufzeiten beider Implementierungen führt. 
+WebAssembly erreicht hier nahezu vergleichbare Ausführungszeiten wie JavaScript.
+
+Die Strategie der Mittelwertrückkehr unter Verwendung von Bollinger-Bändern erfordert den höchsten Rechenaufwand. 
+In diesem Szenario zeigt sich ein deutlicher Performancevorteil von WebAssembly, wobei die JavaScript Implementierung im Durchschnitt etwa 20\% langsamer ist als die WebAssembly Variante.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesFirefox2.png}
+    \caption{Durchschnittliche Ausführungszeiten der Strategien in Firefox mit einer halben Million Datenpunkten}
+    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox2}
+\end{figure}
+
+In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox2} zeigt sich, ähnlich wie in Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1},
+dass der WebAssembly Overhead auch bei geringerer Datenpunktanzahl erst bei rechenintensiven Strategien durch die gesteigerte Performanz kompensiert wird.
+Auffällig ist jedoch, dass in diesem Testfall im Vergleich zu dem Szenario mit mehr Datenpunkten eine Verdreifachung der Datenpunkte 
+zu einer überproportionalen Steigerung der Ausführungsgeschwindigkeit führt.
+Ein möglicher Grund für die Verringerung der Performanz kann darin liegen, dass mit steigender Anzahl an Datenpunkten auch der benötigte Laufzeitspeicher zunimmt. 
+Dies kann zu einem höheren Speicherverbrauch und zu erhöhter Speicherverwaltung durch das System führen.
+Insbesondere bei speicherintensiven Operationen kann dieser Effekt die Effizienz der Strategie deutlich verringern.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesChrome1.png}
+    \caption{Durchschnittliche Ausführungszeiten der Strategien in Chrome mit 1,5 Millionen Datenpunkten}
+    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome1}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesChrome.png}
-    \caption{Durchschnittliche Ausführungszeiten der Strategien in Chrome}
-    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome}
+    \includegraphics[width=1.0\textwidth]{AvgExecutionTimesChrome2.png}
+    \caption{Durchschnittliche Ausführungszeiten der Strategien in Chrome mit einer halben Million Datenpunkten}
+    \label{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome2}
 \end{figure}
 
 \begin{figure}[H]
@@ -101,3 +141,17 @@ Diese Kennzahlen ermöglichen es, sowohl die Performance als auch die Stabilitä
     \caption{Standardabweichung der Strategien in Chrome}
     \label{fig:StandardabweichungderStrategieninChrome}
 \end{figure}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        \textbf{Browser} & \textbf{Durchschnittsüberschneidung} & \textbf{Ausbruch} & \textbf{Mittelwertrückkehr} \\
+        \hline
+        Firefox & 3661,52 & 3892,48 & 3968,64 \\
+        Chrome  & 4411,00 & 4658,52 & 4768,64 \\
+        \hline
+    \end{tabular}
+    \caption{Vergleich der Ausführungzeiten von WebAssembly in den beiden Browsern}
+    \label{tab:browser_strategien}
+\end{table}
