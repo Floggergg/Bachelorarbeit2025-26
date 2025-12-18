@@ -2486,6 +2486,7 @@
     <bcf:citekey order="73" intorder="1">V8_2025</bcf:citekey>
     <bcf:citekey order="74" intorder="1">SpiderMonkey2025</bcf:citekey>
     <bcf:citekey order="75" intorder="1">Binance</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">10.1145/3487552.3487827</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

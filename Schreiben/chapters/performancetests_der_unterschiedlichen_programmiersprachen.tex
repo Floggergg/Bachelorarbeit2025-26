@@ -121,12 +121,33 @@ Insbesondere bei speicherintensiven Operationen kann dieser Effekt die Effizienz
     \label{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome1}
 \end{figure}
 
+Die Testergebnisse in Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome1} zeigen das WebAssembly nicht so effizienzt wie JavaScript in Chrome ausgeführt wird.
+In Chrome ist WebAssembly bei allen drei Strategien langsamer als die JavaScript Implementierung, egal bei welchem Rechenaufwand der Strategie.
+In diesem Fall ist der Unterschied zwischen den beiden Implementierungssprachen über alle Strategien hinweg vergleichbar und beträgt etwa 3\% bis 5\% der Ausführungszeit.
+Dies deutet darauf hin, dass der Overhead von WebAssembly in der V8-Engine höher ist.
+WebAssembly profitiert in Chrome nicht von der gesteigerten Performanz bei rechenintensiven Aufgaben, wie es in Firefox der Fall ist.
+Die Tests von \cite{10.1145/3487552.3487827} kommen ebenfalls bei Desktop-Anwendungen zu dem Ergebnis, dass die WebAssembly Performanz in Chrome schlechter ist als in Firefox.
+
+Des Weiteren zeigt sich, dass die JavaScript Umsetzung der rechenintensiven Mittelwertrückkehrstrategie in Chrome schneller ausgeführt wird als in Firefox.
+Bei den beiden weniger rechenintensiven Strategien hingegen weist Chrome sowohl in WebAssembly als auch in JavaScript eine höhere Ausführungszeit auf.
+Folglich hat Chrome bei rechenintensiven JavaScript Anwendungen eine bessere Performanz als Firefox.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{AvgExecutionTimesChrome2.png}
     \caption{Durchschnittliche Ausführungszeiten der Strategien in Chrome mit einer halben Million Datenpunkten}
     \label{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome2}
 \end{figure}
+
+In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome2} ist sichtbar, dass die Performanzunterschiede zwischen WebAssembly und JavaScript in Chrome auch bei geringerer Datenpunktanzahl bestehen bleiben.
+Die WebAssembly Implementierungen sind weiterhin langsamer als die JavaScript Varianten, unabhängig vom Rechenaufwand der Strategie.
+Interessanterweise benötigt die Ausbruchsstrategie bei geringerer Datenpunktanzahl am längsten zur Ausführung.
+Bei allen anderen Testfällen war die Mittelwertrückkehrstrategie die Zeitaufwendigste.
+Ein möglicher Grund hierfür könnte sein, dass bei dieser Funktion bei dieser Datenmenge noch keine Just-In-Time-Optimierungen durchgeführt wurden,
+die bei größeren Datenmengen zu einer schnelleren Ausführung führen könnten.
+
+Der Effekt der überproportionalen Steigerung der Ausführungsgeschwindigkeit bei erhöhter Datenpunktanzahl,
+der in Firefox beobachtet wurde, ist in Chrome auch in diesem Testfall erneut erkennbar.
 
 \begin{figure}[H]
     \centering
