@@ -156,6 +156,18 @@ der in Firefox beobachtet wurde, ist in Chrome auch in diesem Testfall erneut er
     \label{fig:StandardabweichungderStrategieninFirefox}
 \end{figure}
 
+In Abbildung \ref{fig:StandardabweichungderStrategieninFirefox} ist die Standardabweichung der Ausführungszeiten der einzelnen Strategien in Firefox dargestellt.
+In beiden betrachteten Testfällen ist ein Anstieg der Standardabweichung mit zunehmendem Rechenaufwand zu erkennen.
+Dies bedeutet, dass rechenintensivere Strategien eine weniger vorhersehbare Ausführungszeit aufweisen.
+Besonders deutlich zeigt sich dieser Effekt bei der Mittelwertrückkehrstrategie mit 1,5 Millionen Datenpunkten in WebAssembly, für die die höchste Standardabweichung der Ausführungszeiten gemessen wurde.
+
+Des Weiteren ist zu erkennen, dass die WebAssembly Implementierungen durchschnittlich eine höhere Standardabweichung aufweisen als die JavaScript Varianten.
+Der größte Unterschied ist bei der Durchschnittsüberschneidungsstrategie mit 1,5 Millionen Datenpunkten zu erkennen, bei dieser weist die WebAssembly Implementierung eine 2,5 Mal höhere Varianz in den Ausführungszeiten auf.
+Nur bei der Ausbruchsstrategie mit 1,5 Millionen Datenpunkten ist die Standardabweichung der WebAssembly Implementierung geringer als die der JavaScript Variante.
+
+Für die beiden Strategien mit dem geringsten Rechenaufwand mit 500.000 Datenpunkten sind hingegen keine großen Unterschiede zwischen den Implementierungen erkennbar.
+Die Standardabweichungen sind in beiden Fällen miteinander vergleichbar.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{STDChrome.png}
@@ -163,7 +175,20 @@ der in Firefox beobachtet wurde, ist in Chrome auch in diesem Testfall erneut er
     \label{fig:StandardabweichungderStrategieninChrome}
 \end{figure}
 
-\begin{table}[h]
+Abbildung \ref{fig:StandardabweichungderStrategieninChrome} zeigt die Standardabweichung der Ausführungszeiten der einzelnen Strategien in Chrome.
+Im Gegensatz zu Firefox ist in Chrome kein klarer Trend erkennbar, dass die Standardabweichung mit steigendem Rechenaufwand zunimmt.
+Bei der Ausbruchsstrategie ist die Standardabweichung bei einer geringeren Anzahl von Datenpunkten sogar höher als bei einer größeren Datenmenge.
+Dies könnte darauf hindeuten, dass in Chrome externe Einflüsse wie Laufzeitoptimierungen in der JavaScript Engine einen stärkeren Einfluss auf die Messungen haben.
+
+Des Weiteren im Gegensatz zu Firefox sind die Standardabweichungen der WebAssembly Implementierungen in Chrome überwiegend geringer als die den JavaScript Varianten.
+Nur bei der Durchschnittsüberschneidungsstrategie mit 1,5 Millionen Datenpunkten weist die WebAssembly Implementierung eine höhere Varianz auf als die JavaScript Version.
+Eine mögliche Erklärung hierfür ist eine stabilere Integration von WebAssembly in die Chrome Laufzeitumgebung, die zu geringeren Schwankungen der Ausführungszeiten führt.
+
+Ebenfalls lässt sich in Chrome kein deutlicher Unterschied in der Standardabweichung der WebAssembly Implementierungen zwischen den beiden Datenmengen erkennen.
+Alle in WebAssembly implementierten Strategien außer der Durchschnittsüberschneidungsstrategie mit 1,5 Millionen Datenpunkten weisen eine ähnliche Standardabweichung auf.
+Dies deutet darauf hin, dass die zeitliche Stabilität primär durch die Kombination an Strategie und Datenmenge bestimmt wird.
+
+\begin{table}[H]
     \centering
     \begin{tabular}{lccc}
         \hline

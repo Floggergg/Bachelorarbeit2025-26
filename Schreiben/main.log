@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  18 DEC 2025 19:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  19 DEC 2025 22:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1763,32 +1763,23 @@ Package pdftex.def Info: images/STDFirefox.png  used on input line 154.
 
 
 [28 <./images/AvgExecutionTimesChrome2.png (PNG copy)>]
-<images/STDChrome.png, id=522, 1091.07625pt x 692.5875pt>
+<images/STDChrome.png, id=523, 1091.07625pt x 692.5875pt>
 File: images/STDChrome.png Graphic file (type png)
 <use images/STDChrome.png>
-Package pdftex.def Info: images/STDChrome.png  used on input line 161.
+Package pdftex.def Info: images/STDChrome.png  used on input line 173.
 (pdftex.def)             Requested size: 415.41025pt x 263.69324pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+[29 <./images/STDFirefox.png (PNG copy)>])
 
-)
+[30 <./images/STDChrome.png (PNG copy)>]
 
-[29 <./images/STDFirefox.png (PNG copy)> <./images/STDChrome.png (PNG copy)>]
-
-[30]
+[31]
 \openout2 = `chapters/zusammenfassung_und_schlussbemerkungen.aux'.
 
  (./chapters/zusammenfassung_und_schlussbemerkungen.tex
 Kapitel 6.
 )
-
-[31
-
-
-
-
-]
 
 [32
 
@@ -1797,7 +1788,14 @@ Kapitel 6.
 
 ]
 
-[33]
+[33
+
+
+
+
+]
+
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []\T1/lmr/m/it/10.95 SpiderMonkey: We-bAs-sem-b-ly Pi-pe-li-ne\T1/lmr/m/n/10.95 . https://firefox-source-
  []
@@ -1814,7 +1812,7 @@ Underfull \hbox (badness 2512) in paragraph at lines 68--68
 
 
 
-[34]
+[35]
 Underfull \hbox (badness 1383) in paragraph at lines 68--68
 []\T1/lmr/m/n/10.95 W3Counter. \T1/lmr/m/it/10.95 Brow-ser & Plat-form Mar-ket Sha-re ^^U Glo-bal Web Stats\T1/lmr/m/n/10.95 . htt-
  []
@@ -1826,9 +1824,9 @@ Underfull \hbox (badness 2205) in paragraph at lines 68--68
 
 
 
-[35]
-
 [36]
+
+[37]
 \openout2 = `back/messbox.aux'.
 
  (./back/messbox.tex
@@ -1836,7 +1834,7 @@ LaTeX Font Info:    External font `cmex7' loaded for size
 (Font)              <5> on input line 10.
 )
 
-[37
+[38
 
 
 ] (./main.aux (./front/vorwort.aux) (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
@@ -1849,18 +1847,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46420 strings out of 467816
- 929253 string characters out of 5436431
+ 46422 strings out of 467816
+ 929269 string characters out of 5436431
  1920273 words of memory out of 5000000
- 73917 multiletter control sequences out of 15000+600000
+ 73918 multiletter control sequences out of 15000+600000
  717112 words of font info for 95 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  130i,12n,145p,888b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (45 pages, 1000583 bytes).
+Output written on main.pdf (46 pages, 1003228 bytes).
 PDF statistics:
- 967 PDF objects out of 1000 (max. 8388607)
- 857 compressed objects within 9 object streams
- 192 named destinations out of 1000 (max. 500000)
+ 974 PDF objects out of 1000 (max. 8388607)
+ 863 compressed objects within 9 object streams
+ 193 named destinations out of 1000 (max. 500000)
  644 words of extra memory for PDF output out of 10000 (max. 10000000)
 
