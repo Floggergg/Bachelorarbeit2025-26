@@ -199,5 +199,13 @@ Dies deutet darauf hin, dass die zeitliche Stabilität primär durch die Kombina
         \hline
     \end{tabular}
     \caption{Vergleich der Ausführungzeiten von WebAssembly in den beiden Browsern}
-    \label{tab:browser_strategien}
+    \label{tab:browser_strategien_wasm}
 \end{table}
+
+In Tabelle \ref{tab:browser_strategien_wasm} sind die durchschnittlichen Ausführungszeiten der WebAssembly Implementierungen in den beiden Browsern zusammengefasst.
+Es ist erkennbar, dass Firefox in allen drei Strategien eine bessere Performanz aufweist als Chrome.
+Der Unterschied in den Ausführungszeiten zwischen den beiden Browsern ist bei den Strategien vergleichbar und liegt bei circa 800 Millisekunden.
+Dies deutet darauf hin, dass die WebAssembly Integration in Firefox mit SpiderMonkey effizienter ist als in Chrome mit V8.
+
+\section{Zusammenfassung der Testergebnisse}
+\label{sec:ZusammenfassungderTestergebnisse}
