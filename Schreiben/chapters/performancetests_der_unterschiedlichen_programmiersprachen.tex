@@ -204,8 +204,29 @@ Dies deutet darauf hin, dass die zeitliche Stabilität primär durch die Kombina
 
 In Tabelle \ref{tab:browser_strategien_wasm} sind die durchschnittlichen Ausführungszeiten der WebAssembly Implementierungen in den beiden Browsern zusammengefasst.
 Es ist erkennbar, dass Firefox in allen drei Strategien eine bessere Performanz aufweist als Chrome.
-Der Unterschied in den Ausführungszeiten zwischen den beiden Browsern ist bei den Strategien vergleichbar und liegt bei circa 800 Millisekunden.
+Der Unterschied in den Ausführungszeiten zwischen den beiden Browsern ist bei allen Strategien vergleichbar und liegt bei circa 800 Millisekunden.
 Dies deutet darauf hin, dass die WebAssembly Integration in Firefox mit SpiderMonkey effizienter ist als in Chrome mit V8.
 
 \section{Zusammenfassung der Testergebnisse}
 \label{sec:ZusammenfassungderTestergebnisse}
+
+In diesem Kapitel wurden Performancetests durchgeführt, um das Laufzeitverhalten von JavaScript- und WebAssembly-Implementierungen innerhalb eines webbasierten Backtesters zu vergleichen.
+Die Tests erfolgten unter kontrollierten und reproduzierbaren Rahmenbedingungen, wobei unterschiedliche Browser, JavaScript und WebAssembly Engines, Handelsstrategien sowie Datensatzgrößen berücksichtigt wurden.
+
+Die Ergebnisse zeigen, dass die Performanz von WebAssembly im Vergleich zu JavaScript stark von der verwendeten Laufzeitumgebung und der Rechenintensität der jeweiligen Strategie abhängt.
+In Firefox konnte WebAssembly bei der rechenintensiven Strategie einen Performancevorteil gegenüber JavaScript erzielen.
+Bei den einfacheren Strategien erwies jedoch sich JavaScript aufgrund geringerem Initialisierungs- und Integrationsaufwand als effizienter.
+
+In Chrome zeigte sich bei allen getesteten Strategien ein konsistenter Performance-Nachteil von WebAssembly gegenüber JavaScript.
+Dieser Nachteil blieb unabhängig von der Komplexität der Strategie und der Datenmenge bestehen.
+Dadurch lässt sich vermuten, dass in Chrome WebAssembly weniger optimal in die V8-Engine integriert, ist als reines JavaScript.
+
+Darüber hinaus wurde festgestellt, dass eine Erhöhung der Datenpunktanzahl nicht linear zu einer Verlängerung der Ausführungszeit führt.
+Vielmehr zeigte sich in beiden Browsern, dass größere Datensätze zu einer überproportionalen Steigerung der Ausführungsdauer führen können.
+
+Die Analyse der Standardabweichungen zeigte zudem, dass beide Browser unterschiedliche Stabilitätsprofile aufweisen.
+In Firefox neigen WebAssembly Implementierungen zu höheren Schwankungen in den Ausführungszeiten, während in Chrome JavaScript eine größere Varianz aufweist.
+Insgesamt zeigt sich, dass WebAssembly in Chrome browserübergreifend eine stabilere Ausführungszeit, unabhängig von der gewählten Strategie oder der Datenmenge.
+
+Zusammenfassend lässt sich feststellen, dass WebAssembly in Firefox und bei komplexen, rechenintensiven Strategien einen messbaren Performancevorteil bieten kann.
+Während JavaScript in Chrome bei aufwendigen Aufgaben die bessere Laufzeitperformance aufweist.
