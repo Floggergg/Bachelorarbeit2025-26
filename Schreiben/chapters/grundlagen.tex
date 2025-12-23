@@ -323,7 +323,8 @@ SpiderMonkey ist eine von Mozilla entwickelte JavaScript- und WebAssembly-Laufze
 Diese ist überwiegend in C++ implementiert und wird durch Komponenten in JavaScript und Rust ergänzt. \cite{SpiderMonkey2025}
 
 
-Chrome nutzt die V8 Engine, eine von Google entwickelte JavaScript- und WebAssembly-Laufzeitumgebung, die in C++ implementiert ist.
+Chrome nutzt die V8 Engine, eine von Google entwickelte JavaScript- und WebAssembly-Laufzeitumgebung.
+Diese ist in C++ implementiert.
 V8 wird auch in anderen Chromium-basierten Anwendungen verwendet. \cite{V8_2025}
 
 
@@ -344,11 +345,11 @@ Die Übersetzung von WebAssembly-Bytecode in ausführbare, browserspezifische In
     \label{fig:AusführungvonWebAssemblyimBrowser}
 \end{figure}
 
-In der Abbildung \ref{fig:AusführungvonWebAssemblyimBrowser} ist dargestellt wie WebAssemblycode in Instruktionen für den spezifischen Browser umgewandelt werden.
+In der Abbildung \ref{fig:AusführungvonWebAssemblyimBrowser} ist dargestellt wie WebAssemblycode in Instruktionen für einen spezifischen Browser umgewandelt wird.
 Zuerst wird die WebAssembly-Datei überprüft, ob diese in einem validen Format laut WebAssembly-Spezifikation vorliegt.
 Danach werden die gefundenen Funktionen in browserspezifischen Code kompiliert. 
 SpiderMonkey generiert direkt beim Interagieren der WebAssembly-Datei für jede Funktion den Code.
-Die V8 Engine erzeugt den Code für die Funktionen erst wenn diese zum ersten Mal aufgerufen werden.
+Die V8 Engine hingegen erzeugt den Code für die Funktionen erst wenn diese zum ersten Mal aufgerufen werden.
 Die Ausführung der Funktion erfolgt daraufhin basierend auf dem neu erstellten Code.
 Wird eine Funktion häufig aufgerufen, wird diese erneut mit stärker optimiertem Code kompiliert.
 Jede der Funktionen kann nach der Ausführung gecacht werden, damit diese nicht bei jedem weiteren Aufruf erneut kompiliert werden muss.

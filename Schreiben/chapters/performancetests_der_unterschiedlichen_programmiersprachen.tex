@@ -1,18 +1,18 @@
-\chapter{Performancetests der unterschiedlichen Programmiersprachen}
-\label{cha:PerformancetestsderunterschiedlichenProgrammiersprachen}
+\chapter{Performanztests der unterschiedlichen Programmiersprachen}
+\label{cha:PerformanztestsderunterschiedlichenProgrammiersprachen}
 
-In diesem Kapitel werden die Rahmenbedingungen der Tests beschrieben, die durchgeführten Performancetests analysiert und die Ergebnisse interpretiert.
+In diesem Kapitel werden die Rahmenbedingungen der Tests beschrieben, die durchgeführten Performanztests analysiert und die Ergebnisse interpretiert.
 
 \section{Die Testvoraussetzungen}
 \label{sec:DieTestvoraussetzungen}
 
-Damit die Ergebnisse der Performancetests miteinander vergleichen zu können, müssen die Tests unter den gleichen Voraussetzungen durchgeführt werden.
+Um die Ergebnisse der Performanztests miteinander vergleichen zu können, müssen die Tests unter den gleichen Voraussetzungen durchgeführt werden.
 Deswegen wird in diesem Abschnitt beschrieben, welche Voraussetzungen für die Tests geschaffen wurden.
 
 \subsection{Die Testumgebung}
 \label{subsec:DieTestumgebung}
 
-Alle Performancetests werden auf einem System mit den folgender Hardware und Software durchgeführt:
+Alle Performanztests werden auf einem System mit der folgender Hardware und Software durchgeführt:
 \begin{itemize}
     \item CPU: Intel Core i7-11800H @2.30GHz
     \item RAM: 16 GB DDR4
@@ -21,14 +21,14 @@ Alle Performancetests werden auf einem System mit den folgender Hardware und Sof
     \item Chrome Version: 143.0.7499.41
     \item Firefox Version: 145.0
 \end{itemize}
-Während der Durchführung der Tests werden keine weiteren Programme ausgeführt, um Verzerrungen der Ergebnisse zu vermeiden.
-Als Testumgebungen dienen die Browser Google Chrome und Mozilla Firefox, die jeweils die JavaScript-Engines V8 (Chrome) \cite{V8_2025} und SpiderMonkey (Firefox) \cite{SpiderMonkey2025} verwenden.
-Der Backtester wird in den beiden Browsern ausgeführt, um einen Vergleich der Performance von WebAssembly (WASM) und JavaScript in der jeweiligen Engine zu ermöglichen.
+Während der Durchführung der Tests werden keine weiteren Programme ausgeführt, um eine Verzerrungen der Ergebnisse zu vermeiden.
+Als Testumgebungen dienen die Browser Google Chrome und Mozilla Firefox, die jeweils die JavaScript Engines V8 (Chrome) \cite{V8_2025} und SpiderMonkey (Firefox) \cite{SpiderMonkey2025} verwenden.
+Der Backtester wird in den beiden Browsern ausgeführt, um einen Vergleich der Performanz von WebAssembly (WASM) und JavaScript in der jeweiligen Engine zu ermöglichen.
 
 \subsection{Die Testdaten}
 \label{subsec:DieTestdaten}
 
-Alle Strategien, die in den Performancetests getestet werden, verwenden die gleichen historischen Kursdatensätze.
+Alle Strategien, die in den Performanztests getestet werden, verwenden die gleichen historischen Kursdatensätze.
 Für die Tests werden Kursdaten von zwei verschiedenen Kryptomünzen verwendet:
 \begin{itemize}
     \item Bitcoin (BTC)
@@ -39,7 +39,7 @@ Diese Kursdaten werden von der Kryptobörse Binance \cite{Binance} bezogen und u
 Für die Testfälle wird Bitcoin im Zeitraum vom 01.07.2023 bis zum 30.06.2025 und Cardano im Zeitraum vom 01.07.2021 bis zum 30.06.2022.
 Die Kursdaten umfassen etwa 500.000 Datenpunkte pro Jahr und liegen in einem Minutenintervall vor.
 Somit stehen für Bitcoin rund 1,5 Millionen und für Cardano etwa 500.000 Kurswerte zur Verfügung.
-Durch die Kombination der Beobachtungszeiträume und Kryptowährungen wird ein breites Spektrum an unterschiedlichen Kursbewegungen abgebildet, 
+Durch die Kombination der Beobachtungszeiträume und Kryptowährungen wird ein breites Spektrum an unterschiedlichen Kursschwankungen abgebildet, 
 sodass verschiedene Marktphasen und stark variierende Datenpunktumfänge in den Tests berücksichtig werden.
 
 \begin{figure}[H]
@@ -55,29 +55,29 @@ Die Datenpunkte enthalten einen Zeitstempel und einen Kurswert. Die Daten sind i
 \section{Die Testausführung}
 \label{sec:DieTestausführung}
 
-Damit die Performance der beiden Programmiersprachen objektiv bewertet werden kann, werden die Ausführungszeiten der einzelnen Strategien systematisch gemessen. 
+Damit die Performanz der beiden Programmiersprachen objektiv bewertet werden kann, werden die Ausführungszeiten der einzelnen Strategien systematisch gemessen. 
 Es wird jede der drei Handelsstrategien sowohl in WebAssembly als auch in JavaScript implementiert und anschließend innerhalb des entwickelten Backtesters ausgeführt.
 Dafür wird das System jeweils einmal in Chrome und einmal in Firefox gestartet. 
 Der Backtester garantiert dabei, dass alle Strategien unter gleichen Bedingungen getestet werden können.
-Dieses Signal wird anschließend ausgeführt, sofern in der Simulation ausreichend Geld oder Wertpapiere zur Verfügung stehen.
 
 Bei jedem Durchlauf erhält die Strategie den aktuellen Datenpunkt sowie die letzten 72 historischen Datenpunkte. 
 Auf dieser Basis wird die Strategie im Minutenintervall abgefragt, um ein Handelssignal zu generieren.
+Dieses Signal wird anschließend ausgeführt, sofern in der Simulation ausreichend Geld oder Wertpapiere zur Verfügung stehen.
 
 Um die Aussagekraft der Ergebnisse weiter zu erhöhen, werden alle Strategien auf zwei unterschiedliche Datensets angewandt.
 Durch die Kombination aus zwei Browsern, drei Strategien, zwei Implementierungssprachen und zwei Datensets ergeben sich insgesamt 24 Testfälle.
 
 Für statistisch belastbare und reproduzierbare Ergebnisse wird jede Kombination aus Browser, Strategie, Implementierungssprache und Datenset 25-mal ausgeführt. 
 Bei jedem Durchlauf wird die benötigte Zeit erfasst. Aus den Messdaten wird der Durchschnitt, der Median und die Standardabweichung pro Testfall berechnet. 
-Diese Kennzahlen ermöglichen es, sowohl die Performance als auch die Stabilität und Konsistenz der jeweiligen Implementierung zu bewerten.
+Diese Kennzahlen ermöglichen es, sowohl die Performanz als auch die Stabilität und Konsistenz der jeweiligen Implementierung zu bewerten.
 
 \section{Analyse der Testergebnisse}
 \label{sec:AnalysederTestergebnisse}
 
-Ziel der Analyse ist es, die Laufzeitunterschiede zwischen der Ausführung des Backtesters in reinem JavaScript und
+Ziel der Analyse ist es, die Laufzeitunterschiede zwischen der Ausführung des Backtesters mit reinem JavaScript und
 der Ausführung unter Verwendung von WebAssembly darzustellen und zu analysieren.
 Die Analyse konzentriert sich dabei auf die Interpretation der gemessenen Laufzeiten und deren erkennenbaren Unterschiede.
-Speicherverbrauch und Größe der einzelnen Strategien wird in diesem Kontext nicht betrachtet.
+Speicherverbrauch und Größe der einzelnen Strategien werden in diesem Kontext nicht näher betrachtet.
 
 \begin{figure}[H]
     \centering
@@ -87,8 +87,8 @@ Speicherverbrauch und Größe der einzelnen Strategien wird in diesem Kontext ni
 \end{figure}
 
 In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1} ist erkennbar,
-dass im Firefox-Browser der Performancevorteil von WebAssembly gegenüber JavaScript mit steigender Rechenintensität der Strategien zunimmt.
-Der durch WebAssembly erzielte Performancevorteil kompensiert den zusätzlichen Overhead aber erst bei der rechenintensiven Strategien.
+dass im Firefox Browser der Performanzvorteil von WebAssembly gegenüber JavaScript mit steigender Rechenintensität der Strategien zunimmt.
+Der durch WebAssembly erzielte Performanzvorteil kompensiert den zusätzlichen Overhead aber erst bei der rechenintensiven Strategien.
 
 Die Durchschnittsüberschneidungsstrategie weist den geringsten Rechenaufwand auf und benötigt entsprechend die kürzeste Berechnungszeit.
 In diesem Fall verringert der durch die Nutzung von WebAssembly entstehende Overhead die Performanz so sehr, dass die in JavaScript implementierte Strategie schneller ist.
@@ -97,7 +97,8 @@ Bei der Ausbruchsstrategie ist der Berechnungsaufwand höher, was zu einer Annä
 WebAssembly erreicht hier nahezu vergleichbare Ausführungszeiten wie JavaScript.
 
 Die Strategie der Mittelwertrückkehr unter Verwendung von Bollinger-Bändern erfordert den höchsten Rechenaufwand. 
-In diesem Szenario zeigt sich ein deutlicher Performancevorteil von WebAssembly, wobei die JavaScript Implementierung im Durchschnitt etwa 20\% langsamer ist als die WebAssembly Variante.
+In diesem Szenario zeigt sich ein deutlicher Performanzvorteil von WebAssembly.
+Die JavaScript Implementierung ist im Durchschnitt etwa 20\% langsamer ist als die WebAssembly Variante.
 
 \begin{figure}[H]
     \centering
@@ -110,8 +111,8 @@ In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox2
 dass der WebAssembly Overhead auch bei geringerer Datenpunktanzahl erst bei rechenintensiven Strategien durch die gesteigerte Performanz kompensiert wird.
 Auffällig ist jedoch, dass in diesem Testfall im Vergleich zu dem Szenario mit mehr Datenpunkten eine Verdreifachung der Datenpunkte 
 zu einer überproportionalen Steigerung der Ausführungsgeschwindigkeit führt.
-Ein möglicher Grund für die Verringerung der Performanz kann darin liegen, dass mit steigender Anzahl an Datenpunkten auch der benötigte Laufzeitspeicher zunimmt. 
-Dies kann zu einem höheren Speicherverbrauch und zu erhöhter Speicherverwaltung durch das System führen.
+Ein möglicher Grund für die Verringerung der Performanz bei vielen Datenpunkten kann darin liegen, dass mit steigender Anzahl an Datenpunkten auch der benötigte Laufzeitspeicher zunimmt. 
+Der erhöhte Speicherbedarf führt zu einem entsprechend höheren Aufwand für die Speicherverwaltung im System.
 Insbesondere bei speicherintensiven Operationen kann dieser Effekt die Effizienz der Strategie deutlich verringern.
 
 \begin{figure}[H]
@@ -125,7 +126,7 @@ Die Testergebnisse in Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderS
 In Chrome ist WebAssembly bei allen drei Strategien langsamer als die JavaScript Implementierung, egal bei welchem Rechenaufwand der Strategie.
 In diesem Fall ist der Unterschied zwischen den beiden Implementierungssprachen über alle Strategien hinweg vergleichbar und beträgt etwa 3\% bis 5\% der Ausführungszeit.
 Dies deutet darauf hin, dass der Overhead von WebAssembly in der V8-Engine höher ist.
-WebAssembly profitiert in Chrome nicht von der gesteigerten Performanz bei rechenintensiven Aufgaben, wie es in Firefox der Fall ist.
+WebAssembly profitiert in Chrome nicht von der gesteigerten Performanz bei rechenintensiven Aufgaben, wie dies in Firefox der Fall ist.
 Die Tests von \cite{10.1145/3487552.3487827} kommen ebenfalls bei Desktop-Anwendungen zu dem Ergebnis, dass die WebAssembly Performanz in Chrome schlechter ist als in Firefox.
 
 Des Weiteren zeigt sich, dass die JavaScript Umsetzung der rechenintensiven Mittelwertrückkehrstrategie in Chrome schneller ausgeführt wird als in Firefox.
@@ -146,7 +147,7 @@ Bei allen anderen Testfällen war die Mittelwertrückkehrstrategie die Zeitaufwe
 Ein möglicher Grund hierfür könnte sein, dass bei dieser Funktion bei dieser Datenmenge noch keine Just-In-Time-Optimierungen durchgeführt wurden,
 die bei größeren Datenmengen zu einer schnelleren Ausführung führen könnten.
 
-Der Effekt der überproportionalen Steigerung der Ausführungsgeschwindigkeit bei erhöhter Datenpunktanzahl,
+Der Effekt der überproportionalen Steigerung der Ausführungszeit bei erhöhter Datenpunktanzahl,
 der in Firefox beobachtet wurde, ist in Chrome auch in diesem Testfall erneut erkennbar.
 
 \begin{figure}[H]
@@ -180,7 +181,7 @@ Im Gegensatz zu Firefox ist in Chrome kein klarer Trend erkennbar, dass die Stan
 Bei der Ausbruchsstrategie ist die Standardabweichung bei einer geringeren Anzahl von Datenpunkten sogar höher als bei einer größeren Datenmenge.
 Dies könnte darauf hindeuten, dass in Chrome externe Einflüsse wie Laufzeitoptimierungen in der JavaScript Engine einen stärkeren Einfluss auf die Messungen haben.
 
-Des Weiteren im Gegensatz zu Firefox sind die Standardabweichungen der WebAssembly Implementierungen in Chrome überwiegend geringer als die den JavaScript Varianten.
+Des Weiteren im Gegensatz zu Firefox sind die Standardabweichungen der WebAssembly Implementierungen in Chrome überwiegend geringer als die der JavaScript Varianten.
 Nur bei der Durchschnittsüberschneidungsstrategie mit 1,5 Millionen Datenpunkten weist die WebAssembly Implementierung eine höhere Varianz auf als die JavaScript Version.
 Eine mögliche Erklärung hierfür ist eine stabilere Integration von WebAssembly in die Chrome Laufzeitumgebung, die zu geringeren Schwankungen der Ausführungszeiten führt.
 
@@ -202,7 +203,7 @@ Dies deutet darauf hin, dass die zeitliche Stabilität primär durch die Kombina
     \label{tab:browser_strategien_wasm}
 \end{table}
 
-In Tabelle \ref{tab:browser_strategien_wasm} sind die durchschnittlichen Ausführungszeiten der WebAssembly Implementierungen in den beiden Browsern zusammengefasst.
+In der Tabelle \ref{tab:browser_strategien_wasm} sind die durchschnittlichen Ausführungszeiten der WebAssembly Implementierungen in den beiden Browsern zusammengefasst.
 Es ist erkennbar, dass Firefox in allen drei Strategien eine bessere Performanz aufweist als Chrome.
 Der Unterschied in den Ausführungszeiten zwischen den beiden Browsern ist bei allen Strategien vergleichbar und liegt bei circa 800 Millisekunden.
 Dies deutet darauf hin, dass die WebAssembly Integration in Firefox mit SpiderMonkey effizienter ist als in Chrome mit V8.
@@ -210,14 +211,14 @@ Dies deutet darauf hin, dass die WebAssembly Integration in Firefox mit SpiderMo
 \section{Zusammenfassung der Testergebnisse}
 \label{sec:ZusammenfassungderTestergebnisse}
 
-In diesem Kapitel wurden Performancetests durchgeführt, um das Laufzeitverhalten von JavaScript- und WebAssembly-Implementierungen innerhalb eines webbasierten Backtesters zu vergleichen.
+In diesem Kapitel wurden Performanztests durchgeführt, um das Laufzeitverhalten von JavaScript- und WebAssembly Implementierungen innerhalb eines webbasierten Backtesters zu vergleichen.
 Die Tests erfolgten unter kontrollierten und reproduzierbaren Rahmenbedingungen, wobei unterschiedliche Browser, JavaScript und WebAssembly Engines, Handelsstrategien sowie Datensatzgrößen berücksichtigt wurden.
 
 Die Ergebnisse zeigen, dass die Performanz von WebAssembly im Vergleich zu JavaScript stark von der verwendeten Laufzeitumgebung und der Rechenintensität der jeweiligen Strategie abhängt.
-In Firefox konnte WebAssembly bei der rechenintensiven Strategie einen Performancevorteil gegenüber JavaScript erzielen.
-Bei den einfacheren Strategien erwies jedoch sich JavaScript aufgrund geringerem Initialisierungs- und Integrationsaufwand als effizienter.
+In Firefox konnte WebAssembly bei der rechenintensiven Strategie einen Performanzvorteil gegenüber JavaScript erzielen.
+Bei den einfacheren Strategien erwies sich jedoch JavaScript aufgrund geringerem Initialisierungs- und Integrationsaufwand als effizienter.
 
-In Chrome zeigte sich bei allen getesteten Strategien ein konsistenter Performance-Nachteil von WebAssembly gegenüber JavaScript.
+In Chrome zeigte sich bei allen getesteten Strategien ein konsistenter Performanznachteil von WebAssembly gegenüber JavaScript.
 Dieser Nachteil blieb unabhängig von der Komplexität der Strategie und der Datenmenge bestehen.
 Dadurch lässt sich vermuten, dass in Chrome WebAssembly weniger optimal in die V8-Engine integriert, ist als reines JavaScript.
 
@@ -226,7 +227,7 @@ Vielmehr zeigte sich in beiden Browsern, dass größere Datensätze zu einer üb
 
 Die Analyse der Standardabweichungen zeigte zudem, dass beide Browser unterschiedliche Stabilitätsprofile aufweisen.
 In Firefox neigen WebAssembly Implementierungen zu höheren Schwankungen in den Ausführungszeiten, während in Chrome JavaScript eine größere Varianz aufweist.
-Insgesamt zeigt sich, dass WebAssembly in Chrome browserübergreifend eine stabilere Ausführungszeit, unabhängig von der gewählten Strategie oder der Datenmenge.
+Insgesamt zeigt sich, dass WebAssembly in Chrome browserübergreifend eine stabilere Ausführungszeit aufweist, unabhängig von der gewählten Strategie oder der Datenmenge.
 
-Zusammenfassend lässt sich feststellen, dass WebAssembly in Firefox und bei komplexen, rechenintensiven Strategien einen messbaren Performancevorteil bieten kann.
-Während JavaScript in Chrome bei aufwendigen Aufgaben die bessere Laufzeitperformance aufweist.
+Zusammenfassend lässt sich feststellen, dass WebAssembly in Firefox und bei komplexen, rechenintensiven Strategien einen messbaren Performanzvorteil bieten kann.
+Während JavaScript in Chrome bei aufwendigen Aufgaben die bessere Laufzeitperformanz aufweist.

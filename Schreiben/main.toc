@@ -53,24 +53,24 @@
 \contentsline {subsection}{\numberline {3.7.1}Emscripten}{20}{subsection.3.7.1}%
 \contentsline {subsection}{\numberline {3.7.2}WABT}{21}{subsection.3.7.2}%
 \contentsline {chapter}{\numberline {4}Implementierung des Backtesters und der Strategien}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Die Benutzerschnittstellen}{23}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Die API Schnittstelle}{23}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Die Logikeingangsparameter}{23}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Implementierung der Backtestlogik}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Implementierungen der Strategien}{23}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Gleitende Durchschnittsüberschneidungs Strategie}{23}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Mittelwertrückkehr Strategie}{23}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Ausbruchsstrategie}{23}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Die Datenvisualisierungen}{23}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Visualisierung des Kurswertes}{23}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Visualisierung des Portfoliowertes}{23}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Performancetests der unterschiedlichen Programmiersprachen}{24}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Die Testvoraussetzungen}{24}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Die Testumgebung}{24}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Die Testdaten}{24}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Die Testausführung}{25}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Analyse der Testergebnisse}{26}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{32}{section.5.4}%
+\contentsline {section}{\numberline {4.1}Die Benutzerschnittstellen}{22}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Die API Schnittstelle}{22}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Die Logikeingangsparameter}{22}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Implementierung der Backtestlogik}{22}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Implementierungen der Strategien}{22}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Gleitende Durchschnittsüberschneidungs Strategie}{22}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Mittelwertrückkehr Strategie}{22}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Ausbruchsstrategie}{22}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Die Datenvisualisierungen}{22}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Visualisierung des Kurswertes}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Visualisierung des Portfoliowertes}{22}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Performanztests der unterschiedlichen Programmiersprachen}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Die Testvoraussetzungen}{23}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Die Testumgebung}{23}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Die Testdaten}{23}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Die Testausführung}{24}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Analyse der Testergebnisse}{25}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{31}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{33}{chapter.6}%
 \contentsline {chapter}{Quellenverzeichnis}{34}{chapter*.25}%
 \contentsline {section}{Literatur}{34}{section*.26}%
