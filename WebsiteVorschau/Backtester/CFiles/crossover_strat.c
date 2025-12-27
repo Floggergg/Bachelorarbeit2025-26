@@ -6,9 +6,6 @@ __attribute__((used)) int strategy(double* prices, int prices_length, int interv
         return 0;
     }
 
-    const double currentPrice = prices[prices_length - 1];
-    const double threshold = currentPrice * 0.002;
-
     double shortPrev = 0.0;
     double longPrev = 0.0;
 
@@ -39,6 +36,9 @@ __attribute__((used)) int strategy(double* prices, int prices_length, int interv
     const double diffCurr = shortCurr - longCurr;
 
     double absDiff = diffCurr < 0.0 ? -diffCurr : diffCurr;
+
+    const double currentPrice = prices[prices_length - 1];
+    const double threshold = currentPrice * 0.002;
 
     if (diffPrev < 0.0 && diffCurr > 0.0 && absDiff >= threshold) {
         return 1;

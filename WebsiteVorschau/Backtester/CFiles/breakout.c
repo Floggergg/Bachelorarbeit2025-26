@@ -21,16 +21,16 @@ __attribute__((used)) int strategy(double *prices, int length, int intervalsBack
         }
     }
 
-    double last = prices[length - 1];
+    double lastPrice = prices[length - 1];
     double epsilon = 0.01;
 
     double longTrigger = max * (1.0 + epsilon);
     double shortTrigger = min * (1.0 - epsilon);
 
-    if (last > longTrigger) {
+    if (lastPrice > longTrigger) {
         return 1;
     }
-    if (last < shortTrigger) {
+    if (lastPrice < shortTrigger) {
         return -1;
     }
 

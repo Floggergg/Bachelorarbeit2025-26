@@ -1,7 +1,7 @@
 \chapter{Implementierung des Backtesters und der Strategien}
 \label{cha:ImplementierungdesBacktestersundderStrategien}
 
-In diesem Kapitel wird beschrieben wie die einzelnen Komponenten des Backtester implementiert sind.
+In diesem Kapitel wird beschrieben wie die einzelnen Komponenten des Backtester und die getesteten Strategien implementiert sind.
 \iffalse
 \begin{CCode}[caption={Simple C example}, label={lst:c-example}]
 #include <stdio.h>
@@ -51,14 +51,89 @@ greet("Alice");
 \section{Implementierungen der Strategien}
 \label{sec:ImplementierungenderStrategien}
 
+Es werden drei verschiedene Handelsstrategien implementiert. Jede Strategie hat eine unterschiedliche Logik, um Kauf- und Verkaufsentscheidungen zu treffen.
+Diese Unterschiede in der Logik führen zu unterschiedlichen Laufzeitkomplexitäten.
+Die Ideen hinter den implementierten Strategien sind in Kapitel \ref{sec:Bewährte AnsätzefürHandelsstrategien} beschrieben.
+
+Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei Strategien in JavaScript und C.
+
 \subsection{Gleitende Durchschnittsüberschneidungs Strategie}
 \label{subsec:GleitendeDurchschnittsüberschneidungsStrategie}
+
+\begin{CCode}[caption={Durchschnittsüberschneidung in C}, label={lst:DurchschnittsüberschneidunginC}]
+    for (int i = prices_length - 1 - shortPeriod; i < prices_length - 1; i++) {
+        shortPrev += prices[i];
+    }
+    shortPrev /= shortPeriod;
+
+    for (int i = prices_length - 1 - longPeriod; i < prices_length - 1; i++) {
+        longPrev += prices[i];
+    }
+    longPrev /= longPeriod;
+
+    double shortCurr = 0.0;
+    double longCurr = 0.0;
+
+    for (int i = prices_length - shortPeriod; i < prices_length; i++) {
+        shortCurr += prices[i];
+    }
+    shortCurr /= shortPeriod;
+
+    for (int i = prices_length - longPeriod; i < prices_length; i++) {
+        longCurr += prices[i];
+    }
+    longCurr /= longPeriod;
+
+    const double diffPrev = shortPrev - longPrev;
+    const double diffCurr = shortCurr - longCurr;
+
+    double absDiff = diffCurr < 0.0 ? -diffCurr : diffCurr;
+
+    const double currentPrice = prices[prices_length - 1];
+    const double threshold = currentPrice * 0.002;
+
+    if (diffPrev < 0.0 && diffCurr > 0.0 && absDiff >= threshold) {
+        return 1;
+    }
+    if (diffPrev > 0.0 && diffCurr < 0.0 && absDiff >= threshold) {
+        return -1;
+    }
+\end{CCode}
 
 \subsection{Mittelwertrückkehr Strategie}
 \label{subsec:MittelwertrückkehrStrategie}
 
+\begin{CCode}[caption={Mittelwertrückkehr in C}, label={lst:MittelwertrückkehrinC}]
+    double upperBand = mean + 3.25 * stdDev;
+    double lowerBand = mean - 3.25 * stdDev;
+
+    double lastPrice = prices[length - 1];
+
+    if (lastPrice < lowerBand) {
+        return 1;
+    }
+    if (lastPrice > upperBand) {
+        return -1;
+    }
+\end{CCode}
+
 \subsection{Ausbruchsstrategie}
 \label{subsec:Ausbruchsstrategie}
+
+\begin{CCode}[caption={Ausbruchsstrategie in C}, label={lst:AusbruchsstrategieinC}]
+    double lastPrice = prices[length - 1];
+    double epsilon = 0.01;
+
+    double longTrigger = max * (1.0 + epsilon);
+    double shortTrigger = min * (1.0 - epsilon);
+
+    if (lastPrice > longTrigger) {
+        return 1;
+    }
+    if (lastPrice < shortTrigger) {
+        return -1;
+    }
+\end{CCode}
 
 \section{Die Datenvisualisierungen}
 \label{sec:DieDatenvisualisierungen}
