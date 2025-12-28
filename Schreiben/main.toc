@@ -59,19 +59,19 @@
 \contentsline {section}{\numberline {4.2}Implementierung der Backtestlogik}{22}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Implementierungen der Strategien}{24}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Gleitende Durchschnittsüberschneidungs Strategie}{24}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Mittelwertrückkehr Strategie}{24}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}Mittelwertrückkehr Strategie}{25}{subsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.3.3}Ausbruchsstrategie}{25}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Die Datenvisualisierungen}{25}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Visualisierung des Kurswertes}{25}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Visualisierung des Portfoliowertes}{25}{subsection.4.4.2}%
-\contentsline {chapter}{\numberline {5}Performanztests der unterschiedlichen Programmiersprachen}{27}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Die Testvoraussetzungen}{27}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Die Testumgebung}{27}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Die Testdaten}{27}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Die Testausführung}{28}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Analyse der Testergebnisse}{29}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{35}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{37}{chapter.6}%
-\contentsline {chapter}{Quellenverzeichnis}{38}{chapter*.25}%
-\contentsline {section}{Literatur}{38}{section*.26}%
-\contentsline {section}{Software}{41}{section*.27}%
+\contentsline {section}{\numberline {4.4}Die Datenvisualisierungen}{26}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Visualisierung des Kurswertes}{26}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Visualisierung des Portfoliowertes}{27}{subsection.4.4.2}%
+\contentsline {chapter}{\numberline {5}Performanztests der unterschiedlichen Programmiersprachen}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Die Testvoraussetzungen}{28}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Die Testumgebung}{28}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Die Testdaten}{28}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Die Testausführung}{29}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Analyse der Testergebnisse}{30}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{36}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{38}{chapter.6}%
+\contentsline {chapter}{Quellenverzeichnis}{39}{chapter*.25}%
+\contentsline {section}{Literatur}{39}{section*.26}%
+\contentsline {section}{Software}{42}{section*.27}%

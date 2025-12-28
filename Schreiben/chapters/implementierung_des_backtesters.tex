@@ -146,6 +146,30 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
     }
 \end{CCode}
 
+\begin{JsCode}[caption={Durchschnittsüberschneidung in JavaScript}, label={lst:DurchschnittsüberschneidunginJavaScript}]
+    const shortPrev = movingAverageSlice(prices, prevShortStart, prevEnd);
+    const longPrev = movingAverageSlice(prices, prevLongStart, prevEnd);
+
+    const currShortStart = length - shortPeriod;
+    const currLongStart = length - longPeriod;
+
+    const shortCurr = movingAverageSlice(prices, currShortStart, length);
+    const longCurr = movingAverageSlice(prices, currLongStart, length);
+
+    const diffPrev = shortPrev - longPrev;
+    const diffCurr = shortCurr - longCurr;
+
+    const currentPrice = prices[prices.length - 1];
+    const threshold = currentPrice * 0.002;
+
+    if (diffPrev < 0 && diffCurr > 0 && Math.abs(diffCurr) >= threshold) {
+        return 1;
+    }
+    if (diffPrev > 0 && diffCurr < 0 && Math.abs(diffCurr) >= threshold) {
+        return -1;
+    }
+\end{JsCode}
+
 \subsection{Mittelwertrückkehr Strategie}
 \label{subsec:MittelwertrückkehrStrategie}
 
@@ -163,10 +187,28 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
     }
 \end{CCode}
 
+\begin{JsCode}[caption={Mittelwertrückkehr in JavaScript}, label={lst:MittelwertrückkehrinJavaScript}]
+    const upperBand = mean + 3.25 * stdDev;
+    const lowerBand = mean - 3.25 * stdDev;
+
+    const lastPrice = prices[prices.length - 1];
+
+    if (lastPrice < lowerBand) {
+        return 1;
+    }
+    if (lastPrice > upperBand) {
+        return -1;
+    }
+\end{JsCode}
+
 \subsection{Ausbruchsstrategie}
 \label{subsec:Ausbruchsstrategie}
 
 \begin{CCode}[caption={Ausbruchsstrategie in C}, label={lst:AusbruchsstrategieinC}]
+    int windowLength = length - 1;
+
+    // Berechung des Maximums und Minimums im Fenster
+
     double lastPrice = prices[length - 1];
     double epsilon = 0.01;
 
@@ -181,10 +223,29 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
     }
 \end{CCode}
 
+\begin{JsCode}[caption={Ausbruchsstrategie in JavaScript}, label={lst:AusbruchsstrategieinJavaScript}]
+    const window = prices.slice(0, prices.length - 1);
+    const { min, max } = extrema(window);
+    const last = prices[prices.length - 1];
+
+    const epsilon = 0.01;
+    const longTrigger = max * (1 + epsilon);
+    const shortTrigger = min * (1 - epsilon);
+
+    if (last > longTrigger) {
+        return 1;
+    }
+    if (last < shortTrigger) {
+        return -1;
+    }
+\end{JsCode}
+
 \section{Die Datenvisualisierungen}
 \label{sec:DieDatenvisualisierungen}
 
-// TODO
+Zur Datenvisualisierung werden Kurs- und Portfoliowerte in einem HTML-Canvas dargestellt. 
+Um eine visuelle überladene Darstellung zu vermeiden, wird pro Diagramm jeweils nur ein Teil der verfügbaren Daten visualisiert. 
+Die Auswahl der dargestellten Datenpunkte erfolgt dabei so, dass die Aussagekraft der Diagramme erhalten bleibt, während die Darstellungsdichte reduziert wird.
 
 \subsection{Visualisierung des Kurswertes}
 \label{subsec:VisualisierungdesKurswertes}

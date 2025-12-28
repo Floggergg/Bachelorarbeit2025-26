@@ -17,9 +17,6 @@ function strategy(prices, intervalsBack) {
         return 0;
     }
 
-    const currentPrice = prices[prices.length - 1];
-    const threshold = currentPrice * 0.002;
-
     const length = prices.length;
     const prevEnd = length - 1;
     const prevShortStart = prevEnd - shortPeriod;
@@ -40,6 +37,9 @@ function strategy(prices, intervalsBack) {
 
     const diffPrev = shortPrev - longPrev;
     const diffCurr = shortCurr - longCurr;
+
+    const currentPrice = prices[prices.length - 1];
+    const threshold = currentPrice * 0.002;
 
     if (diffPrev < 0 && diffCurr > 0 && Math.abs(diffCurr) >= threshold) {
         return 1;

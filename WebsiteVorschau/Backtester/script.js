@@ -474,7 +474,7 @@ function executeCalculations(startingMoney, interval, intervalsBack, silent = fa
         if (lastVal !== value) {
             portfolioValues.push({ time, value });
         }
-        
+
         if (value > maxPortfolioValue) {
             maxPortfolioValue = value;
         }
