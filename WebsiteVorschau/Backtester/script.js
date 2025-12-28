@@ -33,10 +33,8 @@ async function fetchApiData(symbol = "BTCUSDT", interval = "1m", start = startTi
 
         allData.push(...data);
 
-        // Move fetchStart to last candle closeTime + 1 ms
         start = data[data.length - 1][6] + 1;
 
-        // Respect Binance rate limit (1200 req/minute)
         await new Promise(r => setTimeout(r, 200));
     }
 
@@ -284,8 +282,12 @@ function drawPortfolioChart(portfolioValues, minTime, maxTime, maxValue) {
         const x = padding + ((new Date(p.time).getTime() - minTime) / (maxTime - minTime)) * plotWidth;
         const y = padding + plotHeight - ((p.value / maxValue) * plotHeight);
 
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
+        if (i === 0) {
+            ctx.moveTo(x, y);
+        }
+        else {
+            ctx.lineTo(x, y);
+        }
     }
 
     ctx.strokeStyle = 'purple';
@@ -468,9 +470,11 @@ function executeCalculations(startingMoney, interval, intervalsBack, silent = fa
 
         const value = holding ? stock * price : money;
         const lastVal = portfolioValues[portfolioValues.length - 1]?.value;
+
         if (lastVal !== value) {
             portfolioValues.push({ time, value });
         }
+        
         if (value > maxPortfolioValue) {
             maxPortfolioValue = value;
         }

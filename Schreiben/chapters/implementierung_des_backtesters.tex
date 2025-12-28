@@ -2,39 +2,6 @@
 \label{cha:ImplementierungdesBacktestersundderStrategien}
 
 In diesem Kapitel wird beschrieben wie die einzelnen Komponenten des Backtester und die getesteten Strategien implementiert sind.
-\iffalse
-\begin{CCode}[caption={Simple C example}, label={lst:c-example}]
-#include <stdio.h>
-
-int main(void)
-{
-    printf("Hello, world!\n");
-    return 0;
-}
-\end{CCode}
-
-\begin{HtmlCode}[caption={Basic HTML page}, label={lst:html-example}]
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Example</title>
-</head>
-<body>
-    <h1>Hello World</h1>
-    <p>This is an HTML example.</p>
-</body>
-</html>
-\end{HtmlCode}
-
-\begin{JsCode}[caption={JavaScript example}, label={lst:js-example}]
-function greet(name) {
-    console.log(`Hello, ${name}!`);
-}
-
-greet("Alice");
-\end{JsCode}
-\fi
 
 \section{Die Benutzerschnittstellen}
 \label{sec:DieBenutzerschnittstellen}
@@ -42,11 +9,90 @@ greet("Alice");
 \subsection{Die API Schnittstelle}
 \label{subsec:DieAPISchnittstelle}
 
+\begin{JsCode}[caption={Binance API Schnittstelle}, label={lst:BinanceAPISchnittstelle}]
+    while (start < end) {
+        const url = new URL("https://api.binance.com/api/v3/klines");
+        url.searchParams.set("symbol", symbol);
+        url.searchParams.set("interval", interval);
+        url.searchParams.set("startTime", start);
+        url.searchParams.set("endTime", end);
+        url.searchParams.set("limit", 1000);
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        // Fehlerbehebeungen
+
+        allData.push(...data);
+
+        start = data[data.length - 1][6] + 1;
+
+        await new Promise(r => setTimeout(r, 200));
+    }
+\end{JsCode}
+
 \subsection{Die Logikeingangsparameter}
 \label{DieLogikeingangsparameter}
 
 \section{Implementierung der Backtestlogik}
 \label{sec:ImplementierungenderBacktestlogik}
+
+\begin{JsCode}[caption={Backtestlogik}, label={lst:Backtestlogik}]
+    if (uploadedFunctionAvailable === "wasm") {
+        array = new Float64Array(memory.buffer, 0, intervalsBack)
+    }
+
+    for (let i = 0; i < jsonData.length; i += interval) {
+        const startIdx = Math.max(0, i - intervalsBack * interval);
+        const sliced = jsonData.slice(startIdx, i);
+
+        const prices = [];
+        for (let idx = 0; idx < sliced.length; idx += interval) {
+            prices.push(parseFloat(sliced[idx].avgPrice));
+        }
+
+        let resCode = 0;
+        if (uploadedFunctionAvailable === "js") {
+            resCode = strategyJS(prices, intervalsBack);
+        } else if (uploadedFunctionAvailable === "wasm" && array) {
+            array.set(prices);
+            if (strategy) {
+                resCode = strategy(array.byteOffset, prices.length, intervalsBack);
+            }
+        } else {
+            return;
+        }
+
+        // Fehlerbehebeungen der Strategieergebnisse
+
+        if (action) {
+            if (action.signal === 'buy' && money > 0) {
+                rowNumber = appendTradeRow(time, action, rowNumber, date, price, tbody);
+
+                stock = money / price;
+                money = 0;
+                holding = true;
+            } else if (action.signal === 'sell' && stock > 0) {
+                rowNumber = appendTradeRow(time, action, rowNumber, date, price, tbody);
+
+                money = stock * price;
+                stock = 0;
+                holding = false;
+            }
+        }
+
+        const value = holding ? stock * price : money;
+        const lastVal = portfolioValues[portfolioValues.length - 1]?.value;
+        
+        if (lastVal !== value) {
+            portfolioValues.push({ time, value });
+        }
+
+        if (value > maxPortfolioValue) {
+            maxPortfolioValue = value;
+        }
+    }
+\end{JsCode}
 
 \section{Implementierungen der Strategien}
 \label{sec:ImplementierungenderStrategien}
@@ -138,8 +184,46 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 \section{Die Datenvisualisierungen}
 \label{sec:DieDatenvisualisierungen}
 
+// TODO
+
 \subsection{Visualisierung des Kurswertes}
 \label{subsec:VisualisierungdesKurswertes}
 
+\begin{JsCode}[caption={Kurswertvisualisierung}, label={lst:Kurswertvisualisierung}]
+    const stepSize = Math.max(Math.round(data.length / 800), 1);
+    const sampled = data.filter((_, i) => i \% stepSize === 0);
+
+    sampled.forEach((d, index) => {
+        const time = new Date(d.time).getTime();
+        const price = parseFloat(d.avgPrice);
+        const x = padding + ((time - minTime) / (maxTime - minTime)) * plotWidth;
+        const y = padding + plotHeight - ((price / maxPrice) * plotHeight * 0.9);
+
+        points.push({ x, y, price, time: d.time });
+        if (index === 0) {
+            ctx.moveTo(x, y);
+        } else {
+            ctx.lineTo(x, y);
+        }
+    });
+\end{JsCode}
+
 \subsection{Visualisierung des Portfoliowertes}
 \label{subsec:VisualisierungdesPortfoliowertes}
+
+\begin{JsCode}[caption={Portfoliovisualisierung}, label={lst:Portfoliovisualisierung}]
+    const stepSize = Math.max(Math.round(portfolioValues.length / 800),1);
+
+    for (let i = 0; i < portfolioValues.length; i += stepSize) {
+        const p = portfolioValues[i];
+        const x = padding + ((new Date(p.time).getTime() - minTime) / (maxTime - minTime)) * plotWidth;
+        const y = padding + plotHeight - ((p.value / maxValue) * plotHeight);
+
+        if (i === 0) {
+            ctx.moveTo(x, y);
+        }
+        else {
+            ctx.lineTo(x, y);
+        }
+    }
+\end{JsCode}
