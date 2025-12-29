@@ -27,7 +27,7 @@ Dies reduziert die Datenmenge erheblich und ermöglicht eine effizientere Verarb
 Ebenfalls liefert Binance bei großen Datenmengen nicht die gesamten Daten auf einmal, sondern limitiert die Anzahl der zurückgegebenen Datensätze pro Anfrage.
 Daher muss die Datenabfrage mehrfach durchgeführt werden, um den gesamten Zeitraum abzudecken.
 Die API ist öffentlich zugänglich, aber es gelten bestimmte Ratenbegrenzungen.
-Um diese Ratenlimitierung nicht zu überschreiten, ist eine Verzögerung von 200 Millisekunden zwischen aufeinanderfolgenden Anfragen eingefügt.
+Um diese Ratenlimitierung nicht zu überschreiten, ist eine Verzögerung zwischen aufeinanderfolgenden Anfragen eingefügt.
 
 \begin{JsCode}[caption={Binance API Schnittstelle}, label={lst:BinanceAPISchnittstelle}]
     while (start < end) {
