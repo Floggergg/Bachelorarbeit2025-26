@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  28 DEC 2025 16:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  29 DEC 2025 12:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1703,10 +1703,7 @@ Overfull \hbox (0.53638pt too wide) in paragraph at lines 243--244
 
  (./chapters/implementierung_des_backtesters.tex
 Kapitel 4.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 12.
-(c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+
 
 [22
 
@@ -1714,12 +1711,16 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 69.
- (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 32.
+ (c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[23] (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+[23]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 98.
+ (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (c:/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
@@ -1729,92 +1730,87 @@ File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 
 [25]
 
-[26])
+[26]
 
-[27]
+[27])
+
+[28]
 \openout2 = `chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux'.
 
  (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.tex
 Kapitel 5.
 
 
-[28
+[29
 
 
 
 
 ]
-<images/TestDataJson.png, id=735, 243.15843pt x 174.6525pt>
+<images/TestDataJson.png, id=742, 243.15843pt x 174.6525pt>
 File: images/TestDataJson.png Graphic file (type png)
 <use images/TestDataJson.png>
 Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
 (pdftex.def)             Requested size: 228.4769pt x 164.10674pt.
 
 
-[29 <./images/TestDataJson.png>]
-<images/AvgExecutionTimesFirefox1.png, id=744, 788.9475pt x 592.2125pt>
+[30 <./images/TestDataJson.png>]
+<images/AvgExecutionTimesFirefox1.png, id=750, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox1.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox1.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox1.png  used on input line 84.
 (pdftex.def)             Requested size: 415.41025pt x 311.81985pt.
 
 
-[30 <./images/AvgExecutionTimesFirefox1.png (PNG copy)>]
-<images/AvgExecutionTimesFirefox2.png, id=751, 788.9475pt x 592.2125pt>
+[31 <./images/AvgExecutionTimesFirefox1.png (PNG copy)>]
+<images/AvgExecutionTimesFirefox2.png, id=757, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox2.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox2.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox2.png  used on input line 105.
 (pdftex.def)             Requested size: 415.41025pt x 311.81985pt.
 
 
-[31 <./images/AvgExecutionTimesFirefox2.png (PNG copy)>]
-<images/AvgExecutionTimesChrome1.png, id=759, 788.9475pt x 592.2125pt>
+[32 <./images/AvgExecutionTimesFirefox2.png (PNG copy)>]
+<images/AvgExecutionTimesChrome1.png, id=765, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome1.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome1.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome1.png  used on input line 120.
 (pdftex.def)             Requested size: 415.41025pt x 311.81985pt.
 
 
-[32 <./images/AvgExecutionTimesChrome1.png (PNG copy)>]
-<images/AvgExecutionTimesChrome2.png, id=767, 788.9475pt x 592.2125pt>
+[33 <./images/AvgExecutionTimesChrome1.png (PNG copy)>]
+<images/AvgExecutionTimesChrome2.png, id=773, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome2.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome2.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome2.png  used on input line 138.
 (pdftex.def)             Requested size: 415.41025pt x 311.81985pt.
-<images/STDFirefox.png, id=769, 1081.03876pt x 692.5875pt>
+<images/STDFirefox.png, id=775, 1081.03876pt x 692.5875pt>
 File: images/STDFirefox.png Graphic file (type png)
 <use images/STDFirefox.png>
 Package pdftex.def Info: images/STDFirefox.png  used on input line 155.
 (pdftex.def)             Requested size: 415.41025pt x 266.13446pt.
 
 
-[33 <./images/AvgExecutionTimesChrome2.png (PNG copy)>]
-<images/STDChrome.png, id=776, 1091.07625pt x 692.5875pt>
+[34 <./images/AvgExecutionTimesChrome2.png (PNG copy)>]
+<images/STDChrome.png, id=782, 1091.07625pt x 692.5875pt>
 File: images/STDChrome.png Graphic file (type png)
 <use images/STDChrome.png>
 Package pdftex.def Info: images/STDChrome.png  used on input line 174.
 (pdftex.def)             Requested size: 415.41025pt x 263.69324pt.
 
 
-[34 <./images/STDFirefox.png (PNG copy)>]
+[35 <./images/STDFirefox.png (PNG copy)>]
 
-[35 <./images/STDChrome.png (PNG copy)>])
-
-[36]
+[36 <./images/STDChrome.png (PNG copy)>])
 
 [37]
+
+[38]
 \openout2 = `chapters/zusammenfassung_und_schlussbemerkungen.aux'.
 
  (./chapters/zusammenfassung_und_schlussbemerkungen.tex
 Kapitel 6.
 )
-
-[38
-
-
-
-
-]
 
 [39
 
@@ -1823,7 +1819,14 @@ Kapitel 6.
 
 ]
 
-[40]
+[40
+
+
+
+
+]
+
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []\T1/lmr/m/it/10.95 SpiderMonkey: We-bAs-sem-b-ly Pi-pe-li-ne\T1/lmr/m/n/10.95 . https://firefox-source-
  []
@@ -1840,7 +1843,7 @@ Underfull \hbox (badness 2512) in paragraph at lines 68--68
 
 
 
-[41]
+[42]
 Underfull \hbox (badness 1383) in paragraph at lines 68--68
 []\T1/lmr/m/n/10.95 W3Counter. \T1/lmr/m/it/10.95 Brow-ser & Plat-form Mar-ket Sha-re ^^U Glo-bal Web Stats\T1/lmr/m/n/10.95 . htt-
  []
@@ -1852,9 +1855,9 @@ Underfull \hbox (badness 2205) in paragraph at lines 68--68
 
 
 
-[42]
-
 [43]
+
+[44]
 \openout2 = `back/messbox.aux'.
 
  (./back/messbox.tex
@@ -1862,7 +1865,7 @@ LaTeX Font Info:    External font `cmex7' loaded for size
 (Font)              <5> on input line 10.
 )
 
-[44
+[45
 
 
 ] (./main.aux (./front/vorwort.aux) (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
@@ -1875,18 +1878,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48187 strings out of 467816
- 956152 string characters out of 5436431
- 2312168 words of memory out of 5000000
+ 48188 strings out of 467816
+ 956173 string characters out of 5436431
+ 2220313 words of memory out of 5000000
  75435 multiletter control sequences out of 15000+600000
  722318 words of font info for 99 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  130i,12n,145p,888b,2465s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (52 pages, 1091901 bytes).
+Output written on main.pdf (53 pages, 1094891 bytes).
 PDF statistics:
- 1293 PDF objects out of 1440 (max. 8388607)
- 1169 compressed objects within 12 object streams
- 423 named destinations out of 1000 (max. 500000)
+ 1300 PDF objects out of 1440 (max. 8388607)
+ 1175 compressed objects within 12 object streams
+ 424 named destinations out of 1000 (max. 500000)
  652 words of extra memory for PDF output out of 10000 (max. 10000000)
 

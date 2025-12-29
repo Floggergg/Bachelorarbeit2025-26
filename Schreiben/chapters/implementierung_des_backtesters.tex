@@ -3,11 +3,31 @@
 
 In diesem Kapitel wird beschrieben wie die einzelnen Komponenten des Backtester und die getesteten Strategien implementiert sind.
 
-\section{Die Benutzerschnittstellen}
-\label{sec:DieBenutzerschnittstellen}
+\section{Die Benutzerschnittstellen des Backtesters}
+\label{sec:DieBenutzerschnittstellendesBacktesters}
+
+Die Benutzerschnittstelle des Backtesters ist in HTML und JavaScript implementiert.
+Der Backtester stellt insgesamt fünf Eingabekomponenten zur Parametrisierung des Backtests bereit. 
+Über ein Dateieingabefeld können JavaScript- und WebAssembly-Dateien hochgeladen werden, welche die Handelsstrategie implementieren. 
+Ein weiteres Dateieingabefeld dient zum Import von einer JSON-Dateie, die historische Kursdaten enthält. 
+Darüber hinaus ermöglichen zwei numerische Eingabefelder die Festlegung des Startkapitals sowie der Anzahl der rückblickend zu berücksichtigenden Zeitintervalle. 
+Ergänzend dazu erlaubt ein Auswahlfeld die Auswahl des gewünschten Abfrageintervalls für die Kursdaten.
+
+Falls eine der Eingaben ungeültig ist kann der Backtest nicht gestartet werden.
+Des weiteren werden die Eingaben nur zu Beginn des Backtests ausgelesen, sodass Änderungen während eines laufenden Backtests keine Auswirkungen haben.
 
 \subsection{Die API Schnittstelle}
 \label{subsec:DieAPISchnittstelle}
+
+Die historischen Kursdaten werden über die API der Kryptowährungsbörse Binance abgerufen.
+Die erhaltenen Kursdaten umfassen Open-, High-, Low- und Close-Preise sowie das Handelsvolumen zu festgelegten Zeitintervallen. \cite{Binance}
+Für die Erstellung der JSON-Datei werden nicht die einzelnen Handelsereignisse berücksichtigt, sondern minütlich gruppierte Durchschnittswerte verwendet.
+Dies reduziert die Datenmenge erheblich und ermöglicht eine effizientere Verarbeitung während des Backtests.
+
+Ebenfalls liefert Binance bei großen Datenmengen nicht die gesamten Daten auf einmal, sondern limitiert die Anzahl der zurückgegebenen Datensätze pro Anfrage.
+Daher muss die Datenabfrage mehrfach durchgeführt werden, um den gesamten Zeitraum abzudecken.
+Die API ist öffentlich zugänglich, aber es gelten bestimmte Ratenbegrenzungen.
+Um diese Ratenlimitierung nicht zu überschreiten, ist eine Verzögerung von 200 Millisekunden zwischen aufeinanderfolgenden Anfragen eingefügt.
 
 \begin{JsCode}[caption={Binance API Schnittstelle}, label={lst:BinanceAPISchnittstelle}]
     while (start < end) {
@@ -30,6 +50,15 @@ In diesem Kapitel wird beschrieben wie die einzelnen Komponenten des Backtester 
         await new Promise(r => setTimeout(r, 200));
     }
 \end{JsCode}
+
+In dem Codeausschnitt \ref{lst:BinanceAPISchnittstelle} ist zu sehen, wie die API aufgerufen wird.
+Entsprechend den in den Eingabeparametern getroffenen Einstellungen werden das Handelssymbol sowie der Zeitraum in die URL eingebunden.
+Zusätzlich wird der Parameter limit auf den Wert 1000 gesetzt, um die maximale Anzahl an Datenpunkten pro Anfrage zu erhalten.
+Danach wird die API aufgerufen und die erhaltenen Daten werden gespeichert.
+Im Anschluss wird der Startzeitpunkt für die nächste Anfrage auf den Zeitpunkt des letzten erhaltenen Datenpunktes plus eine Millisekunde gesetzt.
+Die Millisekunde wird hinzugefügt, um Überschneidungen der Datenpunkte zu vermeiden.
+Eine kurze Verzögerung von 200 Millisekunden wird eingefügt, um die Ratenbegrenzung der API nicht zu überschreiten.
+Dieser Prozess wiederholt sich, bis der Endzeitpunkt erreicht ist.
 
 \subsection{Die Logikeingangsparameter}
 \label{DieLogikeingangsparameter}
@@ -207,7 +236,7 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 \begin{CCode}[caption={Ausbruchsstrategie in C}, label={lst:AusbruchsstrategieinC}]
     int windowLength = length - 1;
 
-    // Berechung des Maximums und Minimums im Fenster
+    // Berechung des Maximums und Minimums innerhalb des Fensters
 
     double lastPrice = prices[length - 1];
     double epsilon = 0.01;
