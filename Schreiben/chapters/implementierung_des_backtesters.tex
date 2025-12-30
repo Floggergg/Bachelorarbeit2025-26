@@ -60,11 +60,16 @@ Die Millisekunde wird hinzugefügt, um Überschneidungen der Datenpunkte zu verm
 Eine kurze Verzögerung von 200 Millisekunden wird eingefügt, um die Ratenbegrenzung der API nicht zu überschreiten.
 Dieser Prozess wiederholt sich, bis der Endzeitpunkt erreicht ist.
 
-\subsection{Die Logikeingangsparameter}
-\label{DieLogikeingangsparameter}
+\section{Laden der Strategien}
+\label{sec:LadenderStrategien}
 
 \section{Implementierung der Backtestlogik}
 \label{sec:ImplementierungenderBacktestlogik}
+
+Die Backtestlogik ist vollständig in JavaScript implementiert, während WebAssembly ausschließlich zur Ausführung der Handelsstrategien eingesetzt werden kann.
+Der Backtestingprozess iteriert über die historischen Kursdaten und ruft bei jedem Iterationsschritt die Handelsstrategie auf, um Kauf- oder Verkaufsentscheidungen zu erzeugen.
+Bei der Verarbeitung des Rückgabewerts der Strategie wird nicht berücksichtigt, in welcher Programmiersprache die Strategie implementiert ist.
+Unterschiede bestehen darin, wie die Kursdaten an die Strategie übergeben werden und ob vor einem Aufruf Speicher für WebAssembly reserviert werden muss.
 
 \begin{JsCode}[caption={Backtestlogik}, label={lst:Backtestlogik}]
     if (uploadedFunctionAvailable === "wasm") {
@@ -93,6 +98,7 @@ Dieser Prozess wiederholt sich, bis der Endzeitpunkt erreicht ist.
         }
 
         // Fehlerbehebeungen der Strategieergebnisse
+        // Umwandlung des Rückgabewerts in ein Aktionsobjekt
 
         if (action) {
             if (action.signal === 'buy' && money > 0) {
@@ -116,12 +122,24 @@ Dieser Prozess wiederholt sich, bis der Endzeitpunkt erreicht ist.
         if (lastVal !== value) {
             portfolioValues.push({ time, value });
         }
-
-        if (value > maxPortfolioValue) {
-            maxPortfolioValue = value;
-        }
     }
 \end{JsCode}
+
+Im Codeausschnitt \ref{lst:Backtestlogik} ist die Hauptschleife der Backtestlogik zu sehen.
+Vor dem Beginn der Schleife werden verschiedenste Initialisierungen vorgenommen und Umgebungsvariablen gesetzt.
+Falls die hochgeladene Strategie in WebAssembly implementiert ist, wird ein Float64Array erstellt, damit die Kursdaten an die Strategie übergeben werden können.
+Die Schleife iteriert über die Kursdaten in den voreingestellten Intervallen.
+Zuerst wird der Bereich der Kursdaten bestimmt, der an die Strategie übergeben werden soll.
+Für dieses Zeitfenster werden die Durchschnittskurswerte herausgenommen und gespeichert.
+Je nach hochgeladener Strategie wird danach die Strategiefunktion in JavaScript oder WebAssembly aufgerufen.
+Der JavaScript Variante werden die Kurswerte im Zeitfenster und die Anzahl der berücksichtigten Intervalle direkt übergeben.
+Bei der WebAssembly Version werden die Kurswerte zuvor in das reservierte Array kopiert und die Byte-Offset-Adresse des Arrays zusammen mit der Länge der Kurswerte und der Anzahl der berücksichtigten Intervalle übergeben.
+Falls ein Fehler bei der Ausführung der Strategie auftritt, wird der Backtest abgebrochen.
+Anschließend wird der Rückgabewert der Strategie in ein Aktionsobjekt umgewandelt.
+Wenn eine Kauf- oder Verkaufsaktion zurückgegeben wird, wird diese ausgeführt und in der Benutzeroberfläche protokolliert.
+Es werden Handelssignale nur ausgeführt, wenn genügend Kapital oder Bestände vorhanden sind.
+Danach wird der aktuelle Portfoliowert neu berechnet und gespeichert.
+Dieser Vorgang wird wiederholt bis alle Kursdaten verarbeitet wurden.
 
 \section{Implementierungen der Strategien}
 \label{sec:ImplementierungenderStrategien}
