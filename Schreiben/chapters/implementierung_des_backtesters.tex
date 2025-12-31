@@ -63,6 +63,53 @@ Dieser Prozess wiederholt sich, bis der Endzeitpunkt erreicht ist.
 \section{Laden der Strategien}
 \label{sec:LadenderStrategien}
 
+In diesem Unterkapitel wird beschrieben, wie extern implementierte Strategien aus hochgeladenen Dateien geladen und aufrufbar gemacht werden.
+In dem Backtester werden JavaScript und WebAssembly Strategien unterstützt, um eine flexible und erweiterbare Architektur zu ermöglichen.
+Abhängig vom Dateityp wird die hochgeladene Datei entweder als JavaScriptfunktion oder als WebAssemblymodul interpretiert.
+
+\begin{JsCode}[caption={Laden der Strategien aus den hochgeladenen Dateien}, label={lst:LadenderStrategienausdenhochgeladenenDateien}]
+    // Bei JavaScript Dateien
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const scriptContent = e.target.result;
+        strategyJS = new Function('return ' + scriptContent)();
+
+        if (typeof strategyJS === 'function') {
+            uploadedFunctionAvailable = "js";
+        } else {
+            strategyJS = null;
+            uploadedFunctionAvailable = "";
+        }
+    };
+
+    reader.readAsText(file);
+
+    // Bei WebAssembly Dateien
+    const wasmArrayBuffer = await file.arrayBuffer();
+    ({ strategy, memory } = await WebAssembly.instantiate(wasmArrayBuffer, {
+        env: {
+            abort: () => console.error('Abort called')
+        }
+    }).then(result => result.instance.exports));
+
+    if (strategy && memory) {
+        uploadedFunctionAvailable = "wasm";
+    } else {
+        uploadedFunctionAvailable = "";
+    }
+\end{JsCode}
+
+Im Codeausschnitt \ref{lst:LadenderStrategienausdenhochgeladenenDateien} ist zu sehen, wie Strategie aus den unterschiedlichen Dateitypen instanziert werden.
+Bei JavaScript Dateien wird ein FileReader verwendet, der den Inhalt ausließt und in ein Funktionsobjekt umwandelt.
+Dazu wird der Inhalt der Datei mit einem return Statement kombiniert und in ein neues Funktionsobjekt zusammengefügt.
+Wenn das entstandene Objekt ohne Fehler in eine Funktion umgewandelt werden kann, wird dieses als Strategie gespeichert und das System merkt sich, dass eine JavaScript Strategie verfügbar ist.
+
+Bei WebAssembly Dateien wird der Inhalt der Datei in ein ArrayBuffer gegeben. In diesem ArrayBuffer ist der Code des WebAssembly Moduls gespeichert.
+Anschließend wird das Modul mit der WebAssembly API instanziert.
+Dabei werden der Buffer und ein Importobjekt übergeben, das eine abort Funktion bereitstellt, die von WebAssembly aufgerufen werden kann, um Fehler zu melden.
+Nach der Instanziierung werden alle exportierten Funktionen und Speicherbereiche des Moduls extrahiert und bereitgestellt.
+Wenn die erwarteten Exporte, Strategie Funktion und Speicherbereich, vorhanden sind, speichert der Backtester diese und merkt sich, dass eine WebAssembly Strategie verfügbar ist.
+
 \section{Implementierung der Backtestlogik}
 \label{sec:ImplementierungenderBacktestlogik}
 
