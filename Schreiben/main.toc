@@ -64,14 +64,14 @@
 \contentsline {section}{\numberline {4.5}Die Datenvisualisierungen}{28}{section.4.5}%
 \contentsline {subsection}{\numberline {4.5.1}Visualisierung des Kurswertes}{29}{subsection.4.5.1}%
 \contentsline {subsection}{\numberline {4.5.2}Visualisierung des Portfoliowertes}{29}{subsection.4.5.2}%
-\contentsline {chapter}{\numberline {5}Performanztests der unterschiedlichen Programmiersprachen}{30}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Die Testvoraussetzungen}{30}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Die Testumgebung}{30}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Die Testdaten}{30}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Die Testausführung}{31}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Analyse der Testergebnisse}{32}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{38}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{40}{chapter.6}%
-\contentsline {chapter}{Quellenverzeichnis}{41}{chapter*.25}%
-\contentsline {section}{Literatur}{41}{section*.26}%
-\contentsline {section}{Software}{44}{section*.27}%
+\contentsline {chapter}{\numberline {5}Performanztests der unterschiedlichen Programmiersprachen}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Die Testvoraussetzungen}{31}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Die Testumgebung}{31}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Die Testdaten}{31}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Die Testausführung}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Analyse der Testergebnisse}{33}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{39}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{41}{chapter.6}%
+\contentsline {chapter}{Quellenverzeichnis}{42}{chapter*.25}%
+\contentsline {section}{Literatur}{42}{section*.26}%
+\contentsline {section}{Software}{45}{section*.27}%

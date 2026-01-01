@@ -301,7 +301,7 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 \begin{CCode}[caption={Ausbruchsstrategie in C}, label={lst:AusbruchsstrategieinC}]
     int windowLength = length - 1;
 
-    // Berechung des Maximums und Minimums innerhalb des Fensters
+    // Berechnung des Maximums und Minimums innerhalb des Fensters
 
     double lastPrice = prices[length - 1];
     double epsilon = 0.01;
@@ -344,6 +344,9 @@ Die Auswahl der dargestellten Datenpunkte erfolgt dabei so, dass die Aussagekraf
 \subsection{Visualisierung des Kurswertes}
 \label{subsec:VisualisierungdesKurswertes}
 
+Für die Darstellung der Kurswerte wird eine Stichprobe an historischen Kursdaten ausgewählt.
+Wie im Kapital \ref{sec:VisualisierungderDatenundErgebnisse} beschrieben, wird jeder n-te Punkt der Daten auf der Grafik dargestellt.
+
 \begin{JsCode}[caption={Kurswertvisualisierung}, label={lst:Kurswertvisualisierung}]
     const stepSize = Math.max(Math.round(data.length / 800), 1);
     const sampled = data.filter((_, i) => i \% stepSize === 0);
@@ -363,11 +366,22 @@ Die Auswahl der dargestellten Datenpunkte erfolgt dabei so, dass die Aussagekraf
     });
 \end{JsCode}
 
+Im Codeausschnitt \ref{lst:Kurswertvisualisierung} ist zu sehen, wie die Kurswerte visualisiert werden.
+Zuerst wird die Schrittgröße berechnet, um die Anzahl der darzustellenden Punkte auf maximal 800 zu begrenzen.
+Anschließend wird eine Stichprobe der Kursdaten erstellt, indem jeder n-te Punkt ausgewählt wird.
+Danach werden die x- und y-Koordinaten für jeden ausgewählten Datenpunkt berechnet.
+Die x Position wird mit der Zeit des Datenpunkts relativ zur Gesamtzeitspanne errechnet.
+Die y-Koordinate wird basierend auf dem Kurswert relativ zum maximalen Kurswert skaliert.
+Schließlich werden die Punkte mit einer verbindenden Linie auf den Canvas gezeichnet.
+
 \subsection{Visualisierung des Portfoliowertes}
 \label{subsec:VisualisierungdesPortfoliowertes}
 
+Zur Darstellung des Portfoliowertes wird ebenfalls eine Stichprobe der berechneten Portfoliowerte verwendet.
+Für die Reduktion der Datenpunkte wird ebenfalls jeder nur jeder n-te Punkt ausgewählt, um eine übersichtliche Darstellung zu gewährleisten.
+
 \begin{JsCode}[caption={Portfoliovisualisierung}, label={lst:Portfoliovisualisierung}]
-    const stepSize = Math.max(Math.round(portfolioValues.length / 800),1);
+    const stepSize = Math.max(Math.round(portfolioValues.length / 800), 1);
 
     for (let i = 0; i < portfolioValues.length; i += stepSize) {
         const p = portfolioValues[i];
@@ -382,3 +396,8 @@ Die Auswahl der dargestellten Datenpunkte erfolgt dabei so, dass die Aussagekraf
         }
     }
 \end{JsCode}
+
+Der Codeausschnitt \ref{lst:Portfoliovisualisierung} zeichnet die reduzierten Portfoliowerte auf einen Canvas.
+Ebenfalls wird in dieser Implementierung die Schrittgröße berechnet, um die Anzahl der darzustellenden Punkte auf maximal 800 zu begrenzen.
+Die Berechnung der Koordinaten der Datenpunkte erfolgt gleich wie zur Kurswertvisualisierung.
+Der Portfoliowert wird auch als Linie dargestellt, die die einzelnen Punkte miteinander verbindet.
