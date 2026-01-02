@@ -15,16 +15,16 @@ function strategy(prices, intervalsBack) {
 
     const window = prices.slice(0, prices.length - 1);
     const { min, max } = extrema(window);
-    const last = prices[prices.length - 1];
+    const lastPrice = prices[prices.length - 1];
 
     const epsilon = 0.01;
     const longTrigger = max * (1 + epsilon);
     const shortTrigger = min * (1 - epsilon);
 
-    if (last > longTrigger) {
+    if (lastPrice > longTrigger) {
         return 1;
     }
-    if (last < shortTrigger) {
+    if (lastPrice < shortTrigger) {
         return -1;
     }
     return 0;

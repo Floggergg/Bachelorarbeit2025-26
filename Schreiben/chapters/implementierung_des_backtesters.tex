@@ -298,14 +298,18 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 \subsection{Ausbruchsstrategie}
 \label{subsec:Ausbruchsstrategie}
 
+Die Ausbruchsstrategie erzeugt Handelssignale, indem der aktuelle Preis mit den Extrema eines historischen Zeitfensters verglichen wird.
+Durch ein Epsilon wird eine kleine Toleranzzone um die Extrema definiert, um Fehlsignale zu reduzieren.
+Die Idee der Strategie ist in Kapital \ref{subsec:Ausbruchsstrategien} beschrieben.
+
 \begin{CCode}[caption={Ausbruchsstrategie in C}, label={lst:AusbruchsstrategieinC}]
     int windowLength = length - 1;
 
     // Berechnung des Maximums und Minimums innerhalb des Fensters
 
-    double lastPrice = prices[length - 1];
-    double epsilon = 0.01;
+    double lastPrice = prices[length - 1];+
 
+    double epsilon = 0.01;
     double longTrigger = max * (1.0 + epsilon);
     double shortTrigger = min * (1.0 - epsilon);
 
@@ -317,22 +321,34 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
     }
 \end{CCode}
 
+In der Implementierung in C \ref{lst:AusbruchsstrategieinC} wird für die Berechnung der Extrema eine Schleife verwendet, die das Maximum und Minimum innerhalb des definierten Fensters bestimmt.
+Diese Werte werden mit einem Epislon skaliert, um kleine Fehlsignale zu vermeiden.
+Zum Schluss wird der aktuelle Preis mit den berechneten Triggerwerten verglichen, um Kauf- oder Verkaufsentscheidungen zu treffen.
+
 \begin{JsCode}[caption={Ausbruchsstrategie in JavaScript}, label={lst:AusbruchsstrategieinJavaScript}]
     const window = prices.slice(0, prices.length - 1);
     const { min, max } = extrema(window);
-    const last = prices[prices.length - 1];
+    const lastPrice = prices[prices.length - 1];
 
     const epsilon = 0.01;
     const longTrigger = max * (1 + epsilon);
     const shortTrigger = min * (1 - epsilon);
 
-    if (last > longTrigger) {
+    if (lastPrice > longTrigger) {
         return 1;
     }
-    if (last < shortTrigger) {
+    if (lastPrice < shortTrigger) {
         return -1;
     }
 \end{JsCode}
+
+In dem Codeausschnitt \ref{lst:AusbruchsstrategieinJavaScript} wird das historische Fenster im Vergleich zur C Variante mit der slice Methode extrahiert.
+Ebenso werden die Extrema mit einer Hilfsfunktion extrema berechnet, die das Minimum und Maximum eines Arrays zurückgibt.
+Die restliche Logik zur Generierung der Handelssignale ist identisch zur C Implementierung.\newline
+
+Beide Implementierungen der Strategie haben die idente Logik.
+Die Unterschiede liegen in der Art und Weise, wie die Extrema berechnet werden.
+Die C Implementierung verwendet eine explizite Schleife, während die JavaScript Variante eine Hilfsfunktion nutzt.
 
 \section{Die Datenvisualisierungen}
 \label{sec:DieDatenvisualisierungen}
