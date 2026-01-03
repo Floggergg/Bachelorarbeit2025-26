@@ -267,7 +267,26 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 \subsection{Mittelwertrückkehr Strategie}
 \label{subsec:MittelwertrückkehrStrategie}
 
+Bei der Mittelwertrückkehr Strategie werden Handelssignale bestimmt, indem der aktuelle Kurswert mit einem Bollinger Band verglichen wird.
+Das Bollinger Band wird durch den Mittelwert und die Standardabweichung der Kurswerte definiert.
+Das Konzept der Strategie ist in Kapital \ref{subsec:MittelwertrückkehrmitBollingerBänder} beschrieben.
+
 \begin{CCode}[caption={Mittelwertrückkehr in C}, label={lst:MittelwertrückkehrinC}]
+    double sum = 0;
+    for (int i = 0; i < length; i++) {
+    sum += prices[i];
+    }
+    double mean = sum / length;
+
+    double var_sum = 0;
+    for (int i = 0; i < length; i++) {
+        double diff = prices[i] - mean;
+        var_sum += diff * diff;
+    }
+    double variance = var_sum / length;
+
+    double stdDev = sqrt(variance);
+
     double upperBand = mean + 3.25 * stdDev;
     double lowerBand = mean - 3.25 * stdDev;
 
@@ -281,19 +300,27 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
     }
 \end{CCode}
 
+Im Codeausschnitt \ref{lst:MittelwertrückkehrinC} ist die Implementierung der Mittelwertrückkehr Strategie in C zu sehen.
+Zuerst wird der Mittelwert der übergebenen Kurswerte berechnet. Dies wird manuell mit einer Schleife durchgeführt.
+Danach wird die Varianz berechnet, indem die Differenz jedes Kurswertes zum Mittelwert quadriert und aufsummiert wird.
+Dazu wird auch keine Hilfsfunktion verwendet, sondern eine Schleife.
+Anschließend wird die Standardabweichung als Quadratwurzel der Varianz berechnet.
+Das Bollinger Band wird berechnet, indem der Mittelwert um das 3.25-fache der Standardabweichung nach oben und unten erweitert wird.
+Der Faktor 3.25 wurde gewählt, um eine breitere Bandbreite zu erhalten und somit weniger Fehlsignale, auch bei sehr volatilen Kursen zu generieren.
+Dies reduziert die Anzahl der generierten Handelssignale und führt zu stabileren Handelsergebnissen.
+Zum Schluss wird der letzte Kurswert mit den Grenzen des Bollinger Bands verglichen, um Kauf- oder Verkaufsentscheidungen zu treffen.
+
 \begin{JsCode}[caption={Mittelwertrückkehr in JavaScript}, label={lst:MittelwertrückkehrinJavaScript}]
-    const upperBand = mean + 3.25 * stdDev;
-    const lowerBand = mean - 3.25 * stdDev;
+    const mean = prices.reduce((acc, val) => acc + val, 0) / prices.length;
 
-    const lastPrice = prices[prices.length - 1];
-
-    if (lastPrice < lowerBand) {
-        return 1;
-    }
-    if (lastPrice > upperBand) {
-        return -1;
-    }
+    const variance = prices.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / prices.length;
+    const stdDev = Math.sqrt(variance);
 \end{JsCode}
+
+In der JavaScript Implementierung \ref{lst:MittelwertrückkehrinJavaScript} besteht der Hauptunterschied zur C Variante darin, dass die Berechnung des Mittelwerts und der Varianz mit der reduce Methode durchgeführt wird.
+Es müssen keine expliziten Schleifen verwendet werden, sondern nur Hilfsfunktionen aufgerufen.
+Dies macht den Code kompakter und leichter lesbar.
+Die restliche Logik zur Berechnung der Standardabweichung und der Bollinger Bänder ist identisch zur C Implementierung.
 
 \subsection{Ausbruchsstrategie}
 \label{subsec:Ausbruchsstrategie}
@@ -307,7 +334,7 @@ Die Idee der Strategie ist in Kapital \ref{subsec:Ausbruchsstrategien} beschrieb
 
     // Berechnung des Maximums und Minimums innerhalb des Fensters
 
-    double lastPrice = prices[length - 1];+
+    double lastPrice = prices[length - 1];
 
     double epsilon = 0.01;
     double longTrigger = max * (1.0 + epsilon);
