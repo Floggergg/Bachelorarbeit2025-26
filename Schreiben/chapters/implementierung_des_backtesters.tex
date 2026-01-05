@@ -200,7 +200,13 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 \subsection{Gleitende Durchschnittsüberschneidungs Strategie}
 \label{subsec:GleitendeDurchschnittsüberschneidungsStrategie}
 
+Die gleitende Durchschnittsüberschneidungs Strategie erzeugt Handelssignale dadurch, dass zwei unterschiedlich lange gleitende Durchschnitte der Kursdaten berechnet und miteinander verglichen werden.
+In Richtung der Überschneidungen der Durchschnittswerte bestimmt, ob ein Kauf- oder Verkaufssignal generiert wird.
+Das Konzept der Strategie ist in Kapital \ref{subsec:GleitendeDurchschnittsÜberscheidungen} genauer beschrieben.
+
 \begin{CCode}[caption={Durchschnittsüberschneidung in C}, label={lst:DurchschnittsüberschneidunginC}]
+    // Initialisierungen
+
     for (int i = prices_length - 1 - shortPeriod; i < prices_length - 1; i++) {
         shortPrev += prices[i];
     }
@@ -240,7 +246,32 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
     }
 \end{CCode}
 
+Im Codeausschnitt \ref{lst:DurchschnittsüberschneidunginC} ist die Implementierung der gleitenden Durchschnittsüberschneidungs Strategie in C dargestellt.
+Nach den Initialisierungen wird der kurze Durchschnitt für des vorherigen Zeitraums berechnet.
+Dazu werden alle Kurswerte vor dem aktuellen Zeitpunkt bis zur Länge des kurzen Zeitraums aufsummiert und durch die Länge des kurzen Zeitraums geteilt.
+In dieser Implementierung werden für das kurze Zeitintervall acht vergangene Kurswerte berücksichtigt.
+Anschließend wird der lange Durchschnitt für den vorherigen Zeitraum auf die gleiche Weise berechnet.
+Für den längeren Zeitraum werden 24 vergangene Kurswerte verwendet.
+Die Wahl der Zeiträume ist in Kapital \ref{subsec:UmsetzungdergleitendenDurchschnittsüberschneidungsStrategie} erklärt.
+\newline
+Um bestimmen zu können, ob eine Überschneidung der Durchschnitte stattgefunden hat, werden die Durchschnittswerte für beide Zeiträume unter Einbeziehung des aktuellsten Kurswertes erneut berechnet.
+Durch den Vergleich der Differenzen der Durchschnittswerte vor und mit dem aktuellen Kurswert kann festgestellt werden, ob eine Überschneidung stattgefunden hat.
+Zusätzlich wird überprüft, ob die Differenz der Durchschnittswerte einen bestimmten Schwellenwert überschreitet, um Fehlsignale zu vermeiden.
+Der Schwellenwert wird als 0.2\% des aktuellen Kurswertes definiert.
+Abschließend wird basierend auf dem Vorzeichen der Differenzen entschieden, ob ein Kauf- oder Verkaufssignal generiert wird.
+
 \begin{JsCode}[caption={Durchschnittsüberschneidung in JavaScript}, label={lst:DurchschnittsüberschneidunginJavaScript}]
+    function movingAverageSlice(data, start, end) {
+        if (end <= start) {
+            return 0;
+        }
+        let sum = 0;
+        for (let i = start; i < end; i++) {
+            sum += data[i];
+        }
+        return sum / (end - start);
+    }
+
     const shortPrev = movingAverageSlice(prices, prevShortStart, prevEnd);
     const longPrev = movingAverageSlice(prices, prevLongStart, prevEnd);
 
@@ -249,20 +280,13 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 
     const shortCurr = movingAverageSlice(prices, currShortStart, length);
     const longCurr = movingAverageSlice(prices, currLongStart, length);
-
-    const diffPrev = shortPrev - longPrev;
-    const diffCurr = shortCurr - longCurr;
-
-    const currentPrice = prices[prices.length - 1];
-    const threshold = currentPrice * 0.002;
-
-    if (diffPrev < 0 && diffCurr > 0 && Math.abs(diffCurr) >= threshold) {
-        return 1;
-    }
-    if (diffPrev > 0 && diffCurr < 0 && Math.abs(diffCurr) >= threshold) {
-        return -1;
-    }
 \end{JsCode}
+
+In der JavaScript Implementierung \ref{lst:DurchschnittsüberschneidunginJavaScript} werden die gleitenden Durchschnitte mit einer Hilfsfunktion berechnet.
+Die Intervalle für die Berechnung der kurzen und langen Durchschnitte ist gleich wie in der C Implementierung.
+Die Logik zur Erzeugung von Haltesignalen ist ebenfalls identisch zur C Version.
+Der Unterschied in den Implementierungen besteht darin, dass die Berechnung der Durchschnitte in JavaScript in eine Funktion ausgelagert ist.
+Würde dies in C angewendet werden würde dies zu einem Geschwindigkeitsverlust führen.
 
 \subsection{Mittelwertrückkehr Strategie}
 \label{subsec:MittelwertrückkehrStrategie}
