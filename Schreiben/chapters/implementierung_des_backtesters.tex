@@ -9,12 +9,13 @@ In diesem Kapitel wird beschrieben wie die einzelnen Komponenten des Backtester 
 Die Benutzerschnittstelle des Backtesters ist in HTML und JavaScript implementiert.
 Der Backtester stellt insgesamt fünf Eingabekomponenten zur Parametrisierung des Backtests bereit. 
 Über ein Dateieingabefeld können JavaScript- und WebAssembly-Dateien hochgeladen werden, welche die Handelsstrategie implementieren. 
-Ein weiteres Dateieingabefeld dient zum Import von einer JSON-Dateie, die historische Kursdaten enthält. 
+Ein weiteres Dateieingabefeld dient zum Import einer JSON-Datei, die historische Kursdaten enthält. 
 Darüber hinaus ermöglichen zwei numerische Eingabefelder die Festlegung des Startkapitals sowie der Anzahl der rückblickend zu berücksichtigenden Zeitintervalle. 
 Ergänzend dazu erlaubt ein Auswahlfeld die Auswahl des gewünschten Abfrageintervalls für die Kursdaten.
+Mögliche Optionen für das Abfrageintervall sind eine Stunde, 30 Minuten, 15 Minuten oder eine Minute.
 
-Falls eine der Eingaben ungeültig ist kann der Backtest nicht gestartet werden.
-Des weiteren werden die Eingaben nur zu Beginn des Backtests ausgelesen, sodass Änderungen während eines laufenden Backtests keine Auswirkungen haben.
+Falls eine der Eingaben ungültig ist, kann der Backtest nicht gestartet werden.
+Des Weiteren werden die Eingaben nur zu Beginn des Backtests ausgelesen, sodass Änderungen während eines laufenden Backtests keine Auswirkungen haben.
 
 \subsection{Die API Schnittstelle}
 \label{subsec:DieAPISchnittstelle}
@@ -26,6 +27,7 @@ Dies reduziert die Datenmenge erheblich und ermöglicht eine effizientere Verarb
 
 Ebenfalls liefert Binance bei großen Datenmengen nicht die gesamten Daten auf einmal, sondern limitiert die Anzahl der zurückgegebenen Datensätze pro Anfrage.
 Daher muss die Datenabfrage mehrfach durchgeführt werden, um den gesamten Zeitraum abzudecken.
+
 Die API ist öffentlich zugänglich, aber es gelten bestimmte Ratenbegrenzungen.
 Um diese Ratenlimitierung nicht zu überschreiten, ist eine Verzögerung zwischen aufeinanderfolgenden Anfragen eingefügt.
 
@@ -65,10 +67,10 @@ Dieser Prozess wiederholt sich, bis der Endzeitpunkt erreicht ist.
 
 In diesem Unterkapitel wird beschrieben, wie extern implementierte Strategien aus hochgeladenen Dateien geladen und aufrufbar gemacht werden.
 In dem Backtester werden JavaScript und WebAssembly Strategien unterstützt, um eine flexible und erweiterbare Architektur zu ermöglichen.
-Abhängig vom Dateityp wird die hochgeladene Datei entweder als JavaScriptfunktion oder als WebAssemblymodul interpretiert.
+Abhängig vom Dateityp wird die hochgeladene Datei entweder als JavaScript-Funktion oder als WebAssembly-Modul interpretiert.
 
 \begin{JsCode}[caption={Laden der Strategien aus den hochgeladenen Dateien}, label={lst:LadenderStrategienausdenhochgeladenenDateien}]
-    // Bei JavaScript Dateien
+    // Bei JavaScript-Dateien
     const reader = new FileReader();
     reader.onload = function (e) {
         const scriptContent = e.target.result;
@@ -84,7 +86,7 @@ Abhängig vom Dateityp wird die hochgeladene Datei entweder als JavaScriptfunkti
 
     reader.readAsText(file);
 
-    // Bei WebAssembly Dateien
+    // Bei WebAssembly-Dateien
     const wasmArrayBuffer = await file.arrayBuffer();
     ({ strategy, memory } = await WebAssembly.instantiate(wasmArrayBuffer, {
         env: {
@@ -100,11 +102,11 @@ Abhängig vom Dateityp wird die hochgeladene Datei entweder als JavaScriptfunkti
 \end{JsCode}
 
 Im Codeausschnitt \ref{lst:LadenderStrategienausdenhochgeladenenDateien} ist zu sehen, wie Strategie aus den unterschiedlichen Dateitypen instanziert werden.
-Bei JavaScript Dateien wird ein FileReader verwendet, der den Inhalt ausließt und in ein Funktionsobjekt umwandelt.
+Bei JavaScript-Dateien wird ein FileReader verwendet, der den Inhalt ausließt und in ein Funktionsobjekt umwandelt.
 Dazu wird der Inhalt der Datei mit einem return Statement kombiniert und in ein neues Funktionsobjekt zusammengefügt.
 Wenn das entstandene Objekt ohne Fehler in eine Funktion umgewandelt werden kann, wird dieses als Strategie gespeichert und das System merkt sich, dass eine JavaScript Strategie verfügbar ist.
 
-Bei WebAssembly Dateien wird der Inhalt der Datei in ein ArrayBuffer gegeben. In diesem ArrayBuffer ist der Code des WebAssembly Moduls gespeichert.
+Bei WebAssembly-Dateien wird der Inhalt der Datei in ein ArrayBuffer gegeben. In diesem ArrayBuffer ist der Code des WebAssembly-Moduls gespeichert.
 Anschließend wird das Modul mit der WebAssembly API instanziert.
 Dabei werden der Buffer und ein Importobjekt übergeben, das eine abort Funktion bereitstellt, die von WebAssembly aufgerufen werden kann, um Fehler zu melden.
 Nach der Instanziierung werden alle exportierten Funktionen und Speicherbereiche des Moduls extrahiert und bereitgestellt.
@@ -114,9 +116,9 @@ Wenn die erwarteten Exporte, Strategie Funktion und Speicherbereich, vorhanden s
 \label{sec:ImplementierungenderBacktestlogik}
 
 Die Backtestlogik ist vollständig in JavaScript implementiert, während WebAssembly ausschließlich zur Ausführung der Handelsstrategien eingesetzt werden kann.
-Der Backtestingprozess iteriert über die historischen Kursdaten und ruft bei jedem Iterationsschritt die Handelsstrategie auf, um Kauf- oder Verkaufsentscheidungen zu erzeugen.
+Der Backtestingprozess iteriert über die historischen Kursdaten und ruft bei jedem Iterationsschritt die Handelsstrategie auf, um Kauf- oder Verkaufsentscheidungen zu treffen.
 Bei der Verarbeitung des Rückgabewerts der Strategie wird nicht berücksichtigt, in welcher Programmiersprache die Strategie implementiert ist.
-Unterschiede bestehen darin, wie die Kursdaten an die Strategie übergeben werden und ob vor einem Aufruf Speicher für WebAssembly reserviert werden muss.
+Unterschiede bestehen nur darin, wie die Kursdaten an die Strategie übergeben werden und ob vor einem Aufruf Speicher für WebAssembly reserviert werden muss.
 
 \begin{JsCode}[caption={Backtestlogik}, label={lst:Backtestlogik}]
     if (uploadedFunctionAvailable === "wasm") {
@@ -177,16 +179,16 @@ Vor dem Beginn der Schleife werden verschiedenste Initialisierungen vorgenommen 
 Falls die hochgeladene Strategie in WebAssembly implementiert ist, wird ein Float64Array erstellt, damit die Kursdaten an die Strategie übergeben werden können.
 Die Schleife iteriert über die Kursdaten in den voreingestellten Intervallen.
 Zuerst wird der Bereich der Kursdaten bestimmt, der an die Strategie übergeben werden soll.
-Für dieses Zeitfenster werden die Durchschnittskurswerte herausgenommen und gespeichert.
+Für dieses Zeitfenster werden die Kurswerte herausgenommen und gespeichert.
 Je nach hochgeladener Strategie wird danach die Strategiefunktion in JavaScript oder WebAssembly aufgerufen.
-Der JavaScript Variante werden die Kurswerte im Zeitfenster und die Anzahl der berücksichtigten Intervalle direkt übergeben.
-Bei der WebAssembly Version werden die Kurswerte zuvor in das reservierte Array kopiert und die Byte-Offset-Adresse des Arrays zusammen mit der Länge der Kurswerte und der Anzahl der berücksichtigten Intervalle übergeben.
+Der JavaScript Variante werden die Kurswerte im Zeitfenster und die Anzahl der zu berücksichtigten Intervalle direkt übergeben.
+Bei der WebAssembly Version werden die Kurswerte zuvor in das reservierte Array kopiert und die Byte-Offset-Adresse des Arrays zusammen mit der Länge der Kurswerte und der Anzahl der zu berücksichtigten Intervalle übergeben.
 Falls ein Fehler bei der Ausführung der Strategie auftritt, wird der Backtest abgebrochen.
 Anschließend wird der Rückgabewert der Strategie in ein Aktionsobjekt umgewandelt.
 Wenn eine Kauf- oder Verkaufsaktion zurückgegeben wird, wird diese ausgeführt und in der Benutzeroberfläche protokolliert.
-Es werden Handelssignale nur ausgeführt, wenn genügend Kapital oder Bestände vorhanden sind.
+Handelssignale werden nur ausgeführt, wenn genügend Kapital oder Bestände vorhanden sind.
 Danach wird der aktuelle Portfoliowert neu berechnet und gespeichert.
-Dieser Vorgang wird wiederholt bis alle Kursdaten verarbeitet wurden.
+Dieser Vorgang wird wiederholt, bis alle Kursdaten verarbeitet wurden.
 
 \section{Implementierungen der Strategien}
 \label{sec:ImplementierungenderStrategien}
@@ -247,7 +249,7 @@ Das Konzept der Strategie ist in Kapital \ref{subsec:GleitendeDurchschnittsÜber
 \end{CCode}
 
 Im Codeausschnitt \ref{lst:DurchschnittsüberschneidunginC} ist die Implementierung der gleitenden Durchschnittsüberschneidungs Strategie in C dargestellt.
-Nach den Initialisierungen wird der kurze Durchschnitt für des vorherigen Zeitraums berechnet.
+Nach den Initialisierungen wird der kurze Durchschnitt für den vorherigen Zeitraums berechnet.
 Dazu werden alle Kurswerte vor dem aktuellen Zeitpunkt bis zur Länge des kurzen Zeitraums aufsummiert und durch die Länge des kurzen Zeitraums geteilt.
 In dieser Implementierung werden für das kurze Zeitintervall acht vergangene Kurswerte berücksichtigt.
 Anschließend wird der lange Durchschnitt für den vorherigen Zeitraum auf die gleiche Weise berechnet.
@@ -283,7 +285,7 @@ Abschließend wird basierend auf dem Vorzeichen der Differenzen entschieden, ob 
 \end{JsCode}
 
 In der JavaScript Implementierung \ref{lst:DurchschnittsüberschneidunginJavaScript} werden die gleitenden Durchschnitte mit einer Hilfsfunktion berechnet.
-Die Intervalle für die Berechnung der kurzen und langen Durchschnitte ist gleich wie in der C Implementierung.
+Die Intervalle sind für die Berechnung der kurzen und langen Durchschnitte gleich wie in der C Implementierung.
 Die Logik zur Erzeugung von Haltesignalen ist ebenfalls identisch zur C Version.
 Der Unterschied in den Implementierungen besteht darin, dass die Berechnung der Durchschnitte in JavaScript in eine Funktion ausgelagert ist.
 Würde dies in C angewendet werden würde dies zu einem Geschwindigkeitsverlust führen.
@@ -291,7 +293,7 @@ Würde dies in C angewendet werden würde dies zu einem Geschwindigkeitsverlust 
 \subsection{Mittelwertrückkehr Strategie}
 \label{subsec:MittelwertrückkehrStrategie}
 
-Bei der Mittelwertrückkehr Strategie werden Handelssignale bestimmt, indem der aktuelle Kurswert mit einem Bollinger Band verglichen wird.
+Bei der Mittelwertrückkehr Strategie werden Handelssignale bestimmt, indem der aktuelle Kurswert mit den Grenzen eines Bollinger Bandes verglichen wird.
 Das Bollinger Band wird durch den Mittelwert und die Standardabweichung der Kurswerte definiert.
 Das Konzept der Strategie ist in Kapital \ref{subsec:MittelwertrückkehrmitBollingerBänder} beschrieben.
 
@@ -332,7 +334,7 @@ Anschließend wird die Standardabweichung als Quadratwurzel der Varianz berechne
 Das Bollinger Band wird berechnet, indem der Mittelwert um das 3.25-fache der Standardabweichung nach oben und unten erweitert wird.
 Der Faktor 3.25 wurde gewählt, um eine breitere Bandbreite zu erhalten und somit weniger Fehlsignale, auch bei sehr volatilen Kursen zu generieren.
 Dies reduziert die Anzahl der generierten Handelssignale und führt zu stabileren Handelsergebnissen.
-Zum Schluss wird der letzte Kurswert mit den Grenzen des Bollinger Bands verglichen, um Kauf- oder Verkaufsentscheidungen zu treffen.
+Zum Schluss wird der letzte Kurswert mit den Grenzen des Bollinger Bandes verglichen, um Kauf- oder Verkaufsentscheidungen zu treffen.
 
 \begin{JsCode}[caption={Mittelwertrückkehr in JavaScript}, label={lst:MittelwertrückkehrinJavaScript}]
     const mean = prices.reduce((acc, val) => acc + val, 0) / prices.length;
