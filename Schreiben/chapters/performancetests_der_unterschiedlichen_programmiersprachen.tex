@@ -6,7 +6,7 @@ In diesem Kapitel werden die Rahmenbedingungen der Tests beschrieben, die durchg
 \section{Die Testvoraussetzungen}
 \label{sec:DieTestvoraussetzungen}
 
-Um die Ergebnisse der Performanztests miteinander vergleichen zu können, müssen die Tests unter den gleichen Voraussetzungen durchgeführt werden.
+Um die Ergebnisse der Performanztests vergleichen zu können, müssen die Tests unter den gleichen Voraussetzungen durchgeführt werden.
 Deswegen wird in diesem Abschnitt beschrieben, welche Voraussetzungen für die Tests geschaffen wurden.
 
 \subsection{Die Testumgebung}
@@ -29,7 +29,7 @@ Der Backtester wird in den beiden Browsern ausgeführt, um einen Vergleich der P
 \label{subsec:DieTestdaten}
 
 Alle Strategien, die in den Performanztests getestet werden, verwenden die gleichen historischen Kursdatensätze.
-Für die Tests werden Kursdaten von zwei verschiedenen Kryptomünzen verwendet:
+Für die Tests werden Kursdaten von zwei verschiedenen Kryptowährungen verwendet:
 \begin{itemize}
     \item Bitcoin (BTC)
     \item Cardano (ADA)
@@ -71,6 +71,32 @@ Für statistisch belastbare und reproduzierbare Ergebnisse wird jede Kombination
 Bei jedem Durchlauf wird die benötigte Zeit erfasst. Aus den Messdaten wird der Durchschnitt, der Median und die Standardabweichung pro Testfall berechnet. 
 Diese Kennzahlen ermöglichen es, sowohl die Performanz als auch die Stabilität und Konsistenz der jeweiligen Implementierung zu bewerten.
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ll}
+        \hline
+        \textbf{Untersuchungsmerkmal} & \textbf{Ausprägung} \\
+        \hline
+        Browser & Chrome, Firefox \\
+        Handelsstrategien & Mittelwertrückkehr, Ausbruch, \\
+         & Durchschnittsüberschneidung \\
+        Implementierungssprachen & JavaScript, WebAssembly \\
+        Datensätze & 0,5 Millionen Datenpunkte, \\
+         & 1,5 Millionen Datenpunkte \\
+        Wiederholungen pro Testfall & 25 \\
+        Zeitintervall & 1 Minute \\
+        Historische Datenpunkte & 72 \\
+        Gemessene Kennzahlen & Mittelwert, Median, Standardabweichung \\
+        \hline
+        Anzahl Testfälle gesamt & $2 \times 3 \times 2 \times 2 = 24$ \\
+        \hline
+    \end{tabular}
+    \caption{Übersicht der Rahmenbedingungen der Performanzmessung}
+    \label{tab:ÜbersichtderRahmenbedingungenderPerformanzmessung}
+\end{table}
+
+In der Tabelle \ref{tab:ÜbersichtderRahmenbedingungenderPerformanzmessung} sind die Rahmenbedingungen der Performanzmessung zusammengefasst.
+
 \section{Analyse der Testergebnisse}
 \label{sec:AnalysederTestergebnisse}
 
@@ -79,6 +105,9 @@ der Ausführung unter Verwendung von WebAssembly darzustellen und zu analysieren
 Die Analyse konzentriert sich dabei auf die Interpretation der gemessenen Laufzeiten und deren erkennenbaren Unterschiede.
 Speicherverbrauch und Größe der einzelnen Strategien werden in diesem Kontext nicht näher betrachtet.
 
+\subsection{Ergebnisse in Firefox}
+\label{subsec:ErgebnisseinFirefox}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{AvgExecutionTimesFirefox1.png}
@@ -86,8 +115,8 @@ Speicherverbrauch und Größe der einzelnen Strategien werden in diesem Kontext 
     \label{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1}
 \end{figure}
 
-In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1} ist erkennbar,
-dass im Firefox Browser der Performanzvorteil von WebAssembly gegenüber JavaScript mit steigender Rechenintensität der Strategien zunimmt.
+In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1} ist zu sehen wie sich die Ausführungsdauer der drei Strategien bei 1,5 Millionen Datenpunkten in Firefox verhält.
+Dabei ist erkennbar, dass im Firefox Browser der Performanzvorteil von WebAssembly gegenüber JavaScript mit steigender Rechenintensität der Strategien zunimmt.
 Der durch WebAssembly erzielte Performanzvorteil kompensiert den zusätzlichen Overhead aber erst bei der rechenintensiven Strategien.
 
 Die Durchschnittsüberschneidungsstrategie weist den geringsten Rechenaufwand auf und benötigt entsprechend die kürzeste Berechnungszeit.
@@ -109,11 +138,33 @@ Die JavaScript Implementierung ist im Durchschnitt etwa 20\% langsamer ist als d
 
 In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox2} zeigt sich, ähnlich wie in Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninFirefox1},
 dass der WebAssembly Overhead auch bei geringerer Datenpunktanzahl erst bei rechenintensiven Strategien durch die gesteigerte Performanz kompensiert wird.
-Auffällig ist jedoch, dass in diesem Testfall im Vergleich zu dem Szenario mit mehr Datenpunkten eine Verdreifachung der Datenpunkte 
-zu einer überproportionalen Steigerung der Ausführungsgeschwindigkeit führt.
+Auffällig ist jedoch, dass in diesem Testfall eine Verdreifachung der Datenpunkte im Vergleich zum Szenario mit weniger Datenpunkten zu einer überproportionalen Erhöhung der Ausführungszeit führt.
+Bei 1,5 Million Datenpunkten dauert die durchschnittliche Ausführung der Strategien etwa 3,5x so lange wie bei einer halben Million Datenpunkten.
 Ein möglicher Grund für die Verringerung der Performanz bei vielen Datenpunkten kann darin liegen, dass mit steigender Anzahl an Datenpunkten auch der benötigte Laufzeitspeicher zunimmt. 
 Der erhöhte Speicherbedarf führt zu einem entsprechend höheren Aufwand für die Speicherverwaltung im System.
 Insbesondere bei speicherintensiven Operationen kann dieser Effekt die Effizienz der Strategie deutlich verringern.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{STDFirefox.png}
+    \caption{Standardabweichung der Strategien in Firefox}
+    \label{fig:StandardabweichungderStrategieninFirefox}
+\end{figure}
+
+In Abbildung \ref{fig:StandardabweichungderStrategieninFirefox} ist die Standardabweichung der Ausführungszeiten der einzelnen Strategien in Firefox dargestellt.
+In beiden betrachteten Testfällen ist ein Anstieg der Standardabweichung mit zunehmendem Rechenaufwand zu erkennen.
+Dies bedeutet, dass rechenintensivere Strategien eine weniger vorhersehbare Ausführungszeit aufweisen.
+Besonders deutlich zeigt sich dieser Effekt bei der Mittelwertrückkehrstrategie mit 1,5 Millionen Datenpunkten in WebAssembly, für die die höchste Standardabweichung der Ausführungszeiten gemessen wurde.
+
+Des Weiteren ist zu erkennen, dass die WebAssembly Implementierungen durchschnittlich eine höhere Standardabweichung aufweisen als die JavaScript Varianten.
+Der größte Unterschied ist bei der Durchschnittsüberschneidungsstrategie mit 1,5 Millionen Datenpunkten zu erkennen, bei dieser weist die WebAssembly Implementierung eine 2,5 Mal höhere Varianz in den Ausführungszeiten auf.
+Nur bei der Ausbruchsstrategie mit 1,5 Millionen Datenpunkten ist die Standardabweichung der WebAssembly Implementierung geringer als die der JavaScript Variante.
+
+Für die beiden Strategien mit dem geringsten Rechenaufwand mit 500.000 Datenpunkten sind hingegen keine großen Unterschiede zwischen den Implementierungen erkennbar.
+Die Standardabweichungen sind in beiden Fällen miteinander vergleichbar.
+
+\subsection{Ergebnisse in Chrome}
+\label{subsec:ErgebnisseinChrome}
 
 \begin{figure}[H]
     \centering
@@ -122,7 +173,8 @@ Insbesondere bei speicherintensiven Operationen kann dieser Effekt die Effizienz
     \label{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome1}
 \end{figure}
 
-Die Testergebnisse in Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome1} zeigen das WebAssembly nicht so effizienzt wie JavaScript in Chrome ausgeführt wird.
+In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome1} sind die Ausführungszeiten der drei Strategien in Chrome bei 1,5 Millionen Datenpunkten zu sehen.
+Diese Testergebnisse zeigen das WebAssembly nicht so effizienzt wie JavaScript in Chrome ausgeführt wird.
 In Chrome ist WebAssembly bei allen drei Strategien langsamer als die JavaScript Implementierung, egal bei welchem Rechenaufwand der Strategie.
 In diesem Fall ist der Unterschied zwischen den beiden Implementierungssprachen über alle Strategien hinweg vergleichbar und beträgt etwa 3\% bis 5\% der Ausführungszeit.
 Dies deutet darauf hin, dass der Overhead von WebAssembly in der V8-Engine höher ist.
@@ -143,31 +195,13 @@ Folglich hat Chrome bei rechenintensiven JavaScript Anwendungen eine bessere Per
 In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome2} ist sichtbar, dass die Performanzunterschiede zwischen WebAssembly und JavaScript in Chrome auch bei geringerer Datenpunktanzahl bestehen bleiben.
 Die WebAssembly Implementierungen sind weiterhin langsamer als die JavaScript Varianten, unabhängig vom Rechenaufwand der Strategie.
 Interessanterweise benötigt die Ausbruchsstrategie bei geringerer Datenpunktanzahl am längsten zur Ausführung.
-Bei allen anderen Testfällen war die Mittelwertrückkehrstrategie die Zeitaufwendigste.
+Bei allen anderen Testfällen war die Mittelwertrückkehrstrategie die Zeitaufwändigste.
 Ein möglicher Grund hierfür könnte sein, dass bei dieser Funktion bei dieser Datenmenge noch keine Just-In-Time-Optimierungen durchgeführt wurden,
 die bei größeren Datenmengen zu einer schnelleren Ausführung führen könnten.
 
 Der Effekt der überproportionalen Steigerung der Ausführungszeit bei erhöhter Datenpunktanzahl,
 der in Firefox beobachtet wurde, ist in Chrome auch in diesem Testfall erneut erkennbar.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{STDFirefox.png}
-    \caption{Standardabweichung der Strategien in Firefox}
-    \label{fig:StandardabweichungderStrategieninFirefox}
-\end{figure}
-
-In Abbildung \ref{fig:StandardabweichungderStrategieninFirefox} ist die Standardabweichung der Ausführungszeiten der einzelnen Strategien in Firefox dargestellt.
-In beiden betrachteten Testfällen ist ein Anstieg der Standardabweichung mit zunehmendem Rechenaufwand zu erkennen.
-Dies bedeutet, dass rechenintensivere Strategien eine weniger vorhersehbare Ausführungszeit aufweisen.
-Besonders deutlich zeigt sich dieser Effekt bei der Mittelwertrückkehrstrategie mit 1,5 Millionen Datenpunkten in WebAssembly, für die die höchste Standardabweichung der Ausführungszeiten gemessen wurde.
-
-Des Weiteren ist zu erkennen, dass die WebAssembly Implementierungen durchschnittlich eine höhere Standardabweichung aufweisen als die JavaScript Varianten.
-Der größte Unterschied ist bei der Durchschnittsüberschneidungsstrategie mit 1,5 Millionen Datenpunkten zu erkennen, bei dieser weist die WebAssembly Implementierung eine 2,5 Mal höhere Varianz in den Ausführungszeiten auf.
-Nur bei der Ausbruchsstrategie mit 1,5 Millionen Datenpunkten ist die Standardabweichung der WebAssembly Implementierung geringer als die der JavaScript Variante.
-
-Für die beiden Strategien mit dem geringsten Rechenaufwand mit 500.000 Datenpunkten sind hingegen keine großen Unterschiede zwischen den Implementierungen erkennbar.
-Die Standardabweichungen sind in beiden Fällen miteinander vergleichbar.
+Bei einer Verdreifachung der Datenpunkte von 500.000 auf 1,5 Millionen steigt die durchschnittliche Ausführungszeit der Strategien um etwa das Dreifache an.
 
 \begin{figure}[H]
     \centering
@@ -189,6 +223,9 @@ Ebenfalls lässt sich in Chrome kein deutlicher Unterschied in der Standardabwei
 Alle in WebAssembly implementierten Strategien außer der Durchschnittsüberschneidungsstrategie mit 1,5 Millionen Datenpunkten weisen eine ähnliche Standardabweichung auf.
 Dies deutet darauf hin, dass die zeitliche Stabilität primär durch die Kombination an Strategie und Datenmenge bestimmt wird.
 
+\subsection{Browserabhängige Performanz von WebAssembly im Vergleich}
+\label{subsec:BrowserabhängigePerformanzvonWebAssemblyimVergleich}
+
 \begin{table}[H]
     \centering
     \begin{tabular}{lccc}
@@ -207,6 +244,11 @@ In der Tabelle \ref{tab:browser_strategien_wasm} sind die durchschnittlichen Aus
 Es ist erkennbar, dass Firefox in allen drei Strategien eine bessere Performanz aufweist als Chrome.
 Der Unterschied in den Ausführungszeiten zwischen den beiden Browsern ist bei allen Strategien vergleichbar und liegt bei circa 800 Millisekunden.
 Dies deutet darauf hin, dass die WebAssembly Integration in Firefox mit SpiderMonkey effizienter ist als in Chrome mit V8.
+
+\subsection{Analyse der WebAssembly Performanz ohne Berücksichtigung der Speicherverwaltung}
+\label{subsec:AnalysederWebAssemblyPerformanzohneBerücksichtigungderSpeicherverwaltung}
+
+// TODO
 
 \section{Zusammenfassung der Testergebnisse}
 \label{sec:ZusammenfassungderTestergebnisse}
@@ -230,4 +272,6 @@ In Firefox neigen WebAssembly Implementierungen zu höheren Schwankungen in den 
 Insgesamt zeigt sich, dass WebAssembly in Chrome browserübergreifend eine stabilere Ausführungszeit aufweist, unabhängig von der gewählten Strategie oder der Datenmenge.
 
 Zusammenfassend lässt sich feststellen, dass WebAssembly in Firefox und bei komplexen, rechenintensiven Strategien einen messbaren Performanzvorteil bieten kann.
-Während JavaScript in Chrome bei aufwendigen Aufgaben die bessere Laufzeitperformanz aufweist.
+Während JavaScript in Chrome bei aufwändigen Aufgaben die bessere Laufzeitperformanz aufweist.
+
+// TODO

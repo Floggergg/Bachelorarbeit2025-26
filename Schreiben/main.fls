@@ -774,6 +774,10 @@ INPUT ./images/AvgExecutionTimesFirefox2.png
 INPUT ./images/AvgExecutionTimesFirefox2.png
 INPUT ./images/AvgExecutionTimesFirefox2.png
 INPUT ./images/AvgExecutionTimesFirefox2.png
+INPUT ./images/STDFirefox.png
+INPUT ./images/STDFirefox.png
+INPUT ./images/STDFirefox.png
+INPUT ./images/STDFirefox.png
 INPUT ./images/AvgExecutionTimesChrome1.png
 INPUT ./images/AvgExecutionTimesChrome1.png
 INPUT ./images/AvgExecutionTimesChrome1.png
@@ -782,10 +786,6 @@ INPUT ./images/AvgExecutionTimesChrome2.png
 INPUT ./images/AvgExecutionTimesChrome2.png
 INPUT ./images/AvgExecutionTimesChrome2.png
 INPUT ./images/AvgExecutionTimesChrome2.png
-INPUT ./images/STDFirefox.png
-INPUT ./images/STDFirefox.png
-INPUT ./images/STDFirefox.png
-INPUT ./images/STDFirefox.png
 INPUT ./images/STDChrome.png
 INPUT ./images/STDChrome.png
 INPUT ./images/STDChrome.png
