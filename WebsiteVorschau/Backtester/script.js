@@ -415,6 +415,7 @@ function executeCalculations(startingMoney, interval, intervalsBack, silent = fa
     }
 
     const t0 = performance.now();
+    let execTimeSum = 0;
 
     for (let i = 0; i < jsonData.length; i += interval) {
         const startIdx = Math.max(0, i - intervalsBack * interval);
@@ -427,11 +428,17 @@ function executeCalculations(startingMoney, interval, intervalsBack, silent = fa
 
         let resCode = 0;
         if (uploadedFunctionAvailable === "js") {
+            const t2 = performance.now();
             resCode = strategyJS(prices, intervalsBack);
+            const t3 = performance.now();
+            execTimeSum += (t3 - t2);
         } else if (uploadedFunctionAvailable === "wasm" && array) {
             array.set(prices);
             if (strategy) {
+                const t2 = performance.now();
                 resCode = strategy(array.byteOffset, prices.length, intervalsBack);
+                const t3 = performance.now();
+                execTimeSum += (t3 - t2);
             }
         } else {
             return;
@@ -493,10 +500,11 @@ function executeCalculations(startingMoney, interval, intervalsBack, silent = fa
         document.getElementById('resAbsProfit').textContent = absProfit.toFixed(2).toString();
         document.getElementById('resPercentProfit').textContent = ((absProfit / startingMoney) * 100).toFixed(2) + '%';
         document.getElementById('sharpeRatio').textContent = calculateSharpeRatio(portfolioValues).toFixed(2).toString();
-        document.getElementById('executionSpeed').textContent = (t1 - t0).toFixed(2) + " ms";
+        document.getElementById('executionSpeed').textContent = (execTimeSum).toFixed(2) + " ms";
     }
 
-    return (t1 - t0).toFixed(2);
+    console.log(execTimeSum);
+    return (execTimeSum).toFixed(2);
 }
 
 function calculateSharpeRatio(portfolioValues, riskFreeRate = 0.02) {
