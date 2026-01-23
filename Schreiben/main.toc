@@ -74,8 +74,8 @@
 \contentsline {subsection}{\numberline {5.3.2}Ergebnisse in Chrome}{39}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Browserabhängige Performanz von WebAssembly im Vergleich}{42}{subsection.5.3.3}%
 \contentsline {subsection}{\numberline {5.3.4}Analyse der WebAssembly Performanz ohne Berücksichtigung der Speicherverwaltung}{42}{subsection.5.3.4}%
-\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{42}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{44}{chapter.6}%
-\contentsline {chapter}{Quellenverzeichnis}{45}{chapter*.26}%
-\contentsline {section}{Literatur}{45}{section*.27}%
-\contentsline {section}{Software}{48}{section*.28}%
+\contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{44}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{46}{chapter.6}%
+\contentsline {chapter}{Quellenverzeichnis}{47}{chapter*.28}%
+\contentsline {section}{Literatur}{47}{section*.29}%
+\contentsline {section}{Software}{50}{section*.30}%

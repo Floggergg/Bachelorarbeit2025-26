@@ -790,6 +790,14 @@ INPUT ./images/STDChrome.png
 INPUT ./images/STDChrome.png
 INPUT ./images/STDChrome.png
 INPUT ./images/STDChrome.png
+INPUT ./images/AvgExecutionTimesFirefox3.png
+INPUT ./images/AvgExecutionTimesFirefox3.png
+INPUT ./images/AvgExecutionTimesFirefox3.png
+INPUT ./images/AvgExecutionTimesFirefox3.png
+INPUT ./images/AvgExecutionTimesChrome3.png
+INPUT ./images/AvgExecutionTimesChrome3.png
+INPUT ./images/AvgExecutionTimesChrome3.png
+INPUT ./images/AvgExecutionTimesChrome3.png
 INPUT ./chapters/zusammenfassung_und_schlussbemerkungen.tex
 INPUT ./chapters/zusammenfassung_und_schlussbemerkungen.tex
 OUTPUT chapters/zusammenfassung_und_schlussbemerkungen.aux
