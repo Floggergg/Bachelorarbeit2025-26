@@ -9,7 +9,8 @@
 \RequirePackage[utf8]{inputenc} % bei Verw. von lualatex oder xelatex entfernen!
 \RequirePackage{hgbpdfa}        % Erzeugt ein PDF/A-2b-konformes Dokument
 
-\documentclass[type=bachelor,theme=default,language=german,titlelanguage=german,smartquotes]{hgbthesis}
+\documentclass[type=bachelor, theme=default, language=german, titlelanguage=german, smartquotes, notitlepage, nodeclaration]{hgbthesis}
+\usepackage{pdfpages}
 \setlength{\parindent}{0pt}
 
 \graphicspath{{images/}}  % Verzeichnis mit Bildern und Grafiken
@@ -36,16 +37,18 @@
 
 \advisor{Andreas Johann~Scheibenpflug~BSc MSc}
 
-\license{cc}
-
 %%%-----------------------------------------------------------------------------
 \frontmatter                                       % Titelei (röm. Seitenzahlen)
 %%%-----------------------------------------------------------------------------
 
-\maketitle
+\setcounter{page}{-1}
+
+\includepdf[pages=1-2, pagecommand={}, fitpaper=true]{./pdf/Titelblattvorlage_Bachelorarbeit.pdf}
+
+\setcounter{page}{1}
+
 \tableofcontents
 
-\include{front/vorwort} % Ein Vorwort ist optional
 \include{front/kurzfassung}		
 \include{front/abstract}
 

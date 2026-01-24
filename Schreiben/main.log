@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  23 JAN 2026 13:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  24 JAN 2026 12:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -104,11 +104,17 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 ) (./hgb.sty
 Package: hgb 2025/05/26
 
-******************* hgb.sty (options=smartquotes,) ***********************
+******************* hgb.sty (options=smartquotes,notitlepage,nodeclaration,) ***********************
 (./hgbdict.sty
 Package: hgbdict 2025/05/26
 )
 hgb.sty: option 'smartquotes' used
+
+Package hgb Warning: Unknown option 'notitlepage'. on input line 34.
+
+
+Package hgb Warning: Unknown option 'nodeclaration'. on input line 34.
+
 (c:/texlive/2025/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -1308,27 +1314,27 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 )) (./main.aux
 Package babel Info: 'ngerman' activates 'ngerman' shorthands.
 (babel)             Reported  on input line 10.
- (./front/vorwort.aux) (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
+ (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 
 Package pdf Warning: PDF version 2.0 is too high for standard 'A-2'.
@@ -1367,7 +1373,7 @@ Package pdf Warning: PDF version 2.0 is too high for standard 'A-2'.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package csquotes Info: Redefining character " on input line 19.
+Package csquotes Info: Redefining character " on input line 20.
 (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count569
@@ -1382,7 +1388,7 @@ Package csquotes Info: Redefining character " on input line 19.
 \makeMPintoPDFobject=\count574
 \everyMPtoPDFconversion=\toks64
 )
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 20.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1396,7 +1402,7 @@ Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ))
 \c@lstlisting=\count575
-Package tocbasic Info: setting babel extension for `lol' on input line 19.
+Package tocbasic Info: setting babel extension for `lol' on input line 20.
 Package biblatex Info: Trying to load language 'ngerman'...
 Package biblatex Info: ... file 'ngerman.lbx' found.
  (c:/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
@@ -1424,73 +1430,106 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 19.
-Package biblatex Info: Reference segment=0 on input line 19.
+Package biblatex Info: Reference section=0 on input line 20.
+Package biblatex Info: Reference segment=0 on input line 20.
 <<sRGB.icc>>
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 45.
- (c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
+<./pdf/Titelblattvorlage_Bachelorarbeit.pdf, id=10, 597.63278pt x 844.95674pt>
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf  used on input line 46.
+(pdftex.def)             Requested size: 597.63132pt x 844.95468pt.
+<./pdf/Titelblattvorlage_Bachelorarbeit.pdf, id=12, page=1, 597.63278pt x 844.95674pt>
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 1>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page1 used on input line 46.
+(pdftex.def)             Requested size: 597.63132pt x 844.95468pt.
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 1>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page1 used on input line 46.
+(pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 1>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page1 used on input line 46.
+(pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 1>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page1 used on input line 46.
+(pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
+
+
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 46.
+(c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<hgbtheme-default-logo.pdf, id=10, 269.93045pt x 269.93045pt>
-File: hgbtheme-default-logo.pdf Graphic file (type pdf)
-<use hgbtheme-default-logo.pdf>
-Package pdftex.def Info: hgbtheme-default-logo.pdf  used on input line 45.
-(pdftex.def)             Requested size: 85.35805pt x 85.35823pt.
-\c@C=\count576
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 45.
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 1>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page1 used on input line 46.
+(pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
+ [-1
+
+
+
+ <./pdf/Titelblattvorlage_Bachelorarbeit.pdf>]
+<./pdf/Titelblattvorlage_Bachelorarbeit.pdf, id=39, page=2, 597.63278pt x 844.95674pt>
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 2>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page2 used on input line 46.
+(pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 2>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page2 used on input line 46.
+(pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \scan_stop: 
+l.46 .../pdf/Titelblattvorlage_Bachelorarbeit.pdf}
+                                                  
+File: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf Graphic file (type pdf)
+<use ./pdf/Titelblattvorlage_Bachelorarbeit.pdf, page 2>
+Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page2 used on input line 46.
+(pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
+ [0
+
+ <./pdf/Titelblattvorlage_Bachelorarbeit.pdf>] (./main.toc
+Package tocbasic Info: Using my definition of `\numberline' on input line 2.
+Package tocbasic Info: Using my definition of `\numberline' on input line 5.
+Package tocbasic Info: Using my definition of `\numberline' on input line 8.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<ot1.cmap>>
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 45.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oml.cmap>>
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 45.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 9.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<oms.cmap>><<omx.cmap>>
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <6> on input line 45.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
+(Font)              <6> on input line 9.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-[1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
-
-
-
- <./hgbtheme-default-logo.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 45.
- (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmss.fd
-File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-[1{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-
-[2
-
-] (./main.toc
-Package tocbasic Info: Using my definition of `\numberline' on input line 7.
-Package tocbasic Info: Using my definition of `\numberline' on input line 11.
-Package tocbasic Info: Using my definition of `\numberline' on input line 12.
-Package tocbasic Info: Using my definition of `\numberline' on input line 15.
-Package tocbasic Info: Using my definition of `\numberline' on input line 18.
-Package tocbasic Info: Using my definition of `\numberline' on input line 20.
-Package tocbasic Info: Using my definition of `\numberline' on input line 39.
+Package tocbasic Info: Using my definition of `\numberline' on input line 10.
+Package tocbasic Info: Using my definition of `\numberline' on input line 29.
 
 
-[3
+[1
 
-]
-Package tocbasic Info: Using my definition of `\numberline' on input line 55.
-Package tocbasic Info: Using my definition of `\numberline' on input line 67.
-Package tocbasic Info: Using my definition of `\numberline' on input line 78.
-Package tocbasic Info: Using my definition of `\numberline' on input line 79.
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+Package tocbasic Info: Using my definition of `\numberline' on input line 45.
+Package tocbasic Info: Using my definition of `\numberline' on input line 57.
+Package tocbasic Info: Using my definition of `\numberline' on input line 68.
+Package tocbasic Info: Using my definition of `\numberline' on input line 69.
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -1498,23 +1537,13 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 79.
 
 
 Package babel Info: 'ngerman' activates 'ngerman' shorthands.
-(babel)             Reported  on input line 48.
-[4]
-\openout2 = `front/vorwort.aux'.
-
- (./front/vorwort.tex)
-
-[5
-
-
-]
+(babel)             Reported  on input line 52.
+[2]
 \openout2 = `front/kurzfassung.aux'.
 
  (./front/kurzfassung.tex)
 
-[6
-
-
+[3
 
 
 ]
@@ -1522,7 +1551,7 @@ Package babel Info: 'ngerman' activates 'ngerman' shorthands.
 
  (./front/abstract.tex)
 
-[7
+[4
 
 
 
@@ -1545,7 +1574,7 @@ Kapitel 1.
 
  (./chapters/grundlagen.tex
 Kapitel 2.
-<images/BacktestingFlow.png, id=208, 508.90125pt x 491.8375pt>
+<images/BacktestingFlow.png, id=211, 508.90125pt x 491.8375pt>
 File: images/BacktestingFlow.png Graphic file (type png)
 <use images/BacktestingFlow.png>
 Package pdftex.def Info: images/BacktestingFlow.png  used on input line 17.
@@ -1563,14 +1592,14 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 35
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[3{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./images/BacktestingFlow.png>]
+[3{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc} <./images/BacktestingFlow.png>]
 
 [4]
 
 [5]
 
 [6]
-<images/ResulsBacktestBacktestJS.jpeg, id=281, 1027.84pt x 443.6575pt>
+<images/ResulsBacktestBacktestJS.jpeg, id=284, 1027.84pt x 443.6575pt>
 File: images/ResulsBacktestBacktestJS.jpeg Graphic file (type jpg)
 <use images/ResulsBacktestBacktestJS.jpeg>
 Package pdftex.def Info: images/ResulsBacktestBacktestJS.jpeg  used on input line 162.
@@ -1578,7 +1607,7 @@ Package pdftex.def Info: images/ResulsBacktestBacktestJS.jpeg  used on input lin
 
 
 [7 <./images/ResulsBacktestBacktestJS.jpeg>]
-<images/BollingerBands.png, id=297, 764.8575pt x 390.70969pt>
+<images/BollingerBands.png, id=301, 764.8575pt x 390.70969pt>
 File: images/BollingerBands.png Graphic file (type png)
 <use images/BollingerBands.png>
 Package pdftex.def Info: images/BollingerBands.png  used on input line 202.
@@ -1593,7 +1622,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--211
 [8 <./images/BollingerBands.png>]
 
 [9]
-<images/CombinedWASMCode.png, id=337, 629.35126pt x 180.675pt>
+<images/CombinedWASMCode.png, id=341, 629.35126pt x 180.675pt>
 File: images/CombinedWASMCode.png Graphic file (type png)
 <use images/CombinedWASMCode.png>
 Package pdftex.def Info: images/CombinedWASMCode.png  used on input line 270.
@@ -1618,7 +1647,7 @@ Overfull \hbox (2.14702pt too wide) in paragraph at lines 326--329
 
 
 [11]
-<images/wasmtoBrowsercode.png, id=370, 788.9475pt x 185.69376pt>
+<images/wasmtoBrowsercode.png, id=373, 788.9475pt x 185.69376pt>
 File: images/wasmtoBrowsercode.png Graphic file (type png)
 <use images/wasmtoBrowsercode.png>
 Package pdftex.def Info: images/wasmtoBrowsercode.png  used on input line 343.
@@ -1630,7 +1659,7 @@ Package pdftex.def Info: images/wasmtoBrowsercode.png  used on input line 343.
 
  (./chapters/konzept_und_design.tex
 Kapitel 3.
-<images/backtester_architektur.drawio.png, id=383, 563.10374pt x 373.395pt>
+<images/backtester_architektur.drawio.png, id=386, 563.10374pt x 373.395pt>
 File: images/backtester_architektur.drawio.png Graphic file (type png)
 <use images/backtester_architektur.drawio.png>
 Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input line 15.
@@ -1643,7 +1672,7 @@ Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input
 
 
  <./images/backtester_architektur.drawio.png>]
-<images/BacktesterLogik.png, id=393, 237.88875pt x 542.025pt>
+<images/BacktesterLogik.png, id=397, 237.88875pt x 542.025pt>
 File: images/BacktesterLogik.png Graphic file (type png)
 <use images/BacktesterLogik.png>
 Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
@@ -1653,7 +1682,7 @@ Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
 [14]
 
 [15 <./images/BacktesterLogik.png>]
-<images/CombinedCJSFunktionsschnittstellen.png, id=404, 509.905pt x 92.345pt>
+<images/CombinedCJSFunktionsschnittstellen.png, id=408, 509.905pt x 92.345pt>
 File: images/CombinedCJSFunktionsschnittstellen.png Graphic file (type png)
 <use images/CombinedCJSFunktionsschnittstellen.png>
 Package pdftex.def Info: images/CombinedCJSFunktionsschnittstellen.png  used on input line 79.
@@ -1668,7 +1697,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--89
 [16 <./images/CombinedCJSFunktionsschnittstellen.png>]
 
 [17]
-<images/weboberflaecheDesign.drawio.png, id=428, 553.06625pt x 553.06625pt>
+<images/weboberflaecheDesign.drawio.png, id=431, 553.06625pt x 553.06625pt>
 File: images/weboberflaecheDesign.drawio.png Graphic file (type png)
 <use images/weboberflaecheDesign.drawio.png>
 Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input line 161.
@@ -1676,7 +1705,7 @@ Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input l
 
 
 [18 <./images/weboberflaecheDesign.drawio.png>]
-<images/Diagramms.png, id=437, 1422.81563pt x 710.655pt>
+<images/Diagramms.png, id=440, 1422.81563pt x 710.655pt>
 File: images/Diagramms.png Graphic file (type png)
 <use images/Diagramms.png>
 Package pdftex.def Info: images/Diagramms.png  used on input line 187.
@@ -1684,7 +1713,7 @@ Package pdftex.def Info: images/Diagramms.png  used on input line 187.
 
 
 [19 <./images/Diagramms.png>]
-<images/EmscriptenPipeline.png, id=456, 1039.885pt x 187.70125pt>
+<images/EmscriptenPipeline.png, id=460, 1039.885pt x 187.70125pt>
 File: images/EmscriptenPipeline.png Graphic file (type png)
 <use images/EmscriptenPipeline.png>
 Package pdftex.def Info: images/EmscriptenPipeline.png  used on input line 243.
@@ -1760,7 +1789,7 @@ Kapitel 5.
 
 
 ]
-<images/TestDataJson.png, id=818, 243.15843pt x 174.6525pt>
+<images/TestDataJson.png, id=822, 243.15843pt x 174.6525pt>
 File: images/TestDataJson.png Graphic file (type png)
 <use images/TestDataJson.png>
 Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
@@ -1768,7 +1797,7 @@ Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
 
 
 [34 <./images/TestDataJson.png>]
-<images/AvgExecutionTimesFirefox1.png, id=827, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox1.png, id=831, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox1.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox1.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox1.png  used on input line 113.
@@ -1776,7 +1805,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox1.png  used on input lin
 
 
 [35]
-<images/AvgExecutionTimesFirefox2.png, id=835, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox2.png, id=838, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox2.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox2.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox2.png  used on input line 134.
@@ -1784,7 +1813,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox2.png  used on input lin
 
 
 [36 <./images/AvgExecutionTimesFirefox1.png (PNG copy)>]
-<images/STDFirefox.png, id=843, 1091.07625pt x 692.5875pt>
+<images/STDFirefox.png, id=846, 1091.07625pt x 692.5875pt>
 File: images/STDFirefox.png Graphic file (type png)
 <use images/STDFirefox.png>
 Package pdftex.def Info: images/STDFirefox.png  used on input line 149.
@@ -1792,7 +1821,7 @@ Package pdftex.def Info: images/STDFirefox.png  used on input line 149.
 
 
 [37 <./images/AvgExecutionTimesFirefox2.png (PNG copy)>]
-<images/AvgExecutionTimesChrome1.png, id=850, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome1.png, id=854, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome1.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome1.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome1.png  used on input line 171.
@@ -1800,7 +1829,7 @@ Package pdftex.def Info: images/AvgExecutionTimesChrome1.png  used on input line
 
 
 [38 <./images/STDFirefox.png (PNG copy)>]
-<images/AvgExecutionTimesChrome2.png, id=858, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome2.png, id=862, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome2.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome2.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome2.png  used on input line 190.
@@ -1808,7 +1837,7 @@ Package pdftex.def Info: images/AvgExecutionTimesChrome2.png  used on input line
 
 
 [39 <./images/AvgExecutionTimesChrome1.png (PNG copy)>]
-<images/STDChrome.png, id=865, 1091.07625pt x 692.5875pt>
+<images/STDChrome.png, id=869, 1091.07625pt x 692.5875pt>
 File: images/STDChrome.png Graphic file (type png)
 <use images/STDChrome.png>
 Package pdftex.def Info: images/STDChrome.png  used on input line 208.
@@ -1818,7 +1847,7 @@ Package pdftex.def Info: images/STDChrome.png  used on input line 208.
 [40 <./images/AvgExecutionTimesChrome2.png (PNG copy)>]
 
 [41 <./images/STDChrome.png (PNG copy)>]
-<images/AvgExecutionTimesFirefox3.png, id=879, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox3.png, id=882, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox3.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox3.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox3.png  used on input line 257.
@@ -1826,7 +1855,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox3.png  used on input lin
 
 
 [42]
-<images/AvgExecutionTimesChrome3.png, id=887, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome3.png, id=890, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome3.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome3.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome3.png  used on input line 269.
@@ -1859,29 +1888,29 @@ Kapitel 6.
 ]
 
 [48]
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []\T1/lmr/m/it/10.95 SpiderMonkey: We-bAs-sem-b-ly Pi-pe-li-ne\T1/lmr/m/n/10.95 . https://firefox-source-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--68
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
 []\T1/lmr/m/n/10.95 StatCounter Glo-bal Stats. \T1/lmr/m/it/10.95 Brow-ser Mar-ket Sha-re World-wi-de\T1/lmr/m/n/10.95 .
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 68--68
+Underfull \hbox (badness 2512) in paragraph at lines 71--71
 \T1/lmr/m/n/10.95 https://gs.statcounter.com/browser-market-share. Ac-ces-sed: 2025-10-31. 2025
  []
 
 
 
 [49]
-Underfull \hbox (badness 1383) in paragraph at lines 68--68
+Underfull \hbox (badness 1383) in paragraph at lines 71--71
 []\T1/lmr/m/n/10.95 W3Counter. \T1/lmr/m/it/10.95 Brow-ser & Plat-form Mar-ket Sha-re ^^U Glo-bal Web Stats\T1/lmr/m/n/10.95 . htt-
  []
 
 
-Underfull \hbox (badness 2205) in paragraph at lines 68--68
+Underfull \hbox (badness 2205) in paragraph at lines 71--71
 \T1/lmr/m/n/10.95 ps://www.w3counter.com/globalstats.php. Ac-ces-sed: 2025-10-31. 2025 (sie-he
  []
 
@@ -1924,7 +1953,7 @@ LaTeX Font Info:    External font `cmex7' loaded for size
 [55
 
 
-] (./main.aux (./front/vorwort.aux) (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
+] (./main.aux (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux) (./back/messbox.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-11>
@@ -1934,18 +1963,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48335 strings out of 467816
- 958958 string characters out of 5436431
- 2305402 words of memory out of 5000000
- 75517 multiletter control sequences out of 15000+600000
- 722737 words of font info for 100 fonts, out of 8000000 for 9000
+ 48270 strings out of 467816
+ 957903 string characters out of 5436431
+ 2300720 words of memory out of 5000000
+ 75469 multiletter control sequences out of 15000+600000
+ 714042 words of font info for 96 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
- 130i,12n,145p,1048b,3576s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 130i,17n,145p,1048b,3574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (63 pages, 1234516 bytes).
+Output written on main.pdf (61 pages, 1322770 bytes).
 PDF statistics:
- 1476 PDF objects out of 1728 (max. 8388607)
- 1336 compressed objects within 14 object streams
- 479 named destinations out of 1000 (max. 500000)
- 694 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1472 PDF objects out of 1728 (max. 8388607)
+ 1329 compressed objects within 14 object streams
+ 476 named destinations out of 1000 (max. 500000)
+ 693 words of extra memory for PDF output out of 10000 (max. 10000000)
 
