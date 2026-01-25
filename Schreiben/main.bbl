@@ -355,10 +355,15 @@
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{https://www.binance.com/}
       \field{note}{Accessed: 2025-11-03}
       \field{title}{Binance - Cryptocurrency Exchange}
       \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.binance.com/
+      \endverb
+      \verb{url}
+      \verb https://www.binance.com/
+      \endverb
     \endentry
     \entry{bollinger1992using}{article}{}{}
       \name{author}{1}{}{%
@@ -390,30 +395,30 @@
     \endentry
     \entry{https://doi.org/10.1111/j.1540-6261.1992.tb04681.x}{article}{}{}
       \name{author}{3}{}{%
-        {{hash=d00b60e921487be764223bd1f4e6ff06}{%
-           family={BROCK},
+        {{hash=0f3ac5d44c465ad9f8613ca90efc0d4a}{%
+           family={Brock},
            familyi={B\bibinitperiod},
-           given={WILLIAM},
+           given={William},
            giveni={W\bibinitperiod}}}%
-        {{hash=90718000361d40f849ec179a31ba1416}{%
-           family={LAKONISHOK},
+        {{hash=7067481189aa7a7f3a9cff920faef611}{%
+           family={Lakonishok},
            familyi={L\bibinitperiod},
-           given={JOSEF},
+           given={Josef},
            giveni={J\bibinitperiod}}}%
-        {{hash=f8bb8800e4a3729b7a9c31a0ef6ecd77}{%
-           family={LeBARON},
+        {{hash=4c0d2cc98d93d965730044412a65944d}{%
+           family={LeBaron},
            familyi={L\bibinitperiod},
-           given={BLAKE},
+           given={Blake},
            giveni={B\bibinitperiod}}}%
       }
-      \strng{namehash}{677e0887f84c918a0a669e2dddad92bb}
-      \strng{fullhash}{677e0887f84c918a0a669e2dddad92bb}
-      \strng{fullhashraw}{677e0887f84c918a0a669e2dddad92bb}
-      \strng{bibnamehash}{677e0887f84c918a0a669e2dddad92bb}
-      \strng{authorbibnamehash}{677e0887f84c918a0a669e2dddad92bb}
-      \strng{authornamehash}{677e0887f84c918a0a669e2dddad92bb}
-      \strng{authorfullhash}{677e0887f84c918a0a669e2dddad92bb}
-      \strng{authorfullhashraw}{677e0887f84c918a0a669e2dddad92bb}
+      \strng{namehash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{fullhash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{fullhashraw}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{bibnamehash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{authorbibnamehash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{authornamehash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{authorfullhash}{dd1f7c6c367f3b61051e284820c4cd85}
+      \strng{authorfullhashraw}{dd1f7c6c367f3b61051e284820c4cd85}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
@@ -733,6 +738,37 @@
       \field{year}{2000}
       \field{pages}{285\bibrangedash 288}
       \range{pages}{4}
+    \endentry
+    \entry{webassemblyorg}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=67858f7c827290cb36945226b7a34fc3}{%
+           family={Group},
+           familyi={G\bibinitperiod},
+           given={WebAssembly\bibnamedelima Community},
+           giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{fullhash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{fullhashraw}{67858f7c827290cb36945226b7a34fc3}
+      \strng{bibnamehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authorbibnamehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authornamehash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authorfullhash}{67858f7c827290cb36945226b7a34fc3}
+      \strng{authorfullhashraw}{67858f7c827290cb36945226b7a34fc3}
+      \field{extraname}{1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-09-07}
+      \field{title}{WebAssembly}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://webassembly.org/
+      \endverb
+      \verb{url}
+      \verb https://webassembly.org/
+      \endverb
     \endentry
     \entry{gurrib2016moving}{article}{}{}
       \name{author}{1}{}{%
@@ -1389,19 +1425,29 @@
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labeltitlesource}{title}
-      \field{howpublished}{https://spidermonkey.dev}
       \field{note}{Accessed: 2025-12-09}
       \field{title}{SpiderMonkey: Mozillas WebAssembly Engine}
       \field{year}{2025}
+      \verb{urlraw}
+      \verb https://spidermonkey.dev
+      \endverb
+      \verb{url}
+      \verb https://spidermonkey.dev
+      \endverb
     \endentry
     \entry{SpiderMonkey2025_Pipeline}{misc}{}{}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labeltitlesource}{title}
-      \field{howpublished}{https://firefox-source-docs.mozilla.org/js/index.html}
       \field{note}{Accessed: 2025-12-09}
       \field{title}{SpiderMonkey: WebAssembly Pipeline}
       \field{year}{2025}
+      \verb{urlraw}
+      \verb https://firefox-source-docs.mozilla.org/js/index.html
+      \endverb
+      \verb{url}
+      \verb https://firefox-source-docs.mozilla.org/js/index.html
+      \endverb
     \endentry
     \entry{StatCounterBrowserShare2025}{misc}{}{}
       \name{author}{1}{}{%
@@ -1423,10 +1469,15 @@
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{https://gs.statcounter.com/browser-market-share}
       \field{note}{Accessed: 2025-10-31}
       \field{title}{Browser Market Share Worldwide}
       \field{year}{2025}
+      \verb{urlraw}
+      \verb https://gs.statcounter.com/browser-market-share
+      \endverb
+      \verb{url}
+      \verb https://gs.statcounter.com/browser-market-share
+      \endverb
     \endentry
     \entry{Su2023}{inproceedings}{}{}
       \name{author}{1}{}{%
@@ -1530,19 +1581,29 @@
       \field{sortinit}{V}
       \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
       \field{labeltitlesource}{title}
-      \field{howpublished}{https://v8.dev/docs/wasm-compilation-pipeline}
       \field{note}{Accessed: 2025-12-09}
       \field{title}{V8 WebAssembly Pipeline}
       \field{year}{2025}
+      \verb{urlraw}
+      \verb https://v8.dev/docs/wasm-compilation-pipeline
+      \endverb
+      \verb{url}
+      \verb https://v8.dev/docs/wasm-compilation-pipeline
+      \endverb
     \endentry
     \entry{V8_2025}{misc}{}{}
       \field{sortinit}{V}
       \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
       \field{labeltitlesource}{title}
-      \field{howpublished}{https://v8.dev}
       \field{note}{Accessed: 2025-12-09}
       \field{title}{V8: Googles WebAssembly Engine}
       \field{year}{2025}
+      \verb{urlraw}
+      \verb https://v8.dev
+      \endverb
+      \verb{url}
+      \verb https://v8.dev
+      \endverb
     \endentry
     \entry{W3CounterGlobalStats2025}{misc}{}{}
       \name{author}{1}{}{%
@@ -1562,37 +1623,14 @@
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{https://www.w3counter.com/globalstats.php}
       \field{note}{Accessed: 2025-10-31}
       \field{title}{Browser \& Platform Market Share – Global Web Stats}
       \field{year}{2025}
-    \endentry
-    \entry{webassemblyorg}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=a76d091753d08838e97965cb7ac788f3}{%
-           family={{WebAssembly Community Group}},
-           familyi={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{a76d091753d08838e97965cb7ac788f3}
-      \strng{fullhash}{a76d091753d08838e97965cb7ac788f3}
-      \strng{fullhashraw}{a76d091753d08838e97965cb7ac788f3}
-      \strng{bibnamehash}{a76d091753d08838e97965cb7ac788f3}
-      \strng{authorbibnamehash}{a76d091753d08838e97965cb7ac788f3}
-      \strng{authornamehash}{a76d091753d08838e97965cb7ac788f3}
-      \strng{authorfullhash}{a76d091753d08838e97965cb7ac788f3}
-      \strng{authorfullhashraw}{a76d091753d08838e97965cb7ac788f3}
-      \field{sortinit}{W}
-      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: 2025-09-07}
-      \field{title}{WebAssembly}
-      \field{year}{2025}
       \verb{urlraw}
-      \verb https://webassembly.org/
+      \verb https://www.w3counter.com/globalstats.php
       \endverb
       \verb{url}
-      \verb https://webassembly.org/
+      \verb https://www.w3counter.com/globalstats.php
       \endverb
     \endentry
     \entry{10.1145/3487552.3487827}{inproceedings}{}{}
@@ -1863,6 +1901,7 @@
       \strng{authornamehash}{67858f7c827290cb36945226b7a34fc3}
       \strng{authorfullhash}{67858f7c827290cb36945226b7a34fc3}
       \strng{authorfullhashraw}{67858f7c827290cb36945226b7a34fc3}
+      \field{extraname}{2}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
