@@ -652,6 +652,7 @@ INPUT ./chapters/einleitung.tex
 INPUT ./chapters/einleitung.tex
 INPUT chapters/einleitung.tex
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
 INPUT ./chapters/grundlagen.tex
 INPUT ./chapters/grundlagen.tex
 OUTPUT chapters/grundlagen.aux
@@ -677,7 +678,6 @@ INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss12.tfm
 INPUT ./images/ResulsBacktestBacktestJS.jpeg
 INPUT ./images/ResulsBacktestBacktestJS.jpeg
 INPUT ./images/ResulsBacktestBacktestJS.jpeg

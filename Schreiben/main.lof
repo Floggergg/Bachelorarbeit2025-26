@@ -7,27 +7,27 @@
 \babel@toc {ngerman}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Ablauf eines Backtestingsprozesses}}{3}{figure.caption.4}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Beispielergebnis eines Backtests mit BacktestJS \blx@tocontentsinit {0}\cite {backtestjsExampleResult}}}{7}{figure.caption.5}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispiel für ein Bollinger Band}}{8}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Vergleich von C Quellcode und generiertem WebAssembly Bytecode}}{10}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Ausführung von WebAssembly im Browser}}{12}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Ablauf eines Backtestingsprozesses}}{4}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Beispielergebnis eines Backtests mit BacktestJS \blx@tocontentsinit {0}\cite {backtestjsExampleResult}}}{8}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Beispiel für ein Bollinger Band}}{9}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Vergleich von C Quellcode und generiertem WebAssembly Bytecode}}{11}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Ausführung von WebAssembly im Browser}}{13}{figure.caption.8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Struktur des Backtesters}}{13}{figure.caption.9}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Backtestingablauf}}{15}{figure.caption.10}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Funktionsschnittstellen der Strategien in C und JavaScript}}{16}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Design der Weboberfläche des Backtesters}}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Kursdiagramme mit Kennzahlen}}{19}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Emscripten Pipeline}}{21}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Struktur des Backtesters}}{14}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Backtestingablauf}}{16}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Funktionsschnittstellen der Strategien in C und JavaScript}}{17}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Design der Weboberfläche des Backtesters}}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Kursdiagramme mit Kennzahlen}}{20}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Emscripten Pipeline}}{22}{figure.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Beispiel eines Kursdatensatzes im JSON-Format}}{34}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit 1,5 Millionen Datenpunkten}}{36}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit einer halben Million Datenpunkten}}{37}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Standardabweichung der Strategien in Firefox}}{38}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit 1,5 Millionen Datenpunkten}}{39}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit einer halben Million Datenpunkten}}{40}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Standardabweichung der Strategien in Chrome}}{41}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Firefox mit 1,5 Millionen Datenpunkten}}{43}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Chrome mit 1,5 Millionen Datenpunkten}}{44}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Beispiel eines Kursdatensatzes im JSON-Format}}{35}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit 1,5 Millionen Datenpunkten}}{37}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit einer halben Million Datenpunkten}}{38}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Standardabweichung der Strategien in Firefox}}{39}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit 1,5 Millionen Datenpunkten}}{40}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit einer halben Million Datenpunkten}}{41}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Standardabweichung der Strategien in Chrome}}{42}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Firefox mit 1,5 Millionen Datenpunkten}}{44}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Chrome mit 1,5 Millionen Datenpunkten}}{45}{figure.caption.25}%
 \addvspace {10\p@ }
