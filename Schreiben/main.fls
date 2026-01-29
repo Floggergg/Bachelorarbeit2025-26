@@ -730,6 +730,10 @@ OUTPUT chapters/implementierung_des_backtesters.aux
 INPUT ./chapters/implementierung_des_backtesters.tex
 INPUT ./chapters/implementierung_des_backtesters.tex
 INPUT chapters/implementierung_des_backtesters.tex
+INPUT ./images/UserInterface.png
+INPUT ./images/UserInterface.png
+INPUT ./images/UserInterface.png
+INPUT ./images/UserInterface.png
 INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd

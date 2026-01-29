@@ -7,7 +7,16 @@ In diesem Kapitel wird beschrieben wie die einzelnen Komponenten des Backtester 
 \label{sec:DieBenutzerschnittstellendesBacktesters}
 
 Die Benutzerschnittstelle des Backtesters ist in HTML und JavaScript implementiert.
-Der Backtester stellt insgesamt fünf Eingabekomponenten zur Parametrisierung des Backtests bereit. 
+Der Backtester stellt insgesamt fünf Eingabekomponenten zur Parametrisierung des Backtests bereit.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{UserInterface.png}
+    \caption{Eingabefelder der Backtestparameter}
+    \label{fig:EingabefelderderBacktestparameter}
+\end{figure}
+
+In der Abbildung \ref{fig:EingabefelderderBacktestparameter} sind die Eingabefelder der Backtestparameter zu sehen.
 Über ein Dateieingabefeld können JavaScript- und WebAssembly-Dateien hochgeladen werden, welche die Handelsstrategie implementieren. 
 Ein weiteres Dateieingabefeld dient zum Import einer JSON-Datei, die historische Kursdaten enthält. 
 Darüber hinaus ermöglichen zwei numerische Eingabefelder die Festlegung des Startkapitals sowie der Anzahl der rückblickend zu berücksichtigenden Zeitintervalle. 
@@ -17,8 +26,8 @@ Mögliche Optionen für das Abfrageintervall sind eine Stunde, 30 Minuten, 15 Mi
 Falls eine der Eingaben ungültig ist, kann der Backtest nicht gestartet werden.
 Des Weiteren werden die Eingaben nur zu Beginn des Backtests ausgelesen, sodass Änderungen während eines laufenden Backtests keine Auswirkungen haben.
 
-\subsection{Die API Schnittstelle}
-\label{subsec:DieAPISchnittstelle}
+\section{Laden und Vorverarbeitung der Kursdaten}
+\label{sec:LadenundVorverarbeitungderKursdaten}
 
 Die historischen Kursdaten werden über die API der Kryptowährungsbörse Binance abgerufen.
 Die erhaltenen Kursdaten umfassen Open-, High-, Low- und Close-Preise sowie das Handelsvolumen zu festgelegten Zeitintervallen. \cite{Binance}
@@ -31,7 +40,7 @@ Daher muss die Datenabfrage mehrfach durchgeführt werden, um den gesamten Zeitr
 Die API ist öffentlich zugänglich, aber es gelten bestimmte Ratenbegrenzungen.
 Um diese Ratenlimitierung nicht zu überschreiten, ist eine Verzögerung zwischen aufeinanderfolgenden Anfragen eingefügt.
 
-\begin{JsCode}[caption={Binance API Schnittstelle}, label={lst:BinanceAPISchnittstelle}]
+\begin{JsCode}[caption={Aufruf der Binance API Schnittstelle}, label={lst:BinanceAPISchnittstelle}]
     while (start < end) {
         const url = new URL("https://api.binance.com/api/v3/klines");
         url.searchParams.set("symbol", symbol);
@@ -43,7 +52,7 @@ Um diese Ratenlimitierung nicht zu überschreiten, ist eine Verzögerung zwische
         const res = await fetch(url);
         const data = await res.json();
 
-        // Fehlerbehebeungen
+        // Fehlerbehandlung
 
         allData.push(...data);
 
@@ -102,15 +111,15 @@ Abhängig vom Dateityp wird die hochgeladene Datei entweder als JavaScript-Funkt
 \end{JsCode}
 
 Im Codeausschnitt \ref{lst:LadenderStrategienausdenhochgeladenenDateien} ist zu sehen, wie Strategie aus den unterschiedlichen Dateitypen instanziert werden.
-Bei JavaScript-Dateien wird ein FileReader verwendet, der den Inhalt ausließt und in ein Funktionsobjekt umwandelt.
+Bei JavaScript-Dateien wird ein FileReader verwendet, der den Inhalt ausliest und in ein Funktionsobjekt umwandelt.
 Dazu wird der Inhalt der Datei mit einem return Statement kombiniert und in ein neues Funktionsobjekt zusammengefügt.
-Wenn das entstandene Objekt ohne Fehler in eine Funktion umgewandelt werden kann, wird dieses als Strategie gespeichert und das System merkt sich, dass eine JavaScript Strategie verfügbar ist.
+Wenn das entstandene Objekt ohne Fehler in eine Funktion umgewandelt werden kann, wird dieses als Strategie gespeichert und es wird im System vermerkt, dass eine JavaScript-Strategie verfügbar ist.
 
 Bei WebAssembly-Dateien wird der Inhalt der Datei in ein ArrayBuffer gegeben. In diesem ArrayBuffer ist der Code des WebAssembly-Moduls gespeichert.
 Anschließend wird das Modul mit der WebAssembly API instanziert.
 Dabei werden der Buffer und ein Importobjekt übergeben, das eine abort Funktion bereitstellt, die von WebAssembly aufgerufen werden kann, um Fehler zu melden.
 Nach der Instanziierung werden alle exportierten Funktionen und Speicherbereiche des Moduls extrahiert und bereitgestellt.
-Wenn die erwarteten Exporte, Strategie Funktion und Speicherbereich, vorhanden sind, speichert der Backtester diese und merkt sich, dass eine WebAssembly Strategie verfügbar ist.
+Wenn die erwarteten Exporte, Strategie Funktion und Speicherbereich, vorhanden sind, werden diese im Backtester gespeichert und es wird vermerkt, dass eine WebAssembly-Strategie verfügbar ist.
 
 \section{Implementierung der Backtestlogik}
 \label{sec:ImplementierungenderBacktestlogik}
@@ -146,7 +155,7 @@ Unterschiede bestehen nur darin, wie die Kursdaten an die Strategie übergeben w
             return;
         }
 
-        // Fehlerbehebeungen der Strategieergebnisse
+        // Fehlerbehandlung der Strategieergebnisse
         // Umwandlung des Rückgabewerts in ein Aktionsobjekt
 
         if (action) {
@@ -186,7 +195,7 @@ Bei der WebAssembly Version werden die Kurswerte zuvor in das reservierte Array 
 Falls ein Fehler bei der Ausführung der Strategie auftritt, wird der Backtest abgebrochen.
 Anschließend wird der Rückgabewert der Strategie in ein Aktionsobjekt umgewandelt.
 Wenn eine Kauf- oder Verkaufsaktion zurückgegeben wird, wird diese ausgeführt und in der Benutzeroberfläche protokolliert.
-Handelssignale werden nur ausgeführt, wenn genügend Kapital oder Bestände vorhanden sind.
+Verkaufssignale werden nur ausgeführt, wenn Bestände vorhanden sind, während Kaufsignale nur ausgeführt werden, wenn genügend Kapital vorhanden ist.
 Danach wird der aktuelle Portfoliowert neu berechnet und gespeichert.
 Dieser Vorgang wird wiederholt, bis alle Kursdaten verarbeitet wurden.
 
@@ -203,7 +212,7 @@ Jede der folgenden Untersektionen beschreibt die Implementierung einer der drei 
 \label{subsec:GleitendeDurchschnittsüberschneidungsStrategie}
 
 Die gleitende Durchschnittsüberschneidungs Strategie erzeugt Handelssignale dadurch, dass zwei unterschiedlich lange gleitende Durchschnitte der Kursdaten berechnet und miteinander verglichen werden.
-In Richtung der Überschneidungen der Durchschnittswerte bestimmt, ob ein Kauf- oder Verkaufssignal generiert wird.
+Die Richtung, von der sich der kurzfristige und der langfristige Durchschnitt schneiden bestimmt, ob ein Kauf- oder Verkaufssignal generiert wird.
 Das Konzept der Strategie ist in Kapital \ref{subsec:GleitendeDurchschnittsÜberscheidungen} genauer beschrieben.
 
 \begin{CCode}[caption={Durchschnittsüberschneidung in C}, label={lst:DurchschnittsüberschneidunginC}]
@@ -288,7 +297,9 @@ In der JavaScript Implementierung \ref{lst:DurchschnittsüberschneidunginJavaScr
 Die Intervalle sind für die Berechnung der kurzen und langen Durchschnitte gleich wie in der C Implementierung.
 Die Logik zur Erzeugung von Haltesignalen ist ebenfalls identisch zur C Version.
 Der Unterschied in den Implementierungen besteht darin, dass die Berechnung der Durchschnitte in JavaScript in eine Funktion ausgelagert ist.
-Würde dies in C angewendet werden würde dies zu einem Geschwindigkeitsverlust führen.
+In C könnte diese Auslagerung zu einem Geschwindigkeitsverlust führen, da Funktionsaufrufe zusätzlichen Overhead verursachen.
+Compiler-Optimierungen wie Inlining würden in diesem Fall nicht zuverlässig an dieser Stelle eine Optimierung durchführen können.
+\cite{10.1145/3611643.3616311}
 
 \subsection{Mittelwertrückkehr Strategie}
 \label{subsec:MittelwertrückkehrStrategie}
@@ -407,7 +418,7 @@ Die C Implementierung verwendet eine explizite Schleife, während die JavaScript
 \label{sec:DieDatenvisualisierungen}
 
 Zur Datenvisualisierung werden Kurs- und Portfoliowerte in einem HTML-Canvas dargestellt. 
-Um eine visuelle überladene Darstellung zu vermeiden, wird pro Diagramm jeweils nur ein Teil der verfügbaren Daten visualisiert. 
+Um eine visuelle überladene Darstellung und eine geringe Performanz zu vermeiden, wird pro Diagramm jeweils nur ein Teil der verfügbaren Daten visualisiert. 
 Die Auswahl der dargestellten Datenpunkte erfolgt dabei so, dass die Aussagekraft der Diagramme erhalten bleibt, während die Darstellungsdichte reduziert wird.
 
 \subsection{Visualisierung des Kurswertes}

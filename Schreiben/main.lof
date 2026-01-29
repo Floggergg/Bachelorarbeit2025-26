@@ -20,14 +20,15 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Kursdiagramme mit Kennzahlen}}{20}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Emscripten Pipeline}}{22}{figure.caption.14}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Eingabefelder der Backtestparameter}}{23}{figure.caption.15}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Beispiel eines Kursdatensatzes im JSON-Format}}{35}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit 1,5 Millionen Datenpunkten}}{37}{figure.caption.17}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit einer halben Million Datenpunkten}}{38}{figure.caption.18}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Standardabweichung der Strategien in Firefox}}{39}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit 1,5 Millionen Datenpunkten}}{40}{figure.caption.20}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit einer halben Million Datenpunkten}}{41}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Standardabweichung der Strategien in Chrome}}{42}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Firefox mit 1,5 Millionen Datenpunkten}}{44}{figure.caption.24}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Chrome mit 1,5 Millionen Datenpunkten}}{45}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Beispiel eines Kursdatensatzes im JSON-Format}}{35}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit 1,5 Millionen Datenpunkten}}{37}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Firefox mit einer halben Million Datenpunkten}}{38}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Standardabweichung der Strategien in Firefox}}{39}{figure.caption.20}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit 1,5 Millionen Datenpunkten}}{40}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien in Chrome mit einer halben Million Datenpunkten}}{41}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Standardabweichung der Strategien in Chrome}}{42}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Firefox mit 1,5 Millionen Datenpunkten}}{44}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Durchschnittliche Ausführungszeiten der Strategien ohne Speicherverwaltung in Chrome mit 1,5 Millionen Datenpunkten}}{45}{figure.caption.26}%
 \addvspace {10\p@ }

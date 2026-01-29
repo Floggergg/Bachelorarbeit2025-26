@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  27 JAN 2026 12:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  29 JAN 2026 16:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1736,6 +1736,11 @@ Overfull \hbox (0.53638pt too wide) in paragraph at lines 243--244
 
  (./chapters/implementierung_des_backtesters.tex
 Kapitel 4.
+<images/UserInterface.png, id=520, 421.575pt x 88.07906pt>
+File: images/UserInterface.png Graphic file (type png)
+<use images/UserInterface.png>
+Package pdftex.def Info: images/UserInterface.png  used on input line 14.
+(pdftex.def)             Requested size: 415.41025pt x 86.79263pt.
 
 
 [23
@@ -1743,42 +1748,42 @@ Kapitel 4.
 
 
 
-]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 34.
+ <./images/UserInterface.png>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 43.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 77.
+
+[24]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 86.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[24]
-
 [25]
 
-[26] (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
+[26]
+
+[27] (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 ) (c:/texlive/2025/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
 )
-
-[27]
 
 [28]
 
 [29]
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 398--401
+Underfull \hbox (badness 10000) in paragraph at lines 409--412
 
  []
 
 
 
-[31])
+[31]
 
-[32]
+[32])
 
 [33]
 \openout2 = `chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux'.
@@ -1793,7 +1798,7 @@ Kapitel 5.
 
 
 ]
-<images/TestDataJson.png, id=857, 243.15843pt x 174.6525pt>
+<images/TestDataJson.png, id=863, 243.15843pt x 174.6525pt>
 File: images/TestDataJson.png Graphic file (type png)
 <use images/TestDataJson.png>
 Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
@@ -1801,7 +1806,7 @@ Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
 
 
 [35 <./images/TestDataJson.png>]
-<images/AvgExecutionTimesFirefox1.png, id=866, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox1.png, id=872, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox1.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox1.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox1.png  used on input line 113.
@@ -1809,7 +1814,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox1.png  used on input lin
 
 
 [36]
-<images/AvgExecutionTimesFirefox2.png, id=874, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox2.png, id=880, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox2.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox2.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox2.png  used on input line 134.
@@ -1817,7 +1822,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox2.png  used on input lin
 
 
 [37 <./images/AvgExecutionTimesFirefox1.png (PNG copy)>]
-<images/STDFirefox.png, id=882, 1091.07625pt x 692.5875pt>
+<images/STDFirefox.png, id=888, 1091.07625pt x 692.5875pt>
 File: images/STDFirefox.png Graphic file (type png)
 <use images/STDFirefox.png>
 Package pdftex.def Info: images/STDFirefox.png  used on input line 149.
@@ -1825,7 +1830,7 @@ Package pdftex.def Info: images/STDFirefox.png  used on input line 149.
 
 
 [38 <./images/AvgExecutionTimesFirefox2.png (PNG copy)>]
-<images/AvgExecutionTimesChrome1.png, id=889, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome1.png, id=895, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome1.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome1.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome1.png  used on input line 171.
@@ -1833,7 +1838,7 @@ Package pdftex.def Info: images/AvgExecutionTimesChrome1.png  used on input line
 
 
 [39 <./images/STDFirefox.png (PNG copy)>]
-<images/AvgExecutionTimesChrome2.png, id=897, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome2.png, id=904, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome2.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome2.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome2.png  used on input line 190.
@@ -1841,7 +1846,7 @@ Package pdftex.def Info: images/AvgExecutionTimesChrome2.png  used on input line
 
 
 [40 <./images/AvgExecutionTimesChrome1.png (PNG copy)>]
-<images/STDChrome.png, id=905, 1091.07625pt x 692.5875pt>
+<images/STDChrome.png, id=911, 1091.07625pt x 692.5875pt>
 File: images/STDChrome.png Graphic file (type png)
 <use images/STDChrome.png>
 Package pdftex.def Info: images/STDChrome.png  used on input line 208.
@@ -1851,7 +1856,7 @@ Package pdftex.def Info: images/STDChrome.png  used on input line 208.
 [41 <./images/AvgExecutionTimesChrome2.png (PNG copy)>]
 
 [42 <./images/STDChrome.png (PNG copy)>]
-<images/AvgExecutionTimesFirefox3.png, id=919, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox3.png, id=925, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox3.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox3.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox3.png  used on input line 257.
@@ -1859,7 +1864,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox3.png  used on input lin
 
 
 [43]
-<images/AvgExecutionTimesChrome3.png, id=927, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome3.png, id=933, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome3.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome3.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome3.png  used on input line 269.
@@ -1931,18 +1936,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48233 strings out of 467816
- 957223 string characters out of 5436431
- 2298534 words of memory out of 5000000
- 75450 multiletter control sequences out of 15000+600000
+ 48251 strings out of 467816
+ 957895 string characters out of 5436431
+ 2196279 words of memory out of 5000000
+ 75466 multiletter control sequences out of 15000+600000
  699824 words of font info for 83 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  130i,17n,145p,1048b,3574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (62 pages, 1277088 bytes).
+Output written on main.pdf (62 pages, 1284331 bytes).
 PDF statistics:
- 1538 PDF objects out of 1728 (max. 8388607)
- 1396 compressed objects within 14 object streams
- 487 named destinations out of 1000 (max. 500000)
- 781 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1547 PDF objects out of 1728 (max. 8388607)
+ 1402 compressed objects within 15 object streams
+ 489 named destinations out of 1000 (max. 500000)
+ 786 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1421,6 +1421,40 @@
       \verb https://www.backtrader.com/
       \endverb
     \endentry
+    \entry{10.1145/3611643.3616311}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=2412dabcd10dd3815f7fc166c55b9048}{%
+           family={Romano},
+           familyi={R\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9ef6436089a8bfcd743a79ea68f8cafa}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Weihang},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{7932d5fb401412c5a81b024b7f2544f2}
+      \strng{fullhash}{7932d5fb401412c5a81b024b7f2544f2}
+      \strng{fullhashraw}{7932d5fb401412c5a81b024b7f2544f2}
+      \strng{bibnamehash}{7932d5fb401412c5a81b024b7f2544f2}
+      \strng{authorbibnamehash}{7932d5fb401412c5a81b024b7f2544f2}
+      \strng{authornamehash}{7932d5fb401412c5a81b024b7f2544f2}
+      \strng{authorfullhash}{7932d5fb401412c5a81b024b7f2544f2}
+      \strng{authorfullhashraw}{7932d5fb401412c5a81b024b7f2544f2}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}
+      \field{title}{When Function Inlining Meets WebAssembly: Counterintuitive Impacts on Runtime Performance}
+      \field{year}{2023}
+      \field{pages}{350\bibrangedash 362}
+      \range{pages}{13}
+    \endentry
     \entry{SpiderMonkey2025}{misc}{}{}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
