@@ -28,10 +28,20 @@ Ziel dieser Arbeit ist es, einen Vergleich der Ausführungszeiten von WebAssembl
 Da moderne Webanwendungen immer komplexer und rechenintensiver werden, spielt die Performanz der eingesetzten Webtechnologien eine wichtige Rolle.
 Mit dem Vergleich anhand eines Backtesters soll getestet werden, ob WebAssembly eine höhere Ausführungsgeschwindigkeit gegenüber JavaScript erzielt.
 Backtesting ist für einen Geschwindigkeitsverglich geeignet, da es sich um eine rechenintensive Aufgabe handelt, bei der große Mengen historischer Daten von Handelsstrategien verarbeitet werden müssen.
-Diese Strategien werden mit unterschiedlichen Algorithmen und Programmiersprachen implementiert, um die Performanzunterschiede bei verschiedenen Komplexitätsgraden zu analysieren.
 
 \section{Vorgangsweise zur Zielerreichung}
 \label{sec:VorgangsweisezurZielerreichung}
+
+Damit ein Vergleich der Ausführungszeiten durchgeführt werden kann, wird zuerst ein clientseitiger Backtester entwickelt.
+Dieser besitzt die Möglichkeit, in JavaScript und WebAssembly implementierte Strategien zu laden und auszuführen.
+\newline
+Die WebAssembly-Strategien werden in C implementiert und anschließend in WebAssembly mit dem Emscripten-Compiler übersetzt.
+Diese Strategien werden mit unterschiedlichen Algorithmen und Programmiersprachen implementiert, um die Performanzunterschiede bei verschiedenen Komplexitätsgraden zu analysieren.
+Durch den unterschiedlich hohen Rechenaufwand der Strategien wird der Vergleich umfangreicher und aussagekräftiger.
+\newline
+Die historischen Marktdaten werden von einer externen Quelle bezogen und im Backtester geladen.
+Der Backtester führt die Strategien mehrfach aus, um die Performanzunterschiede zwischen den Programmiersprachen zu messen.
+Dadurch wird ein Vergleich der Ausführungszeiten von WebAssembly und JavaScript möglich.
 
 \section{Kapitelübersicht}
 \label{sec:Kapitelübersicht}
