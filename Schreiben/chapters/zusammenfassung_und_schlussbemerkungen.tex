@@ -12,15 +12,18 @@ In diesem Kapitel wird die Arbeit zusammengefasst, ein Ausblick auf mögliche zu
 Der in dieser Arbeit entwickelte Backtester bietet eine Grundlage für den Vergleich der Ausführungszeiten von WebAssembly und JavaScript und ermöglicht es Strategien mit einem Backtest zu analysieren.
 Der Backtester kann zukünftig erweitert und angepasst werden, um weitere Funktionalität und Auswertungsmöglichkeiten zu bieten.
 \newline
-Spesen für Handel miteinbeziehen
-Mehr paramter
-\newline
-Eine Verbesserungen wäre die Möglichkeit, mehrere Strategien und Datensätze gleichzeitg zu testen.
-Somit können mit einem Durchlauf mehrere Testfälle gleichzeitg und benutzerfreundlicher angewandt werden.
+Eine mögliche Erweiterung, um den realen Aktienmarkt besser nachbilden zu können, ist Transaktionskosten und Spesen ebenfalls zu berücksichtigen.
+Damit werden Strategien die häufige Käufe und Verkäufe durchführen realitätsnäher bewertet.
+Mehr Parameter für die Konfiguration des Backtesters würden noch mehr Flexibilität bieten.
+Es könnten dadurch vorzeitige Abbruchkriterien, Dividenden oder die Transaktionskosten in den Backtest miteinbezogen werden.
+Durch das Hinzufügen eines Datumsfilters wäre es möglich, die Strategie nur in bestimmen Zeiträumen zu betrachten und die Kennzahlen für diese Zeiträume zu berechnen.
+Dies biete die Möglichkeit Strategien genauer zu analysieren.
+Eine weitere Verbesserung wäre die Möglichkeit, mehrere Strategien und Datensätze gleichzeitg zu testen.
+Somit können mit einem Durchlauf mehrere Testfälle gleichzeitig und benutzerfreundlicher angewandt werden.
 Es müsste nicht mehr für jede Strategie und jeden Datensatz ein einzelner Test durchgeführt werden.
+Um die Berechnungen und grafischen Elemente stärker zu trennen, könnte die Berechnung in einen Webworker ausgelagert werden.
+Somit würde die zeitaufwändige Berechnung nicht mehr die Benutzeroberfläche blockieren.
+Eine Möglichkeit die Resultate als CSV oder JSON-Datei herunterzuladen würde die Weiterverarbeitung der Ergebnisse erleichtern.
+Durch diese Erweiterung müssten die Kennzahlen nicht mehr manuell abgelesen und in eine Tabelle übertragen werden.
 \newline
-Die Berechung in Webworker auslagern.
-\newline
-Andere und genuere Statiken.
-\newline
-Download der Ergebnisse
+Mit diesen Erweiterungen und Verbesserungen kann der Backtester weiterentwickelt werden, um einen besseren Vergleich der Strategien zu ermöglichen, den realen Handel besser zu simulieren und die Implementierung besser zu separieren.

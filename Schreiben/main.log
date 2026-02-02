@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  1 FEB 2026 18:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  2 FEB 2026 12:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1891,26 +1891,28 @@ Kapitel 6.
 
 ]
 
-[49
+[49]
+
+[50
 
 
 
 
 ]
 
-[50]
-
 [51]
 
 [52]
 
-[53] (./main.lof)
+[53]
+
+[54] (./main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
 
 
-[54
+[55
 
 ] (./main.lot)
 \tf@lot=\write7
@@ -1918,7 +1920,7 @@ Kapitel 6.
 
 
 
-[55
+[56
 
 ] (./main.lol)
 \tf@lol=\write8
@@ -1926,7 +1928,7 @@ Kapitel 6.
 
 
 
-[56
+[57
 
 ] (./main.aux (./front/kurzfassung.aux) (./front/abstract.aux) (./chapters/einleitung.aux) (./chapters/grundlagen.aux) (./chapters/konzept_und_design.aux) (./chapters/implementierung_des_backtesters.aux) (./chapters/performancetests_der_unterschiedlichen_programmiersprachen.aux) (./chapters/zusammenfassung_und_schlussbemerkungen.aux))
  ***********
@@ -1938,18 +1940,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48246 strings out of 467816
- 957878 string characters out of 5436431
+ 48247 strings out of 467816
+ 957885 string characters out of 5436431
  2196249 words of memory out of 5000000
  75462 multiletter control sequences out of 15000+600000
  699824 words of font info for 83 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  130i,17n,145p,1048b,3574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (63 pages, 1286314 bytes).
+Output written on main.pdf (64 pages, 1287628 bytes).
 PDF statistics:
- 1540 PDF objects out of 1728 (max. 8388607)
- 1395 compressed objects within 14 object streams
- 488 named destinations out of 1000 (max. 500000)
+ 1544 PDF objects out of 1728 (max. 8388607)
+ 1398 compressed objects within 14 object streams
+ 489 named destinations out of 1000 (max. 500000)
  770 words of extra memory for PDF output out of 10000 (max. 10000000)
 
