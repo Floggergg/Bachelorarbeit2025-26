@@ -6,6 +6,35 @@ In diesem Kapitel wird die Arbeit zusammengefasst, ein Ausblick auf mögliche zu
 \section{Zusammenfassung}
 \label{sec:Zusammenfassung}
 
+In dieser Arbeit wurde ein clientseitiger Backtester mit Weboberfläche entwickelt, der den Vergleich von JavaScript und WebAssembly ermöglicht.
+Dieser wurde entwickelt, um die Performanzeunterschiede zwischen den beiden Programmiersprachen bei einer realistischen Anwendung zu untersuchen.
+Es wurden unterschiedlich rechenintensive Handelsstrategien implementiert und in den Backtester integriert.
+Dadurch kann die Ausführungsdauer auch bei steigernder Komplexität der Strategien verglichen werden.
+\newline
+Es gibt bereits clientseitige Backtester, die selbst implementierte Strategien unterstützen.
+Diese eignen sich jedoch nicht für den Vergleich von JavaScript und WebAssembly, da diese keine JavaScript und WebAssembly Strategien unterstützen.
+\newline
+Der Backtester wurde in JavaScript implementiert und bietet die Möglichkeit, Strategien sowohl in JavaScript als auch in WebAssembly zu testen.
+Die historischen Kursdaten können entweder als JSON-Datei hochgeladen oder mit der Binance API abgerufen werden.
+Die Ergebnisse des Backtests werden nach der Ausführung in Form von Kennzahlen und einem Diagramm dargestellt.
+Die Ausführungszeit des Vorgangs wird ebenfalls gemessen und angezeigt.
+\newline
+Für die Performanztests wurden drei unterschiedliche Handelsstrategien mit unterschiedlicher Komplexität implementiert.
+Es wurden eine Gleitende Durchschnitts Überscheidungsstrategie, eine Ausbruchsstrategie und eine Mittelwertrückkehrstrategie mit Bollinger Bänder entwickelt.
+Die Komplexität der Strategien steigt von der Gleitenden Durchschnitts Überscheidungsstrategie über die Ausbruchsstrategie bis hin zur Mittelwertrückkehrstrategie.
+Jede Strategie hat eine JavaScript und eine WebAssembly Variante.
+Diese Strategien wurden mit dem Backtester in den Browsern Chrome und Firefox mit verschiedenen Datensätzen getestet.
+\newline
+Die Ergebnisse des Vergleichs zeigen, dass WebAssembly bei rechenaufwendigen Strategien schneller ist als JavaScript.
+Dieser Performanzvorteil ist aber nicht in allen getesteten Browsern zu erkennen.
+Nur in Firefox hatte WebAssembly einen klaren Vorteil gegenüber JavaScript.
+In Chrome war JavaScript in der Ausführung immer schneller.
+Einer der Gründe für die langsamere Ausführung von WebAssembly bei weniger komplexen Strategien ist der Overhead durch die manuelle Speicherverwaltung.
+Wenn der Vergleich ohne diesen Overhead durchgeführt wird, ist WebAssembly in Firefox bei allen getesteten Strategien schneller als JavaScript.
+Ein weiterer Unterschied zwischen den Programmiersprachen ist die Varianz der durchschnittlichen Ausführungszeiten.
+In Firefox ist die Varianz der Ausführungszeiten von WebAssembly deutlich geringer als die von JavaScript.
+In Chrome ist dies umgekehrt.
+
 \section{Ausblick und mögliche Erweiterungen des Backtesters}
 \label{sec:AusblickundmöglicheErweiterungendesBacktesters}
 

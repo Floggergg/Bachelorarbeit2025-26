@@ -74,7 +74,7 @@
 \contentsline {section}{\numberline {5.4}Zusammenfassung der Testergebnisse}{46}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Zusammenfassung und Schlussbemerkungen}{48}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Zusammenfassung}{48}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ausblick und mögliche Erweiterungen des Backtesters}{48}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Ausblick und mögliche Erweiterungen des Backtesters}{49}{section.6.2}%
 \contentsline {chapter}{Quellenverzeichnis}{50}{chapter*.27}%
 \contentsline {section}{Literatur}{50}{section*.28}%
 \contentsline {section}{Software}{53}{section*.29}%
