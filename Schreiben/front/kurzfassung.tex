@@ -1,7 +1,24 @@
 \chapter{Kurzfassung}
 
 \begin{german}
-Maximal 1-seitige "Zusammenfassung" der Arbeit in Deutsch.
-% ...
-\end{german}
+In dieser Arbeit wird die Performanz von WebAssembly und JavaScript verglichen.
+Der Vergleich wird mit einem clientseitigen Backtester durchgeführt, der Handelsstrategien in beiden Sprachen unterstützt.
+Ein Backtester ist eine Software mit der Handelsstrategien anhand historischer Kursdaten getestet werden können.
+Strategien sind Algorithmen, die automatisch Kauf- und Verkaufsentscheidungen treffen, um Gewinne zu erzielen, ohne selbst aktiv handeln zu müssen.
+Der Backtester ist ein geeignetes Programm zum Vergleich der beiden Programmiersprachen, da der Prozess des Backtestings rechenintensiv ist und somit die Performanzunterschiede gut erkennbar sind.
+\newline
 
+Der Backtester wird als Webanwendung in JavaScript implementiert, die im Browser ausgeführt wird.
+Für den Vergleich der Sprachen wird der rechenaufwendigste Teil des Backtestings, die Strategien, ausgelagert und in WebAssembly und JavaScript implementiert.
+Damit die Ausführungszeiten bei unterschiedlichem Rechenaufwand verglichen werden können, werden drei unterschiedliche Handelsstrategien mit steigender Komplexität implementiert.
+Die entwickelten Strategien sind eine Gleitende Durchschnitts Überscheidungsstrategie, eine Ausbruchsstrategie und eine Mittelwertrückkehrstrategie mit Bollinger Bänder.
+Anhand dieser Strategien kann die Performanz und Varianz von JavaScript und WebAssembly verglichen werden.
+\newline
+
+Durch die Tests der Strategien mit verschiedenen Datensätzen ist erkennbar, dass WebAssembly in Firefox bei rechenintensiven Strategien schneller ist als JavaScript.
+Ebenfalls ist die Varianz der durchschnittlichen Ausführungszeiten von WebAssembly in Firefox geringer als die von JavaScript.
+In Chrome hingegen ist JavaScript bei jeder getesteten Strategie schneller als WebAssembly.
+Die Varianz ist in Chrome bei WebAssembly geringer als bei JavaScript.
+Insgesamt ist zu erkennen, dass die Performanz von WebAssembly und JavaScript vom verwendeten Browser und der Rechenintensität der Strategie abhängt.
+Jedoch kann WebAssembly bei rechenintensiven Aufgaben einen großen Vorteil in der Ausführung bieten.
+\end{german}

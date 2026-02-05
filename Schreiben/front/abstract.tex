@@ -1,8 +1,25 @@
 \chapter{Abstract}
 
+\begin{english}
+This paper compares the performance of WebAssembly and JavaScript.
+The comparison is made with a clientside backtester that supports trading strategies in both languages.
+A backtester is a software that allows the testing of trading strategies based on historical price data.
+Strategies are algorithms that automatically make buying and selling decisions in order to make profits without active interaction.
+The backtester is a suitable program for comparing the two programming languages, because the backtesting process is very computationally intensive and thus the performance differences are clearly visible.
+\newline
 
-\begin{english} %switch to English language rules
-This should be a 1-page (maximum) "summary" of your work in English.
-% ...
+The backtester is implemented as a web application in JavaScript that runs in the browser.
+To compare the languages, the most computationally intensive part of backtesting, the strategies, is outsourced and implemented in WebAssembly and JavaScript.
+To be able to compare the execution times at different computational loads, three different trading strategies with increasing complexity are implemented.
+The developed strategies are a moving average crossover strategy, a breakout strategy and a mean reversion strategy with Bollinger bands.
+Because of these strategies, the performance and variance of JavaScript and WebAssembly can be compared.
+\newline
+
+Testing the strategies with different data sets shows that WebAssembly in Firefox is faster than JavaScript for computationally intensive strategies.
+Furthermore, the variance in the average execution times for WebAssembly in Firefox is lower than that for JavaScript.
+In Chrome, on the other hand, JavaScript is faster than WebAssembly for every strategy tested.
+The variance in Chrome is lower for WebAssembly than for JavaScript.
+Overall, it can be seen that the performance of WebAssembly and JavaScript depends on the browser used and the computational intensity of the strategy.
+However, WebAssembly can offer a significant advantage in execution for computationally intensive tasks.
 \end{english}
 
