@@ -11,7 +11,7 @@ Dadurch können Strategien vor dem Einsatz im echten Finanzmarkt bewertet und op
 In vielen bestehenden Lösungen erfolgt das Backtesting serverseitig oder über externe Drittanbieter, wodurch Handelsstrategien an fremde Systeme übergeben werden müssen.
 Die Verwendung externer Infrastrukturen zur Ausführung von Strategien hat jedoch Risiken hinsichtlich des Datenschutzes und der Vertrauenswürdigkeit der Ausführungsumgebung mit sich.
 Es kann nicht ausgeschlossen werden, dass sensible Informationen über die Strategien abgefangen oder missbraucht werden.
-Mit einem clientseitigen Backtester kann dieses Risiko vermieden werden, da die Strategien lokal im Browser des Nutzers ausgeführt werden und nicht an externe Systeme weitergegeben werden müssen.
+Mit einem clientseitigen Backtester kann dieses Risiko vermieden werden, da die Strategien lokal im Browser ausgeführt werden und nicht an externe Systeme weitergegeben werden müssen.
 Allerdings hat die clientseitige Ausführung des Backtesters auch den Nachteil, dass die Performanz im Vergleich zu den serverseitigen Lösungen geringer sein kann.
 Moderne Webtechnologien ermöglichen jedoch zunehmend, dass auch aufwendige Berechnungen auf der Clientseite performant und stabil durchgeführt werden können.
 Insbesondere WebAssembly bietet immer mehr neue Möglichkeiten, rechenintensive Logik effizient clientseitig im Web auszuführen.
@@ -40,7 +40,7 @@ Diese Strategien werden mit unterschiedlichen Algorithmen und Programmiersprache
 Durch den unterschiedlich hohen Rechenaufwand der Strategien wird der Vergleich umfangreicher und aussagekräftiger.
 \newline
 Die historischen Marktdaten werden von einer externen Quelle bezogen und im Backtester geladen.
-Der Backtester führt die Strategien mehrfach aus, um die Performanzunterschiede zwischen den Programmiersprachen zu messen.
+Der Backtester führt die Strategien mehrfach aus, um die Performanzunterschiede zwischen den Programmiersprachen genauer zu messen.
 Dadurch wird ein Vergleich der Ausführungszeiten von WebAssembly und JavaScript möglich.
 
 \section{Kapitelübersicht}

@@ -17,7 +17,7 @@ Diese eignen sich jedoch nicht für den Vergleich von JavaScript und WebAssembly
 Der Backtester wurde in JavaScript implementiert und bietet die Möglichkeit, Strategien sowohl in JavaScript als auch in WebAssembly zu testen.
 Die historischen Kursdaten können entweder als JSON-Datei hochgeladen oder mit der Binance API abgerufen werden.
 Die Ergebnisse des Backtests werden nach der Ausführung in Form von Kennzahlen und einem Diagramm dargestellt.
-Die Ausführungszeit des Vorgangs wird ebenfalls gemessen und angezeigt.
+Die Ausführungszeit des Vorgangs wird ebenfalls gemessen und protokolliert.
 \newline
 Für die Performanztests wurden drei unterschiedliche Handelsstrategien mit unterschiedlicher Komplexität implementiert.
 Es wurden eine Gleitende Durchschnitts Überscheidungsstrategie, eine Ausbruchsstrategie und eine Mittelwertrückkehrstrategie mit Bollinger Bänder entwickelt.
@@ -27,7 +27,7 @@ Diese Strategien wurden mit dem Backtester in den Browsern Chrome und Firefox mi
 \newline
 Die Ergebnisse des Vergleichs zeigen, dass WebAssembly bei rechenaufwendigen Strategien schneller ist als JavaScript.
 Dieser Performanzvorteil ist aber nicht in allen getesteten Browsern zu erkennen.
-Nur in Firefox hatte WebAssembly einen klaren Vorteil gegenüber JavaScript.
+Nur in Firefox hat WebAssembly einen klaren Vorteil gegenüber JavaScript.
 In Chrome war JavaScript in der Ausführung immer schneller.
 Einer der Gründe für die langsamere Ausführung von WebAssembly bei weniger komplexen Strategien ist der Overhead durch die manuelle Speicherverwaltung.
 Wenn der Vergleich ohne diesen Overhead durchgeführt wird, ist WebAssembly in Firefox bei allen getesteten Strategien schneller als JavaScript.
@@ -47,13 +47,17 @@ Eine mögliche Erweiterung, um den realen Aktienmarkt besser nachbilden zu könn
 Damit werden Strategien die häufige Käufe und Verkäufe durchführen realitätsnäher bewertet.
 Mehr Parameter für die Konfiguration des Backtesters würden noch mehr Flexibilität bieten.
 Es könnten dadurch vorzeitige Abbruchkriterien, Dividenden oder die Transaktionskosten in den Backtest miteinbezogen werden.
+\newline
 Durch das Hinzufügen eines Datumsfilters wäre es möglich, die Strategie nur in bestimmen Zeiträumen zu betrachten und die Kennzahlen für diese Zeiträume zu berechnen.
 Dies biete die Möglichkeit Strategien genauer zu analysieren.
+\newline
 Eine weitere Verbesserung wäre die Möglichkeit, mehrere Strategien und Datensätze gleichzeitg zu testen.
 Somit können mit einem Durchlauf mehrere Testfälle gleichzeitig und benutzerfreundlicher angewandt werden.
 Es müsste nicht mehr für jede Strategie und jeden Datensatz ein einzelner Test durchgeführt werden.
+\newline
 Um die Berechnungen und grafischen Elemente stärker zu trennen, könnte die Berechnung in einen Webworker ausgelagert werden.
 Somit würde die zeitaufwändige Berechnung nicht mehr die Benutzeroberfläche blockieren.
+\newline
 Eine Möglichkeit die Resultate als CSV oder JSON-Datei herunterzuladen würde die Weiterverarbeitung der Ergebnisse erleichtern.
 Durch diese Erweiterung müssten die Kennzahlen nicht mehr manuell abgelesen und in eine Tabelle übertragen werden.
 \newline
