@@ -1,15 +1,16 @@
 \chapter{Einleitung}
 \label{cha:Einleitung}
 
-Automatisiertes handeln von Wertpapieren ist heute ein wesentlicher Bestandteil vieler Finanzmarktanwendungen.
-Die Grundlage für einen solchen Handel sind Handelsstrategie, die verschiedenste Algorithmen implementierten und ohne manuelles Eingreifen ausgeführt werden können.
+Automatisiertes Handeln von Wertpapieren ist heute ein wesentlicher Bestandteil vieler Finanzmarktanwendungen.
+\cite{HOROBET2024123746}
+Die Grundlage für einen solchen Handel sind Handelsstrategien, die verschiedenste Algorithmen implementierten und ohne manuelles Eingreifen ausgeführt werden können.
 Um die Wirtschaftlichkeit und Stabilität einer Strategie zu bewerten, ist ein systematisches Testen auf Basis von historischer Finanzdaten notwendig.
 Für diese Validierung werden Backtester eingesetzt.
 \newline
 Backtester sind Softwarewerkzeuge, mit denen das Verhalten einer Handelsstrategie unter historischen Marktbedingungen simuliert werden kann.
 Dadurch können Strategien vor dem Einsatz im echten Finanzmarkt bewertet und optimiert werden.
 In vielen bestehenden Lösungen erfolgt das Backtesting serverseitig oder über externe Drittanbieter, wodurch Handelsstrategien an fremde Systeme übergeben werden müssen.
-Die Verwendung externer Infrastrukturen zur Ausführung von Strategien hat jedoch Risiken hinsichtlich des Datenschutzes und der Vertrauenswürdigkeit der Ausführungsumgebung mit sich.
+Die Verwendung externer Infrastrukturen zur Ausführung von Strategien hat jedoch Risiken hinsichtlich des Datenschutzes und der Vertrauenswürdigkeit der Ausführungsumgebung.
 Es kann nicht ausgeschlossen werden, dass sensible Informationen über die Strategien abgefangen oder missbraucht werden.
 Mit einem clientseitigen Backtester kann dieses Risiko vermieden werden, da die Strategien lokal im Browser ausgeführt werden und nicht an externe Systeme weitergegeben werden müssen.
 Allerdings hat die clientseitige Ausführung des Backtesters auch den Nachteil, dass die Performanz im Vergleich zu den serverseitigen Lösungen geringer sein kann.
@@ -26,7 +27,8 @@ Mit diesem wird die Ausführungsgeschwindigkeit und Stabilität von WebAssembly 
 
 Ziel dieser Arbeit ist es, einen Vergleich der Ausführungszeiten von WebAssembly und JavaScript mithilfe eines clientseitigen Backtesters durchzuführen.
 Da moderne Webanwendungen immer komplexer und rechenintensiver werden, spielt die Performanz der eingesetzten Webtechnologien eine wichtige Rolle.
-Mit dem Vergleich anhand eines Backtesters soll getestet werden, ob WebAssembly eine höhere Ausführungsgeschwindigkeit gegenüber JavaScript erzielt.
+Mit dem Vergleich anhand eines Backtesters soll getestet werden, ob WebAssembly in diesem Anwendungsfall eine höhere Ausführungsgeschwindigkeit als JavaScript erzielen kann.
+Der Vergleich soll dabei unterschiedlich komplexe Handelsstrategien, verschiedene Datensätze und verschiedene Browserumgebungen umfassen, um die Performanzunterschiede umfassend zu analysieren.
 Backtesting ist für einen Geschwindigkeitsverglich geeignet, da es sich um eine rechenintensive Aufgabe handelt, bei der große Mengen historischer Daten von Handelsstrategien verarbeitet werden müssen.
 
 \section{Vorgangsweise zur Zielerreichung}
@@ -49,25 +51,25 @@ Dadurch wird ein Vergleich der Ausführungszeiten von WebAssembly und JavaScript
 \subsection{Grundlegende Konzepte und Technologien}
 \label{subsec:GrundlegendeKonzepteundTechnologien}
 
-In dem Kaptiel \ref{cha:GrundlegendeKonzepteundTechnologien} werden die Grundlagen und die relevanten Technologien beschrieben.
+In dem Kapitel \ref{cha:GrundlegendeKonzepteundTechnologien} werden die Grundlagen und die relevanten Technologien beschrieben.
 Dabei werden die grundlegenden Themen wie Backtesting, Biase im Backtesting, bereits existierende Backtester sowie Ansätze für Handelsstrategien näher erläutert.
 Zudem wird WebAssembly als eine der Kerntechnologien vorgestellt und wie diese in Webanwendungen integriert wird.
 
 \subsection{Konzept und Design}
 \label{subsec:KonzeptundDesign}
 
-Das Kaptiel \ref{cha:KonzeptundDesign} beschreibt wie die einzelnen Komponenten des entwickelten Backtester aufgebaut sind, wie die Geschwindigkeitstests durchgeführt werden und welche Werkzeuge für die Entwicklung von WebAssembly genutzt wurden. 
+Das Kapitel \ref{cha:KonzeptundDesign} beschreibt wie die einzelnen Komponenten des entwickelten Backtester aufgebaut sind, wie die Geschwindigkeitstests durchgeführt werden und welche Werkzeuge für die Entwicklung von WebAssembly genutzt wurden. 
 
 \subsection{Implementierung des Backtesters und der Strategien}
 \label{subsec:ImplementierungdesBacktestersundderStrategien}
 
-In dem Kaptiel \ref{cha:ImplementierungdesBacktestersundderStrategien} wird die Implementierung des Backtesters und der Handelsstrategien beschrieben.
+In dem Kapitel \ref{cha:ImplementierungdesBacktestersundderStrategien} wird die Implementierung des Backtesters und der Handelsstrategien beschrieben.
 Dabei wird der gesamte Prozess von der Beschaffung historischer Daten über das Laden und Anwenden der Handelsstrategien bis hin zur Darstellung der Ergebnisse auf der Webseite beschrieben.
 
 \subsection{Performanztests der unterschiedlichen Programmiersprachen}
 \label{subsec:PerformanztestsderunterschiedlichenProgrammiersprachen}
 
-Das Kaptiel \ref{cha:PerformanztestsderunterschiedlichenProgrammiersprachen} zeigt den Aufbau und die Ergebnisse der Performanztests der verschiedenen Implementierungen der Handelsstrategien in unterschiedlichen Programmiersprachen.
+Das Kapitel \ref{cha:PerformanztestsderunterschiedlichenProgrammiersprachen} zeigt den Aufbau und die Ergebnisse der Performanztests der verschiedenen Implementierungen der Handelsstrategien in unterschiedlichen Programmiersprachen.
 Es werden Strategien in verschiedene Programmiersprachen implementiert und deren Ausführungszeiten im Backtester in verschiedenen Browsern gemessen.
 Desweitern werden die Ergebnisse der Performanztests analysiert und interpretiert.
 

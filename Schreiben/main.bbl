@@ -984,6 +984,51 @@
       \field{pages}{27\bibrangedash 33}
       \range{pages}{7}
     \endentry
+    \entry{HOROBET2024123746}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=df64970ec847393c6ed8738a3ff283f9}{%
+           family={Horobet},
+           familyi={H\bibinitperiod},
+           given={Alexandra},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9fc37bb7d969ef480859b15c03920f68}{%
+           family={Boubaker},
+           familyi={B\bibinitperiod},
+           given={Sabri},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0240493d3546be42314553cdbb27fd12}{%
+           family={Belascu},
+           familyi={B\bibinitperiod},
+           given={Lucian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=209e41a90cd9a8d745c110c03c759d05}{%
+           family={Negreanu},
+           familyi={N\bibinitperiod},
+           given={Cristina\bibnamedelima Carmencita},
+           giveni={C\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=70bef22384728038c6aab914ed019263}{%
+           family={Dinca},
+           familyi={D\bibinitperiod},
+           given={Zeno},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{f918c196bd325179d3e8eeb41d061f7b}
+      \strng{fullhash}{471b4df62a2ca4d5b4270aa81fb3ac18}
+      \strng{fullhashraw}{471b4df62a2ca4d5b4270aa81fb3ac18}
+      \strng{bibnamehash}{f918c196bd325179d3e8eeb41d061f7b}
+      \strng{authorbibnamehash}{f918c196bd325179d3e8eeb41d061f7b}
+      \strng{authornamehash}{f918c196bd325179d3e8eeb41d061f7b}
+      \strng{authorfullhash}{471b4df62a2ca4d5b4270aa81fb3ac18}
+      \strng{authorfullhashraw}{471b4df62a2ca4d5b4270aa81fb3ac18}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Technological Forecasting and Social Change}
+      \field{title}{Technology-driven advancements: Mapping the landscape of algorithmic trading literature}
+      \field{volume}{209}
+      \field{year}{2024}
+    \endentry
     \entry{HUANG202016}{article}{}{}
       \name{author}{2}{}{%
         {{hash=142774f1a351d59eddf6113a4d0baa36}{%

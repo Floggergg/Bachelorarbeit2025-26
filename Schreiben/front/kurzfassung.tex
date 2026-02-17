@@ -3,7 +3,7 @@
 \begin{german}
 In dieser Arbeit wird die Performanz von WebAssembly und JavaScript verglichen.
 Der Vergleich wird mit einem clientseitigen Backtester durchgeführt, der Handelsstrategien in beiden Sprachen unterstützt.
-Ein Backtester ist eine Software mit der Strategien anhand historischer Kursdaten getestet werden können.
+Ein Backtester ist eine Software, mit der Strategien anhand historischer Kursdaten getestet werden können.
 Handelsstrategien sind Algorithmen, die automatisch Kauf- und Verkaufsentscheidungen treffen, um Gewinne zu erzielen, ohne selbst aktiv handeln zu müssen.
 Der Backtester ist ein geeignetes Programm zum Vergleich der beiden Programmiersprachen, da der Prozess des Backtestings rechenintensiv ist und somit die Performanzunterschiede gut erkennbar sind.
 \newline
@@ -15,10 +15,10 @@ Die entwickelten Strategien sind eine Gleitende Durchschnitts Überscheidungsstr
 Anhand dieser Strategien kann die Performanz und Varianz von JavaScript und WebAssembly verglichen werden.
 \newline
 
+Insgesamt ist zu erkennen, dass die Performanz von WebAssembly und JavaScript vom verwendeten Browser und der Rechenintensität der Strategie abhängt.
+Jedoch kann WebAssembly bei rechenintensiven Aufgaben einen großen Vorteil in der Ausführung bieten.
 Durch die Tests der Strategien mit verschiedenen Datensätzen ist erkennbar, dass WebAssembly in Firefox bei rechenintensiven Strategien schneller ist als JavaScript.
 Ebenfalls ist die Varianz der durchschnittlichen Ausführungszeiten von WebAssembly in Firefox geringer als die von JavaScript.
 In Chrome hingegen ist JavaScript bei jeder getesteten Strategie schneller als WebAssembly.
 Die Varianz ist in Chrome bei WebAssembly geringer als bei JavaScript.
-Insgesamt ist zu erkennen, dass die Performanz von WebAssembly und JavaScript vom verwendeten Browser und der Rechenintensität der Strategie abhängt.
-Jedoch kann WebAssembly bei rechenintensiven Aufgaben einen großen Vorteil in der Ausführung bieten.
 \end{german}

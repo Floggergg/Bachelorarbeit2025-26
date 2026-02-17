@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  6 FEB 2026 12:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.14)  17 FEB 2026 15:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1493,7 +1493,45 @@ Package pdftex.def Info: ./pdf/Titelblattvorlage_Bachelorarbeit.pdf , page2 used
 (pdftex.def)             Requested size: 598.26053pt x 845.84428pt.
  [0
 
- <./pdf/Titelblattvorlage_Bachelorarbeit.pdf>] (./main.toc
+ <./pdf/Titelblattvorlage_Bachelorarbeit.pdf>]
+\openout2 = `front/kurzfassung.aux'.
+
+ (./front/kurzfassung.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--17
+
+ []
+
+)
+
+[1
+
+
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+\openout2 = `front/abstract.aux'.
+
+ (./front/abstract.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--17
+
+ []
+
+)
+
+[2
+
+
+
+
+] (./main.toc
 Package tocbasic Info: Using my definition of `\numberline' on input line 2.
 Package tocbasic Info: Using my definition of `\numberline' on input line 5.
 Package tocbasic Info: Using my definition of `\numberline' on input line 8.
@@ -1523,9 +1561,11 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 17.
 Package tocbasic Info: Using my definition of `\numberline' on input line 36.
 
 
-[1
+[3
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
+
+
+]
 Package tocbasic Info: Using my definition of `\numberline' on input line 52.
 Package tocbasic Info: Using my definition of `\numberline' on input line 64.
 Package tocbasic Info: Using my definition of `\numberline' on input line 75.
@@ -1537,48 +1577,10 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 78.
 
 
 Package babel Info: 'ngerman' activates 'ngerman' shorthands.
-(babel)             Reported  on input line 35.
-[2]
+(babel)             Reported  on input line 39.
+[4]
 
-[3]
-\openout2 = `front/kurzfassung.aux'.
-
- (./front/kurzfassung.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--17
-
- []
-
-)
-
-[4
-
-
-]
-\openout2 = `front/abstract.aux'.
-
- (./front/abstract.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--10
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--17
-
- []
-
-)
-
-[5
-
-
-
-
-]
+[5]
 \openout2 = `chapters/einleitung.aux'.
 
  (./chapters/einleitung.tex
@@ -1586,8 +1588,6 @@ Kapitel 1.
 
 
 [1
-
-
 
 
 
@@ -1600,7 +1600,7 @@ Kapitel 1.
 
  (./chapters/grundlagen.tex
 Kapitel 2.
-<images/BacktestingFlow.png, id=246, 508.90125pt x 491.8375pt>
+<images/BacktestingFlow.png, id=248, 508.90125pt x 491.8375pt>
 File: images/BacktestingFlow.png Graphic file (type png)
 <use images/BacktestingFlow.png>
 Package pdftex.def Info: images/BacktestingFlow.png  used on input line 17.
@@ -1625,7 +1625,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 [7]
 
 [8]
-<images/ResulsBacktestBacktestJS.jpeg, id=320, 1027.84pt x 443.6575pt>
+<images/ResulsBacktestBacktestJS.jpeg, id=322, 1027.84pt x 443.6575pt>
 File: images/ResulsBacktestBacktestJS.jpeg Graphic file (type jpg)
 <use images/ResulsBacktestBacktestJS.jpeg>
 Package pdftex.def Info: images/ResulsBacktestBacktestJS.jpeg  used on input line 162.
@@ -1633,7 +1633,7 @@ Package pdftex.def Info: images/ResulsBacktestBacktestJS.jpeg  used on input lin
 
 
 [9 <./images/ResulsBacktestBacktestJS.jpeg>]
-<images/BollingerBands.png, id=336, 764.8575pt x 390.70969pt>
+<images/BollingerBands.png, id=339, 764.8575pt x 390.70969pt>
 File: images/BollingerBands.png Graphic file (type png)
 <use images/BollingerBands.png>
 Package pdftex.def Info: images/BollingerBands.png  used on input line 202.
@@ -1648,7 +1648,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--211
 [10 <./images/BollingerBands.png>]
 
 [11]
-<images/CombinedWASMCode.png, id=377, 629.35126pt x 180.675pt>
+<images/CombinedWASMCode.png, id=379, 629.35126pt x 180.675pt>
 File: images/CombinedWASMCode.png Graphic file (type png)
 <use images/CombinedWASMCode.png>
 Package pdftex.def Info: images/CombinedWASMCode.png  used on input line 270.
@@ -1673,7 +1673,7 @@ Overfull \hbox (2.14702pt too wide) in paragraph at lines 326--329
 
 
 [13]
-<images/wasmtoBrowsercode.png, id=409, 788.9475pt x 185.69376pt>
+<images/wasmtoBrowsercode.png, id=411, 788.9475pt x 185.69376pt>
 File: images/wasmtoBrowsercode.png Graphic file (type png)
 <use images/wasmtoBrowsercode.png>
 Package pdftex.def Info: images/wasmtoBrowsercode.png  used on input line 343.
@@ -1685,7 +1685,7 @@ Package pdftex.def Info: images/wasmtoBrowsercode.png  used on input line 343.
 
  (./chapters/konzept_und_design.tex
 Kapitel 3.
-<images/backtester_architektur.drawio.png, id=422, 563.10374pt x 373.395pt>
+<images/backtester_architektur.drawio.png, id=424, 563.10374pt x 373.395pt>
 File: images/backtester_architektur.drawio.png Graphic file (type png)
 <use images/backtester_architektur.drawio.png>
 Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input line 15.
@@ -1698,7 +1698,7 @@ Package pdftex.def Info: images/backtester_architektur.drawio.png  used on input
 
 
  <./images/backtester_architektur.drawio.png>]
-<images/BacktesterLogik.png, id=432, 237.88875pt x 542.025pt>
+<images/BacktesterLogik.png, id=434, 237.88875pt x 542.025pt>
 File: images/BacktesterLogik.png Graphic file (type png)
 <use images/BacktesterLogik.png>
 Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
@@ -1708,7 +1708,7 @@ Package pdftex.def Info: images/BacktesterLogik.png  used on input line 55.
 [16]
 
 [17 <./images/BacktesterLogik.png>]
-<images/CombinedCJSFunktionsschnittstellen.png, id=443, 509.905pt x 92.345pt>
+<images/CombinedCJSFunktionsschnittstellen.png, id=445, 509.905pt x 92.345pt>
 File: images/CombinedCJSFunktionsschnittstellen.png Graphic file (type png)
 <use images/CombinedCJSFunktionsschnittstellen.png>
 Package pdftex.def Info: images/CombinedCJSFunktionsschnittstellen.png  used on input line 79.
@@ -1723,7 +1723,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--89
 [18 <./images/CombinedCJSFunktionsschnittstellen.png>]
 
 [19]
-<images/weboberflaecheDesign.drawio.png, id=467, 553.06625pt x 553.06625pt>
+<images/weboberflaecheDesign.drawio.png, id=469, 553.06625pt x 553.06625pt>
 File: images/weboberflaecheDesign.drawio.png Graphic file (type png)
 <use images/weboberflaecheDesign.drawio.png>
 Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input line 161.
@@ -1731,7 +1731,7 @@ Package pdftex.def Info: images/weboberflaecheDesign.drawio.png  used on input l
 
 
 [20 <./images/weboberflaecheDesign.drawio.png>]
-<images/Diagramms.png, id=477, 1422.81563pt x 710.655pt>
+<images/Diagramms.png, id=479, 1422.81563pt x 710.655pt>
 File: images/Diagramms.png Graphic file (type png)
 <use images/Diagramms.png>
 Package pdftex.def Info: images/Diagramms.png  used on input line 187.
@@ -1739,7 +1739,7 @@ Package pdftex.def Info: images/Diagramms.png  used on input line 187.
 
 
 [21 <./images/Diagramms.png>]
-<images/EmscriptenPipeline.png, id=496, 1039.885pt x 187.70125pt>
+<images/EmscriptenPipeline.png, id=498, 1039.885pt x 187.70125pt>
 File: images/EmscriptenPipeline.png Graphic file (type png)
 <use images/EmscriptenPipeline.png>
 Package pdftex.def Info: images/EmscriptenPipeline.png  used on input line 243.
@@ -1758,7 +1758,7 @@ Overfull \hbox (0.53638pt too wide) in paragraph at lines 243--244
 
  (./chapters/implementierung_des_backtesters.tex
 Kapitel 4.
-<images/UserInterface.png, id=520, 421.575pt x 88.07906pt>
+<images/UserInterface.png, id=522, 421.575pt x 88.07906pt>
 File: images/UserInterface.png Graphic file (type png)
 <use images/UserInterface.png>
 Package pdftex.def Info: images/UserInterface.png  used on input line 14.
@@ -1820,7 +1820,7 @@ Kapitel 5.
 
 
 ]
-<images/TestDataJson.png, id=863, 243.15843pt x 174.6525pt>
+<images/TestDataJson.png, id=865, 243.15843pt x 174.6525pt>
 File: images/TestDataJson.png Graphic file (type png)
 <use images/TestDataJson.png>
 Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
@@ -1828,7 +1828,7 @@ Package pdftex.def Info: images/TestDataJson.png  used on input line 47.
 
 
 [36 <./images/TestDataJson.png>]
-<images/AvgExecutionTimesFirefox1.png, id=873, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox1.png, id=875, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox1.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox1.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox1.png  used on input line 113.
@@ -1836,7 +1836,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox1.png  used on input lin
 
 
 [37]
-<images/AvgExecutionTimesFirefox2.png, id=880, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox2.png, id=882, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox2.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox2.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox2.png  used on input line 134.
@@ -1844,7 +1844,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox2.png  used on input lin
 
 
 [38 <./images/AvgExecutionTimesFirefox1.png (PNG copy)>]
-<images/STDFirefox.png, id=888, 1091.07625pt x 692.5875pt>
+<images/STDFirefox.png, id=890, 1091.07625pt x 692.5875pt>
 File: images/STDFirefox.png Graphic file (type png)
 <use images/STDFirefox.png>
 Package pdftex.def Info: images/STDFirefox.png  used on input line 149.
@@ -1852,7 +1852,7 @@ Package pdftex.def Info: images/STDFirefox.png  used on input line 149.
 
 
 [39 <./images/AvgExecutionTimesFirefox2.png (PNG copy)>]
-<images/AvgExecutionTimesChrome1.png, id=895, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome1.png, id=897, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome1.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome1.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome1.png  used on input line 171.
@@ -1860,7 +1860,7 @@ Package pdftex.def Info: images/AvgExecutionTimesChrome1.png  used on input line
 
 
 [40 <./images/STDFirefox.png (PNG copy)>]
-<images/AvgExecutionTimesChrome2.png, id=904, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome2.png, id=906, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome2.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome2.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome2.png  used on input line 190.
@@ -1868,7 +1868,7 @@ Package pdftex.def Info: images/AvgExecutionTimesChrome2.png  used on input line
 
 
 [41 <./images/AvgExecutionTimesChrome1.png (PNG copy)>]
-<images/STDChrome.png, id=911, 1091.07625pt x 692.5875pt>
+<images/STDChrome.png, id=913, 1091.07625pt x 692.5875pt>
 File: images/STDChrome.png Graphic file (type png)
 <use images/STDChrome.png>
 Package pdftex.def Info: images/STDChrome.png  used on input line 208.
@@ -1878,7 +1878,7 @@ Package pdftex.def Info: images/STDChrome.png  used on input line 208.
 [42 <./images/AvgExecutionTimesChrome2.png (PNG copy)>]
 
 [43 <./images/STDChrome.png (PNG copy)>]
-<images/AvgExecutionTimesFirefox3.png, id=925, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesFirefox3.png, id=927, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesFirefox3.png Graphic file (type png)
 <use images/AvgExecutionTimesFirefox3.png>
 Package pdftex.def Info: images/AvgExecutionTimesFirefox3.png  used on input line 257.
@@ -1886,7 +1886,7 @@ Package pdftex.def Info: images/AvgExecutionTimesFirefox3.png  used on input lin
 
 
 [44]
-<images/AvgExecutionTimesChrome3.png, id=933, 788.9475pt x 592.2125pt>
+<images/AvgExecutionTimesChrome3.png, id=935, 788.9475pt x 592.2125pt>
 File: images/AvgExecutionTimesChrome3.png Graphic file (type png)
 <use images/AvgExecutionTimesChrome3.png>
 Package pdftex.def Info: images/AvgExecutionTimesChrome3.png  used on input line 269.
@@ -1960,18 +1960,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48247 strings out of 467816
- 957885 string characters out of 5436431
- 2196249 words of memory out of 5000000
- 75462 multiletter control sequences out of 15000+600000
+ 48254 strings out of 467816
+ 958189 string characters out of 5436431
+ 2197588 words of memory out of 5000000
+ 75468 multiletter control sequences out of 15000+600000
  699824 words of font info for 83 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  130i,17n,145p,1048b,3574s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (64 pages, 1292634 bytes).
+Output written on main.pdf (64 pages, 1293213 bytes).
 PDF statistics:
- 1544 PDF objects out of 1728 (max. 8388607)
- 1398 compressed objects within 14 object streams
- 489 named destinations out of 1000 (max. 500000)
+ 1548 PDF objects out of 1728 (max. 8388607)
+ 1401 compressed objects within 15 object streams
+ 490 named destinations out of 1000 (max. 500000)
  770 words of extra memory for PDF output out of 10000 (max. 10000000)
 

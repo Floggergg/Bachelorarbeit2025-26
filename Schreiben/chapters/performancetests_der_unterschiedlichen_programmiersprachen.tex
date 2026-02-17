@@ -195,7 +195,7 @@ Folglich hat Chrome bei rechenintensiven JavaScript Anwendungen eine bessere Per
 In Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome2} ist sichtbar, dass die Performanzunterschiede zwischen WebAssembly und JavaScript in Chrome auch bei geringerer Datenpunktanzahl bestehen bleiben.
 Die WebAssembly Implementierungen sind weiterhin langsamer als die JavaScript Varianten, unabhängig vom Rechenaufwand der Strategie.
 Interessanterweise benötigt die Ausbruchsstrategie bei geringerer Datenpunktanzahl am längsten zur Ausführung.
-Bei allen anderen Testfällen war die Mittelwertrückkehrstrategie die Zeitaufwändigste.
+Bei allen anderen Testfällen war die Mittelwertrückkehrstrategie die Zeitaufwendigste.
 Ein möglicher Grund hierfür könnte sein, dass bei dieser Funktion bei dieser Datenmenge noch keine Just-In-Time-Optimierungen durchgeführt wurden,
 die bei größeren Datenmengen zu einer schnelleren Ausführung führen könnten.
 
@@ -274,7 +274,7 @@ Dieser Einfluss ist groß genug, um alle WebAssembly Strategien performanter als
 Die Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome3} zeigt die Ausführungszeiten der Strategien in Chrome ohne Berücksichtigung der Speicherverwaltung.
 Auch in diesen Testfällen sind die JavaScript Implementierungen aller drei Strategien schneller als die WebAssembly Varianten.
 Dies war auch in den ursprünglichen Testergebnissen in Abbildung \ref{fig:DurchschnittlicheAusführungszeitenderStrategieninChrome1} der Fall.
-Der Unterschied besteht aber darin, dass die Performanz Unterschiede zwischen den beiden Implementierungssprachen geringer sind.
+Der Unterschied besteht aber darin, dass die Performanzunterschiede zwischen den beiden Implementierungssprachen geringer sind.
 Mit Berücksichtigung der Speicherverwaltung war WebAssembly um circa 150 Millisekunden langsamer als JavaScript.
 Ohne der Speicherverwaltung beträgt der Unterschied durchschnittlich nur noch etwa 80 Millisekunden.
 Diese Testergebnisse verdeutlichen, dass die Speicherverwaltung auch in Chrome einen Einfluss auf die Performanz von WebAssembly hat, aber nicht genug, um den Overhead Nachteil gegenüber JavaScript zu kompensieren.
@@ -291,7 +291,7 @@ Bei den einfacheren Strategien erwies sich jedoch JavaScript aufgrund geringerem
 
 In Chrome zeigte sich bei allen getesteten Strategien ein konsistenter Performanznachteil von WebAssembly gegenüber JavaScript.
 Dieser Nachteil blieb unabhängig von der Komplexität der Strategie und der Datenmenge bestehen.
-Dadurch lässt sich vermuten, dass in Chrome WebAssembly weniger optimal in die V8-Engine integriert, ist als reines JavaScript.
+Dadurch lässt sich vermuten, dass bei diesem Anwendungsfall in Chrome WebAssembly weniger optimal in die V8-Engine integriert, ist als reines JavaScript.
 
 Darüber hinaus wurde festgestellt, dass eine Erhöhung der Datenpunktanzahl nicht linear zu einer Verlängerung der Ausführungszeit führt.
 Vielmehr zeigte sich in beiden Browsern, dass größere Datensätze zu einer überproportionalen Steigerung der Ausführungsdauer führen können.
@@ -305,4 +305,4 @@ In Firefox konnte WebAssembly ohne diesen Overhead alle JavaScript Implementieru
 In Chrome blieb JavaScript jedoch auch ohne diese Berücksichtigung schneller als WebAssembly, jedoch verringerte sich der Performanzunterschied.
 
 Zusammenfassend lässt sich feststellen, dass WebAssembly in Firefox und bei komplexen, rechenintensiven Strategien einen messbaren Performanzvorteil bieten kann.
-Während JavaScript in Chrome bei aufwändigen Aufgaben die bessere Laufzeitperformanz aufweist.
+Während JavaScript in Chrome bei aufwendigen Aufgaben die bessere Laufzeitperformanz aufweist.
