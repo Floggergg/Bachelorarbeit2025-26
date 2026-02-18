@@ -9,19 +9,18 @@ In diesem Kapitel wird die Arbeit zusammengefasst, ein Ausblick auf mögliche zu
 In dieser Arbeit wurde ein clientseitiger Backtester mit Weboberfläche entwickelt, der den Vergleich von JavaScript und WebAssembly ermöglicht.
 Dieser wurde entwickelt, um die Performanzeunterschiede zwischen den beiden Programmiersprachen bei einer realistischen Anwendung zu untersuchen.
 Es wurden unterschiedlich rechenintensive Handelsstrategien implementiert und in den Backtester integriert.
-Dadurch kann die Ausführungsdauer auch bei steigernder Komplexität der Strategien verglichen werden.
+Dadurch kann die Ausführungsdauer auch bei steigender Komplexität der Strategien verglichen werden.
 \newline
 Es gibt bereits clientseitige Backtester, die selbst implementierte Strategien unterstützen.
-Diese eignen sich jedoch nicht für den Vergleich von JavaScript und WebAssembly, da diese keine JavaScript und WebAssembly Strategien unterstützen.
+Diese sind jedoch für den Vergleich der beiden Sprachen ungeeignet, da JavaScript und WebAssembly-Strategien nicht gleichzeitig unterstützt werden und somit kein direkter Vergleich möglich ist.
 \newline
-Der Backtester wurde in JavaScript implementiert und bietet die Möglichkeit, Strategien sowohl in JavaScript als auch in WebAssembly zu testen.
+Der Backtester wurde in JavaScript implementiert.
 Die historischen Kursdaten können entweder als JSON-Datei hochgeladen oder mit der Binance API abgerufen werden.
 Die Ergebnisse des Backtests werden nach der Ausführung in Form von Kennzahlen und einem Diagramm dargestellt.
 Die Ausführungszeit des Vorgangs wird ebenfalls gemessen und protokolliert.
 \newline
 Für die Performanztests wurden drei unterschiedliche Handelsstrategien mit unterschiedlicher Komplexität implementiert.
 Es wurden eine Gleitende Durchschnitts Überscheidungsstrategie, eine Ausbruchsstrategie und eine Mittelwertrückkehrstrategie mit Bollinger Bänder entwickelt.
-Die Komplexität der Strategien steigt von der Gleitenden Durchschnitts Überscheidungsstrategie über die Ausbruchsstrategie bis hin zur Mittelwertrückkehrstrategie.
 Jede Strategie hat eine JavaScript und eine WebAssembly Variante.
 Diese Strategien wurden mit dem Backtester in den Browsern Chrome und Firefox mit verschiedenen Datensätzen getestet.
 \newline
